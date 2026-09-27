@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 370" role="img">
+  <title>Las cinco categorías entran en una colección</title>
+  <desc>Cada grupo documenta una categoría, y todas se guardan en la misma colección de ChromaDB.</desc>
+  <rect width="646" height="370" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="36" y="40" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="20" font-weight="650">Cinco categorías, una sola colección</text>
+<rect x="36" y="64" width="250" height="48" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="48" y="74" width="44" height="28" rx="8" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="93" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g1</text>
+<text x="104" y="94" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Programaciones</text>
+<line x1="286" y1="88" x2="360" y2="176" stroke="#d5daf0" stroke-width="2"/>
+<rect x="36" y="122" width="250" height="48" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="48" y="132" width="44" height="28" rx="8" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="151" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g2</text>
+<text x="104" y="152" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Proyecto educativo</text>
+<line x1="286" y1="146" x2="360" y2="176" stroke="#d5daf0" stroke-width="2"/>
+<rect x="36" y="180" width="250" height="48" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="48" y="190" width="44" height="28" rx="8" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="209" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g3</text>
+<text x="104" y="210" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Planes y programas</text>
+<line x1="286" y1="204" x2="360" y2="176" stroke="#d5daf0" stroke-width="2"/>
+<rect x="36" y="238" width="250" height="48" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="48" y="248" width="44" height="28" rx="8" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="267" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g4</text>
+<text x="104" y="268" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Oferta educativa</text>
+<line x1="286" y1="262" x2="360" y2="176" stroke="#d5daf0" stroke-width="2"/>
+<rect x="36" y="296" width="250" height="48" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="48" y="306" width="44" height="28" rx="8" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="325" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g5</text>
+<text x="104" y="326" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Actividades y horarios</text>
+<line x1="286" y1="320" x2="360" y2="176" stroke="#d5daf0" stroke-width="2"/>
+<rect x="360" y="120" width="250" height="112" rx="16" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<text x="485" y="168" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">ChromaDB</text>
+<text x="485" y="194" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Una colección</text>
+<text x="485" y="214" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">la categoría es un filtro</text>
+</svg>

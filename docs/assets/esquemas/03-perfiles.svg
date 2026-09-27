@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 592" role="img">
+  <title>Perfil de los cinco vectores de ejemplo</title>
+  <desc>La pregunta se parece al trámite de matrícula. Horas y convivencia tienen otro perfil. Los números son los del tema, con ejes didácticos.</desc>
+  <rect width="792" height="592" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="36" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="20" font-weight="650">Perfil de los vectores de ejemplo</text>
+<text x="24" y="58" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Ejes inventados para la clase. Un embedding real no se etiqueta así.</text>
+<rect x="24" y="74" width="14" height="14" rx="3" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="44" y="86" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Matrícula</text>
+<rect x="184" y="74" width="14" height="14" rx="3" fill="#00796b" stroke="#00796b" stroke-width="0"/>
+<text x="204" y="86" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Horas</text>
+<rect x="344" y="74" width="14" height="14" rx="3" fill="#ef6c00" stroke="#ef6c00" stroke-width="0"/>
+<text x="364" y="86" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Convivencia</text>
+<text x="32" y="136" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Formalización de matrícula</text>
+<rect x="340" y="116" width="270" height="18" rx="5" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="618" y="130" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,90</text>
+<rect x="340" y="140" width="30" height="18" rx="5" fill="#00796b" stroke="#00796b" stroke-width="0"/>
+<text x="378" y="154" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,10</text>
+<rect x="340" y="164" width="4" height="18" rx="5" fill="#ef6c00" stroke="#ef6c00" stroke-width="0"/>
+<text x="352" y="178" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,00</text>
+<text x="32" y="232" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Cómo me matriculo</text>
+<rect x="340" y="212" width="255" height="18" rx="5" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="603" y="226" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,85</text>
+<rect x="340" y="236" width="60" height="18" rx="5" fill="#00796b" stroke="#00796b" stroke-width="0"/>
+<text x="408" y="250" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,20</text>
+<rect x="340" y="260" width="15" height="18" rx="5" fill="#ef6c00" stroke="#ef6c00" stroke-width="0"/>
+<text x="363" y="274" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,05</text>
+<rect x="16" y="294" width="760" height="86" rx="12" fill="#e8eaf6" stroke="#3949ab" stroke-width="1.5"/>
+<text x="32" y="328" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Pregunta: ¿cómo me matriculo?</text>
+<rect x="340" y="308" width="264" height="18" rx="5" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="612" y="322" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,88</text>
+<rect x="340" y="332" width="45" height="18" rx="5" fill="#00796b" stroke="#00796b" stroke-width="0"/>
+<text x="393" y="346" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,15</text>
+<rect x="340" y="356" width="6" height="18" rx="5" fill="#ef6c00" stroke="#ef6c00" stroke-width="0"/>
+<text x="354" y="370" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,02</text>
+<text x="32" y="424" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Horas del módulo</text>
+<rect x="340" y="404" width="15" height="18" rx="5" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="363" y="418" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,05</text>
+<rect x="340" y="428" width="285" height="18" rx="5" fill="#00796b" stroke="#00796b" stroke-width="0"/>
+<text x="633" y="442" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,95</text>
+<rect x="340" y="452" width="4" height="18" rx="5" fill="#ef6c00" stroke="#ef6c00" stroke-width="0"/>
+<text x="352" y="466" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,00</text>
+<text x="32" y="520" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Plan de convivencia</text>
+<rect x="340" y="500" width="4" height="18" rx="5" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="352" y="514" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,00</text>
+<rect x="340" y="524" width="15" height="18" rx="5" fill="#00796b" stroke="#00796b" stroke-width="0"/>
+<text x="363" y="538" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,05</text>
+<rect x="340" y="548" width="270" height="18" rx="5" fill="#ef6c00" stroke="#ef6c00" stroke-width="0"/>
+<text x="618" y="562" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">0,90</text>
+</svg>

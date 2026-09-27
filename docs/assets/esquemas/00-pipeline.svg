@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 528" role="img">
+  <title>Recorrido de una pregunta en DocIA+</title>
+  <desc>La pregunta se convierte en vector, ChromaDB devuelve fragmentos y otro modelo redacta la respuesta citando la fuente.</desc>
+  <rect width="520" height="528" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="36" y="42" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="20" font-weight="650">Dónde está la base vectorial en DocIA+</text>
+<rect x="36" y="64" width="448" height="64" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="52" y="78" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="102" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">1</text>
+<text x="102" y="92" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">Pregunta</text>
+<text x="102" y="112" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">¿Cómo me matriculo?</text>
+<rect x="36" y="140" width="448" height="64" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="52" y="154" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="178" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">2</text>
+<text x="102" y="168" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">Mismo modelo de embeddings</text>
+<text x="102" y="188" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Titan v2, 1024, normalizado</text>
+<rect x="36" y="216" width="448" height="64" rx="14" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<rect x="52" y="230" width="36" height="36" rx="10" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="254" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">3</text>
+<text x="102" y="244" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">ChromaDB</text>
+<text x="102" y="264" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Busca los fragmentos más cercanos</text>
+<text x="468" y="254" text-anchor="end" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">esta unidad</text>
+<rect x="36" y="292" width="448" height="64" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="52" y="306" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="330" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">4</text>
+<text x="102" y="320" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">Fragmentos recuperados</text>
+<text x="102" y="340" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Los 3 a 5 más relevantes, con su texto</text>
+<rect x="36" y="368" width="448" height="64" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="52" y="382" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="406" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">5</text>
+<text x="102" y="396" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">Modelo de lenguaje</text>
+<text x="102" y="416" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Redacta usando solo esos fragmentos</text>
+<rect x="36" y="444" width="448" height="64" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="52" y="458" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="70" y="482" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">6</text>
+<text x="102" y="472" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">Respuesta con cita</text>
+<text x="102" y="492" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">El usuario puede abrir el documento</text>
+</svg>

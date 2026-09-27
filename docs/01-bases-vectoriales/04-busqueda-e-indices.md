@@ -12,6 +12,8 @@ Supongamos 80 documentos y, de media, 15 fragmentos por documento. Son unos **1.
 
 Conclusión, y es una conclusión de ingeniería: **en el corpus de un IES la corrección del sistema no depende de un índice aproximado ingenioso**. Depende del fragmentado, de los metadatos, del modelo y de la evaluación. El índice aproximado importa por otras tres razones, que sí justifican estudiarlo:
 
+![A la izquierda la pregunta se compara con todos los puntos. A la derecha, HNSW recorre un camino del grafo y puede perder un vecino.](../assets/esquemas/04-exacta-vs-hnsw.svg)
+
 1. ChromaDB lo usa por defecto. Hay que saber qué garantiza y qué no.
 2. El proyecto quiere ser replicable en centros con un corpus mayor, y en la fase local puede convivir con otros usos.
 3. Un índice aproximado puede **dejar fuera** el fragmento correcto. Quien no lo sepa, depurará el modelo o los documentos cuando el fallo está en los parámetros de búsqueda.

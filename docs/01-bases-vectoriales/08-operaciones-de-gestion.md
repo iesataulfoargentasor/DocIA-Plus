@@ -35,6 +35,8 @@ k y los filtros los decide quien llama. La colección no los adivina.
 
 Un documento institucional cambia: nueva duración de un módulo, nuevo calendario. El procedimiento completo, para un `doc_id`, es:
 
+![Al reindexar, el fragmento igual no vuelve a Titan, el que cambió se sustituye y los que sobran se borran.](../assets/esquemas/08-actualizacion.svg)
+
 1. Volver a extraer y fragmentar el fichero nuevo.
 2. Calcular el conjunto de identificadores nuevos.
 3. Para cada fragmento, si el hash guardado coincide, no llamar a Titan; si no coincide, `upsert` con el vector nuevo.

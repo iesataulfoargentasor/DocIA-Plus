@@ -8,6 +8,8 @@ En el proyecto hay una pregunta de ejemplo y un documento que no usa las mismas 
 | --- | --- |
 | ¿cómo me matriculo en el ciclo de IA? | procedimiento de formalización de matrícula |
 
+![A la izquierda, la búsqueda literal no encuentra el documento porque no están las mismas palabras. A la derecha, los dos textos quedan cerca.](../assets/esquemas/01-literal-vs-semantica.svg)
+
 Un buscador literal acierta si la cadena, o un trozo suficiente de ella, aparece en el texto. Aquí no aparece «cómo me matriculo». Aparece otra formulación del mismo trámite. La persona no encuentra el párrafo, aunque el párrafo responde a su pregunta.
 
 Eso le pasa todos los días a la documentación de un centro: programaciones, instrucciones de la Consejería, planes y la web no comparten un vocabulario único. Familias, alumnado y profesorado preguntan con el suyo.

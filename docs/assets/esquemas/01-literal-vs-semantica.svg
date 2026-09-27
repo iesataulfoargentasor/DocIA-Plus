@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 724 348" role="img">
+  <title>La búsqueda literal no encuentra el documento y la semántica sí</title>
+  <desc>La pregunta cómo me matriculo no contiene las palabras formalización de matrícula. En el espacio vectorial los dos textos quedan próximos.</desc>
+  <rect width="724" height="348" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <rect x="24" y="24" width="330" height="300" rx="16" fill="#fdecea" stroke="#f5c6c2" stroke-width="1.5"/>
+<text x="40" y="56" text-anchor="start" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Búsqueda literal</text>
+<rect x="40" y="76" width="298" height="44" rx="22" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="52" y="104" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">¿cómo me matriculo?</text>
+<rect x="40" y="140" width="298" height="88" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="52" y="168" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">En el documento dice:</text>
+<text x="52" y="192" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">formalización de matrícula</text>
+<text x="52" y="212" text-anchor="start" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">Esas palabras no están</text>
+<text x="189" y="280" text-anchor="middle" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">No lo encuentra</text>
+<rect x="370" y="24" width="330" height="300" rx="16" fill="#e8f5e9" stroke="#b7dfb9" stroke-width="1.5"/>
+<text x="386" y="56" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Búsqueda semántica</text>
+<rect x="386" y="76" width="298" height="44" rx="22" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="398" y="104" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">¿cómo me matriculo?</text>
+<circle cx="470" cy="190" r="14" fill="#3949ab"/>
+<circle cx="520" cy="168" r="14" fill="#00796b"/>
+<text x="492" y="240" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta y documento</text>
+<text x="492" y="260" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">quedan cerca</text>
+<text x="535" y="280" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Sí lo recupera</text>
+</svg>

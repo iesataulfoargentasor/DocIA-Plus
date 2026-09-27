@@ -35,6 +35,8 @@ recall@k = preguntas en las que el doc_id esperado aparece en el top k
            / preguntas del conjunto
 ```
 
+![En el ejemplo del ejercicio, cinco de ocho preguntas aciertan en el top 5: un 62,5 %, por debajo del 80 % que pide el proyecto.](../assets/esquemas/09-recall.svg)
+
 Con k = 5, el objetivo del proyecto se lee así: en más del 80 % de las preguntas controladas, el documento correcto está entre los cinco primeros fragmentos.
 
 Es un recall sobre documentos, no sobre el índice HNSW. Si se quiere afinar, se exige también la sección. Al empezar, el `doc_id` basta para no bloquear la medida en discusiones de paginación.

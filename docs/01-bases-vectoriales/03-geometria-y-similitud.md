@@ -33,6 +33,8 @@ La similitud del coseno:
 cos(a, b) = (a · b) / (||a|| * ||b||)
 ```
 
+![El coseno vale 1 si los vectores apuntan al mismo sitio, baja cuando se abre el ángulo y vale 0 si son perpendiculares.](../assets/esquemas/03-coseno.svg)
+
 Vale 1 si apuntan al mismo sitio, 0 si son perpendiculares, y valores negativos si apuntan a sitios opuestos. En embeddings de texto normalizados, los valores útiles suelen estar entre 0 y 1: dos fragmentos de documentación rara vez son «opuestos» en el sentido geométrico; simplemente hablan de otra cosa y el coseno baja.
 
 ## Por qué Titan simplifica la cuenta
@@ -57,6 +59,8 @@ Ejes: `(trámites de matrícula, horas y módulos, convivencia)`.
 | Cómo me matriculo en el ciclo | (0,85, 0,20, 0,05) |
 | El módulo tiene 190 horas | (0,05, 0,95, 0,00) |
 | Plan de convivencia del centro | (0,00, 0,05, 0,90) |
+
+![Perfil de los vectores de ejemplo. La pregunta se parece a los textos de matrícula y no a horas ni a convivencia.](../assets/esquemas/03-perfiles.svg)
 
 La pregunta «¿cómo me matriculo?» la colocamos en `(0,88, 0,15, 0,02)`.
 

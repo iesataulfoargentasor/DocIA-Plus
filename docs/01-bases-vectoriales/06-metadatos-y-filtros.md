@@ -23,6 +23,8 @@ donde categoria = g4
 devolver 5
 ```
 
+![Con el filtro dentro de la consulta, los cinco resultados ya son de oferta educativa. Los demás ni siquiera entran en el top 5.](../assets/esquemas/06-filtro.svg)
+
 Los cinco resultados ya son de oferta educativa. Si ninguno se parece lo bastante, se dice que no hay evidencia. No se rellena con un fragmento de convivencia que casualmente contiene la palabra «acceso».
 
 Varios campos se combinan. ChromaDB expresa la conjunción con un operador lógico en el propio `where`. Lo usaremos para «esta categoría **y** este curso», por ejemplo. El detalle de sintaxis se practica en el laboratorio 2 y se fija cuando escribamos el cliente definitivo.

@@ -8,20 +8,9 @@ Una persona escribe una pregunta sobre la documentación del IES. El sistema bus
 
 La pieza que hace posible la búsqueda por significado es la **base de datos vectorial**.
 
-```mermaid
-flowchart LR
-  pregunta[Pregunta en lenguaje natural]
-  embed[Mismo modelo de embeddings]
-  bd[(ChromaDB)]
-  fragmentos[Fragmentos más cercanos]
-  llm[Modelo de lenguaje]
-  respuesta[Respuesta con cita]
+![Recorrido de una pregunta en DocIA+. El paso 3, ChromaDB, es la base vectorial de esta unidad.](assets/esquemas/00-pipeline.svg)
 
-  pregunta --> embed --> bd
-  bd --> fragmentos --> llm --> respuesta
-```
-
-En esta unidad nos quedamos en el recuadro de ChromaDB y en todo lo que tiene que ocurrir para que ese recuadro tenga datos buenos. La redacción de la respuesta corresponde más adelante a PIA.
+En esta unidad nos quedamos en el paso 3: que ChromaDB tenga fragmentos buenos. La redacción de la respuesta corresponde más adelante a PIA.
 
 ## Cómo está organizada
 

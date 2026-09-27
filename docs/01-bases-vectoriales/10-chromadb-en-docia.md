@@ -19,6 +19,8 @@ Estas decisiones se pueden revisar con una medida del tema 9 en la mano. No se r
 
 ## Qué hay que tener en la cabeza el día que se despliegue
 
+![La web habla con la API. La API consulta ChromaDB y Titan. La colección no se publica en internet.](../assets/esquemas/10-arquitectura.svg)
+
 En el proyecto, ChromaDB y FastAPI comparten una instancia pequeña (dos vCPU y 4 GB de RAM). Para el volumen del IES sobra, siempre que no se convierta la máquina en el sitio donde también se entrenan modelos. El índice HNSW de unos miles de vectores de 1024 floats ocupa decenas de megabytes, no gigabytes.
 
 La base escucha en la red privada de esa máquina. No se publica ChromaDB a internet para que el widget de la web le consulte directo. Quien consulta es la API, que aplica autenticación en las operaciones de escritura. La lectura que hace el chatbot pasa por la API. Abrir el puerto de ChromaDB al público dejaría la colección de documentos internos al alcance de cualquiera, con o sin embeddings de por medio.

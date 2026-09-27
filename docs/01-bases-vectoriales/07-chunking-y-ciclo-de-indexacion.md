@@ -8,6 +8,8 @@ Titan admite entradas largas, del orden de ocho mil tokens. Una programación di
 
 Además, la cita tiene que señalar un sitio, no un PDF de treinta páginas. La unidad de almacenamiento es el **fragmento**.
 
+![El PDF se parte en fragmentos. El solape repite un trozo entre dos fragmentos, y cada uno tiene su propio vector.](../assets/esquemas/07-fragmentos.svg)
+
 ## Qué es un fragmento bueno
 
 Un fragmento bueno cabe en el modelo con margen, habla de un solo asunto y, leído solo, sigue entendiéndose.

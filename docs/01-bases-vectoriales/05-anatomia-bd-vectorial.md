@@ -13,6 +13,8 @@ Cada fragmento indexado en DocIA+ será un registro con:
 | Documento | Sí, el texto del fragmento | El párrafo que citaremos |
 | Metadatos | Sí en DocIA+, aunque ChromaDB los permita vacíos | categoría, fichero, página, curso |
 
+![Las cuatro piezas de cada fragmento: identificador, vector, texto que se cita y metadatos para filtrar.](../assets/esquemas/05-registro.svg)
+
 El identificador lo elegimos nosotros. No es un autonumérico opaco si podemos evitarlo. Un identificador estable permite reindexar: el mismo fragmento, si no ha cambiado, se vuelve a escribir encima con `upsert` y no deja un duplicado. El criterio para construirlo está en el tema 8.
 
 El documento se guarda junto al vector porque la respuesta tiene que **citar texto real**, no reconstruir el párrafo desde los números. Los números no se decodifican a texto.

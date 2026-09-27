@@ -22,6 +22,8 @@ El corpus previsto son los documentos oficiales del centro, organizados en cinco
 | G4 | Oferta educativa | Ciclos, módulos, duración, acceso, titulaciones |
 | G5 | Actividades, orientación y horarios | Calendario, horarios, actividades complementarias |
 
+![Las cinco categorías documentales entran en una sola colección de ChromaDB. La categoría se usa como filtro.](../assets/esquemas/00-categorias.svg)
+
 El objetivo verificable de la búsqueda semántica, en el propio proyecto, es:
 
 - al menos **80 documentos** indexados con embeddings;
@@ -32,25 +34,7 @@ La base vectorial elegida en el proyecto es **ChromaDB**, alojada junto con la A
 
 ## Dónde encaja la base vectorial
 
-```mermaid
-flowchart TB
-  subgraph sbd [SBD]
-    corpus[Corpus limpio y categorizado]
-    meta[Metadatos y estructura de la colección]
-  end
-  subgraph bda [BDA]
-    chunks[Fragmentos]
-    vectores[Embeddings]
-    guarda[Escritura en ChromaDB]
-  end
-  subgraph pia [PIA, más adelante]
-    api[API de consulta]
-    llm[Redacción de la respuesta]
-  end
-  corpus --> chunks --> vectores --> guarda
-  meta --> guarda
-  guarda --> api --> llm
-```
+![SBD prepara el texto y los metadatos, BDA escribe los vectores y PIA consultará la colección más adelante.](../assets/esquemas/00-modulos.svg)
 
 SBD deja los documentos listos y define qué se guarda junto a cada vector. BDA convierte esos documentos en vectores y los persiste. PIA pregunta a esa base y compone la respuesta. Si la base está mal diseñada, la API solo puede devolver respuestas mal fundamentadas.
 

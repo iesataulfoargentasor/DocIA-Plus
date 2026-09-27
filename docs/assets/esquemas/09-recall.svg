@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 684 386" role="img">
+  <title>Recall en cinco de ocho preguntas de ejemplo</title>
+  <desc>Cinco preguntas tienen el documento esperado entre los cinco primeros fragmentos. Eso es un 62,5 por ciento, por debajo del objetivo del proyecto.</desc>
+  <rect width="684" height="386" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Ejemplo de recall@5: 5 de 8</text>
+<text x="24" y="56" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Es el ejercicio 7, no una medida del corpus del IES.</text>
+<rect x="24" y="74" width="420" height="32" rx="8" fill="#e8f5e9" stroke="#e8f5e9" stroke-width="0"/>
+<text x="40" y="96" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 1</text>
+<text x="160" y="96" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">sí</text>
+<text x="210" y="96" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">dentro del top 5</text>
+<rect x="24" y="112" width="420" height="32" rx="8" fill="#e8f5e9" stroke="#e8f5e9" stroke-width="0"/>
+<text x="40" y="134" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 2</text>
+<text x="160" y="134" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">sí</text>
+<text x="210" y="134" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">dentro del top 5</text>
+<rect x="24" y="150" width="420" height="32" rx="8" fill="#e8f5e9" stroke="#e8f5e9" stroke-width="0"/>
+<text x="40" y="172" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 3</text>
+<text x="160" y="172" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">sí</text>
+<text x="210" y="172" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">dentro del top 5</text>
+<rect x="24" y="188" width="420" height="32" rx="8" fill="#fdecea" stroke="#fdecea" stroke-width="0"/>
+<text x="40" y="210" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 4</text>
+<text x="160" y="210" text-anchor="start" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">no</text>
+<text x="210" y="210" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">sale en el puesto 8</text>
+<rect x="24" y="226" width="420" height="32" rx="8" fill="#e8f5e9" stroke="#e8f5e9" stroke-width="0"/>
+<text x="40" y="248" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 5</text>
+<text x="160" y="248" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">sí</text>
+<text x="210" y="248" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">dentro del top 5</text>
+<rect x="24" y="264" width="420" height="32" rx="8" fill="#fdecea" stroke="#fdecea" stroke-width="0"/>
+<text x="40" y="286" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 6</text>
+<text x="160" y="286" text-anchor="start" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">no</text>
+<text x="210" y="286" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">no aparece</text>
+<rect x="24" y="302" width="420" height="32" rx="8" fill="#e8f5e9" stroke="#e8f5e9" stroke-width="0"/>
+<text x="40" y="324" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 7</text>
+<text x="160" y="324" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">sí</text>
+<text x="210" y="324" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">dentro del top 5</text>
+<rect x="24" y="340" width="420" height="32" rx="8" fill="#fdecea" stroke="#fdecea" stroke-width="0"/>
+<text x="40" y="362" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 8</text>
+<text x="160" y="362" text-anchor="start" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">no</text>
+<text x="210" y="362" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">no aparece</text>
+<rect x="460" y="74" width="200" height="120" rx="16" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="560" y="112" text-anchor="middle" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">62,5 %</text>
+<text x="560" y="140" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">objetivo: más del 80 %</text>
+<text x="560" y="164" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">con k entre 3 y 5</text>
+</svg>

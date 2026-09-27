@@ -5,11 +5,15 @@ Un **embedding** de texto es una lista de números reales que un modelo produce 
 - **embedding de documento**, calculado al indexar y guardado en la base;
 - **embedding de consulta**, calculado al llegar la pregunta y usado solo para buscar. El proyecto no guarda la pregunta ni datos de quien la hace.
 
+![El fragmento y la pregunta entran al mismo modelo. El vector del fragmento se guarda; el de la pregunta, no.](../assets/esquemas/02-mismo-modelo.svg)
+
 ## Qué entra y qué sale
 
 Entra una cadena ya limpia: un fragmento, no un PDF binario. Sale un vector de longitud fija. La longitud se llama **dimensión**.
 
 Si el modelo devuelve dimensión 1024, todos los vectores de esa colección tienen 1024 componentes. No se puede insertar uno de 768 al lado de uno de 1024. La base lo rechaza o, peor, una implementación descuidada compara magnitudes que no viven en el mismo espacio.
+
+![Una consulta solo es válida si usa la misma dimensión que la indexación. Pasar de 1024 a 256 obliga a reindexar.](../assets/esquemas/02-dimensiones.svg)
 
 Cada componente, por separado, no significa «horas» ni «matrícula». El significado está en la **posición conjunta** del punto. No se interpreta la coordenada 37. Se interpreta a qué otros puntos se parece.
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 400" role="img">
+  <title>El filtro de categoría entra en la consulta</title>
+  <desc>Si se piden cinco resultados y luego se tiran los que no son g4, el fragmento correcto puede quedar fuera. El where va dentro de la consulta.</desc>
+  <rect width="620" height="400" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="36" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">El filtro actúa antes de quedarse con los 5</text>
+<rect x="24" y="56" width="300" height="44" rx="22" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="40" y="84" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">¿Puedo acceder con un grado medio?</text>
+<text x="24" y="126" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">where categoria = g4</text>
+<rect x="24" y="150" width="250" height="36" rx="10" fill="#eef0f6" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="40" y="174" text-anchor="start" fill="#8b93a7" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">g1  Programaciones</text>
+<text x="250" y="174" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">fuera</text>
+<rect x="24" y="194" width="250" height="36" rx="10" fill="#eef0f6" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="40" y="218" text-anchor="start" fill="#8b93a7" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">g2  Proyecto educativo</text>
+<text x="250" y="218" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">fuera</text>
+<rect x="24" y="238" width="250" height="36" rx="10" fill="#eef0f6" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="40" y="262" text-anchor="start" fill="#8b93a7" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">g3  Planes</text>
+<text x="250" y="262" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">fuera</text>
+<rect x="24" y="282" width="250" height="36" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="40" y="306" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">g4  Oferta educativa</text>
+<text x="250" y="306" text-anchor="end" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">entra</text>
+<rect x="24" y="326" width="250" height="36" rx="10" fill="#eef0f6" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="40" y="350" text-anchor="start" fill="#8b93a7" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">g5  Horarios</text>
+<text x="250" y="350" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">fuera</text>
+<rect x="340" y="168" width="250" height="150" rx="16" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="465" y="210" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">Top 5</text>
+<text x="465" y="238" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">ya son de oferta</text>
+<text x="465" y="262" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">educativa</text>
+<text x="465" y="290" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">k cuenta solo estos</text>
+<line x1="274" y1="330" x2="340" y2="250" stroke="#2e7d32" stroke-width="2" marker-end="url(#flecha)"/>
+</svg>
