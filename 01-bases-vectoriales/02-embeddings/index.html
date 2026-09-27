@@ -1025,9 +1025,11 @@
 <li><strong>embedding de documento</strong>, calculado al indexar y guardado en la base;</li>
 <li><strong>embedding de consulta</strong>, calculado al llegar la pregunta y usado solo para buscar. El proyecto no guarda la pregunta ni datos de quien la hace.</li>
 </ul>
+<p><img alt="El fragmento y la pregunta entran al mismo modelo. El vector del fragmento se guarda; el de la pregunta, no." src="../../assets/esquemas/02-mismo-modelo.svg" /></p>
 <h2 id="que-entra-y-que-sale">Qué entra y qué sale<a class="headerlink" href="#que-entra-y-que-sale" title="Permanent link">&para;</a></h2>
 <p>Entra una cadena ya limpia: un fragmento, no un PDF binario. Sale un vector de longitud fija. La longitud se llama <strong>dimensión</strong>.</p>
 <p>Si el modelo devuelve dimensión 1024, todos los vectores de esa colección tienen 1024 componentes. No se puede insertar uno de 768 al lado de uno de 1024. La base lo rechaza o, peor, una implementación descuidada compara magnitudes que no viven en el mismo espacio.</p>
+<p><img alt="Una consulta solo es válida si usa la misma dimensión que la indexación. Pasar de 1024 a 256 obliga a reindexar." src="../../assets/esquemas/02-dimensiones.svg" /></p>
 <p>Cada componente, por separado, no significa «horas» ni «matrícula». El significado está en la <strong>posición conjunta</strong> del punto. No se interpreta la coordenada 37. Se interpreta a qué otros puntos se parece.</p>
 <h2 id="no-es-un-resumen-ni-un-cifrado-ni-un-hash">No es un resumen, ni un cifrado, ni un hash<a class="headerlink" href="#no-es-un-resumen-ni-un-cifrado-ni-un-hash" title="Permanent link">&para;</a></h2>
 <table>

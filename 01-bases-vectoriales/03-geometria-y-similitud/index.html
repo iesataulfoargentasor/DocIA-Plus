@@ -1084,6 +1084,7 @@ longitud o norma  ||a|| = raíz cuadrada de (a · a)
 <p>La similitud del coseno:</p>
 <div class="highlight"><pre><span></span><code>cos(a, b) = (a · b) / (||a|| * ||b||)
 </code></pre></div>
+<p><img alt="El coseno vale 1 si los vectores apuntan al mismo sitio, baja cuando se abre el ángulo y vale 0 si son perpendiculares." src="../../assets/esquemas/03-coseno.svg" /></p>
 <p>Vale 1 si apuntan al mismo sitio, 0 si son perpendiculares, y valores negativos si apuntan a sitios opuestos. En embeddings de texto normalizados, los valores útiles suelen estar entre 0 y 1: dos fragmentos de documentación rara vez son «opuestos» en el sentido geométrico; simplemente hablan de otra cosa y el coseno baja.</p>
 <h2 id="por-que-titan-simplifica-la-cuenta">Por qué Titan simplifica la cuenta<a class="headerlink" href="#por-que-titan-simplifica-la-cuenta" title="Permanent link">&para;</a></h2>
 <p>Si el modelo devuelve vectores de longitud 1, el denominador vale 1 y:</p>
@@ -1119,6 +1120,7 @@ longitud o norma  ||a|| = raíz cuadrada de (a · a)
 </tr>
 </tbody>
 </table>
+<p><img alt="Perfil de los vectores de ejemplo. La pregunta se parece a los textos de matrícula y no a horas ni a convivencia." src="../../assets/esquemas/03-perfiles.svg" /></p>
 <p>La pregunta «¿cómo me matriculo?» la colocamos en <code>(0,88, 0,15, 0,02)</code>.</p>
 <p>El coseno con el procedimiento de matrícula sale alto. El coseno con el plan de convivencia sale bajo. El orden de los cuatro textos es el ranking que devolvería una base vectorial. No ha hecho falta que la pregunta contenga la palabra «formalización».</p>
 <p>Haz la cuenta en el laboratorio, no solo de lectura: cambia una coordenada y mira cómo se mueve el ranking. Esa sensibilidad es la misma que tendrá un mal fragmento en 1024 dimensiones, solo que allí no veremos el eje culpable.</p>

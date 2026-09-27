@@ -1004,6 +1004,7 @@
 <p>Hay que ponerle cifras de DocIA+ antes de hablar de índices exóticos.</p>
 <p>Supongamos 80 documentos y, de media, 15 fragmentos por documento. Son unos <strong>1.200 vectores</strong>. Con d = 1024, cada consulta exacta hace del orden de un millón de multiplicaciones. Un portátil las hace en unos pocos milisegundos. Aunque el hito posterior del proyecto hable de varios cientos de documentos indexados, seguimos en un tamaño en el que el barrido completo cabe de sobra en el objetivo de latencia de la API, que el proyecto sitúa por debajo de 3 segundos de punta a punta. Esos 3 segundos los consumirá sobre todo la redacción del modelo de lenguaje, no la búsqueda.</p>
 <p>Conclusión, y es una conclusión de ingeniería: <strong>en el corpus de un IES la corrección del sistema no depende de un índice aproximado ingenioso</strong>. Depende del fragmentado, de los metadatos, del modelo y de la evaluación. El índice aproximado importa por otras tres razones, que sí justifican estudiarlo:</p>
+<p><img alt="A la izquierda la pregunta se compara con todos los puntos. A la derecha, HNSW recorre un camino del grafo y puede perder un vecino." src="../../assets/esquemas/04-exacta-vs-hnsw.svg" /></p>
 <ol>
 <li>ChromaDB lo usa por defecto. Hay que saber qué garantiza y qué no.</li>
 <li>El proyecto quiere ser replicable en centros con un corpus mayor, y en la fase local puede convivir con otros usos.</li>

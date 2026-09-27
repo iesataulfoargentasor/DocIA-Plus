@@ -999,6 +999,7 @@
 </tr>
 </tbody>
 </table>
+<p><img alt="Las cinco categorías documentales entran en una sola colección de ChromaDB. La categoría se usa como filtro." src="../../assets/esquemas/00-categorias.svg" /></p>
 <p>El objetivo verificable de la búsqueda semántica, en el propio proyecto, es:</p>
 <ul>
 <li>al menos <strong>80 documentos</strong> indexados con embeddings;</li>
@@ -1007,23 +1008,7 @@
 </ul>
 <p>La base vectorial elegida en el proyecto es <strong>ChromaDB</strong>, alojada junto con la API en una instancia EC2. El modelo que convertirá texto en vectores en la fase cloud es <strong>Amazon Titan Embeddings v2</strong>. Más adelante, en la fase de servidor local del centro, ese modelo puede sustituirse por uno ejecutado en el propio IES. Esa sustitución obliga a <strong>volver a calcular todos los vectores</strong>: una colección no mezcla vectores de dos modelos distintos. Lo veremos en el tema de embeddings.</p>
 <h2 id="donde-encaja-la-base-vectorial">Dónde encaja la base vectorial<a class="headerlink" href="#donde-encaja-la-base-vectorial" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TB
-  subgraph sbd [SBD]
-    corpus[Corpus limpio y categorizado]
-    meta[Metadatos y estructura de la colección]
-  end
-  subgraph bda [BDA]
-    chunks[Fragmentos]
-    vectores[Embeddings]
-    guarda[Escritura en ChromaDB]
-  end
-  subgraph pia [PIA, más adelante]
-    api[API de consulta]
-    llm[Redacción de la respuesta]
-  end
-  corpus --&gt; chunks --&gt; vectores --&gt; guarda
-  meta --&gt; guarda
-  guarda --&gt; api --&gt; llm</code></pre>
+<p><img alt="SBD prepara el texto y los metadatos, BDA escribe los vectores y PIA consultará la colección más adelante." src="../../assets/esquemas/00-modulos.svg" /></p>
 <p>SBD deja los documentos listos y define qué se guarda junto a cada vector. BDA convierte esos documentos en vectores y los persiste. PIA pregunta a esa base y compone la respuesta. Si la base está mal diseñada, la API solo puede devolver respuestas mal fundamentadas.</p>
 <h2 id="lo-que-esta-unidad-no-implementa">Lo que esta unidad no implementa<a class="headerlink" href="#lo-que-esta-unidad-no-implementa" title="Permanent link">&para;</a></h2>
 <p>La infraestructura AWS, la API, el panel de administración y el chatbot de la web vienen después. Aquí el objetivo es que, cuando abramos ChromaDB de verdad, el grupo sepa qué colección está creando, por qué el espacio de distancia es el coseno, qué metadatos son obligatorios y cómo se reindexa un documento que ha cambiado.</p>

@@ -956,17 +956,8 @@
 <h2 id="el-sistema-en-una-frase">El sistema, en una frase<a class="headerlink" href="#el-sistema-en-una-frase" title="Permanent link">&para;</a></h2>
 <p>Una persona escribe una pregunta sobre la documentación del IES. El sistema busca los fragmentos de documento cuyo <strong>significado</strong> se parece a esa pregunta y, con esos fragmentos delante, un modelo de lenguaje redacta la respuesta citando la fuente.</p>
 <p>La pieza que hace posible la búsqueda por significado es la <strong>base de datos vectorial</strong>.</p>
-<pre class="mermaid"><code>flowchart LR
-  pregunta[Pregunta en lenguaje natural]
-  embed[Mismo modelo de embeddings]
-  bd[(ChromaDB)]
-  fragmentos[Fragmentos más cercanos]
-  llm[Modelo de lenguaje]
-  respuesta[Respuesta con cita]
-
-  pregunta --&gt; embed --&gt; bd
-  bd --&gt; fragmentos --&gt; llm --&gt; respuesta</code></pre>
-<p>En esta unidad nos quedamos en el recuadro de ChromaDB y en todo lo que tiene que ocurrir para que ese recuadro tenga datos buenos. La redacción de la respuesta corresponde más adelante a PIA.</p>
+<p><img alt="Recorrido de una pregunta en DocIA+. El paso 3, ChromaDB, es la base vectorial de esta unidad." src="assets/esquemas/00-pipeline.svg" /></p>
+<p>En esta unidad nos quedamos en el paso 3: que ChromaDB tenga fragmentos buenos. La redacción de la respuesta corresponde más adelante a PIA.</p>
 <h2 id="como-esta-organizada">Cómo está organizada<a class="headerlink" href="#como-esta-organizada" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

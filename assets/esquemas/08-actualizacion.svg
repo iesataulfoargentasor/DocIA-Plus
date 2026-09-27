@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 688 294" role="img">
+  <title>Qué ocurre al reindexar un documento más corto</title>
+  <desc>El fragmento igual no vuelve a pasar por Titan. El que cambió se sustituye. Los que sobran se borran.</desc>
+  <rect width="688" height="294" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Actualizar calendario-2026 sin dejar huérfanos</text>
+<text x="24" y="58" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Antes: cuatro fragmentos</text>
+<rect x="24" y="76" width="144" height="64" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="96" y="104" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">_000</text>
+<text x="96" y="124" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">igual</text>
+<rect x="180" y="76" width="144" height="64" rx="12" fill="#fff8e1" stroke="#ef6c00" stroke-width="2"/>
+<text x="252" y="104" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">_001</text>
+<text x="252" y="124" text-anchor="middle" fill="#ef6c00" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">ha cambiado</text>
+<rect x="336" y="76" width="144" height="64" rx="12" fill="#fdecea" stroke="#b71c1c" stroke-width="2"/>
+<text x="408" y="104" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">_002</text>
+<text x="408" y="124" text-anchor="middle" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">ya no está</text>
+<rect x="492" y="76" width="144" height="64" rx="12" fill="#fdecea" stroke="#b71c1c" stroke-width="2"/>
+<text x="564" y="104" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">_003</text>
+<text x="564" y="124" text-anchor="middle" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">ya no está</text>
+<text x="24" y="176" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Después</text>
+<rect x="24" y="192" width="200" height="78" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="124" y="222" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">_000 se queda</text>
+<text x="124" y="244" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">el hash coincide: no hay llamada</text>
+<rect x="244" y="192" width="200" height="78" rx="12" fill="#fff8e1" stroke="#ef6c00" stroke-width="2"/>
+<text x="344" y="222" text-anchor="middle" fill="#ef6c00" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">_001 upsert</text>
+<text x="344" y="244" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">mismo id, vector nuevo</text>
+<rect x="464" y="192" width="200" height="78" rx="12" fill="#fdecea" stroke="#b71c1c" stroke-width="2"/>
+<text x="564" y="222" text-anchor="middle" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">_002 y _003</text>
+<text x="564" y="244" text-anchor="middle" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">delete</text>
+</svg>

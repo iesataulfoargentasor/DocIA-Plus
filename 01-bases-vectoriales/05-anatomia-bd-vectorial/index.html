@@ -1032,6 +1032,7 @@
 </tr>
 </tbody>
 </table>
+<p><img alt="Las cuatro piezas de cada fragmento: identificador, vector, texto que se cita y metadatos para filtrar." src="../../assets/esquemas/05-registro.svg" /></p>
 <p>El identificador lo elegimos nosotros. No es un autonumérico opaco si podemos evitarlo. Un identificador estable permite reindexar: el mismo fragmento, si no ha cambiado, se vuelve a escribir encima con <code>upsert</code> y no deja un duplicado. El criterio para construirlo está en el tema 8.</p>
 <p>El documento se guarda junto al vector porque la respuesta tiene que <strong>citar texto real</strong>, no reconstruir el párrafo desde los números. Los números no se decodifican a texto.</p>
 <h2 id="la-coleccion">La colección<a class="headerlink" href="#la-coleccion" title="Permanent link">&para;</a></h2>

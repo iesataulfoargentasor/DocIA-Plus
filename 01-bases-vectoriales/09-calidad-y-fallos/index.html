@@ -1079,6 +1079,7 @@
 <div class="highlight"><pre><span></span><code>recall@k = preguntas en las que el doc_id esperado aparece en el top k
            / preguntas del conjunto
 </code></pre></div>
+<p><img alt="En el ejemplo del ejercicio, cinco de ocho preguntas aciertan en el top 5: un 62,5 %, por debajo del 80 % que pide el proyecto." src="../../assets/esquemas/09-recall.svg" /></p>
 <p>Con k = 5, el objetivo del proyecto se lee así: en más del 80 % de las preguntas controladas, el documento correcto está entre los cinco primeros fragmentos.</p>
 <p>Es un recall sobre documentos, no sobre el índice HNSW. Si se quiere afinar, se exige también la sección. Al empezar, el <code>doc_id</code> basta para no bloquear la medida en discusiones de paginación.</p>
 <p>k se reporta siempre junto a la cifra. Un 80 % con k = 20 no es el objetivo. El objetivo habla de 3 a 5.</p>

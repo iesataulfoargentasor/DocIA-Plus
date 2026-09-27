@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 688 348" role="img">
+  <title>Las cuatro piezas de un registro</title>
+  <desc>Cada fragmento guarda identificador, vector, texto citable y metadatos.</desc>
+  <rect width="688" height="348" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="28" y="40" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="20" font-weight="650">Un fragmento dentro de la colección</text>
+<rect x="24" y="60" width="640" height="58" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="24" y="60" width="150" height="58" rx="12" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<rect x="160" y="60" width="14" height="58" rx="0" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="36" y="95" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Identificador</text>
+<text x="190" y="86" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">oferta-iabd-2026_000</text>
+<text x="190" y="106" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Único y estable</text>
+<rect x="24" y="130" width="640" height="58" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="24" y="130" width="150" height="58" rx="12" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<rect x="160" y="130" width="14" height="58" rx="0" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="36" y="165" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Vector</text>
+<text x="190" y="156" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">1024 números, norma 1</text>
+<text x="190" y="176" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Sirve para ordenar</text>
+<rect x="24" y="200" width="640" height="58" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="24" y="200" width="150" height="58" rx="12" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<rect x="160" y="200" width="14" height="58" rx="0" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="36" y="235" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Texto</text>
+<text x="190" y="226" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Procedimiento de formalización…</text>
+<text x="190" y="246" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Es lo que se cita</text>
+<rect x="24" y="270" width="640" height="58" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="24" y="270" width="150" height="58" rx="12" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<rect x="160" y="270" width="14" height="58" rx="0" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="36" y="305" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Metadatos</text>
+<text x="190" y="296" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">g4 · 2026-2027 · página 2</text>
+<text x="190" y="316" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Sirven para filtrar</text>
+</svg>
