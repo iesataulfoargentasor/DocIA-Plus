@@ -24,10 +24,11 @@ En esta unidad nos quedamos en el paso 3: que ChromaDB tenga fragmentos buenos. 
 ## Orden de lectura
 
 1. Contexto del proyecto.
-2. Temas 1 a 4: por qué un vector, cómo se compara y cómo se busca entre muchos.
-3. Laboratorio 1 (geometría, solo Python).
-4. Temas 5 a 8: qué se guarda, cómo se filtra por categoría y cómo entra y sale un documento.
-5. Laboratorio 2 (ChromaDB en local).
-6. Temas 9 y 10: cómo sabremos si la base está bien y qué decisión de diseño ya está tomada en el proyecto.
+2. [Por qué existen](01-bases-vectoriales/00-por-que-existen.md) las bases vectoriales.
+3. Temas 1 a 4: por qué un vector, cómo se compara y cómo se busca entre muchos.
+4. Laboratorio 1 (geometría, solo Python).
+5. Temas 5 a 8: qué se guarda, cómo se filtra por categoría y cómo entra y sale un documento.
+6. Laboratorio 2 (ChromaDB en local).
+7. Temas 9 y 10: cómo sabremos si la base está bien y qué decisión de diseño ya está tomada en el proyecto.
 
 Los [ejercicios](01-bases-vectoriales/ejercicios.md) cierran la unidad.

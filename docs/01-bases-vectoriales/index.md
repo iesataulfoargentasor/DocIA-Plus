@@ -6,6 +6,7 @@ Unidad previa a la implementación del almacén de embeddings de DocIA+. Cada te
 
 | Tema | Pregunta que responde |
 | --- | --- |
+| [Por qué existen](00-por-que-existen.md) | Cuándo aparecen y por qué no nacieron para el RAG |
 | [1. Búsqueda literal y semántica](01-busqueda-literal-y-semantica.md) | Por qué una base SQL o un `grep` no bastan |
 | [2. Embeddings](02-embeddings.md) | Qué es el vector y qué modelo lo produce en DocIA+ |
 | [3. Geometría y similitud](03-geometria-y-similitud.md) | Cómo se decide que dos textos «se parecen» |
@@ -23,7 +24,7 @@ Pensada para unas seis sesiones compartidas o repartidas entre SBD y BDA. Se pue
 
 | Sesión | Trabajo | Encargo dominante |
 | --- | --- | --- |
-| 1 | Temas 1 y 2 | Los dos |
+| 1 | Por qué existen, y temas 1 y 2 | Los dos |
 | 2 | Tema 3 y laboratorio de geometría | Los dos |
 | 3 | Tema 4 | Los dos, con más peso conceptual en BDA |
 | 4 | Temas 5 y 6, y el esquema de metadatos | SBD |

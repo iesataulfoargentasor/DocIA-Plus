@@ -608,7 +608,96 @@ def arquitectura() -> None:
     )
 
 
+def origen_orden() -> None:
+    parts = []
+    parts.append(rect(20, 20, 330, 280, RED_SOFT, "#f5c6c2", 16))
+    parts.append(text(185, 52, "Lo que parece", 18, RED, 700, "middle"))
+    parts.append(rect(48, 76, 274, 52, CARD, LINE, 12))
+    parts.append(text(185, 108, "Primero el chatbot RAG", 15, INK, 650, "middle"))
+    parts.append(f'<line x1="185" y1="128" x2="185" y2="158" stroke="{RED}" stroke-width="2" marker-end="url(#flecha-roja)"/>')
+    parts.append(rect(48, 162, 274, 52, CARD, LINE, 12))
+    parts.append(text(185, 194, "Luego se inventa la base", 15, INK, 650, "middle"))
+    parts.append(text(185, 268, "Ese orden es al revés", 16, RED, 700, "middle"))
+
+    parts.append(rect(370, 20, 330, 280, GREEN_SOFT, "#b7dfb9", 16))
+    parts.append(text(535, 52, "Lo que ocurrió", 18, GREEN, 700, "middle"))
+    hechos = ["Fotos y música parecidas", "Un índice para millones", "La base de datos, 2019", "El RAG la usa, 2020"]
+    y = 72
+    for hecho in hechos:
+        parts.append(rect(394, y, 282, 36, CARD, LINE, 10))
+        parts.append(text(535, y + 24, hecho, 14, INK, 650, "middle"))
+        y += 42
+    parts.append(text(535, 268, "La base ya existía", 16, GREEN, 700, "middle"))
+    save(
+        "00-origen-orden.svg",
+        "\n".join(parts),
+        "La base vectorial no se inventó para el chatbot",
+        "El orden real es búsqueda de parecidos, índice, base de datos en 2019 y RAG en 2020.",
+        720,
+        320,
+    )
+
+
+def origen_linea() -> None:
+    steps = [
+        ("1975", "La idea", "Un documento ya podía ser un vector"),
+        ("2017", "El índice", "Faiss busca parecidos entre millones de fotos"),
+        ("2019", "La base de datos", "Milvus guarda, filtra y borra vectores"),
+        ("2020", "El RAG", "Recupera texto y después redacta"),
+        ("2023", "Se hace famosa", "Los chatbots la usan. Ahí entra DocIA+"),
+    ]
+    parts = [text(28, 36, "Cinco fechas, en orden", 20, INK, 650)]
+    y = 56
+    for year, title, detail in steps:
+        here = year == "2019"
+        fill = INDIGO_SOFT if here else CARD
+        stroke = INDIGO if here else LINE
+        parts.append(rect(24, y, 520, 72, fill, stroke, 14, 2 if here else 1.5))
+        parts.append(rect(40, y + 16, 72, 40, INDIGO if here else INDIGO_SOFT, INDIGO, 10, 0))
+        parts.append(text(76, y + 42, year, 14, "#ffffff" if here else INDIGO, 700, "middle"))
+        parts.append(text(128, y + 32, title, 16, INK, 650))
+        parts.append(text(128, y + 54, detail, 14, MUTED))
+        y += 84
+    save(
+        "00-origen-linea.svg",
+        "\n".join(parts),
+        "Línea de tiempo de las bases de datos vectoriales",
+        "La idea es de 1975, el índice de 2017, el producto de 2019 y el RAG de 2020. DocIA+ está en el uso famoso de 2023.",
+        568,
+        y + 8,
+    )
+
+
+def origen_libreria() -> None:
+    parts = []
+    parts.append(rect(20, 24, 300, 250, CARD, LINE, 16))
+    parts.append(rect(20, 24, 300, 52, "#eceff1", "#eceff1", 16, 0))
+    parts.append(rect(20, 60, 300, 16, "#eceff1", "#eceff1", 0, 0))
+    parts.append(text(170, 56, "Faiss, 2017", 18, INK, 700, "middle"))
+    parts.append(text(170, 96, "Una librería", 14, MUTED, 500, "middle"))
+    for i, item in enumerate(["Busca vectores cercanos", "Aguanta millones", "No guarda el texto", "No filtra ni borra"]):
+        parts.append(text(48, 136 + i * 30, item, 15, INK, 500))
+    parts.append(rect(340, 24, 300, 250, INDIGO_SOFT, INDIGO, 16, 2))
+    parts.append(rect(340, 24, 300, 52, INDIGO, INDIGO, 16, 0))
+    parts.append(rect(340, 60, 300, 16, INDIGO, INDIGO, 0, 0))
+    parts.append(text(490, 56, "ChromaDB", 18, "#ffffff", 700, "middle"))
+    parts.append(text(490, 96, "Una base de datos", 14, INDIGO, 650, "middle"))
+    for i, item in enumerate(["Busca vectores cercanos", "Guarda el texto citable", "Filtra por categoría", "Actualiza, borra y copia"]):
+        parts.append(text(368, 136 + i * 30, item, 15, INK, 500))
+    save(
+        "00-origen-libreria.svg",
+        "\n".join(parts),
+        "Un índice no es todavía una base de datos",
+        "Faiss busca parecidos. ChromaDB además guarda el texto, filtra, actualiza y borra.",
+        660,
+        298,
+    )
+
+
 def main() -> None:
+    origen_orden()
+    origen_linea()
+    origen_libreria()
     pipeline()
     modulos()
     categorias()

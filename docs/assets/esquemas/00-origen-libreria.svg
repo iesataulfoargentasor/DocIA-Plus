@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 298" role="img">
+  <title>Un índice no es todavía una base de datos</title>
+  <desc>Faiss busca parecidos. ChromaDB además guarda el texto, filtra, actualiza y borra.</desc>
+  <rect width="660" height="298" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <rect x="20" y="24" width="300" height="250" rx="16" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="20" y="24" width="300" height="52" rx="16" fill="#eceff1" stroke="#eceff1" stroke-width="0"/>
+<rect x="20" y="60" width="300" height="16" rx="0" fill="#eceff1" stroke="#eceff1" stroke-width="0"/>
+<text x="170" y="56" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Faiss, 2017</text>
+<text x="170" y="96" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Una librería</text>
+<text x="48" y="136" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Busca vectores cercanos</text>
+<text x="48" y="166" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Aguanta millones</text>
+<text x="48" y="196" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">No guarda el texto</text>
+<text x="48" y="226" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">No filtra ni borra</text>
+<rect x="340" y="24" width="300" height="250" rx="16" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<rect x="340" y="24" width="300" height="52" rx="16" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<rect x="340" y="60" width="300" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="490" y="56" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">ChromaDB</text>
+<text x="490" y="96" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Una base de datos</text>
+<text x="368" y="136" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Busca vectores cercanos</text>
+<text x="368" y="166" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Guarda el texto citable</text>
+<text x="368" y="196" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Filtra por categoría</text>
+<text x="368" y="226" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">Actualiza, borra y copia</text>
+</svg>
