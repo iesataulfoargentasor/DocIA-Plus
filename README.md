@@ -19,7 +19,9 @@ Programación de Inteligencia Artificial (PIA) construye después la API y la l�
 
 La unidad didáctica está en [`docs/`](docs/index.md). El orden recomendado es el de esa página de inicio.
 
-Para verla como sitio:
+El sitio publicado para el alumnado está en [https://iesataulfoargentasor.github.io/DocIA-Plus/](https://iesataulfoargentasor.github.io/DocIA-Plus/). Las soluciones de los ejercicios no van en esa web: siguen en `docs/docente/` del repositorio.
+
+Para verla en local:
 
 ```powershell
 python -m venv .venv

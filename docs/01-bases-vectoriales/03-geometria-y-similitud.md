@@ -2,7 +2,7 @@
 
 Este tema es el que hay que saber calcular a mano con vectores pequeños. En DocIA+ los vectores tendrán 1024 componentes, pero las cuentas son las mismas que con 3.
 
-El laboratorio [`01_geometria_similitud.py`](../../laboratorio/01_geometria_similitud.py) reproduce los ejemplos.
+El laboratorio [`01_geometria_similitud.py`](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/01_geometria_similitud.py) reproduce los ejemplos.
 
 ## Vector, longitud y producto escalar
 

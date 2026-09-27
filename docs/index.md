@@ -41,4 +41,4 @@ En esta unidad nos quedamos en el recuadro de ChromaDB y en todo lo que tiene qu
 5. Laboratorio 2 (ChromaDB en local).
 6. Temas 9 y 10: cómo sabremos si la base está bien y qué decisión de diseño ya está tomada en el proyecto.
 
-Los [ejercicios](01-bases-vectoriales/ejercicios.md) cierran la unidad. Las soluciones están en el apartado de docente.
+Los [ejercicios](01-bases-vectoriales/ejercicios.md) cierran la unidad.

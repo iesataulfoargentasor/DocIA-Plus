@@ -45,4 +45,4 @@ La unidad está asentada cuando un grupo puede explicar, sin leer los apuntes, e
 5. Actualizar un documento es un `upsert` de sus fragmentos y un borrado de los fragmentos que ya no existen.
 6. Cambiar de modelo de embeddings obliga a **reconstruir la colección**.
 
-El [laboratorio](../../laboratorio/README.md) comprueba la geometría y las operaciones con vectores escritos a mano, para no mezclar todavía el aprendizaje de la base de datos con el de la cuenta de AWS.
+El [laboratorio](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md) comprueba la geometría y las operaciones con vectores escritos a mano, para no mezclar todavía el aprendizaje de la base de datos con el de la cuenta de AWS.

@@ -32,7 +32,7 @@ El laboratorio no llama a Titan y no necesita cuenta de AWS. Usa vectores escrit
 1. **Geometría**, en Python puro: producto escalar, norma y coseno, y un ranking de cuatro textos del estilo de los documentos del centro.
 2. **ChromaDB**, en un directorio local: crear la colección en espacio coseno, hacer `upsert`, consultar con filtro de categoría, borrar un huérfano y comprobar que dos vectores iguales dan distancia casi nula.
 
-Instrucciones, salida esperada y qué observar en clase: [laboratorio/README.md](../../laboratorio/README.md).
+Instrucciones, salida esperada y qué observar en clase: [laboratorio/README.md](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md).
 
 Cuando esas dos prácticas salen, el grupo ha visto la base de datos sin el ruido de la nube. El paso siguiente, ya fuera de esta unidad, es sustituir el vector escrito a mano por la salida real de Titan y el texto de juguete por un documento real de una de las cinco categorías. El esquema de metadatos y las operaciones no cambian.
 

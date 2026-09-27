@@ -1,8 +1,11 @@
 site_name: DocIA+
 site_description: Bases de datos vectoriales para el proyecto DocIA+ (CE IA y Big Data)
+site_url: https://iesataulfoargentasor.github.io/DocIA-Plus/
 repo_url: https://github.com/iesataulfoargentasor/DocIA-Plus
 repo_name: iesataulfoargentasor/DocIA-Plus
 docs_dir: docs
+exclude_docs: |
+  docente/**
 theme:
   name: material
   language: es
@@ -42,8 +45,6 @@ nav:
       - 9. Calidad, fallos y qué mediremos: 01-bases-vectoriales/09-calidad-y-fallos.md
       - 10. ChromaDB en DocIA+: 01-bases-vectoriales/10-chromadb-en-docia.md
       - Ejercicios: 01-bases-vectoriales/ejercicios.md
-  - Para el docente:
-      - Soluciones de los ejercicios: docente/soluciones-ejercicios.md
 markdown_extensions:
   - admonition
   - pymdownx.details
