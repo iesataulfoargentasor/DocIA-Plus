@@ -1064,8 +1064,8 @@
 <p><img alt="Matrícula e inscripción quedan juntas. El horario de cafetería queda lejos. El dibujo tiene dos ejes; un embedding real tiene cientos." src="../../assets/esquemas/00-mapa-2d.svg" /></p>
 <p>Cuando eso se vea claro en la pizarra, se abre el cuaderno. Si se ejecuta ChromaDB antes de este mapa, la base parece una caja que adivina textos.</p>
 <h2 id="15-minutos-ver-el-vector-antes-de-guardarlo">15 minutos. Ver el vector, antes de guardarlo<a class="headerlink" href="#15-minutos-ver-el-vector-antes-de-guardarlo" title="Permanent link">&para;</a></h2>
-<p>Cuaderno <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/01_ver_el_vector.ipynb">01_ver_el_vector.ipynb</a>.</p>
-<p><a href="https://colab.research.google.com/github/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/01_ver_el_vector.ipynb">Abrir en Google Colab</a></p>
+<p>Cuaderno <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/01_ver_el_vector.ipynb" target="_blank" rel="noopener">01_ver_el_vector.ipynb</a>.</p>
+<p><a href="https://colab.research.google.com/github/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/01_ver_el_vector.ipynb" target="_blank" rel="noopener">Abrir en Google Colab</a></p>
 <p>Ahí no hay base de datos. Hay un modelo pequeño y gratuito, <code>all-MiniLM-L6-v2</code>, que convierte una frase en una lista de 384 números. El alumno imprime los diez primeros. Eso es un embedding: la posición de la frase en el mapa.</p>
 <p>Después se mide la distancia entre tres frases de práctica:</p>
 <ul>
@@ -1076,8 +1076,8 @@
 <p>La distancia entre las dos primeras sale más pequeña que la distancia entre matrícula y cafetería. Número más pequeño, más cerca. Las frases son de ejercicio. No son documentos oficiales del centro.</p>
 <p>En el proyecto el modelo será Titan y la lista tendrá 1024 números. No se pueden mezclar con estos 384. Es otro mapa.</p>
 <h2 id="45-minutos-chromadb-despacio">45 minutos. ChromaDB, despacio<a class="headerlink" href="#45-minutos-chromadb-despacio" title="Permanent link">&para;</a></h2>
-<p>Cuaderno <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/02_chromadb_paso_a_paso.ipynb">02_chromadb_paso_a_paso.ipynb</a>.</p>
-<p><a href="https://colab.research.google.com/github/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/02_chromadb_paso_a_paso.ipynb">Abrir en Google Colab</a></p>
+<p>Cuaderno <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/02_chromadb_paso_a_paso.ipynb" target="_blank" rel="noopener">02_chromadb_paso_a_paso.ipynb</a>.</p>
+<p><a href="https://colab.research.google.com/github/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/02_chromadb_paso_a_paso.ipynb" target="_blank" rel="noopener">Abrir en Google Colab</a></p>
 <p>El orden del cuaderno es este:</p>
 <ol>
 <li>Crear una colección. En SQL sería una tabla. Aquí se llama colección.</li>
@@ -1090,7 +1090,7 @@
 <p>Si en <code>add</code> solo se pasa el texto y no el vector, ChromaDB llama a un modelo que el alumno no ve. En este cuaderno no se hace así. El vector se calcula en una línea, se imprime y luego entra en la colección.</p>
 <p>El cuaderno cierra con un ejercicio: añadir una frase sobre el aparcamiento de bicicletas, categoría <code>Servicios</code>, y preguntar dónde dejar la bicicleta.</p>
 <h2 id="que-no-entra-todavia">Qué no entra todavía<a class="headerlink" href="#que-no-entra-todavia" title="Permanent link">&para;</a></h2>
-<p>HNSW, el coseno a mano, Titan, AWS y el corpus real del IES. Están en los temas siguientes y en el <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md">laboratorio con vectores escritos a mano</a>, que sirve cuando ya se ha visto un vector de verdad y se quiere calcular la geometría sin descargar un modelo.</p>
+<p>HNSW, el coseno a mano, Titan, AWS y el corpus real del IES. Están en los temas siguientes y en el <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md" target="_blank" rel="noopener">laboratorio con vectores escritos a mano</a>, que sirve cuando ya se ha visto un vector de verdad y se quiere calcular la geometría sin descargar un modelo.</p>
 <h2 id="despues-de-esta-sesion">Después de esta sesión<a class="headerlink" href="#despues-de-esta-sesion" title="Permanent link">&para;</a></h2>
 <p>El grupo tiene que poder decir, con el cuaderno cerrado, cuatro cosas:</p>
 <ol>
