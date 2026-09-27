@@ -30,7 +30,7 @@ En esta unidad nos quedamos en el recuadro de ChromaDB y en todo lo que tiene qu
 | [Qué vamos a construir](00-proyecto/que-vamos-a-construir.md) | El producto, las cinco categorías documentales y el sitio de la base vectorial |
 | [El encargo de SBD y BDA](00-proyecto/encargo-sbd-bda.md) | Qué parte del currículo cubre este trabajo y qué no |
 | [Unidad 1 a 10](01-bases-vectoriales/index.md) | Las bases de datos vectoriales, con el caso DocIA+ como hilo |
-| [Laboratorio](https://github.com/iesataulfoargentasor/DocIA-Plus/tree/main/laboratorio) | Dos prácticas locales, sin cuenta de AWS |
+| [Laboratorio](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md) | Dos prácticas locales, sin cuenta de AWS |
 
 ## Orden de lectura
 

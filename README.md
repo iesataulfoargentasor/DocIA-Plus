@@ -2,6 +2,8 @@
 
 Repositorio de trabajo del proyecto de innovación **DocIA+** (modalidad Tecno-Innova+, convocatoria Innova+ Activa 2026-2027) del IES Ataúlfo Argenta, Castro Urdiales.
 
+La carpeta local se llama `DocIA+`. En GitHub el repositorio es [iesataulfoargentasor/DocIA-Plus](https://github.com/iesataulfoargentasor/DocIA-Plus): el carácter `+` no está permitido en el nombre de un repositorio.
+
 DocIA+ es un asistente de consulta sobre la documentación oficial del centro. El alumnado del Curso de Especialización en Inteligencia Artificial y Big Data construye un sistema RAG: los documentos se dividen en fragmentos, cada fragmento se convierte en un embedding y esos vectores se guardan en **ChromaDB** para recuperar, ante una pregunta, los fragmentos más cercanos en significado.
 
 Este repositorio empieza por ahí. Antes de implementar el almacenamiento, hay que entender qué es una base de datos vectorial y qué se le va a pedir en este proyecto.
