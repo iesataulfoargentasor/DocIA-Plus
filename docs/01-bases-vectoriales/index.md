@@ -26,7 +26,7 @@ Pensada para unas siete sesiones compartidas o repartidas entre SBD y BDA. La pr
 | Sesión | Trabajo | Encargo dominante |
 | --- | --- | --- |
 | 1 | [Sesión 1](sesion-01.md): mapa, vector a la vista y ChromaDB en Colab | Los dos |
-| 2 | Por qué existen, y temas 1 y 2 | Los dos |
+| 2 | Por qué existen, y temas 1 y 2, con los dos vídeos de CodelyTV | Los dos |
 | 3 | Tema 3 y laboratorio de geometría | Los dos |
 | 4 | Tema 4 | Los dos, con más peso conceptual en BDA |
 | 5 | Temas 5 y 6, y el esquema de metadatos | SBD |

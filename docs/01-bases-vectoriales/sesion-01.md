@@ -67,3 +67,5 @@ El grupo tiene que poder decir, con el cuaderno cerrado, cuatro cosas:
 2. Un embedding es una lista de números. La hemos impreso.
 3. Cada registro guarda identificador, texto, vector y metadatos.
 4. El filtro de categoría y la cercanía son dos cosas distintas.
+
+Esas ideas se ven con calma en dos vídeos de CodelyTV: la comparación entre SQL y la búsqueda por significado, en el tema de [búsqueda literal y semántica](01-busqueda-literal-y-semantica.md), y el mapa del vector, en el tema de [embeddings](02-embeddings.md). La base de los vídeos es PostgreSQL. La de esta sesión y la del proyecto es ChromaDB.

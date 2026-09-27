@@ -44,6 +44,14 @@ Una tabla relacional guarda el texto y permite filtrar por columnas: categoría,
 
 Se podría guardar el vector como una columna de números y, en cada consulta, recorrer todas las filas calculando la similitud. Con el tamaño inicial de DocIA+ eso incluso funciona, y lo cuantificaremos en el tema 4. Sigue siendo una búsqueda vectorial: solo que el índice es un barrido completo. Una base de datos vectorial es el sistema que trata ese barrido, o un índice aproximado equivalente, como operación de primera clase, junto con el texto y los metadatos del fragmento.
 
+## Para verlo
+
+[Dónde y cuándo generar los embeddings](https://www.youtube.com/watch?v=HHr96KF4fWQ), de CodelyTV. El arranque del vídeo es el mismo fallo de esta página: una tabla de cursos responde a `LIKE '%CSS%'`, y no responde a «¿dónde se enseñan las bases de la programación backend?» si esas palabras no están escritas. A partir de ahí enseña la búsqueda por embeddings: la pregunta se convierte en un vector y la tabla se ordena por cercanía.
+
+La base del vídeo es PostgreSQL, no ChromaDB. El operador que escriben en la consulta no es el nuestro. Lo que hay que quedarse es la comparación: la búsqueda clásica encuentra la cadena; la semántica ordena por parecido.
+
+El resto del vídeo compara en qué momento del programa se calcula el vector (al guardar, o más tarde, en la aplicación o dentro de PostgreSQL). En DocIA+ esa decisión ya está tomada y es más simple: el vector del fragmento se calcula al indexar y se vuelve a calcular si el texto cambia. El de la pregunta se calcula al consultar, con el mismo modelo, y no se guarda.
+
 ## Lo que la semántica no garantiza
 
 Cercanía no es verdad. El vector de un fragmento desactualizado puede ser el más parecido a la pregunta y estar mal. El vector de un índice o de una portada puede parecerse a muchas preguntas porque contiene palabras de todos los temas. Por eso el proyecto exige **cita de la fuente** y una precisión medida en pruebas controladas, no la confianza de que «la IA ya lo encontrará».

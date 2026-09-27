@@ -17,6 +17,16 @@ Si el modelo devuelve dimensión 1024, todos los vectores de esa colección tien
 
 Cada componente, por separado, no significa «horas» ni «matrícula». El significado está en la **posición conjunta** del punto. No se interpreta la coordenada 37. Se interpreta a qué otros puntos se parece.
 
+## Para verlo
+
+[Qué son las búsquedas semánticas y los embeddings](https://www.youtube.com/watch?v=5rvUTeb0be4), de CodelyTV. Coloca gatos y perros en un eje, luego añade el color y luego la velocidad. Cada eje nuevo es una dimensión más. Después pasa un texto por un modelo de embeddings y busca los puntos más cercanos. También explica por qué, cuando el vector es largo, mirar el ángulo (el coseno) no es lo mismo que medir la distancia en línea recta. Esa cuenta se hace a mano en el [tema 3](03-geometria-y-similitud.md).
+
+Tres avisos para no mezclarlo con el proyecto:
+
+- En el vídeo la base es PostgreSQL. En DocIA+ es ChromaDB. La idea del mapa es la misma.
+- Un eje del dibujo significa «color» o «tipo de animal» porque lo han puesto ellos para poder verlo. En un embedding real, como dice el propio vídeo al llegar a cientos de números, un eje suelto no tiene nombre. En la sesión 1 el modelo pequeño devuelve 384 números. Titan, en el proyecto, devuelve 1024.
+- La resta «perro negro menos perro más gato» es un dibujo. Con las frases del centro no va a fabricar una frase nueva.
+
 ## No es un resumen, ni un cifrado, ni un hash
 
 | Técnica | ¿Sirve para buscar por significado? | Qué conserva |
