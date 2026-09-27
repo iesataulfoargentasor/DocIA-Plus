@@ -4,6 +4,8 @@ site_url: https://iesataulfoargentasor.github.io/DocIA-Plus/
 repo_url: https://github.com/iesataulfoargentasor/DocIA-Plus
 repo_name: iesataulfoargentasor/DocIA-Plus
 docs_dir: docs
+hooks:
+  - hooks/enlaces_nueva_pestana.py
 exclude_docs: |
   docente/**
 theme:
