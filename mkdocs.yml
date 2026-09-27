@@ -1,0 +1,57 @@
+site_name: DocIA+
+site_description: Bases de datos vectoriales para el proyecto DocIA+ (CE IA y Big Data)
+repo_url: https://github.com/iesataulfoargentasor/DocIA-Plus
+repo_name: iesataulfoargentasor/DocIA-Plus
+docs_dir: docs
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+nav:
+  - Inicio: index.md
+  - El proyecto:
+      - Qué vamos a construir: 00-proyecto/que-vamos-a-construir.md
+      - El encargo de SBD y BDA: 00-proyecto/encargo-sbd-bda.md
+  - Bases de datos vectoriales:
+      - Cómo seguir la unidad: 01-bases-vectoriales/index.md
+      - 1. Búsqueda literal y búsqueda semántica: 01-bases-vectoriales/01-busqueda-literal-y-semantica.md
+      - 2. Embeddings: 01-bases-vectoriales/02-embeddings.md
+      - 3. Geometría y similitud: 01-bases-vectoriales/03-geometria-y-similitud.md
+      - 4. Búsqueda del vecino más cercano e índices: 01-bases-vectoriales/04-busqueda-e-indices.md
+      - 5. Anatomía de una base de datos vectorial: 01-bases-vectoriales/05-anatomia-bd-vectorial.md
+      - 6. Metadatos, filtros y categorías: 01-bases-vectoriales/06-metadatos-y-filtros.md
+      - 7. Del documento al vector: 01-bases-vectoriales/07-chunking-y-ciclo-de-indexacion.md
+      - 8. Operaciones de gestión: 01-bases-vectoriales/08-operaciones-de-gestion.md
+      - 9. Calidad, fallos y qué mediremos: 01-bases-vectoriales/09-calidad-y-fallos.md
+      - 10. ChromaDB en DocIA+: 01-bases-vectoriales/10-chromadb-en-docia.md
+      - Ejercicios: 01-bases-vectoriales/ejercicios.md
+  - Para el docente:
+      - Soluciones de los ejercicios: docente/soluciones-ejercicios.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - tables
+  - toc:
+      permalink: true
