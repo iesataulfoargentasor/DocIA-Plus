@@ -34,6 +34,7 @@ nav:
       - El encargo de SBD y BDA: 00-proyecto/encargo-sbd-bda.md
   - Bases de datos vectoriales:
       - Cómo seguir la unidad: 01-bases-vectoriales/index.md
+      - Sesión 1. Ver la base vectorial: 01-bases-vectoriales/sesion-01.md
       - Por qué existen: 01-bases-vectoriales/00-por-que-existen.md
       - 1. Búsqueda literal y búsqueda semántica: 01-bases-vectoriales/01-busqueda-literal-y-semantica.md
       - 2. Embeddings: 01-bases-vectoriales/02-embeddings.md

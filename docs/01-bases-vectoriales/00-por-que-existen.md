@@ -1,5 +1,7 @@
 # Por qué existen las bases de datos vectoriales
 
+Esta página viene después de la [sesión 1](sesion-01.md). Allí se ve el mapa y se imprime un vector. Aquí se responde cuándo apareció esta idea.
+
 No nacieron para hacer un chatbot. El RAG, que es recuperar un fragmento y luego redactar la respuesta, llegó después y las hizo famosas. DocIA+ está en esa última etapa.
 
 ![A la izquierda, el orden que parece: primero el chatbot y luego la base. A la derecha, el orden real: primero los parecidos, luego la base, y el RAG la usa.](../assets/esquemas/00-origen-orden.svg)

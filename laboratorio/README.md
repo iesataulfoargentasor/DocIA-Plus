@@ -1,8 +1,8 @@
 # Laboratorio
 
-Dos prácticas locales. La primera solo usa la biblioteca estándar de Python. La segunda usa ChromaDB y escribe un directorio de datos que no se sube al repositorio.
+La primera toma de contacto no es esta carpeta. Es la [sesión 1](../docs/01-bases-vectoriales/sesion-01.md): un mapa en la pizarra y dos cuadernos de Colab en [`colab/`](colab/). Ahí el alumno ve una lista de números de verdad y luego la guarda en ChromaDB.
 
-No llaman a AWS ni descargan un modelo de embeddings. Los vectores están escritos en el código a propósito: así se ve la base de datos sin confundirla con el modelo. En un embedding real nadie asigna «el eje 1 es matrícula». Aquí sí, porque son tres números didácticos.
+Las dos prácticas de esta página vienen después. No descargan un modelo. Los vectores están escritos en el código para calcular la geometría a mano. En un embedding real nadie asigna «el eje 1 es matrícula». Aquí sí, porque son tres números didácticos.
 
 ## Entorno
 

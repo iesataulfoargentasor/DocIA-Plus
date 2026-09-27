@@ -30,11 +30,11 @@ pip install -r requirements-docs.txt
 mkdocs serve
 ```
 
-El laboratorio local, sin AWS y sin modelos de pago, está en [`laboratorio/`](laboratorio/README.md).
+La primera práctica es la sesión 1, con dos cuadernos de Colab en [`laboratorio/colab/`](laboratorio/colab/). El laboratorio local, sin AWS y sin modelos de pago, está en [`laboratorio/`](laboratorio/README.md).
 
 ## Qué hay y qué no hay todavía
 
-Hay explicación, un esquema de metadatos propuesto para discutir en clase y dos prácticas que enseñan la geometría y las operaciones de ChromaDB.
+Hay explicación, un esquema de metadatos propuesto para discutir en clase, la sesión 1 (mapa, vector a la vista y ChromaDB en Colab) y dos prácticas locales que enseñan la geometría y las operaciones de ChromaDB con vectores escritos a mano.
 
 No hay todavía pipeline de indexación, cuenta de AWS, Amazon Titan ni API FastAPI. Eso viene cuando esta unidad esté asentada y concretemos el trabajo sobre la base vectorial del proyecto.
 

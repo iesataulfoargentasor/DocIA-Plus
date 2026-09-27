@@ -1,11 +1,12 @@
 # Bases de datos vectoriales
 
-Unidad previa a la implementación del almacén de embeddings de DocIA+. Cada tema cierra con la consecuencia práctica para ChromaDB. Los cálculos pequeños se hacen en papel o con el laboratorio; no hace falta AWS.
+Unidad previa a la implementación del almacén de embeddings de DocIA+. Si el grupo no ha visto nunca una base vectorial, se empieza por la [sesión 1](sesion-01.md). Los temas 1 a 10 vienen después. Cada tema cierra con la consecuencia práctica para ChromaDB.
 
 ## Mapa
 
 | Tema | Pregunta que responde |
 | --- | --- |
+| [Sesión 1. Ver la base vectorial](sesion-01.md) | Mapa en la pizarra, ver un vector y las primeras operaciones en ChromaDB |
 | [Por qué existen](00-por-que-existen.md) | Cuándo aparecen y por qué no nacieron para el RAG |
 | [1. Búsqueda literal y semántica](01-busqueda-literal-y-semantica.md) | Por qué una base SQL o un `grep` no bastan |
 | [2. Embeddings](02-embeddings.md) | Qué es el vector y qué modelo lo produce en DocIA+ |
@@ -20,16 +21,17 @@ Unidad previa a la implementación del almacén de embeddings de DocIA+. Cada te
 
 ## Secuencia de aula sugerida
 
-Pensada para unas seis sesiones compartidas o repartidas entre SBD y BDA. Se puede comprimir si el grupo ya ha visto similitud en otro módulo.
+Pensada para unas siete sesiones compartidas o repartidas entre SBD y BDA. La primera no supone nada de la teoría. Se puede comprimir el resto si el grupo ya ha visto similitud en otro módulo.
 
 | Sesión | Trabajo | Encargo dominante |
 | --- | --- | --- |
-| 1 | Por qué existen, y temas 1 y 2 | Los dos |
-| 2 | Tema 3 y laboratorio de geometría | Los dos |
-| 3 | Tema 4 | Los dos, con más peso conceptual en BDA |
-| 4 | Temas 5 y 6, y el esquema de metadatos | SBD |
-| 5 | Temas 7 y 8, y laboratorio ChromaDB | BDA, con SBD revisando metadatos |
-| 6 | Temas 9 y 10, y ejercicios | Los dos |
+| 1 | [Sesión 1](sesion-01.md): mapa, vector a la vista y ChromaDB en Colab | Los dos |
+| 2 | Por qué existen, y temas 1 y 2 | Los dos |
+| 3 | Tema 3 y laboratorio de geometría | Los dos |
+| 4 | Tema 4 | Los dos, con más peso conceptual en BDA |
+| 5 | Temas 5 y 6, y el esquema de metadatos | SBD |
+| 6 | Temas 7 y 8, y laboratorio ChromaDB con vectores escritos a mano | BDA, con SBD revisando metadatos |
+| 7 | Temas 9 y 10, y ejercicios | Los dos |
 
 ## Convenios de vocabulario
 

@@ -694,7 +694,79 @@ def origen_libreria() -> None:
     )
 
 
+def mapa_2d() -> None:
+    def px(x):
+        return 70 + x * 460
+
+    def py(y):
+        return 390 - y * 300
+
+    parts = [text(24, 32, "Un mapa de dos ejes, solo para verlo", 18, INK, 650)]
+    parts.append(f'<line x1="70" y1="390" x2="560" y2="390" stroke="{INK}" stroke-width="1.5"/>')
+    parts.append(f'<line x1="70" y1="390" x2="70" y2="70" stroke="{INK}" stroke-width="1.5"/>')
+    parts.append(text(300, 418, "más formal  →", 13, MUTED, 500, "middle"))
+    parts.append(
+        f'<text x="22" y="230" text-anchor="middle" fill="{MUTED}" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500" transform="rotate(-90 22 230)">más trámite de estudios  →</text>'
+    )
+    points = [
+        (0.85, 0.90, "Matrícula en el ciclo", INDIGO),
+        (0.83, 0.88, "Inscripción en el curso", TEAL),
+        (0.10, 0.20, "Horario de cafetería", ORANGE),
+    ]
+    # halo around the two close points
+    cx = (px(0.85) + px(0.83)) / 2
+    cy = (py(0.90) + py(0.88)) / 2
+    parts.append(f'<circle cx="{cx}" cy="{cy}" r="46" fill="{INDIGO_SOFT}" stroke="{INDIGO}" stroke-dasharray="4 4"/>')
+    for x, y, label, color in points:
+        parts.append(f'<circle cx="{px(x)}" cy="{py(y)}" r="8" fill="{color}"/>')
+    parts.append(text(px(0.85) + 16, py(0.90) - 8, "Matrícula en el ciclo", 14, INK, 650))
+    parts.append(text(px(0.83) + 16, py(0.88) + 18, "Inscripción en el curso", 14, INK, 650))
+    parts.append(text(px(0.10) + 14, py(0.20) + 4, "Horario de cafetería", 14, INK, 650))
+    parts.append(text(24, 448, "Las dos de matrícula quedan juntas. La cafetería, no.", 14, MUTED))
+    parts.append(text(24, 470, "Un embedding real usa 384 o 1024 ejes. Este dibujo solo tiene 2.", 14, MUTED))
+    save(
+        "00-mapa-2d.svg",
+        "\n".join(parts),
+        "Mapa de dos ejes con tres frases del centro",
+        "Matrícula e inscripción quedan juntas. El horario de cafetería queda lejos. Los ejes son didácticos.",
+        760,
+        496,
+    )
+
+
+def sql_vs_mapa() -> None:
+    parts = []
+    parts.append(rect(16, 16, 300, 250, RED_SOFT, "#f5c6c2", 16))
+    parts.append(text(166, 48, "MySQL", 18, RED, 700, "middle"))
+    parts.append(rect(32, 68, 268, 64, CARD, LINE, 10))
+    parts.append(text(44, 92, "LIKE '%matricula%'", 14, INK, 650))
+    parts.append(text(44, 114, "busca esa cadena", 13, MUTED))
+    parts.append(rect(32, 148, 268, 64, CARD, LINE, 10))
+    parts.append(text(44, 172, "El texto dice «inscripción»", 13, INK, 500))
+    parts.append(text(44, 194, "0 filas", 16, RED, 700))
+    parts.append(rect(332, 16, 300, 250, GREEN_SOFT, "#b7dfb9", 16))
+    parts.append(text(482, 48, "Mapa de vectores", 18, GREEN, 700, "middle"))
+    parts.append(f'<circle cx="400" cy="148" r="10" fill="{INDIGO}"/>')
+    parts.append(f'<circle cx="448" cy="132" r="10" fill="{TEAL}"/>')
+    parts.append(f'<circle cx="560" cy="188" r="10" fill="{ORANGE}"/>')
+    parts.append(text(348, 128, "matrícula", 13, INK, 650))
+    parts.append(text(462, 116, "inscripción", 13, INK, 650))
+    parts.append(text(468, 168, "cafetería", 13, INK, 650))
+    parts.append(text(482, 230, "Mide la distancia", 15, INK, 650, "middle"))
+    parts.append(text(482, 252, "y encuentra las dos", 15, GREEN, 700, "middle"))
+    save(
+        "00-sql-vs-mapa.svg",
+        "\n".join(parts),
+        "MySQL busca la palabra y el mapa busca la cercanía",
+        "LIKE matricula no encuentra un texto que dice inscripción. En el mapa las dos frases están juntas.",
+        648,
+        282,
+    )
+
+
 def main() -> None:
+    mapa_2d()
+    sql_vs_mapa()
     origen_orden()
     origen_linea()
     origen_libreria()
