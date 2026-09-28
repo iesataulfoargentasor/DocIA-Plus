@@ -101,9 +101,9 @@ def pipeline() -> None:
 
 def modulos() -> None:
     cols = [
-        (36, "SBD", "Prepara el corpus", ["Texto limpio", "Categorías g1–g5", "Metadatos del fragmento"]),
-        (262, "BDA", "Llena la colección", ["Corta en fragmentos", "Llama a Titan v2", "upsert en ChromaDB"]),
-        (488, "PIA", "Consulta después", ["API de la pregunta", "Recupera fragmentos", "Redacta y cita"]),
+        (36, "SBD", "Prepara los documentos", ["Extrae y limpia texto", "Corta en fragmentos", "Metadatos g1–g5"]),
+        (262, "BDA", "Llena y cuida la colección", ["Vectores con Titan v2", "upsert y huérfanos", "Mide el recall@5"]),
+        (488, "PIA", "La usa después", ["API y umbral", "Redacta y cita", "Widget de la web"]),
     ]
     parts = []
     for x, name, subtitle, items in cols:
@@ -117,12 +117,12 @@ def modulos() -> None:
             parts.append(rect(x + 16, yy, 178, 36, INDIGO_SOFT, INDIGO_SOFT, 8, 0))
             parts.append(text(x + 105, yy + 23, item, 14, INK, 500, "middle"))
             yy += 46
-    parts.append(text(367, 322, "SBD entrega el texto · BDA entrega la colección", 14, MUTED, 500, "middle"))
+    parts.append(text(367, 322, "SBD entrega los fragmentos · BDA entrega la colección · PIA la consulta", 14, MUTED, 500, "middle"))
     save(
         "00-modulos.svg",
         "\n".join(parts),
         "Qué hace cada módulo con la base vectorial",
-        "SBD prepara texto y metadatos, BDA escribe los vectores en ChromaDB y PIA consulta esa colección.",
+        "SBD extrae, limpia y trocea los documentos y define sus metadatos. BDA calcula los vectores, los escribe en ChromaDB, la mantiene y mide la recuperación. PIA construye la API, el umbral, la redacción y el widget.",
         734,
         348,
     )
