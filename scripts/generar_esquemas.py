@@ -359,6 +359,41 @@ def coseno() -> None:
     )
 
 
+def dos_fases() -> None:
+    parts = []
+    bandas = [
+        (20, "Fase 1 · Indexar. Se hace una vez, antes de que nadie pregunte", INDIGO_SOFT, INDIGO,
+         [("Documento", "PDF, web, guía"), ("Fragmentos", "trozos de texto"),
+          ("Modelo", "de embeddings"), ("Base vectorial", "guarda texto y vector")]),
+        (162, "Fase 2 · Consultar. Se hace con cada pregunta", GREEN_SOFT, GREEN,
+         [("Pregunta", "de una persona"), ("Modelo", "el mismo que en la fase 1"),
+          ("Base vectorial", "busca los más cercanos"), ("Fragmentos", "3 a 5, con su fuente")]),
+    ]
+    for top, title, fill, stroke, boxes in bandas:
+        parts.append(rect(16, top, 752, 128, fill, stroke, 16, 1.5))
+        parts.append(text(32, top + 28, title, 15, stroke, 700))
+        for index, (name, sub) in enumerate(boxes):
+            x = 32 + index * 184
+            parts.append(rect(x, top + 46, 152, 62, CARD, LINE, 12))
+            parts.append(text(x + 76, top + 74, name, 15, INK, 700, "middle"))
+            parts.append(text(x + 76, top + 94, sub, 12, MUTED, 500, "middle"))
+            if index < 3:
+                parts.append(
+                    f'<line x1="{x + 154}" y1="{top + 77}" x2="{x + 180}" y2="{top + 77}" '
+                    f'stroke="{INDIGO}" stroke-width="2.5" marker-end="url(#flecha)"/>'
+                )
+    parts.append(text(24, 322, "El paso caro (leer, trocear, calcular vectores) se hace una sola vez.", 14, MUTED))
+    parts.append(text(24, 344, "Cada pregunta solo hace una llamada al modelo y una búsqueda.", 14, MUTED))
+    save(
+        "01-dos-fases.svg",
+        "\n".join(parts),
+        "Las dos fases de la búsqueda semántica",
+        "Primero se indexan los documentos: se trocean, se convierten en vectores y se guardan. Después, cada pregunta se convierte en vector con el mismo modelo y se buscan los fragmentos más cercanos.",
+        784,
+        366,
+    )
+
+
 def mapa_significado() -> None:
     ox, oy, k = 70, 330, 52
 
@@ -1011,6 +1046,7 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    dos_fases()
     mapa_significado()
     texto_a_vector()
     flechas_2d()
