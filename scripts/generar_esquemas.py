@@ -359,6 +359,53 @@ def coseno() -> None:
     )
 
 
+def dos_partes() -> None:
+    registros = [
+        ("oferta-iabd-2026_000", "Formalización de matrícula", "g4 · 2026-2027", True, "0,003"),
+        ("oferta-iabd-2023_000", "Formalización de matrícula (2023)", "g4 · 2023-2024", False, ""),
+        ("oferta-iabd-2026_001", "Plazo de inscripción", "g4 · 2026-2027", True, "0,030"),
+        ("menu-2026_000", "Menú de la cafetería", "g5 · 2026-2027", False, ""),
+        ("menu-2026_001", "Precio del bocadillo", "g5 · 2026-2027", False, ""),
+    ]
+    parts = [text(24, 32, "Cada consulta responde a dos preguntas distintas", 18, INK, 650)]
+    parts.append(rect(24, 50, 400, 40, INDIGO_SOFT, INDIGO, 10))
+    parts.append(text(40, 76, "1. ¿Quién participa?  →  el filtro where", 15, INDIGO, 700))
+    parts.append(text(40, 110, "categoria = g4  y  curso = 2026-2027", 13, MUTED, 600))
+    y = 124
+    for ident, label, meta, entra, _ in registros:
+        fill = GREEN_SOFT if entra else "#eef0f6"
+        stroke = GREEN if entra else LINE
+        ink = INK if entra else "#8b93a7"
+        parts.append(rect(24, y, 400, 44, fill, stroke, 10))
+        parts.append(text(38, y + 19, label, 14, ink, 650 if entra else 400))
+        parts.append(text(38, y + 36, f"{ident}  ·  {meta}", 11, MUTED, 500))
+        parts.append(text(410, y + 27, "entra" if entra else "fuera", 13, GREEN if entra else MUTED, 700, "end"))
+        y += 52
+    parts.append(
+        f'<line x1="430" y1="250" x2="470" y2="250" stroke="{INDIGO}" stroke-width="2.5" marker-end="url(#flecha)"/>'
+    )
+    parts.append(rect(476, 50, 260, 40, GREEN_SOFT, GREEN, 10))
+    parts.append(text(492, 76, "2. ¿En qué orden?  →  el vector", 15, GREEN, 700))
+    parts.append(text(492, 110, "distancia a la pregunta, menor primero", 13, MUTED, 600))
+    parts.append(rect(476, 176, 260, 150, CARD, LINE, 14))
+    parts.append(text(606, 204, "Resultado", 15, INK, 700, "middle"))
+    fila = 236
+    for puesto, (_, label, _, entra, dist) in enumerate([r for r in registros if r[3]], start=1):
+        parts.append(text(492, fila, f"{puesto}.  {label}", 14, INK, 650))
+        parts.append(text(492, fila + 18, f"distancia {dist}", 12, MUTED, 500))
+        fila += 44
+    parts.append(text(24, 406, "La versión de 2023 se parece tanto como la de 2026: el vector no sabe de vigencias.", 14, MUTED))
+    parts.append(text(24, 428, "La deja fuera el filtro por curso, no la similitud.", 14, MUTED))
+    save(
+        "06-dos-partes.svg",
+        "\n".join(parts),
+        "Filtro y similitud en una misma consulta",
+        "El filtro decide qué registros participan: solo g4 del curso 2026-2027. El vector ordena los que quedan por distancia a la pregunta. La versión de 2023 queda fuera por el filtro.",
+        760,
+        448,
+    )
+
+
 def almacenes() -> None:
     parts = [text(24, 32, "Dónde vive cada cosa", 18, INK, 650)]
     cajas = [
@@ -1134,6 +1181,7 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    dos_partes()
     almacenes()
     capas_hnsw()
     dos_fases()
