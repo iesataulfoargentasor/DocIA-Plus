@@ -1,6 +1,6 @@
 # 8. Operaciones de gestión
 
-Estas son las operaciones que el pipeline de BDA va a usar sobre la colección definida por SBD. El laboratorio 2 las ejecuta con vectores de juguete, para ver el efecto sin Titan.
+Estas son las operaciones que el pipeline de BDA va a usar sobre la colección definida por SBD. El script `laboratorio/02_chromadb_coleccion.py` las ejecuta con vectores escritos a mano, para ver el efecto sin Titan. No es el cuaderno de Colab de la sesión 1.
 
 ## Alta e inserción idempotente
 

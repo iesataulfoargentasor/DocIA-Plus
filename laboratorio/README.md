@@ -1,8 +1,10 @@
-# Laboratorio
+# Laboratorio local
 
-La primera toma de contacto no es esta carpeta. Es la [sesión 1](../docs/01-bases-vectoriales/sesion-01.md): un mapa en la pizarra y dos cuadernos de Colab en [`colab/`](colab/). Ahí el alumno ve una lista de números de verdad y luego la guarda en ChromaDB.
+Estos dos scripts no son los cuadernos de la sesión 1. Los cuadernos están en [`colab/`](colab/) y descargan un modelo. Aquí los vectores están escritos en el código, para calcular la geometría y las operaciones de la base sin confundirlas con el modelo.
 
-Las dos prácticas de esta página vienen después. No descargan un modelo. Los vectores están escritos en el código para calcular la geometría a mano. En un embedding real nadie asigna «el eje 1 es matrícula». Aquí sí, porque son tres números didácticos.
+El orden es este: primero la [sesión 1](../docs/01-bases-vectoriales/sesion-01.md), después la geometría de esta página, y al llegar a los temas 7 y 8 el script de ChromaDB. En un embedding real nadie asigna «el eje 1 es matrícula». Aquí sí, porque son tres números didácticos.
+
+La distancia de este ChromaDB es 1 menos el coseno. No es la resta de listas del cuaderno «ver el vector». Las categorías son `g1` a `g5`, las mismas que en el proyecto y en el cuaderno de Colab.
 
 ## Entorno
 
@@ -14,9 +16,9 @@ python -m venv .venv
 pip install -r requirements-lab.txt
 ```
 
-La práctica 1 puede ejecutarse sin instalar ChromaDB.
+La geometría puede ejecutarse sin instalar ChromaDB.
 
-## Práctica 1. Geometría
+## Geometría, con vectores escritos a mano
 
 ```powershell
 python laboratorio/01_geometria_similitud.py
@@ -28,9 +30,9 @@ Qué tiene que observarse:
 - La pregunta por las horas del módulo invierte el ranking y coloca primero el fragmento de las 190 horas.
 - El producto escalar y el coseno no coinciden en los vectores sin normalizar que imprime la segunda parte del script (`2` frente a `0,707`). Esa es la razón de pedir a Titan vectores de norma 1.
 
-Si el ranking de matrícula no sale así, no se sigue a ChromaDB: el fallo está en la cuenta.
+Si el ranking de matrícula no sale así, no se sigue al script de ChromaDB local: el fallo está en la cuenta.
 
-## Práctica 2. Colección en ChromaDB
+## ChromaDB local, con vectores escritos a mano
 
 ```powershell
 python laboratorio/02_chromadb_coleccion.py

@@ -46,9 +46,9 @@ def main() -> None:
     nb1 = nb(
         [
             md(
-                """# Práctica 1. Ver el vector antes de guardarlo
+                """# Cuaderno de la sesión 1. Ver el vector antes de guardarlo
 
-En esta práctica no hay base de datos. El objetivo es obtener un vector y mirarlo.
+En este cuaderno no hay base de datos. El objetivo es obtener un vector y mirarlo.
 
 Un modelo de embeddings ya entrenado convierte una frase en una lista de números. Esa lista es el vector: la posición de la frase en un mapa de muchas dimensiones. No es un resumen y no es una traducción. No se lee número a número.
 
@@ -105,6 +105,8 @@ La cercanía es una propiedad de los vectores. No hace falta una base de datos p
 
 Se convierten tres frases con el mismo modelo. Python resta dos listas y mide lo larga que queda esa resta. Eso es una distancia. Número más pequeño, más cerca.
 
+Esta cuenta es la longitud de la resta entre dos listas. No es el número que imprime ChromaDB en el cuaderno siguiente. Allí, con el espacio coseno, la distancia es 1 menos el coseno. Las dos se leen igual (más pequeña, más cerca) y no se comparan entre sí: un 0,8 aquí no es «peor» que un 0,002 allí.
+
 Tiene que quedar más cerca «matrícula» de «inscripción» que de «cafetería». Las dos primeras hablan del mismo trámite con otras palabras. La tercera no. Si saliera al revés, las tres frases no se habrían codificado con el mismo modelo.
 """
             ),
@@ -136,9 +138,11 @@ else:
     nb2 = nb(
         [
             md(
-                """# Práctica 2. ChromaDB paso a paso
+                """# Cuaderno de la sesión 1. ChromaDB con el modelo
 
-En la práctica 1 el vector vivía en una variable y se perdía al cerrar el cuaderno. Una base de datos lo guarda para poder buscarlo después.
+En el cuaderno anterior el vector vivía en una variable y se perdía al cerrar la sesión. Una base de datos lo guarda para poder buscarlo después.
+
+Este cuaderno no es el laboratorio de vectores escritos a mano. Aquel viene después, en la carpeta `laboratorio/`, y no descarga un modelo.
 
 ChromaDB es la base que usaremos en DocIA+. Aquí trabaja dentro de Colab. Primero en memoria, y al final en una carpeta.
 
@@ -157,7 +161,7 @@ Las frases siguen siendo de ejercicio.
             md(
                 """## Instalar y cargar el mismo modelo
 
-Hace falta la librería de la base (`chromadb`) y otra vez el modelo de la práctica 1.
+Hace falta la librería de la base (`chromadb`) y otra vez el modelo del cuaderno anterior.
 
 Se imprime la dimensión. Tiene que salir 384. Si no sale 384, este cuaderno y el anterior no están en el mismo mapa y las distancias no significan nada.
 """
@@ -205,7 +209,9 @@ Este es el paso de cargar la base. Cada frase ya es un trozo, así que no hay qu
 
 Primero `encode` calcula las cinco listas con el modelo que acabamos de cargar. Después `add` las guarda. El orden importa: el vector que entra es el nuestro. La base no lo inventa.
 
-La categoría (`Secretaria`, `Servicios`…) es un metadato. Sirve para filtrar, como un `WHERE`. No cambia los números del vector.
+La categoría es un metadato. Sirve para filtrar, como un `WHERE`. No cambia los números del vector.
+
+Usamos los mismos códigos que el proyecto: `g4` oferta educativa, `g5` horarios y actividades del centro, `g3` planes. El texto de la frase no es la categoría. «Secretaría» puede aparecer en el texto y el código seguir siendo `g4`.
 """
             ),
             code(
@@ -217,11 +223,11 @@ La categoría (`Secretaria`, `Servicios`…) es un metadato. Sirve para filtrar,
     "El plan de orientacion ayuda al alumnado a elegir estudios.",
 ]
 categorias = [
-    {"categoria": "Oferta Educativa", "fuente": "ejemplo-oferta"},
-    {"categoria": "Secretaria", "fuente": "ejemplo-acceso"},
-    {"categoria": "Servicios", "fuente": "ejemplo-horarios"},
-    {"categoria": "Secretaria", "fuente": "ejemplo-acceso"},
-    {"categoria": "Orientacion", "fuente": "ejemplo-orientacion"},
+    {"categoria": "g4", "fuente": "ejemplo-oferta"},
+    {"categoria": "g4", "fuente": "ejemplo-acceso"},
+    {"categoria": "g5", "fuente": "ejemplo-horarios"},
+    {"categoria": "g4", "fuente": "ejemplo-acceso"},
+    {"categoria": "g3", "fuente": "ejemplo-orientacion"},
 ]
 ids = ["doc1", "doc2", "doc3", "doc4", "doc5"]
 vectores = modelo.encode(frases).tolist()
@@ -240,7 +246,7 @@ print("Registros guardados:", coleccion.count())
 
 Antes de preguntar, se comprueba que la base ha guardado lo que le hemos dado.
 
-Pedimos el registro `doc1` con su texto y su vector. La longitud tiene que ser 384, la misma de la práctica 1. Si la base hubiera llamado a otro modelo a escondidas, esta comprobación fallaría.
+Pedimos el registro `doc1` con su texto y su vector. La longitud tiene que ser 384, la misma del cuaderno anterior. Si la base hubiera llamado a otro modelo a escondidas, esta comprobación fallaría.
 """
             ),
             code(
@@ -259,7 +265,7 @@ La pregunta también es un dato. Hay que convertirla en vector con el mismo mode
 
 La frase no contiene «formalizacion» ni «matricula». Un `LIKE` no encontraría la primera frase. La base vectorial sí puede, porque no busca las letras: busca el punto más cercano.
 
-La distancia que imprime ChromaDB en esta colección es más pequeña cuanto más se parecen. Cerca de 0, muy parecido.
+La distancia que imprime ChromaDB en esta colección es 1 menos el coseno: más pequeña cuanto más se parecen, y 0 si los vectores son iguales. No es la resta de listas del cuaderno anterior. Un 0,002 aquí puede ser casi el mismo texto. No lo compares con el 0,8 de aquella cuenta.
 """
             ),
             code(
@@ -282,9 +288,9 @@ for i, doc in enumerate(resultados["documents"][0]):
 
 La cercanía y el filtro no son la misma cosa.
 
-La pregunta es amplia. Sin filtro podrían salir textos de varias categorías. `where` obliga a que la categoría sea `Secretaria`, igual que un `WHERE` en SQL. Eso no crea otro vector: quita registros y, entre los que quedan, ordena por cercanía.
+La pregunta es amplia. Sin filtro podrían salir textos de varias categorías. `where` obliga a que la categoría sea `g4` (oferta educativa), igual que un `WHERE` en SQL. Eso no crea otro vector: quita registros y, entre los que quedan, ordena por cercanía.
 
-Si el filtro se aplicara después de pedir los dos más cercanos, se podrían perder los de Secretaría. Por eso va dentro de la misma consulta.
+Si el filtro se aplicara después de pedir los dos más cercanos, se podría perder un texto de oferta que iba en el puesto 3. Por eso va dentro de la misma consulta.
 """
             ),
             code(
@@ -293,10 +299,10 @@ vector_pregunta = modelo.encode([pregunta]).tolist()
 filtrados = coleccion.query(
     query_embeddings=vector_pregunta,
     n_results=2,
-    where={"categoria": "Secretaria"},
+    where={"categoria": "g4"},
 )
 print("Pregunta:", pregunta)
-print("Filtro: categoria = Secretaria")
+print("Filtro: categoria = g4")
 print()
 for doc, meta in zip(filtrados["documents"][0], filtrados["metadatas"][0]):
     print("-", doc, f"({meta['categoria']})")
@@ -335,12 +341,12 @@ print("Carpeta:", ruta)
             md(
                 """## Ejercicio
 
-1. Añade el texto «El centro dispone de aparcamiento para bicicletas.» con el id `doc6` y la categoría `Servicios`.
+1. Añade el texto «El centro dispone de aparcamiento para bicicletas.» con el id `doc6` y la categoría `g5`.
 2. Calcula tú el vector con `modelo.encode`. No dejes que ChromaDB lo invente.
 3. Pregunta «Donde puedo dejar la bicicleta?» y pide un solo resultado.
 4. Imprime el texto y la distancia.
 
-La distancia tiene que ser pequeña, y la categoría tiene que ser `Servicios`.
+La distancia tiene que ser pequeña, y la categoría tiene que ser `g5`.
 """
             ),
             code(

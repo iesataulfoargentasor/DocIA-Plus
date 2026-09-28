@@ -27,7 +27,7 @@ devolver 5
 
 Los cinco resultados ya son de oferta educativa. Si ninguno se parece lo bastante, se dice que no hay evidencia. No se rellena con un fragmento de convivencia que casualmente contiene la palabra «acceso».
 
-Varios campos se combinan. ChromaDB expresa la conjunción con un operador lógico en el propio `where`. Lo usaremos para «esta categoría **y** este curso», por ejemplo. El detalle de sintaxis se practica en el laboratorio 2 y se fija cuando escribamos el cliente definitivo.
+Varios campos se combinan. ChromaDB expresa la conjunción con un operador lógico en el propio `where`. Lo usaremos para «esta categoría **y** este curso», por ejemplo. El detalle de sintaxis se practica en `laboratorio/02_chromadb_coleccion.py` y se fija cuando escribamos el cliente definitivo.
 
 ## Las cinco categorías
 

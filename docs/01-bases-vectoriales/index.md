@@ -21,7 +21,7 @@ Unidad previa a la implementación del almacén de embeddings de DocIA+. Si el g
 
 ## Secuencia de aula sugerida
 
-Pensada para unas siete sesiones compartidas o repartidas entre SBD y BDA. La primera no supone nada de la teoría. Se puede comprimir el resto si el grupo ya ha visto similitud en otro módulo.
+Pensada para unas siete sesiones compartidas o repartidas entre SBD y BDA. La primera recorre el camino del dato al vector: no da por sabido el embedding. Se puede comprimir el resto si el grupo ya ha visto similitud en otro módulo.
 
 | Sesión | Trabajo | Encargo dominante |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ Pensada para unas siete sesiones compartidas o repartidas entre SBD y BDA. La pr
 | 3 | Tema 3 y laboratorio de geometría | Los dos |
 | 4 | Tema 4 | Los dos, con más peso conceptual en BDA |
 | 5 | Temas 5 y 6, y el esquema de metadatos | SBD |
-| 6 | Temas 7 y 8, y laboratorio ChromaDB con vectores escritos a mano | BDA, con SBD revisando metadatos |
+| 6 | Temas 7 y 8, y ChromaDB local con vectores escritos a mano | BDA, con SBD revisando metadatos |
 | 7 | Temas 9 y 10, y ejercicios | Los dos |
 
 ## Convenios de vocabulario

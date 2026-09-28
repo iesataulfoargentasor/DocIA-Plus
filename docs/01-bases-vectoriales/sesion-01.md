@@ -153,6 +153,8 @@ Se convierten tres frases con el mismo modelo: formalización de matrícula, ins
 
 Tiene que salir más pequeña la distancia entre matrícula e inscripción que entre matrícula y cafetería. Número más pequeño, más cerca. Si saliera al revés, las tres frases no se habrían codificado con el mismo modelo.
 
+Esa distancia es la longitud de la resta entre dos listas. No es el número que imprime ChromaDB en el cuaderno siguiente. Allí, con el espacio coseno, la distancia es 1 menos el coseno. Las dos se leen igual y no se comparan entre sí.
+
 En el proyecto el modelo será Titan y la lista tendrá 1024 números. No se pueden mezclar con estos 384.
 
 ## ChromaDB, despacio
@@ -163,15 +165,17 @@ Cuaderno [02_chromadb_paso_a_paso.ipynb](https://github.com/iesataulfoargentasor
 
 Hasta aquí el vector vivía en una variable de Python y se perdía al cerrar el cuaderno. ChromaDB es el sitio donde se guarda para poder buscarlo después. En este cuaderno trabaja dentro de Colab. El orden importa: primero el modelo, después la colección, después los vectores calculados por nosotros.
 
-1. **El mismo modelo.** Se vuelve a cargar `all-MiniLM-L6-v2` y se imprime 384. Si este número no coincide con el de la práctica anterior, las listas no se pueden comparar. Por eso no se deja que ChromaDB elija un modelo oculto.
-2. **La colección.** Es el equivalente a una tabla. Se crea vacía, en memoria, y se le dice que compare con distancia coseno. Hoy basta con saber que, en esa colección, una distancia más pequeña significa más parecido. El coseno a mano está en el tema 3.
-3. **Guardar cinco frases.** Cada frase ya es un trozo. `encode` calcula los cinco vectores. `add` guarda las cuatro piezas del registro: identificador, texto, vector y categoría. El texto se guarda porque el vector no se puede citar. La categoría se guarda para filtrar, no porque forme parte del vector.
-4. **Mirar dentro.** Se pide el registro `doc1` y se comprueba que el vector guardado sigue teniendo 384 números. Si la base los hubiera recalculado con otro modelo, la longitud o los valores no cuadrarían con la práctica 1.
+1. **El mismo modelo.** Se vuelve a cargar `all-MiniLM-L6-v2` y se imprime 384. Si este número no coincide con el del cuaderno anterior, las listas no se pueden comparar. Por eso no se deja que ChromaDB elija un modelo oculto.
+2. **La colección.** Es el equivalente a una tabla. Se crea vacía, en memoria, y se le dice que compare con distancia coseno. En esta colección la distancia que sale es 1 menos el coseno: más pequeña, más parecido, y 0 si los vectores son iguales. No es la resta del cuaderno anterior. El coseno a mano está en el tema 3.
+3. **Guardar cinco frases.** Cada frase ya es un trozo. `encode` calcula los cinco vectores. `add` guarda las cuatro piezas del registro: identificador, texto, vector y categoría. El texto se guarda porque el vector no se puede citar. La categoría se guarda para filtrar, no porque forme parte del vector. Los códigos son los del proyecto: `g4` oferta educativa, `g3` planes, `g5` horarios y actividades. La palabra «secretaría» puede estar en el texto y el código seguir siendo `g4`.
+4. **Mirar dentro.** Se pide el registro `doc1` y se comprueba que el vector guardado sigue teniendo 384 números. Si la base los hubiera recalculado con otro modelo, la longitud o los valores no cuadrarían con el cuaderno anterior.
 5. **Preguntar con otras palabras.** «¿Cómo me inscribo en el curso?» no contiene «formalización» ni «matrícula». La pregunta pasa por el mismo `encode` y la base devuelve los dos textos más cercanos. Eso es la búsqueda: mismo camino que al guardar, y luego los vecinos.
-6. **Filtrar.** Se repite una pregunta amplia obligando a la categoría `Secretaria`. El filtro no es otro vector. Quita registros antes de ordenar por cercanía, igual que un `WHERE` en SQL.
+6. **Filtrar.** Se repite una pregunta amplia obligando a la categoría `g4`. El filtro no es otro vector. Quita registros antes de ordenar por cercanía, igual que un `WHERE` en SQL.
 7. **Memoria y disco.** La colección anterior desaparece al cerrar el cuaderno. `PersistentClient` escribe una carpeta y se vuelve a abrir. Una base de datos tiene que seguir ahí mañana. Un cálculo en una variable, no.
 
-El cuaderno cierra con un ejercicio: añadir una frase sobre el aparcamiento de bicicletas, categoría `Servicios`, calcular su vector con `encode` y preguntar dónde dejar la bicicleta. La distancia tiene que ser pequeña y la categoría, `Servicios`.
+El cuaderno cierra con un ejercicio: añadir una frase sobre el aparcamiento de bicicletas, categoría `g5`, calcular su vector con `encode` y preguntar dónde dejar la bicicleta. La distancia tiene que ser pequeña y la categoría, `g5`.
+
+Este ChromaDB de Colab no es el de la carpeta `laboratorio/`. Aquel usa vectores escritos a mano, sin descargar un modelo, y se hace después de los temas 3 a 8.
 
 ## Qué no entra todavía
 

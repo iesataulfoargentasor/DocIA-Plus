@@ -29,7 +29,7 @@ El producto escalar de `a` con `b` vale 2 y el coseno vale unos 0,707 porque `a`
 
 1. `||q|| = raíz(0,36 + 0,64) = raíz(1) = 1`.
 2. `q · d1 = 0,36 + 0,64 = 1`. `q · d2 = 0,48 + 0,48 = 0,96`. Como están normalizados, esos productos son los cosenos.
-3. Primero `d1`, que es el mismo vector. En ChromaDB 1.1.0 con espacio coseno, la distancia es `1 - coseno`, así que `d1` sale a 0 y `d2` a 0,04. El laboratorio 2 lo imprime con otros vectores (un coseno de unos 0,998 sale a distancia de unos 0,002). Si una versión futura de la librería cambiara esa convención, manda la salida del laboratorio, no esta solución.
+3. Primero `d1`, que es el mismo vector. En ChromaDB 1.1.0 con espacio coseno, la distancia es `1 - coseno`, así que `d1` sale a 0 y `d2` a 0,04. `laboratorio/02_chromadb_coleccion.py` lo imprime con otros vectores (un coseno de unos 0,998 sale a distancia de unos 0,002). Si una versión futura de la librería cambiara esa convención, manda la salida de ese script, no esta solución.
 
 ## 4. Una colección que no se puede mezclar
 

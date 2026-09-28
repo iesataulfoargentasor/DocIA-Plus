@@ -27,16 +27,18 @@ La base escucha en la red privada de esa máquina. No se publica ChromaDB a inte
 
 Los originales y las copias de la base van a un almacén de objetos distinto. Si la instancia se rehace, se restaura la copia o se reindexa desde los originales. Las dos vías tienen que estar probadas antes de dar el hito por cumplido.
 
-## El laboratorio de esta unidad
+## Dos laboratorios, en este orden
 
-El laboratorio no llama a Titan y no necesita cuenta de AWS. Usa vectores escritos a mano para separar dos aprendizajes que, si se hacen el mismo día, se confunden:
+La sesión 1 ya ha usado un modelo de verdad (`all-MiniLM-L6-v2`, 384 números) y ChromaDB en Colab, con frases de ejercicio y los códigos `g1` a `g5`. La distancia de aquel primer cuaderno es una resta de listas. La de ChromaDB, en espacio coseno, es 1 menos el coseno. No se comparan.
+
+Después de esa sesión, el laboratorio local separa otras dos cosas, sin descargar un modelo y con vectores escritos a mano:
 
 1. **Geometría**, en Python puro: producto escalar, norma y coseno, y un ranking de cuatro textos del estilo de los documentos del centro.
-2. **ChromaDB**, en un directorio local: crear la colección en espacio coseno, hacer `upsert`, consultar con filtro de categoría, borrar un huérfano y comprobar que dos vectores iguales dan distancia casi nula.
+2. **ChromaDB local**: crear la colección en espacio coseno, hacer `upsert`, consultar con filtro `g4`, borrar un huérfano y comprobar que dos vectores iguales dan distancia 0.
 
-Instrucciones, salida esperada y qué observar en clase: [laboratorio/README.md](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md).
+Instrucciones y qué observar: [laboratorio/README.md](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md).
 
-Cuando esas dos prácticas salen, el grupo ha visto la base de datos sin el ruido de la nube. El paso siguiente, ya fuera de esta unidad, es sustituir el vector escrito a mano por la salida real de Titan y el texto de juguete por un documento real de una de las cinco categorías. El esquema de metadatos y las operaciones no cambian.
+Cuando el script local sale bien, el grupo ha visto las operaciones de la base sin el ruido de la nube. El paso siguiente, ya fuera de esta unidad, es sustituir el vector escrito a mano por la salida real de Titan y el texto de ejercicio por un documento de una de las cinco categorías. El esquema de metadatos y las operaciones no cambian.
 
 ## Qué viene inmediatamente después
 

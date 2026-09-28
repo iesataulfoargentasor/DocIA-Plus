@@ -39,7 +39,7 @@ d2 = (0,8, 0,6)
 
 1. Comprueba que la norma de `q` es 1.
 2. Calcula la similitud del coseno de `q` con `d1` y con `d2` usando el producto escalar.
-3. ¿Cuál devolvería primero una colección en espacio coseno, y qué distancia esperas para `d1` si la distancia es «1 menos el coseno»? Trata esta última regla como hipótesis de lectura: el laboratorio 2 muestra la distancia real que devuelve la versión de ChromaDB fijada en el repositorio.
+3. ¿Cuál devolvería primero una colección en espacio coseno, y qué distancia esperas para `d1` si la distancia es «1 menos el coseno»? Trata esta última regla como hipótesis de lectura: `laboratorio/02_chromadb_coleccion.py` muestra la distancia real que devuelve la versión de ChromaDB fijada en el repositorio. No es la resta de listas del cuaderno de la sesión 1.
 
 ## 4. Una colección que no se puede mezclar
 
