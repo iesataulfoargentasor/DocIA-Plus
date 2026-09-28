@@ -1,8 +1,18 @@
 # Sesión 1. Ver qué es una base de datos vectorial
 
-Esta es la primera sesión. No hace falta haber leído los temas 1 a 10. El grupo parte de cero: sabe consultar una tabla y no ha visto un embedding.
+Esta es la primera sesión. No hace falta haber leído los temas 1 a 10. El grupo parte de cero: sabe consultar una tabla y no ha visto nunca un embedding.
 
-La sesión explica las tecnologías generales que después usaremos en DocIA+. El proyecto es el caso, no el único ejemplo. Primero se recorre, sin código, el camino desde un dato en bruto hasta el vector que se puede guardar. Después se abre el cuaderno para ver esa lista de números. Solo al final entra la base de datos.
+## Qué vamos a hacer hoy
+
+| Parte | Qué se hace | Para qué |
+| --- | --- | --- |
+| 1. El mapa, sin código | Trece diapositivas: del dato en bruto (texto, imagen, audio, vídeo) al vector | Entender qué hay que hacer **antes** de que exista una base vectorial |
+| 2. Ver el vector | Primer cuaderno de Colab: convertir frases en 384 números y medir cuáles quedan cerca | Ver con tus ojos que un embedding es una lista de números |
+| 3. ChromaDB, despacio | Segundo cuaderno: guardar cinco frases, preguntar con otras palabras, filtrar y guardar en disco | Ver qué añade la base de datos a esa lista |
+
+Solo hace falta una cuenta de Google para abrir Colab. No hay que instalar nada en el ordenador.
+
+La sesión explica tecnologías generales que después usaremos en DocIA+. El proyecto es el caso, no el único ejemplo.
 
 ## El mapa, sin código
 
@@ -14,9 +24,9 @@ En clase se recorre diapositiva a diapositiva. El recuadro se selecciona con un 
   <div class="dia-slide">
     <p class="dia-kicker">1 · De dónde partimos</p>
     <h3>Ya sabéis buscar una cadena</h3>
-    <p>En MySQL, <code>LIKE '%matricula%'</code> busca esas letras. Si el texto dice «inscripción» y la consulta pide matrícula, no hay fila. La base ha hecho bien su trabajo: la cadena no está.</p>
+    <p>Alguien pregunta «¿Cómo me matriculo?». En MySQL, <code>LIKE '%matriculo%'</code> busca esas letras. El documento dice «Procedimiento de formalización de matrícula», y no hay fila: «matriculo» no es un trozo de «matrícula». La base ha hecho bien su trabajo: la cadena no está.</p>
     <p>Esa búsqueda sirve para un código, un nombre propio o una fecha. No sirve cuando la persona pregunta con otras palabras y el documento responde igual.</p>
-    <img src="../../assets/esquemas/00-sql-vs-mapa.svg" alt="MySQL no encuentra inscripción si busca la palabra matrícula. En el mapa, matrícula e inscripción están juntas.">
+    <img src="../../assets/esquemas/00-sql-vs-mapa.svg" alt="LIKE matriculo no encuentra un texto que dice matrícula. En el mapa, la pregunta y la formalización de matrícula están juntas y la cafetería lejos.">
   </div>
   <div class="dia-slide">
     <p class="dia-kicker">2 · Qué dato tenemos</p>
@@ -103,7 +113,7 @@ En clase se recorre diapositiva a diapositiva. El recuadro se selecciona con un 
     <p class="dia-kicker">12 · La base</p>
     <h3>Qué guarda y qué no hace</h3>
     <p>Cada registro lleva cuatro cosas: un identificador, el vector de n números, el trozo o la ruta al original, y metadatos para filtrar (categoría, página, minuto, modelo usado).</p>
-    <p>La base compara vectores y devuelve los más cercanos. No entiende el organigrama del centro, no redacta y no sustituye a SQL. SQL sigue sirviendo para «dame lo de este año» o «solo esta categoría». El filtro acota. La cercanía ordena.</p>
+    <p>La base compara vectores y devuelve los más cercanos. No entiende el organigrama del centro y no redacta. Para «solo lo de este curso» o «solo esta categoría» se usa un filtro sobre los metadatos, que funciona como un <code>WHERE</code> de SQL. El filtro acota. La cercanía ordena.</p>
   </div>
   <div class="dia-slide">
     <p class="dia-kicker">13 · Antes del cuaderno</p>
@@ -133,27 +143,75 @@ Cuaderno [01_ver_el_vector.ipynb](https://github.com/iesataulfoargentasor/DocIA-
 
 En este cuaderno no hay base de datos. El objetivo es obtener el vector y mirarlo. Si se salta este paso, la base del cuaderno siguiente parece adivinar textos.
 
-Las frases son de ejercicio. No son documentos oficiales del centro. Ya son cortas, así que aquí no hay que trocear: cada frase es el trozo.
+Las frases son de ejercicio, no documentos oficiales del centro. Ya son cortas, así que aquí no hay que trocear: cada frase es el trozo.
 
 ### Por qué se instala una librería
 
-Python no trae un modelo de embeddings. `sentence-transformers` descarga uno ya entrenado, pequeño y gratuito: `all-MiniLM-L6-v2`. No lo entrenamos. Lo usamos como una función: entra texto, salen números. La primera ejecución tarda porque tiene que bajar el modelo.
+Python no trae un modelo de embeddings. `sentence-transformers` es la librería que sabe cargar uno ya entrenado y gratuito: `paraphrase-multilingual-MiniLM-L12-v2`. «Multilingual» significa que se entrenó con muchos idiomas, español incluido. No lo entrenamos: lo usamos como una función. Entra texto, salen números. La primera ejecución tarda un par de minutos porque tiene que bajar el modelo, unos 450 MB.
 
-### Por qué se convierte una frase y se imprime
+### Convertir una frase en números
 
-`SentenceTransformer` carga el modelo. `encode` hace el embedding: la frase entra y sale una lista de **384** números. Se imprime el texto, la longitud y los diez primeros números para ver tres cosas:
+`SentenceTransformer` carga el modelo. `encode` hace el embedding: la frase entra y sale una lista. Le pedimos `normalize_embeddings=True`, que ajusta la lista para que su **longitud sea 1**. Es lo que hará Titan en DocIA+, y en el [tema 3](03-geometria-y-similitud.md) se ve por qué conviene.
 
-1. La salida es una lista de decimales, no una frase y no un resumen.
-2. La longitud es 384 porque ese modelo se construyó así. No se elige en esta línea.
-3. Un número suelto no se lee. No significa «matrícula». El significado, si lo hay, está en la lista completa comparada con otras listas.
+Esta es la salida real:
 
-### Por qué se mide la distancia antes de guardar nada
+```text
+Texto:
+Procedimiento de formalización de matrícula en el curso de especialización.
 
-Se convierten tres frases con el mismo modelo: formalización de matrícula, instrucciones para inscribirse, y el menú de la cafetería. Python resta las listas y mide lo larga que es esa resta. Eso es una distancia. No hace falta una base de datos para calcularla: la cercanía es una propiedad de los vectores.
+Cuántos números tiene el vector: 384
+Longitud del vector: 1.0
+Los 10 primeros:
+[ 0.1036848   0.09317485 -0.03956842 -0.01952359 -0.03878934  0.02332297
+ -0.06079862 -0.03470635 -0.06651381 -0.01575202]
+```
 
-Tiene que salir más pequeña la distancia entre matrícula e inscripción que entre matrícula y cafetería. Número más pequeño, más cerca. Si saliera al revés, las tres frases no se habrían codificado con el mismo modelo.
+Tres cosas que mirar:
 
-Esa distancia es la longitud de la resta entre dos listas. No es el número que imprime ChromaDB en el cuaderno siguiente. Allí, con el espacio coseno, la distancia es 1 menos el coseno. Las dos se leen igual y no se comparan entre sí.
+1. La salida es una lista de decimales, no una frase ni un resumen.
+2. Tiene 384 números porque ese modelo se construyó así. No se elige en esta línea.
+3. Un número suelto no se lee. El 0,1037 no significa «matrícula». El significado está en la lista completa, comparada con otras listas del mismo modelo.
+
+### Medir quién está cerca
+
+Se convierten tres frases con el mismo modelo: formalización de matrícula, instrucciones para inscribirse y el menú de la cafetería. Python resta dos listas y mide lo larga que queda la resta. Eso es una distancia, y no hace falta una base de datos para calcularla: la cercanía es una propiedad de los vectores.
+
+```text
+Distancia matrícula - inscripción: 0.8267
+Distancia matrícula - cafetería:   1.3755
+
+La inscripción queda más cerca de la matrícula que la cafetería.
+```
+
+Número más pequeño, más cerca. Matrícula e inscripción hablan del mismo trámite con otras palabras, y quedan más cerca que matrícula y cafetería.
+
+### Dos formas de medir, el mismo orden
+
+En el cuaderno siguiente, ChromaDB dará otro número: la **distancia coseno**, que es 1 menos el coseno (tema 3). Para las mismas frases:
+
+| Pareja | Resta de listas (este cuaderno) | Coseno | Distancia coseno (ChromaDB) |
+| --- | --- | --- | --- |
+| Matrícula – inscripción | 0,827 | 0,658 | 0,342 |
+| Matrícula – cafetería | 1,376 | 0,054 | 0,946 |
+
+Los números son distintos, pero **ordenan igual**: la inscripción queda más cerca en las dos columnas. Con vectores de longitud 1 hay una relación exacta entre ellas:
+
+```text
+resta = √(2 × distancia coseno)
+0,827 = √(2 × 0,342)
+```
+
+Por eso no se compara un número de una columna con uno de la otra: un 0,83 de la resta no es «peor» que un 0,37 de ChromaDB. Son escalas distintas.
+
+### El modelo importa
+
+Para ver cuánto importa el modelo, repetimos la búsqueda del cuaderno siguiente (cinco frases y la pregunta «¿Cómo me inscribo en el curso?») con otro modelo muy usado, `all-MiniLM-L6-v2`, entrenado casi solo con textos en inglés:
+
+![Con el modelo entrenado en inglés, las dos frases de matrícula quedan en los puestos 3 y 5. Con el modelo multilingüe quedan en los puestos 1 y 2.](../assets/esquemas/00-modelo-importa.svg)
+
+Con el modelo en inglés, la frase de formalización de matrícula quedaba **la última** de cinco. Con el multilingüe, las dos frases de matrícula son las dos primeras. La base de datos es la misma, y la pregunta y las frases también: solo ha cambiado el modelo.
+
+Es la primera lección de la unidad: **una base vectorial solo encuentra lo que el modelo ha colocado bien.** Por eso DocIA+ usa Titan, que entiende español, y por eso la calidad se mide con preguntas de prueba antes de dar nada por bueno (temas 2 y 9).
 
 En el proyecto el modelo será Titan y la lista tendrá 1024 números. No se pueden mezclar con estos 384.
 
@@ -163,33 +221,56 @@ Cuaderno [02_chromadb_paso_a_paso.ipynb](https://github.com/iesataulfoargentasor
 
 [Abrir en Google Colab](https://colab.research.google.com/github/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/colab/02_chromadb_paso_a_paso.ipynb)
 
-Hasta aquí el vector vivía en una variable de Python y se perdía al cerrar el cuaderno. ChromaDB es el sitio donde se guarda para poder buscarlo después. En este cuaderno trabaja dentro de Colab. El orden importa: primero el modelo, después la colección, después los vectores calculados por nosotros.
+Hasta aquí el vector vivía en una variable de Python y se perdía al cerrar el cuaderno. ChromaDB es el sitio donde se guarda para poder buscarlo después. El orden importa: primero el modelo, después la colección, después los vectores calculados por nosotros.
 
-1. **El mismo modelo.** Se vuelve a cargar `all-MiniLM-L6-v2` y se imprime 384. Si este número no coincide con el del cuaderno anterior, las listas no se pueden comparar. Por eso no se deja que ChromaDB elija un modelo oculto.
-2. **La colección.** Es el equivalente a una tabla. Se crea vacía, en memoria, y se le dice que compare con distancia coseno. En esta colección la distancia que sale es 1 menos el coseno: más pequeña, más parecido, y 0 si los vectores son iguales. No es la resta del cuaderno anterior. El coseno a mano está en el tema 3.
-3. **Guardar cinco frases.** Cada frase ya es un trozo. `encode` calcula los cinco vectores. `add` guarda las cuatro piezas del registro: identificador, texto, vector y categoría. El texto se guarda porque el vector no se puede citar. La categoría se guarda para filtrar, no porque forme parte del vector. Los códigos son los del proyecto: `g4` oferta educativa, `g3` planes, `g5` horarios y actividades. La palabra «secretaría» puede estar en el texto y el código seguir siendo `g4`.
-4. **Mirar dentro.** Se pide el registro `doc1` y se comprueba que el vector guardado sigue teniendo 384 números. Si la base los hubiera recalculado con otro modelo, la longitud o los valores no cuadrarían con el cuaderno anterior.
-5. **Preguntar con otras palabras.** «¿Cómo me inscribo en el curso?» no contiene «formalización» ni «matrícula». La pregunta pasa por el mismo `encode` y la base devuelve los dos textos más cercanos. Eso es la búsqueda: mismo camino que al guardar, y luego los vecinos.
-6. **Filtrar.** Se repite una pregunta amplia obligando a la categoría `g4`. El filtro no es otro vector. Quita registros antes de ordenar por cercanía, igual que un `WHERE` en SQL.
-7. **Memoria y disco.** La colección anterior desaparece al cerrar el cuaderno. `PersistentClient` escribe una carpeta y se vuelve a abrir. Una base de datos tiene que seguir ahí mañana. Un cálculo en una variable, no.
+1. **El mismo modelo.** Se vuelve a cargar el modelo multilingüe y se imprime 384. Si este número no coincide con el del cuaderno anterior, las listas no se pueden comparar. Por eso no se deja que ChromaDB elija un modelo oculto.
+2. **La colección.** Es el equivalente a una tabla. Se crea vacía, en memoria (`EphemeralClient`), y se le dice que compare con distancia coseno. Más pequeña, más parecido, y 0 si los vectores son iguales.
+3. **Guardar cinco frases.** Cada frase ya es un trozo. `encode` calcula los cinco vectores y `add` guarda las cuatro piezas del registro: identificador, texto, vector y categoría. El texto se guarda porque el vector no se puede citar. La categoría se guarda para filtrar, no porque forme parte del vector. Los códigos son los del proyecto: `g4` oferta educativa, `g3` planes, `g5` horarios y actividades. La palabra «secretaría» puede estar en el texto y el código seguir siendo `g4`.
+4. **Mirar dentro.** Se pide el registro `doc1` y se comprueba que el vector guardado tiene 384 números y los mismos valores que en el cuaderno anterior (0,1037, 0,0932…). La base no lo ha recalculado.
+5. **Preguntar con otras palabras.** «¿Cómo me inscribo en el curso?» no contiene «formalización» ni «matrícula». La pregunta pasa por el mismo `encode` y la base devuelve los dos textos más cercanos:
 
-El cuaderno cierra con un ejercicio: añadir una frase sobre el aparcamiento de bicicletas, categoría `g5`, calcular su vector con `encode` y preguntar dónde dejar la bicicleta. La distancia tiene que ser pequeña y la categoría, `g5`.
+    ```text
+    1. distancia=0.3729  categoria=g4
+       Procedimiento de formalización de matrícula en el curso de especialización.
 
-Este ChromaDB de Colab no es el de la carpeta `laboratorio/`. Aquel usa vectores escritos a mano, sin descargar un modelo, y se hace después de los temas 3 a 8.
+    2. distancia=0.4844  categoria=g4
+       Para matricularse hay que presentar la solicitud en secretaría.
+    ```
+
+    Eso es la búsqueda: el mismo camino que al guardar, y luego los vecinos.
+
+6. **Filtrar.** Con la pregunta amplia «¿Cuándo hay que hacer los trámites?» y el filtro `categoria = g4` salen solo las frases de oferta educativa: la de matricularse en secretaría y la de las pruebas de acceso. El filtro no es otro vector. Quita registros antes de ordenar por cercanía, igual que un `WHERE` en SQL.
+7. **Memoria y disco.** La colección en memoria desaparece al cerrar el cuaderno. `PersistentClient` escribe una carpeta; se abre otro cliente sobre ella y el recuento sigue siendo 5. Una base de datos tiene que seguir ahí mañana. Una variable, no.
+
+El cuaderno cierra con un ejercicio: añadir la frase «El centro dispone de aparcamiento para bicicletas.», categoría `g5`, calcular su vector y preguntar «¿Dónde puedo dejar la bicicleta?». Tiene que salir esa frase, a una distancia de unos **0,37**. La siguiente frase más cercana queda por encima de 0,88.
+
+Este ChromaDB de Colab no es el de la carpeta `laboratorio/`. Aquel usa vectores escritos a mano, sin descargar un modelo: la parte de geometría se hace después del tema 3 y la de ChromaDB después de los temas 7 y 8.
 
 ## Qué no entra todavía
 
-El coseno calculado a mano, el índice HNSW, la llamada a Titan, AWS y el corpus real del IES. Están en los temas siguientes y en el [laboratorio con vectores escritos a mano](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md), para cuando ya se ha visto un vector de verdad y se quiere medir la geometría sin descargar un modelo.
-
-## Después de esta sesión
-
-El grupo tiene que poder decir, con el cuaderno cerrado, estas cosas:
-
-1. Antes de la base hay un camino: original, trozo, embedding, vector de n números.
-2. Texto, imagen, audio y vídeo cambian el trozo y el modelo. La base guarda el vector igual.
-3. MySQL busca la palabra. La base vectorial busca el punto más cercano.
-4. Un embedding es una lista de números. La hemos impreso, y tiene 384 porque el modelo es ese.
-5. Cada registro guarda identificador, texto, vector y metadatos.
-6. El filtro de categoría y la cercanía son dos cosas distintas.
+El coseno calculado a mano, el índice HNSW, la llamada a Titan, AWS y el corpus real del IES. Están en los temas siguientes y en el [laboratorio con vectores escritos a mano](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md).
 
 Esas ideas se ven también en dos vídeos de CodelyTV: la comparación entre SQL y la búsqueda por significado, en el tema de [búsqueda literal y semántica](01-busqueda-literal-y-semantica.md), y el mapa del vector, en el tema de [embeddings](02-embeddings.md). La base de los vídeos es PostgreSQL. La de esta sesión y la del proyecto es ChromaDB.
+
+## Comprueba que lo has entendido
+
+??? question "1. ¿Por qué una base vectorial no puede guardar directamente un PDF o una foto?"
+    Porque solo guarda y compara listas de números. Antes hay que cortar el dato en trozos y pasar cada trozo por un modelo de embeddings que lo convierta en vector. El original se conserva aparte.
+
+??? question "2. El primer cuaderno imprime un vector de 384 números. ¿Qué significa el primero, 0,1037?"
+    Nada por sí solo. Un número suelto no se interpreta. El significado está en la posición de la lista completa respecto a otras listas del mismo modelo.
+
+??? question "3. ¿Por qué la pregunta tiene que pasar por el mismo modelo que las frases guardadas?"
+    Porque cada modelo coloca los textos en su propio mapa. Dos listas de modelos distintos no se pueden comparar, aunque tengan la misma cantidad de números.
+
+??? question "4. El primer cuaderno da 0,827 entre matrícula e inscripción, y ChromaDB da 0,342 para la misma pareja. ¿Cuál es más cercana?"
+    La pregunta no tiene sentido: son dos formas distintas de medir, en escalas distintas. Las dos dicen lo mismo, que la inscripción está más cerca de la matrícula que la cafetería. Con vectores de longitud 1, 0,827 = √(2 × 0,342).
+
+??? question "5. Con el modelo en inglés, la frase de formalización de matrícula salía la última. ¿Qué había fallado: la base o el modelo?"
+    El modelo. La base ordenó bien los vectores que recibió. El problema es que el modelo no había colocado bien las frases en español. Por eso se mide la calidad con preguntas de prueba.
+
+??? question "6. En el filtro por `g4`, ¿el filtro cambia los vectores?"
+    No. El filtro quita los registros que no son `g4` y, entre los que quedan, la base ordena por cercanía. Es como un `WHERE` antes del `ORDER BY`.
+
+??? question "7. ¿Qué diferencia hay entre `EphemeralClient` y `PersistentClient`?"
+    El primero guarda la colección en memoria y se pierde al cerrar el cuaderno. El segundo la escribe en una carpeta y se puede volver a abrir. En el tema 10 se ve una tercera forma, el servidor, que es la de DocIA+.

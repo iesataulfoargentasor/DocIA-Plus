@@ -360,6 +360,47 @@ def coseno() -> None:
     )
 
 
+def modelo_importa() -> None:
+    paneles = [
+        ("Modelo entrenado en inglés", "all-MiniLM-L6-v2", [
+            ("Pruebas de acceso", 0.4712, False),
+            ("Plan de orientación", 0.5182, False),
+            ("Matricularse en secretaría", 0.6051, True),
+            ("Horario de cafetería", 0.6293, False),
+            ("Formalización de matrícula", 0.6759, True),
+        ]),
+        ("Modelo multilingüe, el del cuaderno", "paraphrase-multilingual-MiniLM-L12-v2", [
+            ("Formalización de matrícula", 0.3729, True),
+            ("Matricularse en secretaría", 0.4844, True),
+            ("Plan de orientación", 0.5691, False),
+            ("Pruebas de acceso", 0.7783, False),
+            ("Horario de cafetería", 0.8902, False),
+        ]),
+    ]
+    parts = [text(24, 34, "La misma pregunta con dos modelos: «¿Cómo me inscribo en el curso?»", 17, INK, 650)]
+    for p, (titulo, nombre, filas) in enumerate(paneles):
+        x = 16 + p * 392
+        parts.append(rect(x, 52, 376, 256, CARD, LINE, 14))
+        parts.append(text(x + 16, 78, titulo, 14, INK, 700))
+        parts.append(text(x + 16, 96, nombre, 12, MUTED, 500))
+        for i, (etiqueta, dist, bueno) in enumerate(filas):
+            y = 116 + i * 34
+            color = GREEN if bueno else "#9aa3b8"
+            parts.append(text(x + 16, y + 17, f"{i + 1}. {etiqueta}", 12, INK, 650 if bueno else 500))
+            ancho = dist * 130
+            parts.append(rect(x + 204, y + 5, round(ancho, 1), 16, color, color, 4, 0))
+            parts.append(text(x + 210 + ancho, y + 18, f"{dist:.3f}".replace(".", ","), 12, INK, 600))
+    parts.append(text(24, 332, "En verde, las dos frases que responden. Barra más corta: más cerca (distancia coseno de ChromaDB).", 13, MUTED))
+    save(
+        "00-modelo-importa.svg",
+        "\n".join(parts),
+        "El modelo importa",
+        "Con un modelo entrenado en inglés, las frases de matrícula quedan en los puestos 3 y 5. Con el modelo multilingüe del cuaderno quedan en los puestos 1 y 2.",
+        800,
+        352,
+    )
+
+
 def mapa_unidad() -> None:
     bloques = [
         ("Primer contacto", "¿Qué es esto?", ["Sesión 1", "Por qué existen"], "Colab"),
@@ -1357,26 +1398,26 @@ def sql_vs_mapa() -> None:
     parts.append(rect(16, 16, 300, 250, RED_SOFT, "#f5c6c2", 16))
     parts.append(text(166, 48, "MySQL", 18, RED, 700, "middle"))
     parts.append(rect(32, 68, 268, 64, CARD, LINE, 10))
-    parts.append(text(44, 92, "LIKE '%matricula%'", 14, INK, 650))
-    parts.append(text(44, 114, "busca esa cadena", 13, MUTED))
+    parts.append(text(44, 92, "LIKE '%matriculo%'", 14, INK, 650))
+    parts.append(text(44, 114, "busca esas letras", 13, MUTED))
     parts.append(rect(32, 148, 268, 64, CARD, LINE, 10))
-    parts.append(text(44, 172, "El texto dice «inscripción»", 13, INK, 500))
+    parts.append(text(44, 172, "El texto dice «matrícula»", 13, INK, 500))
     parts.append(text(44, 194, "0 filas", 16, RED, 700))
     parts.append(rect(332, 16, 300, 250, GREEN_SOFT, "#b7dfb9", 16))
     parts.append(text(482, 48, "Mapa de vectores", 18, GREEN, 700, "middle"))
     parts.append(f'<circle cx="400" cy="148" r="10" fill="{INDIGO}"/>')
     parts.append(f'<circle cx="448" cy="132" r="10" fill="{TEAL}"/>')
     parts.append(f'<circle cx="560" cy="188" r="10" fill="{ORANGE}"/>')
-    parts.append(text(348, 128, "matrícula", 13, INK, 650))
-    parts.append(text(462, 116, "inscripción", 13, INK, 650))
-    parts.append(text(468, 168, "cafetería", 13, INK, 650))
+    parts.append(text(348, 178, "pregunta", 13, INK, 650))
+    parts.append(text(430, 108, "formalización", 13, INK, 650))
+    parts.append(text(540, 168, "cafetería", 13, INK, 650))
     parts.append(text(482, 230, "Mide la distancia", 15, INK, 650, "middle"))
-    parts.append(text(482, 252, "y encuentra las dos", 15, GREEN, 700, "middle"))
+    parts.append(text(482, 252, "y encuentra el documento", 15, GREEN, 700, "middle"))
     save(
         "00-sql-vs-mapa.svg",
         "\n".join(parts),
-        "MySQL busca la palabra y el mapa busca la cercanía",
-        "LIKE matricula no encuentra un texto que dice inscripción. En el mapa las dos frases están juntas.",
+        "MySQL busca las letras y el mapa busca la cercanía",
+        "LIKE matriculo no encuentra un texto que dice matrícula. En el mapa, la pregunta y la formalización de matrícula están juntas y la cafetería lejos.",
         648,
         282,
     )
@@ -1396,6 +1437,7 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    modelo_importa()
     mapa_unidad()
     recorrido_pregunta()
     tres_clientes()

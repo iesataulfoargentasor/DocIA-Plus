@@ -196,7 +196,7 @@ Titan Embeddings v2 puede **normalizar en la propia llamada**. El pipeline de BD
 - **No se mezclan** vectores normalizados con vectores sin normalizar en la misma colección. Si se mezclan, vuelve el problema de G: un vector más largo gana sin parecerse más.
 - Hay una comprobación fácil de que la llamada está bien configurada: la longitud de un vector recién generado tiene que salir muy cerca de 1. Si sale 7,3 o 0,02, algo está mal.
 
-El modelo MiniLM del [cuaderno de la sesión 1](sesion-01.md) también devuelve vectores de longitud 1. Por eso, cuando allí se mide la distancia en línea recta entre dos frases, el orden que sale es el mismo que daría el coseno. Puedes comprobarlo en el cuaderno con `np.linalg.norm(vector)`, que debe dar 1,0.
+El [cuaderno de la sesión 1](sesion-01.md) hace lo mismo: pide al modelo vectores de longitud 1 con `normalize_embeddings=True`. Sin esa opción, el modelo del cuaderno devuelve vectores de longitud 3,66. Con ella, la longitud es 1,0, que el propio cuaderno imprime. Por eso, cuando allí se mide la distancia en línea recta entre dos frases, el orden que sale es el mismo que daría el coseno.
 
 ## De 2 dimensiones a 3, y de 3 a 1024
 

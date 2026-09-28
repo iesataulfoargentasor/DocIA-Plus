@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 648 282" role="img">
-  <title>MySQL busca la palabra y el mapa busca la cercanía</title>
-  <desc>LIKE matricula no encuentra un texto que dice inscripción. En el mapa las dos frases están juntas.</desc>
+  <title>MySQL busca las letras y el mapa busca la cercanía</title>
+  <desc>LIKE matriculo no encuentra un texto que dice matrícula. En el mapa, la pregunta y la formalización de matrícula están juntas y la cafetería lejos.</desc>
   <rect width="648" height="282" rx="18" fill="#f4f6fb"/>
   <defs>
     <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -14,19 +14,19 @@
   <rect x="16" y="16" width="300" height="250" rx="16" fill="#fdecea" stroke="#f5c6c2" stroke-width="1.5"/>
 <text x="166" y="48" text-anchor="middle" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">MySQL</text>
 <rect x="32" y="68" width="268" height="64" rx="10" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
-<text x="44" y="92" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">LIKE '%matricula%'</text>
-<text x="44" y="114" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">busca esa cadena</text>
+<text x="44" y="92" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">LIKE '%matriculo%'</text>
+<text x="44" y="114" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">busca esas letras</text>
 <rect x="32" y="148" width="268" height="64" rx="10" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
-<text x="44" y="172" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">El texto dice «inscripción»</text>
+<text x="44" y="172" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">El texto dice «matrícula»</text>
 <text x="44" y="194" text-anchor="start" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">0 filas</text>
 <rect x="332" y="16" width="300" height="250" rx="16" fill="#e8f5e9" stroke="#b7dfb9" stroke-width="1.5"/>
 <text x="482" y="48" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Mapa de vectores</text>
 <circle cx="400" cy="148" r="10" fill="#3949ab"/>
 <circle cx="448" cy="132" r="10" fill="#00796b"/>
 <circle cx="560" cy="188" r="10" fill="#ef6c00"/>
-<text x="348" y="128" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">matrícula</text>
-<text x="462" y="116" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">inscripción</text>
-<text x="468" y="168" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">cafetería</text>
+<text x="348" y="178" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">pregunta</text>
+<text x="430" y="108" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">formalización</text>
+<text x="540" y="168" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">cafetería</text>
 <text x="482" y="230" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">Mide la distancia</text>
-<text x="482" y="252" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">y encuentra las dos</text>
+<text x="482" y="252" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">y encuentra el documento</text>
 </svg>

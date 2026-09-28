@@ -204,7 +204,7 @@ Así se comprueba que una copia sirve: **se restaura**, se arranca sobre ella y 
 
 ## Los laboratorios, en orden
 
-1. **[Sesión 1](sesion-01.md)**, en Colab. Un modelo de verdad (`all-MiniLM-L6-v2`, 384 números), ChromaDB en memoria y después en disco, con frases de ejercicio y las categorías `g1` a `g5`. Ojo: la distancia del primer cuaderno, «ver el vector», es una resta de listas, no la distancia coseno de ChromaDB. No se comparan.
+1. **[Sesión 1](sesion-01.md)**, en Colab. Un modelo de verdad (`paraphrase-multilingual-MiniLM-L12-v2`, 384 números), ChromaDB en memoria y después en disco, con frases de ejercicio y las categorías `g1` a `g5`. Ojo: la distancia del primer cuaderno, «ver el vector», es una resta de listas, no la distancia coseno de ChromaDB. No se comparan.
 2. **Geometría**, en Python puro, con vectores escritos a mano: producto escalar, longitud y coseno (tema 3).
 3. **ChromaDB local**, con los mismos vectores escritos a mano y `PersistentClient`.
 

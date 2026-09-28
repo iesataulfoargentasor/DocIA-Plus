@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 352" role="img">
+  <title>El modelo importa</title>
+  <desc>Con un modelo entrenado en inglés, las frases de matrícula quedan en los puestos 3 y 5. Con el modelo multilingüe del cuaderno quedan en los puestos 1 y 2.</desc>
+  <rect width="800" height="352" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="17" font-weight="650">La misma pregunta con dos modelos: «¿Cómo me inscribo en el curso?»</text>
+<rect x="16" y="52" width="376" height="256" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="32" y="78" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Modelo entrenado en inglés</text>
+<text x="32" y="96" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">all-MiniLM-L6-v2</text>
+<text x="32" y="133" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">1. Pruebas de acceso</text>
+<rect x="220" y="121" width="61.3" height="16" rx="4" fill="#9aa3b8" stroke="#9aa3b8" stroke-width="0"/>
+<text x="287.256" y="134" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,471</text>
+<text x="32" y="167" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">2. Plan de orientación</text>
+<rect x="220" y="155" width="67.4" height="16" rx="4" fill="#9aa3b8" stroke="#9aa3b8" stroke-width="0"/>
+<text x="293.366" y="168" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,518</text>
+<text x="32" y="201" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="650">3. Matricularse en secretaría</text>
+<rect x="220" y="189" width="78.7" height="16" rx="4" fill="#2e7d32" stroke="#2e7d32" stroke-width="0"/>
+<text x="304.663" y="202" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,605</text>
+<text x="32" y="235" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">4. Horario de cafetería</text>
+<rect x="220" y="223" width="81.8" height="16" rx="4" fill="#9aa3b8" stroke="#9aa3b8" stroke-width="0"/>
+<text x="307.80899999999997" y="236" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,629</text>
+<text x="32" y="269" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="650">5. Formalización de matrícula</text>
+<rect x="220" y="257" width="87.9" height="16" rx="4" fill="#2e7d32" stroke="#2e7d32" stroke-width="0"/>
+<text x="313.86699999999996" y="270" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,676</text>
+<rect x="408" y="52" width="376" height="256" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="424" y="78" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Modelo multilingüe, el del cuaderno</text>
+<text x="424" y="96" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">paraphrase-multilingual-MiniLM-L12-v2</text>
+<text x="424" y="133" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="650">1. Formalización de matrícula</text>
+<rect x="612" y="121" width="48.5" height="16" rx="4" fill="#2e7d32" stroke="#2e7d32" stroke-width="0"/>
+<text x="666.477" y="134" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,373</text>
+<text x="424" y="167" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="650">2. Matricularse en secretaría</text>
+<rect x="612" y="155" width="63.0" height="16" rx="4" fill="#2e7d32" stroke="#2e7d32" stroke-width="0"/>
+<text x="680.972" y="168" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,484</text>
+<text x="424" y="201" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">3. Plan de orientación</text>
+<rect x="612" y="189" width="74.0" height="16" rx="4" fill="#9aa3b8" stroke="#9aa3b8" stroke-width="0"/>
+<text x="691.983" y="202" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,569</text>
+<text x="424" y="235" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">4. Pruebas de acceso</text>
+<rect x="612" y="223" width="101.2" height="16" rx="4" fill="#9aa3b8" stroke="#9aa3b8" stroke-width="0"/>
+<text x="719.179" y="236" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,778</text>
+<text x="424" y="269" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">5. Horario de cafetería</text>
+<rect x="612" y="257" width="115.7" height="16" rx="4" fill="#9aa3b8" stroke="#9aa3b8" stroke-width="0"/>
+<text x="733.726" y="270" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">0,890</text>
+<text x="24" y="332" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">En verde, las dos frases que responden. Barra más corta: más cerca (distancia coseno de ChromaDB).</text>
+</svg>
