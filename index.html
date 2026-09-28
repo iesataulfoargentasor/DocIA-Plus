@@ -320,10 +320,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#el-sistema-en-una-frase" class="md-nav__link">
+  <a href="#que-es-docia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        El sistema, en una frase
+        Qué es DocIA+
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-problema-buscar-por-palabras-no-basta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El problema: buscar por palabras no basta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donde-entra-la-base-de-datos-vectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dónde entra la base de datos vectorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-tiene-que-conseguir-la-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué tiene que conseguir la base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-ejemplo-que-recorre-los-diez-temas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un ejemplo que recorre los diez temas
       
     </span>
   </a>
@@ -346,6 +390,28 @@
     <span class="md-ellipsis">
       
         Orden de lectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-leer-cada-tema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo leer cada tema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seis-palabras-que-vas-a-leer-mucho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seis palabras que vas a leer mucho
       
     </span>
   </a>
@@ -957,10 +1023,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#el-sistema-en-una-frase" class="md-nav__link">
+  <a href="#que-es-docia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        El sistema, en una frase
+        Qué es DocIA+
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-problema-buscar-por-palabras-no-basta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El problema: buscar por palabras no basta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donde-entra-la-base-de-datos-vectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dónde entra la base de datos vectorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-tiene-que-conseguir-la-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué tiene que conseguir la base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-ejemplo-que-recorre-los-diez-temas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un ejemplo que recorre los diez temas
       
     </span>
   </a>
@@ -989,6 +1099,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#como-leer-cada-tema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo leer cada tema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seis-palabras-que-vas-a-leer-mucho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seis palabras que vas a leer mucho
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1010,12 +1142,121 @@
 
 
 <h1 id="docia-unidad-de-bases-de-datos-vectoriales">DocIA+ · Unidad de bases de datos vectoriales<a class="headerlink" href="#docia-unidad-de-bases-de-datos-vectoriales" title="Permanent link">&para;</a></h1>
-<p>Material de aula para el Curso de Especialización en Inteligencia Artificial y Big Data del IES Ataúlfo Argenta. El proyecto de innovación DocIA+ ya está concedido. Esta unidad es el primer paso técnico de <strong>SBD</strong> y <strong>BDA</strong>: comprender la base de datos donde vivirán los embeddings, antes de construirla.</p>
-<h2 id="el-sistema-en-una-frase">El sistema, en una frase<a class="headerlink" href="#el-sistema-en-una-frase" title="Permanent link">&para;</a></h2>
-<p>Una persona escribe una pregunta sobre la documentación del IES. El sistema busca los fragmentos de documento cuyo <strong>significado</strong> se parece a esa pregunta y, con esos fragmentos delante, un modelo de lenguaje redacta la respuesta citando la fuente.</p>
-<p>La pieza que hace posible la búsqueda por significado es la <strong>base de datos vectorial</strong>.</p>
-<p><img alt="Recorrido de una pregunta en DocIA+. El paso 3, ChromaDB, es la base vectorial de esta unidad." src="assets/esquemas/00-pipeline.svg" /></p>
-<p>En esta unidad nos quedamos en el paso 3: que ChromaDB tenga fragmentos buenos. La redacción de la respuesta corresponde más adelante a PIA.</p>
+<p>Material de aula del Curso de Especialización en Inteligencia Artificial y Big Data del IES Ataúlfo Argenta, para los módulos <strong>SBD</strong> (Sistemas de Big Data) y <strong>BDA</strong> (Big Data Aplicado). El proyecto de innovación DocIA+ ya está concedido. Esta unidad es su primer paso técnico: <strong>entender la base de datos donde se guardará la documentación del centro, antes de construirla.</strong></p>
+<p>No hace falta saber nada de inteligencia artificial para seguirla. Cada tema empieza desde cero, trabaja con números que se pueden comprobar a mano y usa siempre el mismo ejemplo.</p>
+<h2 id="que-es-docia">Qué es DocIA+<a class="headerlink" href="#que-es-docia" title="Permanent link">&para;</a></h2>
+<p>DocIA+ es un asistente para consultar la documentación oficial del IES. Una familia, un alumno o un docente escribe una pregunta con sus palabras y recibe una respuesta que <strong>cita el documento de donde sale</strong>.</p>
+<p>La pregunta que usaremos en toda la unidad es esta:</p>
+<blockquote>
+<p>¿Cómo me matriculo?</p>
+</blockquote>
+<p>Y el documento que la responde dice:</p>
+<blockquote>
+<p>Procedimiento de formalización de matrícula.</p>
+</blockquote>
+<h2 id="el-problema-buscar-por-palabras-no-basta">El problema: buscar por palabras no basta<a class="headerlink" href="#el-problema-buscar-por-palabras-no-basta" title="Permanent link">&para;</a></h2>
+<p>Una base de datos de las que ya conocéis busca por letras. Con SQL:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">fragmentos</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%matriculo%&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>No devuelve <strong>ninguna fila</strong>. «Matriculo» no es un trozo de «matrícula»: cambian la tilde y la última letra. Para una persona las dos frases hablan de lo mismo, pero <code>LIKE</code> no mira el significado, solo las letras.</p>
+<p>La <strong>búsqueda semántica</strong> («del significado») compara de qué habla cada texto. Con los cuatro textos del ejemplo, el resultado es este:</p>
+<table>
+<thead>
+<tr>
+<th>Puesto</th>
+<th>Texto</th>
+<th>Parecido con «¿Cómo me matriculo?» (de 0 a 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Procedimiento de formalización de matrícula</td>
+<td>0,997</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Plazo de inscripción en el ciclo</td>
+<td>0,970</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Menú diario de la cafetería</td>
+<td>0,471</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Precio del bocadillo</td>
+<td>0,243</td>
+</tr>
+</tbody>
+</table>
+<p>Los dos textos que responden salen primero, sin repetir ninguna palabra de la pregunta. Estos números son de juguete: en el <a href="01-bases-vectoriales/01-busqueda-literal-y-semantica/" target="_blank" rel="noopener">tema 1</a> se ve de dónde salen y en el <a href="01-bases-vectoriales/03-geometria-y-similitud/" target="_blank" rel="noopener">tema 3</a> se calculan a mano.</p>
+<h2 id="donde-entra-la-base-de-datos-vectorial">Dónde entra la base de datos vectorial<a class="headerlink" href="#donde-entra-la-base-de-datos-vectorial" title="Permanent link">&para;</a></h2>
+<p>Para comparar significados, un modelo convierte cada texto en una lista de números, llamada <strong>vector</strong> o <strong>embedding</strong>. Los textos que hablan de lo mismo reciben listas parecidas. Una <strong>base de datos vectorial</strong> guarda esas listas junto con su texto y, dada la lista de una pregunta, devuelve deprisa las más parecidas.</p>
+<p><img alt="Seis pasos: la pregunta, su conversión en números, la búsqueda en ChromaDB, los fragmentos más cercanos, la comprobación de si están lo bastante cerca y la redacción de la respuesta." src="assets/esquemas/00-pipeline.svg" /></p>
+<p>En DocIA+ esa base es <strong>ChromaDB</strong>, y el modelo que convierte texto en números es <strong>Amazon Titan Embeddings v2</strong>, que da 1024 números por texto. Los documentos no se guardan enteros: se cortan en <strong>fragmentos</strong> de unos pocos párrafos, y cada fragmento tiene su vector.</p>
+<p>Esta unidad se ocupa de los pasos 3 y 4: que ChromaDB tenga fragmentos buenos y los devuelva bien. También enseña a medir el paso 5. La redacción de la respuesta, el paso 6, corresponde más adelante a PIA (Programación de Inteligencia Artificial).</p>
+<h2 id="que-tiene-que-conseguir-la-base">Qué tiene que conseguir la base<a class="headerlink" href="#que-tiene-que-conseguir-la-base" title="Permanent link">&para;</a></h2>
+<p>El proyecto fija un objetivo que se puede comprobar:</p>
+<ul>
+<li>al menos <strong>80 documentos</strong> del centro indexados;</li>
+<li>ante cada pregunta, devolver los <strong>3 a 5 fragmentos</strong> más relevantes;</li>
+<li>que el fragmento correcto esté entre ellos en <strong>más del 80 %</strong> de las preguntas de prueba.</li>
+</ul>
+<p>Los documentos se organizan en cinco categorías, una por grupo de trabajo, que dentro de la base se escriben <code>g1</code> a <code>g5</code>: programaciones, proyecto educativo, planes y programas, oferta educativa y horarios o actividades. Se explican en <a href="00-proyecto/que-vamos-a-construir/" target="_blank" rel="noopener">Qué vamos a construir</a>.</p>
+<h2 id="un-ejemplo-que-recorre-los-diez-temas">Un ejemplo que recorre los diez temas<a class="headerlink" href="#un-ejemplo-que-recorre-los-diez-temas" title="Permanent link">&para;</a></h2>
+<p>Cada tema añade una pieza al mismo caso, «¿Cómo me matriculo?»:</p>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Qué le pasa a la pregunta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="01-bases-vectoriales/01-busqueda-literal-y-semantica/" target="_blank" rel="noopener">1. Búsqueda literal y semántica</a></td>
+<td><code>LIKE</code> no la encuentra. Buscar por significado sí</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/02-embeddings/" target="_blank" rel="noopener">2. Embeddings</a></td>
+<td>La pregunta y el documento se convierten en 1024 números cada uno</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/03-geometria-y-similitud/" target="_blank" rel="noopener">3. Geometría y similitud</a></td>
+<td>Se calcula cuánto se parecen: coseno 0,997</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/04-busqueda-e-indices/" target="_blank" rel="noopener">4. Búsqueda e índices</a></td>
+<td>Se encuentra el más parecido sin comparar con todos los fragmentos</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/05-anatomia-bd-vectorial/" target="_blank" rel="noopener">5. Anatomía</a></td>
+<td>El fragmento se guarda como un registro: <code>oferta-iabd-2026_000</code>, con texto, vector y metadatos</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/06-metadatos-y-filtros/" target="_blank" rel="noopener">6. Metadatos y filtros</a></td>
+<td>Un filtro por curso deja fuera la versión de 2023, que se parece igual</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/07-chunking-y-ciclo-de-indexacion/" target="_blank" rel="noopener">7. Del documento al vector</a></td>
+<td>El PDF de la oferta se corta por secciones antes de convertirlo</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/08-operaciones-de-gestion/" target="_blank" rel="noopener">8. Operaciones de gestión</a></td>
+<td>Si el documento cambia, se actualiza sin dejar fragmentos viejos</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/09-calidad-y-fallos/" target="_blank" rel="noopener">9. Calidad y fallos</a></td>
+<td>Se mide si sale entre los 5 primeros y cuándo decir «no lo sé»</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/10-chromadb-en-docia/" target="_blank" rel="noopener">10. ChromaDB en DocIA+</a></td>
+<td>Todo junto: de la web a la respuesta, con medidas reales</td>
+</tr>
+</tbody>
+</table>
 <h2 id="como-esta-organizada">Cómo está organizada<a class="headerlink" href="#como-esta-organizada" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1034,31 +1275,83 @@
 <td>Qué parte del currículo cubre este trabajo y qué no</td>
 </tr>
 <tr>
-<td><a href="01-bases-vectoriales/sesion-01/" target="_blank" rel="noopener">Sesión 1</a></td>
-<td>Del dato al vector, un vector impreso y ChromaDB en Colab</td>
+<td><a href="01-bases-vectoriales/" target="_blank" rel="noopener">Cómo seguir la unidad</a></td>
+<td>El mapa de temas, una secuencia de siete sesiones y el vocabulario común</td>
 </tr>
 <tr>
-<td><a href="01-bases-vectoriales/" target="_blank" rel="noopener">Unidad 1 a 10</a></td>
-<td>Las bases de datos vectoriales, con el caso DocIA+ como hilo</td>
+<td><a href="01-bases-vectoriales/sesion-01/" target="_blank" rel="noopener">Sesión 1</a></td>
+<td>Primer contacto: del dato al vector y ChromaDB en Colab, con un modelo real</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/01-busqueda-literal-y-semantica/" target="_blank" rel="noopener">Temas 1 a 10</a></td>
+<td>Las bases de datos vectoriales, con DocIA+ como hilo</td>
 </tr>
 <tr>
 <td><a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md" target="_blank" rel="noopener">Laboratorio local</a></td>
-<td>Geometría y ChromaDB con vectores escritos a mano, sin cuenta de AWS</td>
+<td>Dos scripts con vectores escritos a mano, sin cuenta de AWS</td>
+</tr>
+<tr>
+<td><a href="01-bases-vectoriales/ejercicios/" target="_blank" rel="noopener">Ejercicios</a></td>
+<td>Cierre de la unidad</td>
 </tr>
 </tbody>
 </table>
 <h2 id="orden-de-lectura">Orden de lectura<a class="headerlink" href="#orden-de-lectura" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Contexto del proyecto.</li>
-<li><a href="01-bases-vectoriales/sesion-01/" target="_blank" rel="noopener">Sesión 1</a>: del dato al vector, la lista de números y ChromaDB en Colab, con los códigos <code>g1</code> a <code>g5</code>.</li>
+<li>El proyecto: <a href="00-proyecto/que-vamos-a-construir/" target="_blank" rel="noopener">Qué vamos a construir</a> y <a href="00-proyecto/encargo-sbd-bda/" target="_blank" rel="noopener">El encargo de SBD y BDA</a>.</li>
+<li><a href="01-bases-vectoriales/sesion-01/" target="_blank" rel="noopener">Sesión 1</a>, en Colab.</li>
 <li><a href="01-bases-vectoriales/00-por-que-existen/" target="_blank" rel="noopener">Por qué existen</a> las bases vectoriales.</li>
-<li>Temas 1 a 4: por qué un vector, cómo se compara y cómo se busca entre muchos.</li>
-<li>Geometría a mano, en <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/01_geometria_similitud.py" target="_blank" rel="noopener"><code>laboratorio/01_geometria_similitud.py</code></a>. No es el cuaderno de Colab.</li>
-<li>Temas 5 a 8: qué se guarda, cómo se filtra por categoría y cómo entra y sale un documento.</li>
-<li>ChromaDB local con vectores escritos a mano, en <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/02_chromadb_coleccion.py" target="_blank" rel="noopener"><code>laboratorio/02_chromadb_coleccion.py</code></a>. Aquí la distancia es 1 menos el coseno y la categoría es <code>g4</code>, no la resta de listas de la sesión 1.</li>
-<li>Temas 9 y 10: cómo sabremos si la base está bien y qué decisión de diseño ya está tomada en el proyecto.</li>
+<li>Temas 1 a 4: por qué hace falta un vector, qué es, cómo se comparan dos y cómo se busca entre muchos.</li>
+<li>Laboratorio de geometría, <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/01_geometria_similitud.py" target="_blank" rel="noopener"><code>01_geometria_similitud.py</code></a>, después del tema 3.</li>
+<li>Temas 5 a 8: qué se guarda, cómo se filtra, cómo entra un documento y cómo se mantiene.</li>
+<li>Laboratorio de ChromaDB, <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/02_chromadb_coleccion.py" target="_blank" rel="noopener"><code>02_chromadb_coleccion.py</code></a>, después de los temas 7 y 8.</li>
+<li>Temas 9 y 10: cómo se mide si la base funciona y cómo encaja todo en el proyecto.</li>
+<li><a href="01-bases-vectoriales/ejercicios/" target="_blank" rel="noopener">Ejercicios</a>.</li>
 </ol>
-<p>Los <a href="01-bases-vectoriales/ejercicios/" target="_blank" rel="noopener">ejercicios</a> cierran la unidad.</p>
+<p>Una advertencia para no confundirse: el primer cuaderno de Colab mide la diferencia entre dos vectores restando sus listas. El laboratorio y los temas usan la <strong>distancia coseno</strong> de ChromaDB, que es 1 menos el parecido (tema 3). Son números distintos y no se comparan entre sí.</p>
+<h2 id="como-leer-cada-tema">Cómo leer cada tema<a class="headerlink" href="#como-leer-cada-tema" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Empieza desde cero.</strong> Cada palabra nueva se explica la primera vez que aparece.</li>
+<li><strong>Trabaja con un ejemplo con números.</strong> Casi siempre, el de la matrícula.</li>
+<li><strong>Tiene esquemas</strong> para ver la idea antes de leer la explicación.</li>
+<li><strong>Lo que dice de ChromaDB está comprobado</strong> con la versión 1.1.0, la del laboratorio.</li>
+<li><strong>Termina con «Comprueba que lo has entendido»</strong>: preguntas con la respuesta plegada. Intenta contestar antes de abrirla.</li>
+</ul>
+<h2 id="seis-palabras-que-vas-a-leer-mucho">Seis palabras que vas a leer mucho<a class="headerlink" href="#seis-palabras-que-vas-a-leer-mucho" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Palabra</th>
+<th>Qué significa en DocIA+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documento</td>
+<td>El fichero original: un PDF, un DOCX o una página web</td>
+</tr>
+<tr>
+<td>Fragmento</td>
+<td>Un trozo de ese documento, de unos pocos párrafos, que se convierte en un solo vector</td>
+</tr>
+<tr>
+<td>Vector o embedding</td>
+<td>La lista de números que representa de qué habla un fragmento o una pregunta</td>
+</tr>
+<tr>
+<td>Colección</td>
+<td>El conjunto de fragmentos guardados en ChromaDB. Es lo parecido a una tabla</td>
+</tr>
+<tr>
+<td>Metadatos</td>
+<td>Datos que acompañan a cada fragmento, como su categoría o su curso, y que sirven para filtrar</td>
+</tr>
+<tr>
+<td>Distancia</td>
+<td>El número que devuelve ChromaDB para ordenar resultados. Cuanto más pequeña, más parecido</td>
+</tr>
+</tbody>
+</table>
 
 
 
