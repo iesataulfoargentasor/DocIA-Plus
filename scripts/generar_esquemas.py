@@ -359,6 +359,41 @@ def coseno() -> None:
     )
 
 
+def almacenes() -> None:
+    parts = [text(24, 32, "Dónde vive cada cosa", 18, INK, 650)]
+    cajas = [
+        (24, "Documentos originales", ["PDF y páginas web", "en S3.", "El pipeline los", "indexa en ChromaDB"], "Fuente de verdad", GREEN_SOFT, GREEN),
+        (270, "ChromaDB (un directorio)", ["chroma.sqlite3: ids, texto,", "metadatos", "carpeta del índice HNSW:", "los vectores"], "Índice derivado", INDIGO_SOFT, INDIGO),
+        (516, "Copia de seguridad", ["instantánea del disco", "con la base en reposo"], "Para no reindexar", CARD, LINE),
+    ]
+    for x, title, lines, caption, fill, stroke in cajas:
+        parts.append(rect(x, 56, 220, 170, fill, stroke, 14, 1.8))
+        parts.append(text(x + 110, 84, title, 15, INK, 700, "middle"))
+        for i, content in enumerate(lines):
+            parts.append(text(x + 110, 114 + i * 22, content, 13, INK, 500, "middle"))
+        parts.append(text(x + 110, 212, caption, 13, stroke if stroke != LINE else MUTED, 700, "middle"))
+    parts.append(
+        f'<line x1="246" y1="120" x2="266" y2="120" stroke="{INDIGO}" stroke-width="2.5" marker-end="url(#flecha)"/>'
+    )
+    parts.append(
+        f'<line x1="492" y1="120" x2="512" y2="120" stroke="{INDIGO}" stroke-width="2.5" marker-end="url(#flecha)"/>'
+    )
+    parts.append(
+        f'<path d="M 380 232 C 380 280, 134 280, 134 232" fill="none" stroke="{RED}" stroke-width="2" '
+        f'stroke-dasharray="6 5" marker-end="url(#flecha-roja)"/>'
+    )
+    parts.append(text(257, 292, "Si se pierde ChromaDB y no hay copia, se reconstruye desde los originales.", 13, RED, 600, "middle"))
+    parts.append(text(24, 326, "Al revés no funciona: de los vectores no se recupera el documento oficial.", 14, MUTED))
+    save(
+        "05-almacenes.svg",
+        "\n".join(parts),
+        "Dónde vive cada cosa en DocIA+",
+        "Los documentos originales en S3 son la fuente de verdad. ChromaDB es un índice derivado en un directorio con SQLite y los ficheros HNSW. La copia de seguridad evita reindexar.",
+        760,
+        346,
+    )
+
+
 def capas_hnsw() -> None:
     letras = "ABCDEFGH"
     xs = {letra: 60 + 80 * i for i, letra in enumerate(letras)}
@@ -1099,6 +1134,7 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    almacenes()
     capas_hnsw()
     dos_fases()
     mapa_significado()
