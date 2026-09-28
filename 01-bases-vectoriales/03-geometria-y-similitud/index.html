@@ -1515,7 +1515,7 @@ G = (12, 3)    longitud 12,37   G normalizado = (12 / 12,37, 3 / 12,37) = (0,97,
 <li><strong>No se mezclan</strong> vectores normalizados con vectores sin normalizar en la misma colección. Si se mezclan, vuelve el problema de G: un vector más largo gana sin parecerse más.</li>
 <li>Hay una comprobación fácil de que la llamada está bien configurada: la longitud de un vector recién generado tiene que salir muy cerca de 1. Si sale 7,3 o 0,02, algo está mal.</li>
 </ul>
-<p>El modelo MiniLM del <a href="../sesion-01/" target="_blank" rel="noopener">cuaderno de la sesión 1</a> también devuelve vectores de longitud 1. Por eso, cuando allí se mide la distancia en línea recta entre dos frases, el orden que sale es el mismo que daría el coseno. Puedes comprobarlo en el cuaderno con <code>np.linalg.norm(vector)</code>, que debe dar 1,0.</p>
+<p>El <a href="../sesion-01/" target="_blank" rel="noopener">cuaderno de la sesión 1</a> hace lo mismo: pide al modelo vectores de longitud 1 con <code>normalize_embeddings=True</code>. Sin esa opción, el modelo del cuaderno devuelve vectores de longitud 3,66. Con ella, la longitud es 1,0, que el propio cuaderno imprime. Por eso, cuando allí se mide la distancia en línea recta entre dos frases, el orden que sale es el mismo que daría el coseno.</p>
 <h2 id="de-2-dimensiones-a-3-y-de-3-a-1024">De 2 dimensiones a 3, y de 3 a 1024<a class="headerlink" href="#de-2-dimensiones-a-3-y-de-3-a-1024" title="Permanent link">&para;</a></h2>
 <p>Nada de lo anterior depende de que haya 2 componentes. Con más componentes, cada fórmula simplemente tiene más sumandos:</p>
 <div class="highlight"><pre><span></span><code>producto escalar   a · b = a1 × b1 + a2 × b2 + a3 × b3 + ... + a1024 × b1024
