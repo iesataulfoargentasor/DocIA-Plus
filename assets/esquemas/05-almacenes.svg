@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 346" role="img">
+  <title>Dónde vive cada cosa en DocIA+</title>
+  <desc>Los documentos originales en S3 son la fuente de verdad. ChromaDB es un índice derivado en un directorio con SQLite y los ficheros HNSW. La copia de seguridad evita reindexar.</desc>
+  <rect width="760" height="346" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="32" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Dónde vive cada cosa</text>
+<rect x="24" y="56" width="220" height="170" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.8"/>
+<text x="134" y="84" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Documentos originales</text>
+<text x="134" y="114" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">PDF y páginas web</text>
+<text x="134" y="136" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">en S3.</text>
+<text x="134" y="158" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">El pipeline los</text>
+<text x="134" y="180" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">indexa en ChromaDB</text>
+<text x="134" y="212" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">Fuente de verdad</text>
+<rect x="270" y="56" width="220" height="170" rx="14" fill="#e8eaf6" stroke="#3949ab" stroke-width="1.8"/>
+<text x="380" y="84" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">ChromaDB (un directorio)</text>
+<text x="380" y="114" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">chroma.sqlite3: ids, texto,</text>
+<text x="380" y="136" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">metadatos</text>
+<text x="380" y="158" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">carpeta del índice HNSW:</text>
+<text x="380" y="180" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">los vectores</text>
+<text x="380" y="212" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">Índice derivado</text>
+<rect x="516" y="56" width="220" height="170" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.8"/>
+<text x="626" y="84" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Copia de seguridad</text>
+<text x="626" y="114" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">instantánea del disco</text>
+<text x="626" y="136" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">con la base en reposo</text>
+<text x="626" y="212" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">Para no reindexar</text>
+<line x1="246" y1="120" x2="266" y2="120" stroke="#3949ab" stroke-width="2.5" marker-end="url(#flecha)"/>
+<line x1="492" y1="120" x2="512" y2="120" stroke="#3949ab" stroke-width="2.5" marker-end="url(#flecha)"/>
+<path d="M 380 232 C 380 280, 134 280, 134 232" fill="none" stroke="#b71c1c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#flecha-roja)"/>
+<text x="257" y="292" text-anchor="middle" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">Si se pierde ChromaDB y no hay copia, se reconstruye desde los originales.</text>
+<text x="24" y="326" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Al revés no funciona: de los vectores no se recupera el documento oficial.</text>
+</svg>
