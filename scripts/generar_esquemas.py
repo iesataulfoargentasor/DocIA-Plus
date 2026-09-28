@@ -359,6 +359,50 @@ def coseno() -> None:
     )
 
 
+def pipeline_pasos() -> None:
+    pasos = [
+        ("SBD", "1", "Inventario", "categoría, curso"),
+        ("SBD", "2", "Extraer texto", "¿hay texto o es escaneo?"),
+        ("SBD", "3", "Limpiar", "pies, guiones, vacías"),
+        ("SBD", "4", "Trocear", "fragmentos + metadatos + hash"),
+        ("BDA", "5", "¿Hash igual?", "si coincide, se salta"),
+        ("BDA", "6", "Titan", "1024, normalizado"),
+        ("BDA", "7", "Comprobar", "dimensión y norma ≈ 1"),
+        ("BDA", "8", "upsert", "texto, vector, metadatos"),
+        ("BDA", "9", "Huérfanos", "borrar los ids viejos"),
+    ]
+    parts = [text(24, 32, "Del fichero al registro: nueve pasos, dos asignaturas", 18, INK, 650)]
+    parts.append(rect(16, 50, 752, 150, INDIGO_SOFT, INDIGO, 14, 1.5))
+    parts.append(text(32, 74, "SBD · preparar el texto y su estructura", 14, INDIGO, 700))
+    parts.append(rect(16, 214, 752, 150, GREEN_SOFT, GREEN, 14, 1.5))
+    parts.append(text(32, 238, "BDA · convertir en vector y gestionar la colección", 14, GREEN, 700))
+    sbd = [p for p in pasos if p[0] == "SBD"]
+    bda = [p for p in pasos if p[0] == "BDA"]
+    for fila, grupo, top in ((0, sbd, 90), (1, bda, 254)):
+        ancho = 176 if len(grupo) == 4 else 140
+        paso_x = 184 if len(grupo) == 4 else 148
+        for i, (_, num, titulo, sub) in enumerate(grupo):
+            x = 32 + i * paso_x
+            parts.append(rect(x, top, ancho, 90, CARD, LINE, 12))
+            parts.append(text(x + 14, top + 26, num, 18, INDIGO if fila == 0 else GREEN, 800))
+            parts.append(text(x + 36, top + 26, titulo, 14, INK, 700))
+            parts.append(text(x + ancho / 2, top + 62, sub, 11, MUTED, 500, "middle"))
+            if i < len(grupo) - 1:
+                parts.append(
+                    f'<line x1="{x + ancho + 1}" y1="{top + 45}" x2="{x + paso_x - 3}" y2="{top + 45}" '
+                    f'stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>'
+                )
+    parts.append(text(24, 392, "Si el paso 7 falla, no se escribe nada. Si el corte está mal, BDA lo devuelve a SBD.", 13, MUTED))
+    save(
+        "07-pipeline.svg",
+        "\n".join(parts),
+        "Los nueve pasos del pipeline de indexación",
+        "SBD hace inventario, extracción, limpieza y troceado con metadatos y hash. BDA compara el hash, llama a Titan, comprueba, hace upsert y borra huérfanos.",
+        784,
+        410,
+    )
+
+
 def dos_partes() -> None:
     registros = [
         ("oferta-iabd-2026_000", "Formalización de matrícula", "g4 · 2026-2027", True, "0,003"),
@@ -1181,6 +1225,7 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    pipeline_pasos()
     dos_partes()
     almacenes()
     capas_hnsw()
