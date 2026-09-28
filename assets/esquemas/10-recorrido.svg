@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 510" role="img">
+  <title>Una pregunta de DocIA+, de principio a fin</title>
+  <desc>La web envía la pregunta a la API. La API pide el vector a Titan, consulta ChromaDB con filtro, recibe fragmentos con distancia, compara la primera con el umbral y el redactor contesta citando.</desc>
+  <rect width="760" height="510" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Una pregunta, de principio a fin</text>
+<rect x="24" y="54" width="712" height="60" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="40" y="66" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="58" y="90" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">1</text>
+<text x="92" y="80" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">La web envía el texto a la API</text>
+<text x="92" y="100" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">«¿Cómo me matriculo?»</text>
+<text x="720" y="90" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">tema 1</text>
+<rect x="24" y="124" width="712" height="60" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="40" y="136" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="58" y="160" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">2</text>
+<text x="92" y="150" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">La API pide el vector a Titan</text>
+<text x="92" y="170" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">1024 números, longitud 1</text>
+<text x="720" y="160" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">tema 2</text>
+<rect x="24" y="194" width="712" height="60" rx="12" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<rect x="40" y="206" width="36" height="36" rx="10" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="58" y="230" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">3</text>
+<text x="92" y="220" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">La API consulta ChromaDB</text>
+<text x="92" y="240" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">vector + filtro where por curso + n_results = 5</text>
+<text x="720" y="230" text-anchor="end" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">temas 4 y 6</text>
+<rect x="24" y="264" width="712" height="60" rx="12" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<rect x="40" y="276" width="36" height="36" rx="10" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="58" y="300" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">4</text>
+<text x="92" y="290" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">ChromaDB devuelve fragmentos</text>
+<text x="92" y="310" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">oferta-iabd-2026_000 a distancia 0,002, y cuatro más</text>
+<text x="720" y="300" text-anchor="end" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">tema 3</text>
+<rect x="24" y="334" width="712" height="60" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="40" y="346" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="58" y="370" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">5</text>
+<text x="92" y="360" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">La API mira el primero</text>
+<text x="92" y="380" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">¿distancia menor que el umbral? Si no: «no lo sé»</text>
+<text x="720" y="370" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">tema 9</text>
+<rect x="24" y="404" width="712" height="60" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="40" y="416" width="36" height="36" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="58" y="440" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">6</text>
+<text x="92" y="430" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="650">El redactor contesta con cita</text>
+<text x="92" y="450" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">usa solo esos fragmentos; enlace al documento</text>
+<text x="720" y="440" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">PIA</text>
+<text x="24" y="490" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Solo los pasos 3 y 4 ocurren dentro de la base vectorial. El resto lo coordina la API.</text>
+</svg>
