@@ -68,33 +68,34 @@ def rect(x, y, w, h, fill=CARD, stroke=LINE, rx=12, sw=1.5):
 
 def pipeline() -> None:
     steps = [
-        ("1", "Pregunta", "¿Cómo me matriculo?", False),
-        ("2", "Mismo modelo de embeddings", "Titan v2, 1024, normalizado", False),
-        ("3", "ChromaDB", "Busca los fragmentos más cercanos", True),
-        ("4", "Fragmentos recuperados", "Los 3 a 5 más relevantes, con su texto", False),
-        ("5", "Modelo de lenguaje", "Redacta usando solo esos fragmentos", False),
-        ("6", "Respuesta con cita", "El usuario puede abrir el documento", False),
+        ("1", "Alguien pregunta en la web", "«¿Cómo me matriculo?»", False),
+        ("2", "La pregunta se convierte en números", "Titan v2 la traduce a 1024 números", False),
+        ("3", "ChromaDB busca lo más parecido", "entre los fragmentos de los documentos", True),
+        ("4", "Devuelve los 3 a 5 más cercanos", "«Formalización de matrícula», el primero", True),
+        ("5", "¿Está lo bastante cerca?", "si no, DocIA+ dice que no lo sabe", False),
+        ("6", "Un modelo redacta la respuesta", "con esos fragmentos, citando el documento", False),
     ]
-    parts = [text(36, 42, "Dónde está la base vectorial en DocIA+", 20, INK, 650)]
-    y = 64
+    parts = [text(24, 36, "Dónde está la base vectorial en DocIA+", 20, INK, 650)]
+    y = 56
     for number, title, detail, here in steps:
         fill = INDIGO_SOFT if here else CARD
         stroke = INDIGO if here else LINE
-        parts.append(rect(36, y, 448, 64, fill, stroke, 14, 2 if here else 1.5))
-        parts.append(rect(52, y + 14, 36, 36, INDIGO if here else INDIGO_SOFT, INDIGO, 10, 0))
-        parts.append(text(70, y + 38, number, 16, "#ffffff" if here else INDIGO, 700, "middle"))
-        parts.append(text(102, y + 28, title, 16, INK, 650))
-        parts.append(text(102, y + 48, detail, 13, MUTED))
+        parts.append(rect(24, y, 552, 60, fill, stroke, 12, 2 if here else 1.5))
+        parts.append(rect(40, y + 12, 36, 36, INDIGO if here else INDIGO_SOFT, INDIGO, 10, 0))
+        parts.append(text(58, y + 36, number, 16, "#ffffff" if here else INDIGO, 700, "middle"))
+        parts.append(text(92, y + 26, title, 15, INK, 650))
+        parts.append(text(92, y + 46, detail, 13, MUTED, 500))
         if here:
-            parts.append(text(468, y + 38, "esta unidad", 13, INDIGO, 650, "end"))
-        y += 76
+            parts.append(text(560, y + 36, "esta unidad", 13, INDIGO, 650, "end"))
+        y += 70
+    parts.append(text(24, y + 16, "La unidad también enseña a medir el paso 5 (tema 9). El paso 6 es de PIA.", 13, MUTED))
     save(
         "00-pipeline.svg",
         "\n".join(parts),
         "Recorrido de una pregunta en DocIA+",
-        "La pregunta se convierte en vector, ChromaDB devuelve fragmentos y otro modelo redacta la respuesta citando la fuente.",
-        520,
-        y + 8,
+        "La pregunta se convierte en números, ChromaDB devuelve los fragmentos más cercanos, se comprueba si están lo bastante cerca y otro modelo redacta la respuesta citando la fuente.",
+        600,
+        y + 36,
     )
 
 
