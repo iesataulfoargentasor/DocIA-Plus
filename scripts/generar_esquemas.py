@@ -359,6 +359,59 @@ def coseno() -> None:
     )
 
 
+def capas_hnsw() -> None:
+    letras = "ABCDEFGH"
+    xs = {letra: 60 + 80 * i for i, letra in enumerate(letras)}
+    capas = [
+        (48, "Capa 2 · pocos nodos, saltos largos", "AF"),
+        (160, "Capa 1 · más nodos", "ACFH"),
+        (272, "Capa 0 · todos los fragmentos", letras),
+    ]
+    ny = {0: 108, 1: 220, 2: 332}
+    tx, ty = 515, 366
+    parts = [text(24, 30, "Cómo baja una búsqueda por las capas de HNSW", 18, INK, 650)]
+    for index, (top, titulo, _) in enumerate(capas):
+        parts.append(rect(16, top, 688, 104, CARD, LINE, 12))
+        parts.append(text(28, top + 20, titulo, 13, MUTED, 700))
+    # vertical links between layers
+    for letra in letras:
+        for capa in (0, 1):
+            if letra in capas[capa][2] and letra in capas[capa + 1][2]:
+                color = ORANGE if letra == "F" else LINE
+                width = 3 if letra == "F" else 1.5
+                parts.append(
+                    f'<line x1="{xs[letra]}" y1="{ny[capa]}" x2="{xs[letra]}" y2="{ny[capa + 1]}" '
+                    f'stroke="{color}" stroke-width="{width}" stroke-dasharray="5 4"/>'
+                )
+    # horizontal links inside layers
+    for capa, (_, _, nodos) in enumerate(capas):
+        for a, b in zip(nodos, nodos[1:]):
+            en_camino = (capa == 0 and (a, b) == ("A", "F")) or (capa == 2 and (a, b) == ("F", "G"))
+            color = ORANGE if en_camino else LINE
+            width = 4 if en_camino else 2
+            parts.append(
+                f'<line x1="{xs[a]}" y1="{ny[capa]}" x2="{xs[b]}" y2="{ny[capa]}" stroke="{color}" stroke-width="{width}"/>'
+            )
+    for capa, (_, _, nodos) in enumerate(capas):
+        for letra in nodos:
+            fill = ORANGE if (letra == "F" or (letra == "A" and capa == 0) or (letra == "G" and capa == 2)) else INDIGO
+            parts.append(f'<circle cx="{xs[letra]}" cy="{ny[capa]}" r="13" fill="{fill}"/>')
+            parts.append(text(xs[letra], ny[capa] + 5, letra, 13, "#ffffff", 700, "middle"))
+    parts.append(f'<circle cx="{tx}" cy="{ty}" r="8" fill="{RED}"/>')
+    parts.append(text(tx + 16, ty + 5, "consulta", 13, RED, 700))
+    parts.append(text(24, 426, "1) Entra por la capa 2 en A y salta a F, que queda más cerca de la consulta.", 14, MUTED))
+    parts.append(text(24, 448, "2) Baja a la capa 1 y a la capa 0 en F. Allí mira sus vecinos y pasa a G, aún más cerca.", 14, MUTED))
+    parts.append(text(24, 470, "3) Los vecinos de G no mejoran. Se para y devuelve G sin haber visitado todos.", 14, MUTED))
+    save(
+        "04-capas-hnsw.svg",
+        "\n".join(parts),
+        "Una búsqueda HNSW baja por capas",
+        "La búsqueda entra por la capa con pocos nodos, salta al nodo más cercano a la consulta, baja de capa y afina en la capa completa hasta que ningún vecino mejora.",
+        720,
+        492,
+    )
+
+
 def dos_fases() -> None:
     parts = []
     bandas = [
@@ -1046,6 +1099,7 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    capas_hnsw()
     dos_fases()
     mapa_significado()
     texto_a_vector()
