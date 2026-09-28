@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568 484" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568 568" role="img">
   <title>Línea de tiempo de las bases de datos vectoriales</title>
-  <desc>La idea es de 1975, el índice de 2017, el producto de 2019 y el RAG de 2020. DocIA+ está en el uso famoso de 2023.</desc>
-  <rect width="568" height="484" rx="18" fill="#f4f6fb"/>
+  <desc>La idea es de 1975, los embeddings de 2013, el índice de 2017, el producto de 2019 y el RAG de 2020. DocIA+ está en el uso famoso de 2023.</desc>
+  <rect width="568" height="568" rx="18" fill="#f4f6fb"/>
   <defs>
     <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
@@ -11,30 +11,35 @@
       <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
     </marker>
   </defs>
-  <text x="28" y="36" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="20" font-weight="650">Cinco fechas, en orden</text>
+  <text x="28" y="36" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="20" font-weight="650">Seis fechas, en orden</text>
 <rect x="24" y="56" width="520" height="72" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <rect x="40" y="72" width="72" height="40" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
 <text x="76" y="98" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">1975</text>
 <text x="128" y="88" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">La idea</text>
-<text x="128" y="110" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Un documento ya podía ser un vector</text>
+<text x="128" y="110" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Un documento es un vector que cuenta palabras</text>
 <rect x="24" y="140" width="520" height="72" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <rect x="40" y="156" width="72" height="40" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
-<text x="76" y="182" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2017</text>
-<text x="128" y="172" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">El índice</text>
-<text x="128" y="194" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Faiss busca parecidos entre millones de fotos</text>
-<rect x="24" y="224" width="520" height="72" rx="14" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
-<rect x="40" y="240" width="72" height="40" rx="10" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
-<text x="76" y="266" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2019</text>
-<text x="128" y="256" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">La base de datos</text>
-<text x="128" y="278" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Milvus guarda, filtra y borra vectores</text>
-<rect x="24" y="308" width="520" height="72" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
-<rect x="40" y="324" width="72" height="40" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
-<text x="76" y="350" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2020</text>
-<text x="128" y="340" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">El RAG</text>
-<text x="128" y="362" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Recupera texto y después redacta</text>
+<text x="76" y="182" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2013</text>
+<text x="128" y="172" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">Los embeddings</text>
+<text x="128" y="194" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Una red neuronal coloca palabras por su significado</text>
+<rect x="24" y="224" width="520" height="72" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="40" y="240" width="72" height="40" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="76" y="266" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2017</text>
+<text x="128" y="256" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">El índice</text>
+<text x="128" y="278" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Faiss busca parecidos entre millones de vectores</text>
+<rect x="24" y="308" width="520" height="72" rx="14" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<rect x="40" y="324" width="72" height="40" rx="10" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="76" y="350" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2019</text>
+<text x="128" y="340" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">La base de datos</text>
+<text x="128" y="362" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Milvus guarda, filtra y borra vectores</text>
 <rect x="24" y="392" width="520" height="72" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <rect x="40" y="408" width="72" height="40" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
-<text x="76" y="434" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2023</text>
-<text x="128" y="424" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">Se hace famosa</text>
-<text x="128" y="446" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Los chatbots la usan. Ahí entra DocIA+</text>
+<text x="76" y="434" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2020</text>
+<text x="128" y="424" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">El RAG</text>
+<text x="128" y="446" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Recupera texto y después redacta</text>
+<rect x="24" y="476" width="520" height="72" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="40" y="492" width="72" height="40" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="0"/>
+<text x="76" y="518" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2023</text>
+<text x="128" y="508" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">Se hace famosa</text>
+<text x="128" y="530" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Los chatbots la usan. Ahí entra DocIA+</text>
 </svg>
