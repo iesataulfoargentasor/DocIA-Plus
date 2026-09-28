@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784 368" role="img">
+  <title>La unidad en cuatro bloques</title>
+  <desc>Primer contacto con la sesión 1 y por qué existen; comparar y buscar con los temas 1 a 4; guardar y mantener con los temas 5 a 8; medir y montar con los temas 9 y 10.</desc>
+  <rect width="784" height="368" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">La unidad en cuatro bloques</text>
+<rect x="24" y="52" width="172" height="268" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="24" y="52" width="172" height="44" rx="14" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<rect x="24" y="80" width="172" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="110" y="80" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Primer contacto</text>
+<text x="110" y="120" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">¿Qué es esto?</text>
+<rect x="36" y="136" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="110" y="155" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">Sesión 1</text>
+<rect x="36" y="172" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="110" y="191" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">Por qué existen</text>
+<rect x="36" y="280" width="148" height="28" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.2"/>
+<text x="110" y="299" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">Colab</text>
+<line x1="198" y1="186" x2="212" y2="186" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="214" y="52" width="172" height="268" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="214" y="52" width="172" height="44" rx="14" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<rect x="214" y="80" width="172" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="300" y="80" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Comparar y buscar</text>
+<text x="300" y="120" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">¿Qué se parece a qué?</text>
+<rect x="226" y="136" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="300" y="155" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">1. Literal y semántica</text>
+<rect x="226" y="172" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="300" y="191" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">2. Embeddings</text>
+<rect x="226" y="208" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="300" y="227" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">3. Geometría</text>
+<rect x="226" y="244" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="300" y="263" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">4. Índices</text>
+<rect x="226" y="280" width="148" height="28" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.2"/>
+<text x="300" y="299" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">Lab de geometría</text>
+<line x1="388" y1="186" x2="402" y2="186" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="404" y="52" width="172" height="268" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="404" y="52" width="172" height="44" rx="14" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<rect x="404" y="80" width="172" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="490" y="80" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Guardar y mantener</text>
+<text x="490" y="120" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">¿Cómo se organiza?</text>
+<rect x="416" y="136" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="490" y="155" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">5. Anatomía</text>
+<rect x="416" y="172" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="490" y="191" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">6. Metadatos</text>
+<rect x="416" y="208" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="490" y="227" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">7. Documento → vector</text>
+<rect x="416" y="244" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="490" y="263" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">8. Gestión</text>
+<rect x="416" y="280" width="148" height="28" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.2"/>
+<text x="490" y="299" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">Lab de ChromaDB</text>
+<line x1="578" y1="186" x2="592" y2="186" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="594" y="52" width="172" height="268" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<rect x="594" y="52" width="172" height="44" rx="14" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<rect x="594" y="80" width="172" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="0"/>
+<text x="680" y="80" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Medir y montar</text>
+<text x="680" y="120" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">¿Funciona? ¿Encaja?</text>
+<rect x="606" y="136" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="680" y="155" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">9. Calidad</text>
+<rect x="606" y="172" width="148" height="28" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
+<text x="680" y="191" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">10. ChromaDB en DocIA+</text>
+<rect x="606" y="280" width="148" height="28" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.2"/>
+<text x="680" y="299" text-anchor="middle" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700">Ejercicios</text>
+<text x="24" y="348" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">En verde, la práctica que cierra cada bloque. Unas siete sesiones en total.</text>
+</svg>

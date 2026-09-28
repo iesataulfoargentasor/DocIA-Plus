@@ -360,6 +360,41 @@ def coseno() -> None:
     )
 
 
+def mapa_unidad() -> None:
+    bloques = [
+        ("Primer contacto", "¿Qué es esto?", ["Sesión 1", "Por qué existen"], "Colab"),
+        ("Comparar y buscar", "¿Qué se parece a qué?", ["1. Literal y semántica", "2. Embeddings", "3. Geometría", "4. Índices"], "Lab de geometría"),
+        ("Guardar y mantener", "¿Cómo se organiza?", ["5. Anatomía", "6. Metadatos", "7. Documento → vector", "8. Gestión"], "Lab de ChromaDB"),
+        ("Medir y montar", "¿Funciona? ¿Encaja?", ["9. Calidad", "10. ChromaDB en DocIA+"], "Ejercicios"),
+    ]
+    parts = [text(24, 34, "La unidad en cuatro bloques", 18, INK, 650)]
+    for i, (titulo, pregunta, temas, practica) in enumerate(bloques):
+        x = 24 + i * 190
+        parts.append(rect(x, 52, 172, 268, CARD, LINE, 14))
+        parts.append(rect(x, 52, 172, 44, INDIGO, INDIGO, 14, 0))
+        parts.append(rect(x, 80, 172, 16, INDIGO, INDIGO, 0, 0))
+        parts.append(text(x + 86, 80, titulo, 14, "#ffffff", 700, "middle"))
+        parts.append(text(x + 86, 120, pregunta, 13, INDIGO, 650, "middle"))
+        for j, tema in enumerate(temas):
+            parts.append(rect(x + 12, 136 + j * 36, 148, 28, INDIGO_SOFT, INDIGO_SOFT, 8, 0))
+            parts.append(text(x + 86, 155 + j * 36, tema, 12, INK, 600, "middle"))
+        parts.append(rect(x + 12, 280, 148, 28, GREEN_SOFT, GREEN, 8, 1.2))
+        parts.append(text(x + 86, 299, practica, 12, GREEN, 700, "middle"))
+        if i < 3:
+            parts.append(
+                f'<line x1="{x + 174}" y1="186" x2="{x + 188}" y2="186" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>'
+            )
+    parts.append(text(24, 348, "En verde, la práctica que cierra cada bloque. Unas siete sesiones en total.", 13, MUTED))
+    save(
+        "00-mapa-unidad.svg",
+        "\n".join(parts),
+        "La unidad en cuatro bloques",
+        "Primer contacto con la sesión 1 y por qué existen; comparar y buscar con los temas 1 a 4; guardar y mantener con los temas 5 a 8; medir y montar con los temas 9 y 10.",
+        784,
+        368,
+    )
+
+
 def recorrido_pregunta() -> None:
     pasos = [
         ("1", "La web envía el texto a la API", "«¿Cómo me matriculo?»", "tema 1", False),
@@ -1361,6 +1396,7 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    mapa_unidad()
     recorrido_pregunta()
     tres_clientes()
     umbral()
