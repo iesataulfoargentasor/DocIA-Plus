@@ -1299,13 +1299,14 @@ def origen_orden() -> None:
 
 def origen_linea() -> None:
     steps = [
-        ("1975", "La idea", "Un documento ya podía ser un vector"),
-        ("2017", "El índice", "Faiss busca parecidos entre millones de fotos"),
+        ("1975", "La idea", "Un documento es un vector que cuenta palabras"),
+        ("2013", "Los embeddings", "Una red neuronal coloca palabras por su significado"),
+        ("2017", "El índice", "Faiss busca parecidos entre millones de vectores"),
         ("2019", "La base de datos", "Milvus guarda, filtra y borra vectores"),
         ("2020", "El RAG", "Recupera texto y después redacta"),
         ("2023", "Se hace famosa", "Los chatbots la usan. Ahí entra DocIA+"),
     ]
-    parts = [text(28, 36, "Cinco fechas, en orden", 20, INK, 650)]
+    parts = [text(28, 36, "Seis fechas, en orden", 20, INK, 650)]
     y = 56
     for year, title, detail in steps:
         here = year == "2019"
@@ -1321,9 +1322,52 @@ def origen_linea() -> None:
         "00-origen-linea.svg",
         "\n".join(parts),
         "Línea de tiempo de las bases de datos vectoriales",
-        "La idea es de 1975, el índice de 2017, el producto de 2019 y el RAG de 2020. DocIA+ está en el uso famoso de 2023.",
+        "La idea es de 1975, los embeddings de 2013, el índice de 2017, el producto de 2019 y el RAG de 2020. DocIA+ está en el uso famoso de 2023.",
         568,
         y + 8,
+    )
+
+
+def contar_vs_embedding() -> None:
+    palabras = ["cómo", "me", "matriculo", "procedimiento", "formalización", "matrícula"]
+    p = [1, 1, 1, 0, 0, 0]
+    f = [0, 0, 0, 1, 1, 1]
+    parts = [text(24, 34, "Dos formas de convertir un texto en vector", 18, INK, 650)]
+    parts.append(rect(16, 52, 364, 300, RED_SOFT, "#f5c6c2", 14))
+    parts.append(text(32, 78, "1975 · contar palabras", 15, RED, 700))
+    parts.append(text(216, 104, "P", 14, INK, 700, "middle"))
+    parts.append(text(296, 104, "F", 14, INK, 700, "middle"))
+    for i, palabra in enumerate(palabras):
+        y = 116 + i * 28
+        parts.append(rect(32, y, 332, 24, CARD, LINE, 6, 1))
+        parts.append(text(44, y + 17, palabra, 13, INK, 500))
+        parts.append(text(216, y + 17, str(p[i]), 13, INK if p[i] else MUTED, 700 if p[i] else 400, "middle"))
+        parts.append(text(296, y + 17, str(f[i]), 13, INK if f[i] else MUTED, 700 if f[i] else 400, "middle"))
+    parts.append(text(32, 308, "Ninguna palabra en común:", 13, INK, 600))
+    parts.append(text(32, 330, "coseno 0, «no se parecen nada»", 14, RED, 700))
+
+    parts.append(rect(396, 52, 348, 300, GREEN_SOFT, "#b7dfb9", 14))
+    parts.append(text(412, 78, "2013 en adelante · embedding", 15, GREEN, 700))
+    ox, oy, s = 440, 280, 34
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox + 200}" y2="{oy}" stroke="{MUTED}" stroke-width="1.2"/>')
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox}" y2="{oy - 170}" stroke="{MUTED}" stroke-width="1.2"/>')
+    parts.append(text(ox + 200, oy + 18, "matrícula", 12, MUTED, 500, "end"))
+    parts.append(text(ox + 6, oy - 158, "cafetería", 12, MUTED, 500))
+    for (vx, vy), color, etiqueta, dx, dy in (((4, 1), INDIGO, "P (4, 1)", 8, 4), ((3, 1), GREEN, "F (3, 1)", -18, -12)):
+        parts.append(
+            f'<line x1="{ox}" y1="{oy}" x2="{ox + vx * s}" y2="{oy - vy * s}" stroke="{color}" stroke-width="3" marker-end="url(#flecha)"/>'
+        )
+        parts.append(text(ox + vx * s + dx, oy - vy * s + dy, etiqueta, 13, color, 700))
+    parts.append(text(412, 308, "Apuntan casi al mismo sitio:", 13, INK, 600))
+    parts.append(text(412, 330, "coseno 0,997, «se parecen mucho»", 14, GREEN, 700))
+    parts.append(text(24, 380, "P = «¿Cómo me matriculo?»   F = «Procedimiento de formalización de matrícula»", 13, MUTED))
+    save(
+        "00-contar-vs-embedding.svg",
+        "\n".join(parts),
+        "Contar palabras frente a un embedding",
+        "Contando palabras, la pregunta y el documento no comparten ninguna y su coseno es 0. Con un embedding, los dos vectores apuntan casi al mismo sitio y su coseno es 0,997.",
+        760,
+        400,
     )
 
 
@@ -1438,6 +1482,7 @@ def main() -> None:
     perfiles()
     coseno()
     modelo_importa()
+    contar_vs_embedding()
     mapa_unidad()
     recorrido_pregunta()
     tres_clientes()
