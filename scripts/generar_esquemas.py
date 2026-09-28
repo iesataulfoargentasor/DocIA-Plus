@@ -359,6 +359,109 @@ def coseno() -> None:
     )
 
 
+def mapa_significado() -> None:
+    ox, oy, k = 70, 330, 52
+
+    def px(x):
+        return ox + x * k
+
+    def py(y):
+        return oy - y * k
+
+    puntos = [
+        ("P", "Pregunta: ¿cómo me matriculo?", (4, 1), INDIGO),
+        ("F", "Procedimiento de formalización de matrícula", (3, 1), TEAL),
+        ("I", "Plazo de inscripción en el ciclo", (5, 0), GREEN),
+        ("C", "Menú diario de la cafetería", (1, 4), ORANGE),
+        ("B", "Precio del bocadillo", (0, 3), RED),
+    ]
+    parts = [text(24, 34, "Un mapa de significado con dos ejes inventados", 18, INK, 650)]
+    parts.append(
+        f'<ellipse cx="{px(4)}" cy="{py(0.6)}" rx="{1.75 * k}" ry="{1.0 * k}" fill="{INDIGO_SOFT}" '
+        f'stroke="{INDIGO}" stroke-width="1.5" stroke-dasharray="6 5"/>'
+    )
+    parts.append(
+        f'<ellipse cx="{px(0.6)}" cy="{py(3.5)}" rx="{1.2 * k}" ry="{1.3 * k}" fill="{GREEN_SOFT}" '
+        f'stroke="{GREEN}" stroke-width="1.5" stroke-dasharray="6 5"/>'
+    )
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{px(6.2)}" y2="{oy}" stroke="{INK}" stroke-width="1.5"/>')
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox}" y2="{py(4.7)}" stroke="{INK}" stroke-width="1.5"/>')
+    for i in range(1, 6):
+        parts.append(f'<line x1="{px(i)}" y1="{oy}" x2="{px(i)}" y2="{oy + 5}" stroke="{MUTED}" stroke-width="1"/>')
+        parts.append(text(px(i), oy + 20, str(i), 12, MUTED, 500, "middle"))
+    for j in range(1, 5):
+        parts.append(f'<line x1="{ox - 5}" y1="{py(j)}" x2="{ox}" y2="{py(j)}" stroke="{MUTED}" stroke-width="1"/>')
+        parts.append(text(ox - 12, py(j) + 4, str(j), 12, MUTED, 500, "end"))
+    parts.append(text(px(3.1), oy + 44, "eje 1: cuánto habla de matrícula  →", 13, MUTED, 500, "middle"))
+    parts.append(
+        f'<text x="24" y="{py(2.4)}" text-anchor="middle" fill="{MUTED}" font-family="Segoe UI, sans-serif" '
+        f'font-size="13" font-weight="500" transform="rotate(-90 24 {py(2.4)})">eje 2: cuánto habla de cafetería  →</text>'
+    )
+    for key, _, (x, y), color in puntos:
+        parts.append(f'<circle cx="{px(x)}" cy="{py(y)}" r="8" fill="{color}"/>')
+        parts.append(text(px(x), py(y) - 14, key, 16, color, 800, "middle"))
+    parts.append(text(px(4), py(1.85), "textos de matrícula", 13, INDIGO, 700, "middle"))
+    parts.append(text(px(0.65), py(2.05), "textos de cafetería", 13, GREEN, 700, "middle"))
+    parts.append(rect(452, 70, 236, 214, CARD, LINE, 14))
+    lines = [
+        ("Cada texto es un punto.", INK, 650),
+        ("Los que hablan de lo mismo", MUTED, 400),
+        ("quedan juntos.", MUTED, 400),
+        ("", INK, 400),
+        ("La pregunta P cae en el grupo", MUTED, 400),
+        ("de matrícula, aunque no repita", MUTED, 400),
+        ("las palabras de F ni de I.", MUTED, 400),
+        ("", INK, 400),
+        ("Buscar es mirar qué hay cerca.", INK, 650),
+    ]
+    y = 98
+    for content, color, weight in lines:
+        if content:
+            parts.append(text(468, y, content, 14, color, weight))
+        y += 20
+    parts.append(rect(24, 400, 664, 116, CARD, LINE, 12))
+    for index, (key, label, (x, y), color) in enumerate(puntos):
+        parts.append(text(40, 426 + index * 20, f"{key}  {label}  ({x}, {y})", 13, color, 700))
+    save(
+        "02-mapa-significado.svg",
+        "\n".join(parts),
+        "Un mapa de significado con dos ejes",
+        "Cinco textos colocados según cuánto hablan de matrícula y de cafetería. Los textos de matrícula quedan juntos, incluida la pregunta, y los de cafetería en otra zona.",
+        712,
+        536,
+    )
+
+
+def texto_a_vector() -> None:
+    parts = [text(24, 34, "Qué pasa dentro de la llamada al modelo", 18, INK, 650)]
+    boxes = [
+        (24, "1. Texto", INDIGO_SOFT, INDIGO, ["«¿Cómo me", "matriculo?»"], "lo que enviamos"),
+        (214, "2. Tokens", CARD, LINE, ["¿ · Cómo · me", "· matric · ulo · ?"], "trozos pequeños"),
+        (404, "3. Modelo", CARD, LINE, ["red neuronal", "ya entrenada"], "no la entrenamos"),
+        (594, "4. Vector", GREEN_SOFT, GREEN, ["[0,021  −0,087", "0,154  … ]"], "1024 números"),
+    ]
+    for x, title, fill, stroke, lines, caption in boxes:
+        parts.append(rect(x, 64, 162, 130, fill, stroke, 14, 1.8))
+        parts.append(text(x + 81, 92, title, 16, INK, 700, "middle"))
+        for i, content in enumerate(lines):
+            parts.append(text(x + 81, 126 + i * 24, content, 14, INK, 500, "middle"))
+        parts.append(text(x + 81, 218, caption, 13, MUTED, 500, "middle"))
+    for x in (186, 376, 566):
+        parts.append(
+            f'<line x1="{x + 2}" y1="129" x2="{x + 26}" y2="129" stroke="{INDIGO}" stroke-width="2.5" marker-end="url(#flecha)"/>'
+        )
+    parts.append(text(24, 258, "Los tokens y los números de la figura son ilustrativos: el corte real y los valores dependen del modelo.", 13, MUTED))
+    parts.append(text(24, 280, "Lo importante es que siempre entra un texto de cualquier largo y sale una lista de longitud fija.", 13, MUTED))
+    save(
+        "02-texto-a-vector.svg",
+        "\n".join(parts),
+        "Del texto al vector en cuatro pasos",
+        "El texto se parte en tokens, el modelo los procesa y devuelve una lista de números de longitud fija.",
+        780,
+        302,
+    )
+
+
 GEO_PUNTOS = [
     ("P", "Pregunta: ¿cómo me matriculo?", (4, 1), INDIGO),
     ("F", "Formalización de matrícula", (3, 1), TEAL),
@@ -908,6 +1011,8 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    mapa_significado()
+    texto_a_vector()
     flechas_2d()
     normalizar_2d()
     indices()

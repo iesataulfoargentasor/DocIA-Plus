@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 302" role="img">
+  <title>Del texto al vector en cuatro pasos</title>
+  <desc>El texto se parte en tokens, el modelo los procesa y devuelve una lista de números de longitud fija.</desc>
+  <rect width="780" height="302" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Qué pasa dentro de la llamada al modelo</text>
+<rect x="24" y="64" width="162" height="130" rx="14" fill="#e8eaf6" stroke="#3949ab" stroke-width="1.8"/>
+<text x="105" y="92" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">1. Texto</text>
+<text x="105" y="126" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">«¿Cómo me</text>
+<text x="105" y="150" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">matriculo?»</text>
+<text x="105" y="218" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">lo que enviamos</text>
+<rect x="214" y="64" width="162" height="130" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.8"/>
+<text x="295" y="92" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">2. Tokens</text>
+<text x="295" y="126" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">¿ · Cómo · me</text>
+<text x="295" y="150" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">· matric · ulo · ?</text>
+<text x="295" y="218" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">trozos pequeños</text>
+<rect x="404" y="64" width="162" height="130" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.8"/>
+<text x="485" y="92" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">3. Modelo</text>
+<text x="485" y="126" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">red neuronal</text>
+<text x="485" y="150" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">ya entrenada</text>
+<text x="485" y="218" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">no la entrenamos</text>
+<rect x="594" y="64" width="162" height="130" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.8"/>
+<text x="675" y="92" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">4. Vector</text>
+<text x="675" y="126" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">[0,021  −0,087</text>
+<text x="675" y="150" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">0,154  … ]</text>
+<text x="675" y="218" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">1024 números</text>
+<line x1="188" y1="129" x2="212" y2="129" stroke="#3949ab" stroke-width="2.5" marker-end="url(#flecha)"/>
+<line x1="378" y1="129" x2="402" y2="129" stroke="#3949ab" stroke-width="2.5" marker-end="url(#flecha)"/>
+<line x1="568" y1="129" x2="592" y2="129" stroke="#3949ab" stroke-width="2.5" marker-end="url(#flecha)"/>
+<text x="24" y="258" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Los tokens y los números de la figura son ilustrativos: el corte real y los valores dependen del modelo.</text>
+<text x="24" y="280" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Lo importante es que siempre entra un texto de cualquier largo y sale una lista de longitud fija.</text>
+</svg>
