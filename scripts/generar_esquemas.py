@@ -359,6 +359,136 @@ def coseno() -> None:
     )
 
 
+GEO_PUNTOS = [
+    ("P", "Pregunta: ¿cómo me matriculo?", (4, 1), INDIGO),
+    ("F", "Formalización de matrícula", (3, 1), TEAL),
+    ("C", "Menú de la cafetería", (1, 4), ORANGE),
+    ("G", "Guía larga de matrícula", (12, 3), GREEN),
+]
+
+
+def flechas_2d() -> None:
+    ox, oy = 70, 330
+
+    def px(x):
+        return ox + x * 44
+
+    def py(y):
+        return oy - y * 55
+
+    parts = [text(24, 34, "Cuatro textos como flechas en dos ejes", 18, INK, 650)]
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{px(13.2)}" y2="{oy}" stroke="{INK}" stroke-width="1.5"/>')
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox}" y2="{py(4.9)}" stroke="{INK}" stroke-width="1.5"/>')
+    for i in range(1, 13):
+        parts.append(f'<line x1="{px(i)}" y1="{oy}" x2="{px(i)}" y2="{oy + 5}" stroke="{MUTED}" stroke-width="1"/>')
+        if i in (1, 3, 4, 12):
+            parts.append(text(px(i), oy + 20, str(i), 12, MUTED, 500, "middle"))
+    for j in range(1, 5):
+        parts.append(f'<line x1="{ox - 5}" y1="{py(j)}" x2="{ox}" y2="{py(j)}" stroke="{MUTED}" stroke-width="1"/>')
+        parts.append(text(ox - 12, py(j) + 4, str(j), 12, MUTED, 500, "end"))
+    parts.append(text(px(6.5), oy + 42, "eje 1: habla de matrícula  →", 13, MUTED, 500, "middle"))
+    parts.append(
+        f'<text x="26" y="{py(2.4)}" text-anchor="middle" fill="{MUTED}" font-family="Segoe UI, sans-serif" '
+        f'font-size="13" font-weight="500" transform="rotate(-90 26 {py(2.4)})">eje 2: habla de cafetería  →</text>'
+    )
+    for key, label, (x, y), color in sorted(GEO_PUNTOS, key=lambda item: -abs(complex(*item[2]))):
+        parts.append(
+            f'<line x1="{ox}" y1="{oy}" x2="{px(x)}" y2="{py(y)}" stroke="{color}" stroke-width="{5 if key == "P" else 3}"/>'
+        )
+        parts.append(f'<circle cx="{px(x)}" cy="{py(y)}" r="6" fill="{color}"/>')
+    p = GEO_PUNTOS[0][2]
+    parts.append(
+        f'<line x1="{px(p[0])}" y1="{py(p[1])}" x2="{px(1)}" y2="{py(4)}" '
+        f'stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 5"/>'
+    )
+    parts.append(text((px(4) + px(1)) / 2 + 14, (py(1) + py(4)) / 2, "P a C: 4,24", 13, RED, 700))
+    sx, sy = 5, 15
+    parts.append(
+        f'<line x1="{px(4) + sx}" y1="{py(1) + sy}" x2="{px(12) + sx}" y2="{py(3) + sy}" '
+        f'stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 5"/>'
+    )
+    parts.append(text((px(4) + px(12)) / 2 + 20, (py(1) + py(3)) / 2 + 36, "P a G: 8,25", 13, RED, 700, "middle"))
+    labels = {
+        "P": (px(4) - 2, py(1) + 24, "middle"),
+        "F": (px(3) - 4, py(1) - 12, "middle"),
+        "C": (px(1) + 12, py(4) - 6, "start"),
+        "G": (px(12), py(3) - 14, "middle"),
+    }
+    for key, _, _, color in GEO_PUNTOS:
+        lx, ly, anchor = labels[key]
+        parts.append(text(lx, ly, key, 16, color, 800, anchor))
+    parts.append(rect(24, 388, 632, 64, CARD, LINE, 12))
+    for index, (key, label, (x, y), color) in enumerate(GEO_PUNTOS):
+        col, row = index % 2, index // 2
+        parts.append(text(40 + col * 316, 414 + row * 24, f"{key}  {label}  ({x}, {y})", 13, color, 700))
+    parts.append(text(24, 480, "La guía G apunta al mismo sitio que la pregunta P, pero es tres veces más larga.", 14, MUTED))
+    parts.append(text(24, 502, "En línea recta queda más lejos que la cafetería. La distancia euclídea se equivoca.", 14, MUTED))
+    save(
+        "03-flechas.svg",
+        "\n".join(parts),
+        "Cuatro textos como flechas en dos ejes",
+        "P, F y G apuntan hacia matrícula; C hacia cafetería. G es tres veces más larga que P. En línea recta, P queda a 8,25 de G y a 4,24 de C.",
+        680,
+        522,
+    )
+
+
+def normalizar_2d() -> None:
+    ox, oy, radio = 70, 320, 250
+    parts = [text(24, 34, "Normalizar: todas las flechas a longitud 1", 18, INK, 650)]
+    parts.append(
+        f'<path d="M {ox + radio} {oy} A {radio} {radio} 0 0 0 {ox} {oy - radio}" fill="none" '
+        f'stroke="{LINE}" stroke-width="2" stroke-dasharray="5 5"/>'
+    )
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox + radio + 20}" y2="{oy}" stroke="{INK}" stroke-width="1.5"/>')
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox}" y2="{oy - radio - 20}" stroke="{INK}" stroke-width="1.5"/>')
+    parts.append(text(ox + radio, oy + 20, "1", 12, MUTED, 500, "middle"))
+    parts.append(text(ox - 12, oy - radio + 4, "1", 12, MUTED, 500, "end"))
+    unit = []
+    for key, label, (x, y), color in GEO_PUNTOS:
+        n = (x * x + y * y) ** 0.5
+        unit.append((key, color, x / n, y / n))
+    for key, color, ux, uy in unit:
+        if key == "G":
+            continue
+        tx, ty = ox + ux * radio, oy - uy * radio
+        parts.append(f'<line x1="{ox}" y1="{oy}" x2="{tx:.1f}" y2="{ty:.1f}" stroke="{color}" stroke-width="3"/>')
+        parts.append(f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="6" fill="{color}"/>')
+    p_tip = (ox + unit[0][2] * radio, oy - unit[0][3] * radio)
+    f_tip = (ox + unit[1][2] * radio, oy - unit[1][3] * radio)
+    c_tip = (ox + unit[2][2] * radio, oy - unit[2][3] * radio)
+    parts.append(f'<circle cx="{p_tip[0]:.1f}" cy="{p_tip[1]:.1f}" r="11" fill="none" stroke="{GREEN}" stroke-width="2.5"/>')
+    parts.append(text(p_tip[0] - 30, p_tip[1] + 38, "P y G, en el mismo punto", 13, INDIGO, 700))
+    parts.append(text(f_tip[0] + 16, f_tip[1] - 6, "F, muy cerca", 13, TEAL, 700))
+    parts.append(text(c_tip[0] + 14, c_tip[1] + 2, "C, lejos", 13, ORANGE, 700))
+    parts.append(rect(456, 70, 248, 214, CARD, LINE, 14))
+    lines = [
+        ("Se divide cada flecha", INK, 650),
+        ("por su longitud.", INK, 650),
+        ("", INK, 400),
+        ("La dirección no cambia.", MUTED, 400),
+        ("La longitud pasa a ser 1.", MUTED, 400),
+        ("", INK, 400),
+        ("Ahora la línea recta y el", MUTED, 400),
+        ("ángulo dan el mismo orden:", MUTED, 400),
+        ("G, F y después C.", INK, 650),
+    ]
+    y = 100
+    for content, color, weight in lines:
+        if content:
+            parts.append(text(474, y, content, 14, color, weight))
+        y += 21
+    parts.append(text(24, 364, "Titan normaliza en la propia llamada. Por eso en DocIA+ la longitud del texto no manda.", 14, MUTED))
+    save(
+        "03-normalizar.svg",
+        "\n".join(parts),
+        "Normalizar deja todas las flechas con longitud 1",
+        "Tras dividir por la longitud, la pregunta y la guía larga caen en el mismo punto del arco. La formalización queda muy cerca y la cafetería, lejos.",
+        720,
+        384,
+    )
+
+
 def indices() -> None:
     parts = []
     parts.append(rect(20, 20, 340, 320, CARD, LINE, 16))
@@ -778,6 +908,8 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    flechas_2d()
+    normalizar_2d()
     indices()
     registro()
     filtro()

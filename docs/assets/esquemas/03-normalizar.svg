@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" role="img">
+  <title>Normalizar deja todas las flechas con longitud 1</title>
+  <desc>Tras dividir por la longitud, la pregunta y la guía larga caen en el mismo punto del arco. La formalización queda muy cerca y la cafetería, lejos.</desc>
+  <rect width="720" height="384" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Normalizar: todas las flechas a longitud 1</text>
+<path d="M 320 320 A 250 250 0 0 0 70 70" fill="none" stroke="#d5daf0" stroke-width="2" stroke-dasharray="5 5"/>
+<line x1="70" y1="320" x2="340" y2="320" stroke="#1c2340" stroke-width="1.5"/>
+<line x1="70" y1="320" x2="70" y2="50" stroke="#1c2340" stroke-width="1.5"/>
+<text x="320" y="340" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">1</text>
+<text x="58" y="74" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">1</text>
+<line x1="70" y1="320" x2="312.5" y2="259.4" stroke="#3949ab" stroke-width="3"/>
+<circle cx="312.5" cy="259.4" r="6" fill="#3949ab"/>
+<line x1="70" y1="320" x2="307.2" y2="240.9" stroke="#00796b" stroke-width="3"/>
+<circle cx="307.2" cy="240.9" r="6" fill="#00796b"/>
+<line x1="70" y1="320" x2="130.6" y2="77.5" stroke="#ef6c00" stroke-width="3"/>
+<circle cx="130.6" cy="77.5" r="6" fill="#ef6c00"/>
+<circle cx="312.5" cy="259.4" r="11" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<text x="282.53562503633293" y="297.36609374091677" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">P y G, en el mismo punto</text>
+<text x="323.1708245126284" y="234.94305849579052" text-anchor="start" fill="#00796b" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">F, muy cerca</text>
+<text x="144.63390625908323" y="79.46437496366704" text-anchor="start" fill="#ef6c00" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">C, lejos</text>
+<rect x="456" y="70" width="248" height="214" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="474" y="100" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Se divide cada flecha</text>
+<text x="474" y="121" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">por su longitud.</text>
+<text x="474" y="163" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">La dirección no cambia.</text>
+<text x="474" y="184" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">La longitud pasa a ser 1.</text>
+<text x="474" y="226" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Ahora la línea recta y el</text>
+<text x="474" y="247" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">ángulo dan el mismo orden:</text>
+<text x="474" y="268" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">G, F y después C.</text>
+<text x="24" y="364" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Titan normaliza en la propia llamada. Por eso en DocIA+ la longitud del texto no manda.</text>
+</svg>
