@@ -878,10 +878,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#el-laboratorio-de-esta-unidad" class="md-nav__link">
+  <a href="#dos-laboratorios-en-este-orden" class="md-nav__link">
     <span class="md-ellipsis">
       
-        El laboratorio de esta unidad
+        Dos laboratorios, en este orden
       
     </span>
   </a>
@@ -992,10 +992,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#el-laboratorio-de-esta-unidad" class="md-nav__link">
+  <a href="#dos-laboratorios-en-este-orden" class="md-nav__link">
     <span class="md-ellipsis">
       
-        El laboratorio de esta unidad
+        Dos laboratorios, en este orden
       
     </span>
   </a>
@@ -1093,14 +1093,15 @@
 <p>En el proyecto, ChromaDB y FastAPI comparten una instancia pequeña (dos vCPU y 4 GB de RAM). Para el volumen del IES sobra, siempre que no se convierta la máquina en el sitio donde también se entrenan modelos. El índice HNSW de unos miles de vectores de 1024 floats ocupa decenas de megabytes, no gigabytes.</p>
 <p>La base escucha en la red privada de esa máquina. No se publica ChromaDB a internet para que el widget de la web le consulte directo. Quien consulta es la API, que aplica autenticación en las operaciones de escritura. La lectura que hace el chatbot pasa por la API. Abrir el puerto de ChromaDB al público dejaría la colección de documentos internos al alcance de cualquiera, con o sin embeddings de por medio.</p>
 <p>Los originales y las copias de la base van a un almacén de objetos distinto. Si la instancia se rehace, se restaura la copia o se reindexa desde los originales. Las dos vías tienen que estar probadas antes de dar el hito por cumplido.</p>
-<h2 id="el-laboratorio-de-esta-unidad">El laboratorio de esta unidad<a class="headerlink" href="#el-laboratorio-de-esta-unidad" title="Permanent link">&para;</a></h2>
-<p>El laboratorio no llama a Titan y no necesita cuenta de AWS. Usa vectores escritos a mano para separar dos aprendizajes que, si se hacen el mismo día, se confunden:</p>
+<h2 id="dos-laboratorios-en-este-orden">Dos laboratorios, en este orden<a class="headerlink" href="#dos-laboratorios-en-este-orden" title="Permanent link">&para;</a></h2>
+<p>La sesión 1 ya ha usado un modelo de verdad (<code>all-MiniLM-L6-v2</code>, 384 números) y ChromaDB en Colab, con frases de ejercicio y los códigos <code>g1</code> a <code>g5</code>. La distancia de aquel primer cuaderno es una resta de listas. La de ChromaDB, en espacio coseno, es 1 menos el coseno. No se comparan.</p>
+<p>Después de esa sesión, el laboratorio local separa otras dos cosas, sin descargar un modelo y con vectores escritos a mano:</p>
 <ol>
 <li><strong>Geometría</strong>, en Python puro: producto escalar, norma y coseno, y un ranking de cuatro textos del estilo de los documentos del centro.</li>
-<li><strong>ChromaDB</strong>, en un directorio local: crear la colección en espacio coseno, hacer <code>upsert</code>, consultar con filtro de categoría, borrar un huérfano y comprobar que dos vectores iguales dan distancia casi nula.</li>
+<li><strong>ChromaDB local</strong>: crear la colección en espacio coseno, hacer <code>upsert</code>, consultar con filtro <code>g4</code>, borrar un huérfano y comprobar que dos vectores iguales dan distancia 0.</li>
 </ol>
-<p>Instrucciones, salida esperada y qué observar en clase: <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md" target="_blank" rel="noopener">laboratorio/README.md</a>.</p>
-<p>Cuando esas dos prácticas salen, el grupo ha visto la base de datos sin el ruido de la nube. El paso siguiente, ya fuera de esta unidad, es sustituir el vector escrito a mano por la salida real de Titan y el texto de juguete por un documento real de una de las cinco categorías. El esquema de metadatos y las operaciones no cambian.</p>
+<p>Instrucciones y qué observar: <a href="https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md" target="_blank" rel="noopener">laboratorio/README.md</a>.</p>
+<p>Cuando el script local sale bien, el grupo ha visto las operaciones de la base sin el ruido de la nube. El paso siguiente, ya fuera de esta unidad, es sustituir el vector escrito a mano por la salida real de Titan y el texto de ejercicio por un documento de una de las cinco categorías. El esquema de metadatos y las operaciones no cambian.</p>
 <h2 id="que-viene-inmediatamente-despues">Qué viene inmediatamente después<a class="headerlink" href="#que-viene-inmediatamente-despues" title="Permanent link">&para;</a></h2>
 <p>El trabajo de implementación, cuando se cierre esta unidad, sigue este orden:</p>
 <ol>

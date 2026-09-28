@@ -1078,7 +1078,7 @@
 
 
 <h1 id="8-operaciones-de-gestion">8. Operaciones de gestión<a class="headerlink" href="#8-operaciones-de-gestion" title="Permanent link">&para;</a></h1>
-<p>Estas son las operaciones que el pipeline de BDA va a usar sobre la colección definida por SBD. El laboratorio 2 las ejecuta con vectores de juguete, para ver el efecto sin Titan.</p>
+<p>Estas son las operaciones que el pipeline de BDA va a usar sobre la colección definida por SBD. El script <code>laboratorio/02_chromadb_coleccion.py</code> las ejecuta con vectores escritos a mano, para ver el efecto sin Titan. No es el cuaderno de Colab de la sesión 1.</p>
 <h2 id="alta-e-insercion-idempotente">Alta e inserción idempotente<a class="headerlink" href="#alta-e-insercion-idempotente" title="Permanent link">&para;</a></h2>
 <p><code>add</code> inserta. Si el identificador ya existe, ChromaDB lo rechaza. En un pipeline que puede ejecutarse dos veces —un fallo a medias, un alumno que relanza el script— ese rechazo es una fuente de errores.</p>
 <p><code>upsert</code> inserta o sustituye el registro con ese identificador. Es la operación por defecto de DocIA+. Indexar dos veces el mismo fragmento deja un solo registro, con el vector y los metadatos de la última ejecución.</p>
