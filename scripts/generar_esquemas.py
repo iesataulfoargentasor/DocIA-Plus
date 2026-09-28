@@ -359,6 +359,51 @@ def coseno() -> None:
     )
 
 
+def umbral() -> None:
+    x0, escala = 60, 1500
+
+    def px(d):
+        return x0 + d * escala
+
+    filas = [
+        (80, "Con el fragmento «Índice» del PDF", [0.002, 0.002, 0.002, 0.151], [0.013], None),
+        (230, "Tras limpiar el índice", [0.002, 0.002, 0.002, 0.220], [0.307], 0.26),
+    ]
+    parts = [text(24, 32, "Distancia del primer resultado: preguntas con respuesta y sin respuesta", 17, INK, 650)]
+    parts.append(f'<circle cx="40" cy="52" r="7" fill="{GREEN}"/>')
+    parts.append(text(54, 57, "pregunta con respuesta en los documentos", 13, INK, 500))
+    parts.append(f'<circle cx="360" cy="52" r="7" fill="{RED}"/>')
+    parts.append(text(374, 57, "pregunta sin respuesta", 13, INK, 500))
+    for top, titulo, positivos, negativos, corte in filas:
+        parts.append(rect(16, top, 588, 128, CARD, LINE, 12))
+        parts.append(text(32, top + 24, titulo, 14, INK, 700))
+        base = top + 78
+        parts.append(f'<line x1="{px(0)}" y1="{base}" x2="{px(0.34)}" y2="{base}" stroke="{INK}" stroke-width="1.5"/>')
+        for d in (0, 0.1, 0.2, 0.3):
+            parts.append(f'<line x1="{px(d)}" y1="{base}" x2="{px(d)}" y2="{base + 6}" stroke="{MUTED}" stroke-width="1"/>')
+            parts.append(text(px(d), base + 22, f"{d:.1f}".replace(".", ","), 12, MUTED, 500, "middle"))
+        for i, d in enumerate(positivos):
+            parts.append(f'<circle cx="{px(d):.1f}" cy="{base - 12 - (i % 3) * 12 if d < 0.01 else base - 12}" r="7" fill="{GREEN}"/>')
+        for d in negativos:
+            parts.append(f'<circle cx="{px(d):.1f}" cy="{base - 12 if d > 0.05 else base - 48}" r="7" fill="{RED}"/>')
+        if corte is None:
+            parts.append(text(px(0.34), top + 50, "se mezclan: no hay umbral posible", 13, RED, 700, "end"))
+        else:
+            parts.append(
+                f'<line x1="{px(corte)}" y1="{top + 34}" x2="{px(corte)}" y2="{base + 4}" stroke="{INDIGO}" stroke-width="2" stroke-dasharray="5 4"/>'
+            )
+            parts.append(text(px(corte) + 8, top + 48, "umbral posible", 13, INDIGO, 700))
+    parts.append(text(24, 390, "Distancia coseno: menor es más parecido. Vectores de juguete, en ChromaDB 1.1.0.", 13, MUTED))
+    save(
+        "09-umbral.svg",
+        "\n".join(parts),
+        "El umbral solo existe si hay un hueco",
+        "Con un fragmento de índice, la pregunta sin respuesta queda a 0,013, entre las que sí tienen respuesta. Tras limpiarlo, queda a 0,307, por encima de la peor con respuesta (0,220), y cabe un umbral.",
+        620,
+        408,
+    )
+
+
 def pipeline_pasos() -> None:
     pasos = [
         ("SBD", "1", "Inventario", "categoría, curso"),
@@ -1225,6 +1270,7 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    umbral()
     pipeline_pasos()
     dos_partes()
     almacenes()
