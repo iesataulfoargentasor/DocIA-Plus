@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 324" role="img">
+  <title>Tres formas de abrir ChromaDB</title>
+  <desc>EphemeralClient guarda en memoria y se borra al cerrar. PersistentClient guarda en un directorio que abre un solo programa. HttpClient habla con un servidor chroma run, que es el modo de DocIA+.</desc>
+  <rect width="760" height="324" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Tres formas de abrir ChromaDB</text>
+<rect x="24" y="54" width="224" height="196" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="136" y="86" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700">En memoria</text>
+<text x="136" y="110" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">EphemeralClient</text>
+<text x="136" y="146" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">Todo se borra al cerrar</text>
+<text x="136" y="168" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">el programa.</text>
+<rect x="40" y="200" width="192" height="34" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="136" y="222" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Sesión 1, primera parte</text>
+<line x1="250" y1="152" x2="266" y2="152" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="268" y="54" width="224" height="196" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="380" y="86" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700">Un directorio</text>
+<text x="380" y="110" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">PersistentClient</text>
+<text x="380" y="146" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">Se guarda en disco.</text>
+<text x="380" y="168" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">Lo abre un solo programa.</text>
+<rect x="284" y="200" width="192" height="34" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="380" y="222" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Laboratorio, temas 5 a 9</text>
+<line x1="494" y1="152" x2="510" y2="152" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="512" y="54" width="224" height="196" rx="14" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<text x="624" y="86" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700">Un servidor</text>
+<text x="624" y="110" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">HttpClient</text>
+<text x="624" y="146" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">chroma run abre el directorio.</text>
+<text x="624" y="168" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">Los demás hablan por red.</text>
+<rect x="528" y="200" width="192" height="34" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="624" y="222" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">DocIA+ en la instancia</text>
+<text x="24" y="282" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Las operaciones son las mismas en los tres: upsert, query, get, update, delete.</text>
+<text x="24" y="304" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Solo cambia la línea que crea el cliente.</text>
+</svg>

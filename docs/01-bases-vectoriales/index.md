@@ -17,7 +17,7 @@ Unidad previa a la implementación del almacén de embeddings de DocIA+. Si el g
 | [7. Del documento al vector](07-chunking-y-ciclo-de-indexacion.md) | Qué se indexa exactamente y en qué orden |
 | [8. Operaciones de gestión](08-operaciones-de-gestion.md) | Altas, consultas, cambios, bajas y copias |
 | [9. Calidad y fallos](09-calidad-y-fallos.md) | Cómo mediremos el 80 % y qué errores son típicos |
-| [10. ChromaDB en DocIA+](10-chromadb-en-docia.md) | La decisión ya tomada en el proyecto y el laboratorio |
+| [10. ChromaDB en DocIA+](10-chromadb-en-docia.md) | Cómo encajan todas las piezas en el proyecto, con medidas reales |
 
 ## Secuencia de aula sugerida
 

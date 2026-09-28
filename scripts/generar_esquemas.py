@@ -359,6 +359,70 @@ def coseno() -> None:
     )
 
 
+def recorrido_pregunta() -> None:
+    pasos = [
+        ("1", "La web envía el texto a la API", "«¿Cómo me matriculo?»", "tema 1", False),
+        ("2", "La API pide el vector a Titan", "1024 números, longitud 1", "tema 2", False),
+        ("3", "La API consulta ChromaDB", "vector + filtro where por curso + n_results = 5", "temas 4 y 6", True),
+        ("4", "ChromaDB devuelve fragmentos", "oferta-iabd-2026_000 a distancia 0,002, y cuatro más", "tema 3", True),
+        ("5", "La API mira el primero", "¿distancia menor que el umbral? Si no: «no lo sé»", "tema 9", False),
+        ("6", "El redactor contesta con cita", "usa solo esos fragmentos; enlace al documento", "PIA", False),
+    ]
+    parts = [text(24, 34, "Una pregunta, de principio a fin", 18, INK, 650)]
+    y = 54
+    for num, titulo, detalle, tema, aqui in pasos:
+        fill = INDIGO_SOFT if aqui else CARD
+        stroke = INDIGO if aqui else LINE
+        parts.append(rect(24, y, 712, 60, fill, stroke, 12, 2 if aqui else 1.5))
+        parts.append(rect(40, y + 12, 36, 36, INDIGO if aqui else INDIGO_SOFT, INDIGO, 10, 0))
+        parts.append(text(58, y + 36, num, 16, "#ffffff" if aqui else INDIGO, 700, "middle"))
+        parts.append(text(92, y + 26, titulo, 15, INK, 650))
+        parts.append(text(92, y + 46, detalle, 13, MUTED, 500))
+        parts.append(text(720, y + 36, tema, 13, INDIGO if aqui else MUTED, 650, "end"))
+        y += 70
+    parts.append(text(24, y + 16, "Solo los pasos 3 y 4 ocurren dentro de la base vectorial. El resto lo coordina la API.", 13, MUTED))
+    save(
+        "10-recorrido.svg",
+        "\n".join(parts),
+        "Una pregunta de DocIA+, de principio a fin",
+        "La web envía la pregunta a la API. La API pide el vector a Titan, consulta ChromaDB con filtro, recibe fragmentos con distancia, compara la primera con el umbral y el redactor contesta citando.",
+        760,
+        y + 36,
+    )
+
+
+def tres_clientes() -> None:
+    modos = [
+        ("EphemeralClient", "En memoria", ["Todo se borra al cerrar", "el programa."], "Sesión 1, primera parte", CARD, LINE),
+        ("PersistentClient", "Un directorio", ["Se guarda en disco.", "Lo abre un solo programa."], "Laboratorio, temas 5 a 9", CARD, LINE),
+        ("HttpClient", "Un servidor", ["chroma run abre el directorio.", "Los demás hablan por red."], "DocIA+ en la instancia", INDIGO_SOFT, INDIGO),
+    ]
+    parts = [text(24, 34, "Tres formas de abrir ChromaDB", 18, INK, 650)]
+    for i, (clase, titulo, lineas, uso, fill, stroke) in enumerate(modos):
+        x = 24 + i * 244
+        parts.append(rect(x, 54, 224, 196, fill, stroke, 14, 2 if stroke == INDIGO else 1.5))
+        parts.append(text(x + 112, 86, titulo, 17, INK, 700, "middle"))
+        parts.append(text(x + 112, 110, clase, 14, INDIGO, 650, "middle"))
+        for j, linea in enumerate(lineas):
+            parts.append(text(x + 112, 146 + j * 22, linea, 13, INK, 500, "middle"))
+        parts.append(rect(x + 16, 200, 192, 34, CARD, LINE, 8))
+        parts.append(text(x + 112, 222, uso, 13, MUTED, 650, "middle"))
+        if i < 2:
+            parts.append(
+                f'<line x1="{x + 226}" y1="152" x2="{x + 242}" y2="152" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>'
+            )
+    parts.append(text(24, 282, "Las operaciones son las mismas en los tres: upsert, query, get, update, delete.", 14, MUTED))
+    parts.append(text(24, 304, "Solo cambia la línea que crea el cliente.", 14, MUTED))
+    save(
+        "10-clientes.svg",
+        "\n".join(parts),
+        "Tres formas de abrir ChromaDB",
+        "EphemeralClient guarda en memoria y se borra al cerrar. PersistentClient guarda en un directorio que abre un solo programa. HttpClient habla con un servidor chroma run, que es el modo de DocIA+.",
+        760,
+        324,
+    )
+
+
 def umbral() -> None:
     x0, escala = 60, 1500
 
@@ -1074,29 +1138,55 @@ def recall() -> None:
 
 
 def arquitectura() -> None:
-    boxes = [
-        (24, 64, 210, "Comunidad educativa", "pregunta en la web", CARD, LINE, INK),
-        (280, 64, 180, "API", "solo ella consulta", CARD, LINE, INK),
-        (510, 28, 220, "ChromaDB", "colección privada", INDIGO_SOFT, INDIGO, INDIGO),
-        (510, 140, 220, "Titan v2", "vector de la pregunta", CARD, LINE, INK),
-        (280, 200, 180, "S3", "originales y copias", CARD, LINE, INK),
+    parts = [text(24, 32, "Quién habla con quién en DocIA+", 18, INK, 650)]
+    parts.append(rect(24, 96, 170, 72, CARD, LINE, 14))
+    parts.append(text(109, 126, "Web del IES", 15, INK, 700, "middle"))
+    parts.append(text(109, 148, "widget, internet", 13, MUTED, 500, "middle"))
+
+    parts.append(rect(236, 52, 340, 300, "#eef0f6", LINE, 16))
+    parts.append(text(252, 76, "Instancia EC2 · 2 vCPU · 4 GB", 13, MUTED, 700))
+    cajas = [
+        (92, "API (FastAPI)", "abierta a internet, solo lee", CARD, LINE),
+        (182, "Servidor ChromaDB", "localhost:8000, cerrado", INDIGO_SOFT, INDIGO),
+        (272, "Indexador", "script del pipeline, escribe", CARD, LINE),
     ]
-    parts = [text(24, 22, "ChromaDB no se abre a internet", 18, INK, 650)]
-    for x, y, w, title, detail, fill, stroke, color in boxes:
-        parts.append(rect(x, y, w, 78, fill, stroke, 14, 2 if stroke == INDIGO else 1.5))
-        parts.append(text(x + w / 2, y + 34, title, 16, color, 700, "middle"))
-        parts.append(text(x + w / 2, y + 56, detail, 13, MUTED, 400, "middle"))
-    parts.append(f'<line x1="234" y1="103" x2="276" y2="103" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>')
-    parts.append(f'<line x1="460" y1="86" x2="506" y2="67" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>')
-    parts.append(f'<line x1="460" y1="120" x2="506" y2="160" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>')
-    parts.append(text(24, 308, "La web habla con la API. La API habla con la base.", 14, MUTED))
+    for y, titulo, detalle, fill, stroke in cajas:
+        parts.append(rect(256, y, 300, 60, fill, stroke, 12, 2 if stroke == INDIGO else 1.5))
+        parts.append(text(406, y + 26, titulo, 15, INDIGO if stroke == INDIGO else INK, 700, "middle"))
+        parts.append(text(406, y + 46, detalle, 13, MUTED, 500, "middle"))
+    parts.append(f'<line x1="336" y1="153" x2="336" y2="178" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>')
+    parts.append(text(346, 170, "query", 12, INDIGO, 650))
+    parts.append(f'<line x1="476" y1="271" x2="476" y2="246" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>')
+    parts.append(text(486, 264, "upsert, delete", 12, INDIGO, 650))
+
+    parts.append(rect(612, 92, 150, 60, CARD, LINE, 12))
+    parts.append(text(687, 118, "Titan v2", 15, INK, 700, "middle"))
+    parts.append(text(687, 138, "texto → vector", 13, MUTED, 500, "middle"))
+    parts.append(rect(612, 272, 150, 60, CARD, LINE, 12))
+    parts.append(text(687, 298, "S3", 15, INK, 700, "middle"))
+    parts.append(text(687, 318, "originales y copias", 13, MUTED, 500, "middle"))
+
+    parts.append(f'<line x1="196" y1="124" x2="252" y2="120" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>')
+    parts.append(f'<line x1="557" y1="118" x2="608" y2="118" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>')
+    parts.append(
+        f'<line x1="557" y1="286" x2="640" y2="156" stroke="{INDIGO}" stroke-width="1.6" '
+        f'stroke-dasharray="5 4" marker-end="url(#flecha)"/>'
+    )
+    parts.append(f'<line x1="608" y1="306" x2="560" y2="306" stroke="{INDIGO}" stroke-width="2" marker-end="url(#flecha)"/>')
+    parts.append(
+        f'<line x1="150" y1="170" x2="252" y2="206" stroke="{RED}" stroke-width="2" '
+        f'stroke-dasharray="6 5" marker-end="url(#flecha-roja)"/>'
+    )
+    parts.append(text(118, 214, "✕ sin acceso", 13, RED, 700, "middle"))
+    parts.append(text(24, 384, "Desde internet solo se llega a la API. Nadie de fuera abre el puerto de ChromaDB,", 13, MUTED))
+    parts.append(text(24, 404, "y las escrituras salen de la propia máquina, no de la web.", 13, MUTED))
     save(
         "10-arquitectura.svg",
         "\n".join(parts),
-        "La web no consulta ChromaDB directamente",
-        "Quien busca en la colección es la API. Los documentos originales y las copias viven aparte.",
-        754,
-        336,
+        "Quién habla con quién en DocIA+",
+        "La web solo habla con la API. En la instancia, la API lee de un servidor ChromaDB que escucha en localhost y el indexador escribe en él. Titan calcula los vectores y S3 guarda originales y copias.",
+        784,
+        424,
     )
 
 
@@ -1270,6 +1360,8 @@ def main() -> None:
     dimensiones()
     perfiles()
     coseno()
+    recorrido_pregunta()
+    tres_clientes()
     umbral()
     pipeline_pasos()
     dos_partes()
