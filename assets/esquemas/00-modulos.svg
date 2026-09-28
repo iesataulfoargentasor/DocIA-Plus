@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 734 348" role="img">
   <title>Qué hace cada módulo con la base vectorial</title>
-  <desc>SBD prepara texto y metadatos, BDA escribe los vectores en ChromaDB y PIA consulta esa colección.</desc>
+  <desc>SBD extrae, limpia y trocea los documentos y define sus metadatos. BDA calcula los vectores, los escribe en ChromaDB, la mantiene y mide la recuperación. PIA construye la API, el umbral, la redacción y el widget.</desc>
   <rect width="734" height="348" rx="18" fill="#f4f6fb"/>
   <defs>
     <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -15,34 +15,34 @@
 <rect x="36" y="24" width="210" height="48" rx="16" fill="#3949ab" stroke="#3949ab" stroke-width="1.5"/>
 <rect x="36" y="56" width="210" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="1.5"/>
 <text x="141" y="54" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">SBD</text>
-<text x="141" y="96" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Prepara el corpus</text>
+<text x="141" y="96" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Prepara los documentos</text>
 <rect x="52" y="118" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="141" y="141" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Texto limpio</text>
+<text x="141" y="141" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Extrae y limpia texto</text>
 <rect x="52" y="164" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="141" y="187" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Categorías g1–g5</text>
+<text x="141" y="187" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Corta en fragmentos</text>
 <rect x="52" y="210" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="141" y="233" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Metadatos del fragmento</text>
+<text x="141" y="233" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Metadatos g1–g5</text>
 <rect x="262" y="24" width="210" height="268" rx="16" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <rect x="262" y="24" width="210" height="48" rx="16" fill="#3949ab" stroke="#3949ab" stroke-width="1.5"/>
 <rect x="262" y="56" width="210" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="1.5"/>
 <text x="367" y="54" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">BDA</text>
-<text x="367" y="96" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Llena la colección</text>
+<text x="367" y="96" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Llena y cuida la colección</text>
 <rect x="278" y="118" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="367" y="141" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Corta en fragmentos</text>
+<text x="367" y="141" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Vectores con Titan v2</text>
 <rect x="278" y="164" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="367" y="187" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Llama a Titan v2</text>
+<text x="367" y="187" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">upsert y huérfanos</text>
 <rect x="278" y="210" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="367" y="233" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">upsert en ChromaDB</text>
+<text x="367" y="233" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Mide el recall@5</text>
 <rect x="488" y="24" width="210" height="268" rx="16" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <rect x="488" y="24" width="210" height="48" rx="16" fill="#3949ab" stroke="#3949ab" stroke-width="1.5"/>
 <rect x="488" y="56" width="210" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="1.5"/>
 <text x="593" y="54" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">PIA</text>
-<text x="593" y="96" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Consulta después</text>
+<text x="593" y="96" text-anchor="middle" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">La usa después</text>
 <rect x="504" y="118" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="593" y="141" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">API de la pregunta</text>
+<text x="593" y="141" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">API y umbral</text>
 <rect x="504" y="164" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="593" y="187" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Recupera fragmentos</text>
+<text x="593" y="187" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Redacta y cita</text>
 <rect x="504" y="210" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="593" y="233" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Redacta y cita</text>
-<text x="367" y="322" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">SBD entrega el texto · BDA entrega la colección</text>
+<text x="593" y="233" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Widget de la web</text>
+<text x="367" y="322" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">SBD entrega los fragmentos · BDA entrega la colección · PIA la consulta</text>
 </svg>
