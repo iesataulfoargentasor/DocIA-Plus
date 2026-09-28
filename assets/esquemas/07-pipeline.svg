@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784 410" role="img">
+  <title>Los nueve pasos del pipeline de indexación</title>
+  <desc>SBD hace inventario, extracción, limpieza y troceado con metadatos y hash. BDA compara el hash, llama a Titan, comprueba, hace upsert y borra huérfanos.</desc>
+  <rect width="784" height="410" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="32" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Del fichero al registro: nueve pasos, dos asignaturas</text>
+<rect x="16" y="50" width="752" height="150" rx="14" fill="#e8eaf6" stroke="#3949ab" stroke-width="1.5"/>
+<text x="32" y="74" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">SBD · preparar el texto y su estructura</text>
+<rect x="16" y="214" width="752" height="150" rx="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="32" y="238" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">BDA · convertir en vector y gestionar la colección</text>
+<rect x="32" y="90" width="176" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="46" y="116" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">1</text>
+<text x="68" y="116" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Inventario</text>
+<text x="120.0" y="152" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">categoría, curso</text>
+<line x1="209" y1="135" x2="213" y2="135" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="216" y="90" width="176" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="230" y="116" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">2</text>
+<text x="252" y="116" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Extraer texto</text>
+<text x="304.0" y="152" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">¿hay texto o es escaneo?</text>
+<line x1="393" y1="135" x2="397" y2="135" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="400" y="90" width="176" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="414" y="116" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">3</text>
+<text x="436" y="116" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Limpiar</text>
+<text x="488.0" y="152" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">pies, guiones, vacías</text>
+<line x1="577" y1="135" x2="581" y2="135" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="584" y="90" width="176" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="598" y="116" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">4</text>
+<text x="620" y="116" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Trocear</text>
+<text x="672.0" y="152" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">fragmentos + metadatos + hash</text>
+<rect x="32" y="254" width="140" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="46" y="280" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">5</text>
+<text x="68" y="280" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">¿Hash igual?</text>
+<text x="102.0" y="316" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">si coincide, se salta</text>
+<line x1="173" y1="299" x2="177" y2="299" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="180" y="254" width="140" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="194" y="280" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">6</text>
+<text x="216" y="280" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Titan</text>
+<text x="250.0" y="316" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">1024, normalizado</text>
+<line x1="321" y1="299" x2="325" y2="299" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="328" y="254" width="140" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="342" y="280" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">7</text>
+<text x="364" y="280" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Comprobar</text>
+<text x="398.0" y="316" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">dimensión y norma ≈ 1</text>
+<line x1="469" y1="299" x2="473" y2="299" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="476" y="254" width="140" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="490" y="280" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">8</text>
+<text x="512" y="280" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">upsert</text>
+<text x="546.0" y="316" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">texto, vector, metadatos</text>
+<line x1="617" y1="299" x2="621" y2="299" stroke="#3949ab" stroke-width="2" marker-end="url(#flecha)"/>
+<rect x="624" y="254" width="140" height="90" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="638" y="280" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800">9</text>
+<text x="660" y="280" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Huérfanos</text>
+<text x="694.0" y="316" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">borrar los ids viejos</text>
+<text x="24" y="392" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Si el paso 7 falla, no se escribe nada. Si el corte está mal, BDA lo devuelve a SBD.</text>
+</svg>
