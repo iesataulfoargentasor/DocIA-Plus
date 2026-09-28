@@ -632,10 +632,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#que-entra-y-que-sale" class="md-nav__link">
+  <a href="#el-problema-los-ordenadores-solo-entienden-numeros" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Qué entra y qué sale
+        El problema: los ordenadores solo entienden números
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-idea-con-un-mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La idea con un mapa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-2-ejes-a-1024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De 2 ejes a 1024
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-sabe-el-modelo-donde-colocar-cada-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo sabe el modelo dónde colocar cada texto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-pasa-dentro-de-la-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué pasa dentro de la llamada
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dos-usos-del-mismo-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dos usos del mismo modelo
       
     </span>
   </a>
@@ -676,10 +731,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#llamada-en-esquema" class="md-nav__link">
+  <a href="#la-llamada-en-esquema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Llamada, en esquema
+        La llamada, en esquema
       
     </span>
   </a>
@@ -702,6 +757,17 @@
     <span class="md-ellipsis">
       
         Qué no hace el modelo de embeddings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprueba-que-lo-has-entendido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprueba que lo has entendido
       
     </span>
   </a>
@@ -1003,10 +1069,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#que-entra-y-que-sale" class="md-nav__link">
+  <a href="#el-problema-los-ordenadores-solo-entienden-numeros" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Qué entra y qué sale
+        El problema: los ordenadores solo entienden números
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-idea-con-un-mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La idea con un mapa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-2-ejes-a-1024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De 2 ejes a 1024
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-sabe-el-modelo-donde-colocar-cada-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo sabe el modelo dónde colocar cada texto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-pasa-dentro-de-la-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué pasa dentro de la llamada
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dos-usos-del-mismo-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dos usos del mismo modelo
       
     </span>
   </a>
@@ -1047,10 +1168,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#llamada-en-esquema" class="md-nav__link">
+  <a href="#la-llamada-en-esquema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Llamada, en esquema
+        La llamada, en esquema
       
     </span>
   </a>
@@ -1079,6 +1200,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#comprueba-que-lo-has-entendido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprueba que lo has entendido
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1100,82 +1232,235 @@
 
 
 <h1 id="2-embeddings">2. Embeddings<a class="headerlink" href="#2-embeddings" title="Permanent link">&para;</a></h1>
-<p>Un <strong>embedding</strong> de texto es una lista de números reales que un modelo produce a partir de un texto. Esa lista es el vector. En DocIA+ habrá dos usos del mismo modelo:</p>
+<p>En el tema 1 vimos que buscar por significado necesita algo que la búsqueda literal no tiene: una forma de saber que «matrícula» e «inscripción» hablan de lo mismo. Este tema explica <strong>qué es ese algo</strong>. Se llama embedding y, una vez entendido, todo lo demás de la unidad (bases vectoriales, ChromaDB, el pipeline de DocIA+) es consecuencia.</p>
+<p>Vamos por partes: primero la idea con un mapa que se pueda dibujar, luego cómo se pasa a los 1024 números reales, luego qué hace el modelo por dentro y, al final, las decisiones concretas de DocIA+.</p>
+<h2 id="el-problema-los-ordenadores-solo-entienden-numeros">El problema: los ordenadores solo entienden números<a class="headerlink" href="#el-problema-los-ordenadores-solo-entienden-numeros" title="Permanent link">&para;</a></h2>
+<p>Un ordenador no sabe qué significa «matrícula». Sabe comparar cadenas de letras: si dos cadenas son iguales o distintas. Por eso <code>LIKE '%matrícula%'</code> no encuentra «formalización de inscripción», aunque una persona vería que hablan de lo mismo.</p>
+<p>Para que un programa pueda decir «estos dos textos se parecen», hay que convertir cada texto en <strong>algo con lo que se pueda calcular</strong>: números. Y hay que hacerlo de una manera especial: <strong>que los textos con significado parecido acaben con números parecidos</strong>.</p>
+<p>Ese proceso de convertir un texto en una lista de números que conserva su significado es lo que se llama <strong>crear un embedding</strong> (en español, «incrustación», aunque se usa la palabra inglesa). La lista de números es el <strong>vector</strong> del texto.</p>
+<h2 id="la-idea-con-un-mapa">La idea con un mapa<a class="headerlink" href="#la-idea-con-un-mapa" title="Permanent link">&para;</a></h2>
+<p>Piensa en cómo se dice dónde está una ciudad: con dos números, la latitud y la longitud. Dos ciudades con números parecidos están cerca. Con solo dos números tienes un <strong>mapa</strong>.</p>
+<p>Con el significado se puede hacer lo mismo. Imagina un mapa cuyo primer eje mide <strong>cuánto habla un texto de matrícula</strong> y cuyo segundo eje mide <strong>cuánto habla de cafetería</strong>. Cada texto es un punto en ese mapa:</p>
+<table>
+<thead>
+<tr>
+<th>Letra</th>
+<th>Texto</th>
+<th>Eje 1: matrícula</th>
+<th>Eje 2: cafetería</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P</td>
+<td>Pregunta: «¿Cómo me matriculo?»</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Procedimiento de formalización de matrícula</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Plazo de inscripción en el ciclo</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Menú diario de la cafetería</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Precio del bocadillo</td>
+<td>0</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Cinco textos como puntos en un mapa de dos ejes. P, F e I forman un grupo de matrícula. C y B forman un grupo de cafetería." src="../../assets/esquemas/02-mapa-significado.svg" /></p>
+<p>Mira lo que ha pasado:</p>
 <ul>
-<li><strong>embedding de documento</strong>, calculado al indexar y guardado en la base;</li>
-<li><strong>embedding de consulta</strong>, calculado al llegar la pregunta y usado solo para buscar. El proyecto no guarda la pregunta ni datos de quien la hace.</li>
+<li>Los textos de matrícula (P, F, I) han quedado <strong>juntos</strong>, y los de cafetería (C, B), en otra zona.</li>
+<li>La pregunta P y el plazo de inscripción I <strong>no comparten ninguna palabra</strong>, y aun así están cerca. La cercanía viene del significado, no de las letras.</li>
+<li>Buscar es ahora una tarea de geometría: «dame los puntos más cercanos a P». Cómo se mide esa cercanía es el <a href="../03-geometria-y-similitud/" target="_blank" rel="noopener">tema 3</a>.</li>
+</ul>
+<p>Un <strong>embedding</strong> es exactamente esto: la posición de un texto en un mapa de significado. El vector <code>(4, 1)</code> es «4 en matrícula, 1 en cafetería».</p>
+<h2 id="de-2-ejes-a-1024">De 2 ejes a 1024<a class="headerlink" href="#de-2-ejes-a-1024" title="Permanent link">&para;</a></h2>
+<p>Este mapa de dos ejes es un invento de clase. Lo hemos hecho con dos ejes porque se puede dibujar. Un modelo real hace lo mismo con muchos más:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Mapa de juguete</th>
+<th>Modelo pequeño (sesión 1)</th>
+<th>Titan en DocIA+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ejes o componentes</td>
+<td>2</td>
+<td>384</td>
+<td>1024</td>
+</tr>
+<tr>
+<td>¿Tienen nombre?</td>
+<td>Sí, los pusimos nosotros</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Hay tres diferencias con el mapa de juguete que conviene tener claras:</p>
+<ol>
+<li><strong>Nadie decide qué mide cada eje.</strong> En el mapa de clase elegimos «matrícula» y «cafetería». En un modelo real los ejes los descubre el propio modelo durante su entrenamiento, y no tienen un nombre que se pueda leer. No tiene sentido preguntar «¿qué significa la componente 37?». El significado está en el <strong>conjunto</strong>: en dónde cae el punto respecto a los demás puntos.</li>
+<li><strong>Más ejes, más matices.</strong> Con dos ejes solo distingues «matrícula» de «cafetería». Con cientos de ejes puedes distinguir «matrícula de un ciclo formativo» de «matrícula de bachillerato», «plazo» de «requisito», o un tono formal de otro.</li>
+<li><strong>No se puede dibujar</strong>, pero las cuentas son las mismas que con dos. Un punto con 1024 números sigue teniendo vecinos más cercanos y más lejanos.</li>
+</ol>
+<h2 id="como-sabe-el-modelo-donde-colocar-cada-texto">Cómo sabe el modelo dónde colocar cada texto<a class="headerlink" href="#como-sabe-el-modelo-donde-colocar-cada-texto" title="Permanent link">&para;</a></h2>
+<p>El modelo de embeddings es un programa (una red neuronal) que <strong>ya viene entrenado</strong>. En DocIA+ no lo entrenamos: lo usamos, igual que usarías una calculadora sin construirla.</p>
+<p>Para entender de dónde saca su criterio, basta esta idea del entrenamiento: el modelo ha leído una cantidad enorme de texto y ha ido ajustándose para que <strong>las palabras y frases que aparecen en contextos parecidos reciban números parecidos</strong>. Compara estas dos frases:</p>
+<div class="highlight"><pre><span></span><code>Para ____ en el ciclo tienes que presentar el DNI.
+Para hacer la ____ en el ciclo tienes que presentar el DNI.
+</code></pre></div>
+<p>En el hueco pueden aparecer «matricularte», «inscribirte», «formalizar la matrícula». Esas palabras aparecen en los mismos sitios, con las mismas palabras alrededor. El modelo aprende que son intercambiables y las coloca en zonas cercanas del mapa. «Cafetería» aparece en otros contextos («el menú de la ____», «cerrada los lunes») y queda en otra zona.</p>
+<p>Dos consecuencias importantes:</p>
+<ul>
+<li><strong>Lo que el modelo sabe es lo que ha visto al entrenarse.</strong> Conoce el español general. No conoce las siglas internas del IES ni un procedimiento inventado la semana pasada.</li>
+<li><strong>El mismo texto siempre da el mismo vector</strong>, si el modelo y las opciones son los mismos. No hay azar. Si hoy el texto da un vector y mañana otro, es que algo ha cambiado en el modelo o en su configuración.</li>
+</ul>
+<h2 id="que-pasa-dentro-de-la-llamada">Qué pasa dentro de la llamada<a class="headerlink" href="#que-pasa-dentro-de-la-llamada" title="Permanent link">&para;</a></h2>
+<p>Cuando el pipeline envía un fragmento al modelo pasan cuatro cosas:</p>
+<p><img alt="El texto se parte en tokens, el modelo los procesa y devuelve una lista de números de longitud fija." src="../../assets/esquemas/02-texto-a-vector.svg" /></p>
+<ol>
+<li><strong>Texto.</strong> Entra una cadena ya limpia. Un fragmento, no un PDF binario.</li>
+<li><strong>Tokens.</strong> El modelo no lee letra a letra ni palabra a palabra, sino en trozos llamados <strong>tokens</strong>. Una palabra corta y frecuente suele ser un token. Una palabra larga o rara se parte en varios («matriculo» podría ser «matric» + «ulo»). En español, como orden de magnitud, cada palabra ocupa entre 1 y 2 tokens.</li>
+<li><strong>Modelo.</strong> La red neuronal combina los tokens teniendo en cuenta el orden y el contexto. Por eso «el banco de la plaza» y «el banco de la esquina, que da hipotecas» dan vectores distintos aunque compartan palabras.</li>
+<li><strong>Vector.</strong> Sale una lista de números reales, siempre de la misma longitud.</li>
+</ol>
+<p>Lo más importante está en el último paso: <strong>da igual que el texto sea una palabra o dos párrafos: siempre sale un vector con el mismo número de componentes</strong>. Un fragmento largo no da un vector más largo. Da un vector que resume, en esos 1024 números, de qué habla el texto entero.</p>
+<p>Ese número fijo de componentes es la <strong>dimensión</strong>. Si el modelo devuelve dimensión 1024, todos los vectores de la colección tienen 1024 componentes. No se puede meter uno de 768 al lado de uno de 1024.</p>
+<h2 id="dos-usos-del-mismo-modelo">Dos usos del mismo modelo<a class="headerlink" href="#dos-usos-del-mismo-modelo" title="Permanent link">&para;</a></h2>
+<p>En DocIA+ el modelo se llama en dos momentos distintos:</p>
+<ul>
+<li><strong>Embedding de documento.</strong> Se calcula una vez, al indexar cada fragmento, y se guarda en la base.</li>
+<li><strong>Embedding de consulta.</strong> Se calcula cuando llega una pregunta y sirve solo para buscar. El proyecto no guarda la pregunta ni datos de quien la hace.</li>
 </ul>
 <p><img alt="El fragmento y la pregunta entran al mismo modelo. El vector del fragmento se guarda; el de la pregunta, no." src="../../assets/esquemas/02-mismo-modelo.svg" /></p>
-<h2 id="que-entra-y-que-sale">Qué entra y qué sale<a class="headerlink" href="#que-entra-y-que-sale" title="Permanent link">&para;</a></h2>
-<p>Entra una cadena ya limpia: un fragmento, no un PDF binario. Sale un vector de longitud fija. La longitud se llama <strong>dimensión</strong>.</p>
-<p>Si el modelo devuelve dimensión 1024, todos los vectores de esa colección tienen 1024 componentes. No se puede insertar uno de 768 al lado de uno de 1024. La base lo rechaza o, peor, una implementación descuidada compara magnitudes que no viven en el mismo espacio.</p>
+<p>Los dos tienen que pasar por <strong>el mismo modelo con las mismas opciones</strong>. Piensa en un mapa dibujado por un cartógrafo y otro mapa distinto dibujado por otro: si marcas un punto en uno y buscas el vecino en el otro, las posiciones no significan nada. Lo mismo con la dimensión:</p>
 <p><img alt="Una consulta solo es válida si usa la misma dimensión que la indexación. Pasar de 1024 a 256 obliga a reindexar." src="../../assets/esquemas/02-dimensiones.svg" /></p>
-<p>Cada componente, por separado, no significa «horas» ni «matrícula». El significado está en la <strong>posición conjunta</strong> del punto. No se interpreta la coordenada 37. Se interpreta a qué otros puntos se parece.</p>
 <h2 id="para-verlo">Para verlo<a class="headerlink" href="#para-verlo" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.youtube.com/watch?v=5rvUTeb0be4" target="_blank" rel="noopener">Qué son las búsquedas semánticas y los embeddings</a>, de CodelyTV. Coloca gatos y perros en un eje, luego añade el color y luego la velocidad. Cada eje nuevo es una dimensión más. Después pasa un texto por un modelo de embeddings y busca los puntos más cercanos. También explica por qué, cuando el vector es largo, mirar el ángulo (el coseno) no es lo mismo que medir la distancia en línea recta. Esa cuenta se hace a mano en el <a href="../03-geometria-y-similitud/" target="_blank" rel="noopener">tema 3</a>.</p>
+<p><a href="https://www.youtube.com/watch?v=5rvUTeb0be4" target="_blank" rel="noopener">Qué son las búsquedas semánticas y los embeddings</a>, de CodelyTV. Coloca gatos y perros en un eje, luego añade el color y luego la velocidad. Cada eje nuevo es una dimensión más. Después pasa un texto por un modelo de embeddings y busca los puntos más cercanos. Es la misma idea del mapa de este tema, contada con animales.</p>
 <p>Tres avisos para no mezclarlo con el proyecto:</p>
 <ul>
 <li>En el vídeo la base es PostgreSQL. En DocIA+ es ChromaDB. La idea del mapa es la misma.</li>
 <li>Un eje del dibujo significa «color» o «tipo de animal» porque lo han puesto ellos para poder verlo. En un embedding real, como dice el propio vídeo al llegar a cientos de números, un eje suelto no tiene nombre. En la sesión 1 el modelo pequeño devuelve 384 números. Titan, en el proyecto, devuelve 1024.</li>
 <li>La resta «perro negro menos perro más gato» es un dibujo. Con las frases del centro no va a fabricar una frase nueva.</li>
 </ul>
+<p>Para ver un embedding real, sin dibujo, abre el <a href="../sesion-01/" target="_blank" rel="noopener">cuaderno de la sesión 1</a>: calcula los 384 números de varias frases y comprueba que las que hablan de lo mismo quedan más cerca.</p>
 <h2 id="no-es-un-resumen-ni-un-cifrado-ni-un-hash">No es un resumen, ni un cifrado, ni un hash<a class="headerlink" href="#no-es-un-resumen-ni-un-cifrado-ni-un-hash" title="Permanent link">&para;</a></h2>
+<p>Es fácil confundir el embedding con otras cosas que también «convierten un texto en otra cosa». Esta tabla las separa:</p>
 <table>
 <thead>
 <tr>
 <th>Técnica</th>
+<th>Qué produce</th>
 <th>¿Sirve para buscar por significado?</th>
-<th>Qué conserva</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Hash criptográfico</td>
-<td>No. Un carácter distinto cambia el resultado por completo</td>
-<td>Identidad exacta del fichero</td>
+<td><strong>Resumen</strong></td>
+<td>Otro texto, más corto</td>
+<td>No es un número con el que se pueda calcular cercanía</td>
 </tr>
 <tr>
-<td>TF-IDF o bolsa de palabras</td>
-<td>Solo coincidencia de términos, con pesos</td>
-<td>Qué palabras aparecen</td>
+<td><strong>Cifrado</strong></td>
+<td>El mismo contenido ilegible, que se puede descifrar</td>
+<td>No. Se diseña para que no se pueda comparar</td>
 </tr>
 <tr>
-<td>Embedding denso</td>
+<td><strong>Hash</strong> (como SHA-256)</td>
+<td>Un código fijo del texto</td>
+<td>No. Cambiar una letra cambia el resultado por completo</td>
+</tr>
+<tr>
+<td><strong>TF-IDF</strong> (bolsa de palabras)</td>
+<td>Un número por cada palabra del vocabulario, según cuánto aparece</td>
+<td>Solo si comparten palabras</td>
+</tr>
+<tr>
+<td><strong>Embedding denso</strong></td>
+<td>Unos cientos de números que sitúan el texto en un mapa de significado</td>
 <td>Sí, dentro de lo que el modelo haya aprendido</td>
-<td>Parecido de uso en el lenguaje</td>
 </tr>
 </tbody>
 </table>
-<p>TF-IDF sigue siendo una buena herramienta de SBD para explorar un corpus: ver términos dominantes, duplicados burdos, documentos que son casi la misma bolsa de palabras. No resuelve «matrícula» frente a «formalización de matrícula» si esas cadenas no comparten tokens suficientes. El embedding denso sí puede resolverlo, porque el modelo ha visto esas formulaciones en contextos similares durante el entrenamiento.</p>
-<p>Un hash del texto sí lo usaremos, pero como <strong>metadato de control</strong>: para saber si el fragmento ha cambiado y hay que recalcular el vector. El hash no se consulta por similitud.</p>
+<p><strong>TF-IDF</strong>, que verás en SBD, cuenta palabras: da más peso a las que aparecen mucho en un documento y poco en los demás. Sigue siendo muy útil para explorar un corpus: ver los términos dominantes o detectar documentos casi duplicados. Pero no resuelve «matrícula» frente a «formalización de matrícula» si no comparten palabras. El embedding denso sí puede, porque el modelo ha visto esas formulaciones en contextos parecidos durante el entrenamiento.</p>
+<p>Un hash del texto sí lo usaremos en DocIA+, pero con otro fin: como <strong>metadato de control</strong> para saber si un fragmento ha cambiado y hay que recalcular su vector. El hash no se consulta por similitud.</p>
 <h2 id="el-modelo-elegido-en-el-proyecto">El modelo elegido en el proyecto<a class="headerlink" href="#el-modelo-elegido-en-el-proyecto" title="Permanent link">&para;</a></h2>
-<p>En la fase cloud, DocIA+ usa <strong>Amazon Titan Text Embeddings v2</strong>, invocado a través de Bedrock. Las propiedades que condicionan el diseño de la colección, y que hay que volver a leer en la ficha oficial del modelo el día que se abra la cuenta, son estas:</p>
-<ul>
-<li>La dimensión configurable es <strong>256, 512 o 1024</strong>. El valor por defecto del modelo es 1024. Para DocIA+ partiremos de <strong>1024</strong>, que es la representación completa. Bajar a 512 o 256 reduce almacenamiento y puede perder matices; solo se haría midiendo la precisión de recuperación, no por costumbre.</li>
-<li>La entrada máxima está en el orden de <strong>8.192 tokens</strong>. Un token no es una palabra: en español, una palabra larga o con tilde puede partirse en varios. Un fragmento que supere el máximo se trunca o se rechaza, y el vector deja de representar el final del texto. Por eso el fragmentado del tema 7 tiene que quedar holgadamente por debajo.</li>
-<li>Con la normalización activada, cada vector tiene <strong>longitud 1</strong>. Eso simplifica la similitud: el producto escalar coincide con el coseno. Lo veremos en el tema 3. La colección se creará dando por hecho vectores normalizados, y el pipeline no debe renormalizar a medias ni mezclar llamadas con normalización activada y desactivada.</li>
-<li>El modelo cubre varios idiomas, incluido el español de los documentos del centro. Aun así, un texto lleno de códigos, tablas rotas o guiones de un PDF mal extraído produce un vector pobre. La calidad del embedding no compensa una mala extracción: eso es trabajo de SBD antes de llamar al modelo.</li>
-</ul>
-<p>El proyecto presupuesto del orden de unos pocos euros al mes para esta partida, con unos cinco millones de tokens en la indexación inicial. La tarifa concreta se confirma en AWS en el momento de implementar. No es el coste dominante del sistema; el coste dominante previsto es la redacción de respuestas, que no forma parte de esta unidad.</p>
-<h2 id="llamada-en-esquema">Llamada, en esquema<a class="headerlink" href="#llamada-en-esquema" title="Permanent link">&para;</a></h2>
+<p>En la fase cloud, DocIA+ usa <strong>Amazon Titan Text Embeddings v2</strong>, que se invoca a través de Bedrock (el servicio de AWS para usar modelos). Estas propiedades condicionan el diseño y hay que volver a leerlas en la ficha oficial del modelo el día que se abra la cuenta:</p>
+<p><strong>Dimensión: 256, 512 o 1024.</strong> El valor por defecto es 1024, y es el que usa DocIA+. Más dimensiones dan más matiz, pero ocupan más. Cada número ocupa normalmente 4 bytes, así que un vector de 1024 componentes pesa unos 4 KB y uno de 256, 1 KB. Como ejemplo, con fragmentos de unos 500 tokens, los 5 millones de tokens de la indexación inicial son unos 10.000 fragmentos: unos 40 MB de vectores con 1024 dimensiones. Es poco, así que bajar a 512 o 256 no es una necesidad de espacio. Solo se haría si midiendo la calidad de la búsqueda no se pierde precisión, nunca por costumbre.</p>
+<p><strong>Entrada máxima: en el orden de 8.192 tokens.</strong> Son unas páginas de texto. Si un fragmento la supera, se trunca o se rechaza, y el vector deja de representar el final del texto. Por eso el fragmentado del <a href="../07-chunking-y-ciclo-de-indexacion/" target="_blank" rel="noopener">tema 7</a> tiene que dejar los fragmentos holgadamente por debajo.</p>
+<p><strong>Normalización: longitud 1.</strong> Con la opción activada, cada vector mide exactamente 1. Eso simplifica la similitud, como verás en el tema 3: el producto escalar coincide con el coseno. La colección se creará dando por hecho vectores normalizados, y el pipeline no debe mezclar llamadas con la normalización activada y desactivada.</p>
+<p><strong>Idiomas.</strong> Cubre varios idiomas, incluido el español. Aun así, un texto lleno de códigos, tablas rotas o guiones de un PDF mal extraído produce un vector pobre. El modelo no arregla una mala extracción: eso es trabajo de SBD <strong>antes</strong> de llamar al modelo.</p>
+<p>El proyecto presupuesta del orden de unos pocos euros al mes para esta partida. La tarifa concreta se confirma en AWS al implementar. No es el coste dominante: lo será la redacción de respuestas, que no forma parte de esta unidad.</p>
+<h2 id="la-llamada-en-esquema">La llamada, en esquema<a class="headerlink" href="#la-llamada-en-esquema" title="Permanent link">&para;</a></h2>
 <p>Cuando BDA escriba el pipeline, cada fragmento se enviará al modelo y la respuesta será el vector que se inserta en ChromaDB. En esquema, sin SDK todavía:</p>
 <div class="highlight"><pre><span></span><code>entrada:  texto del fragmento
 modelo:   amazon.titan-embed-text-v2:0
 opciones: dimensión 1024, normalizar
 salida:   lista de 1024 números, longitud del vector ≈ 1
 </code></pre></div>
-<p>La misma llamada, con las mismas opciones, se usará para la pregunta del usuario en el momento de la consulta. Si alguien indexa con dimensión 1024 y consulta con dimensión 512, la búsqueda es inválida.</p>
+<p>La misma llamada, con las mismas opciones, se usa para la pregunta del usuario cuando consulta. Si alguien indexa con dimensión 1024 y consulta con dimensión 512, la búsqueda no es válida.</p>
 <h2 id="el-mismo-texto-otro-modelo-otro-espacio">El mismo texto, otro modelo, otro espacio<a class="headerlink" href="#el-mismo-texto-otro-modelo-otro-espacio" title="Permanent link">&para;</a></h2>
-<p>Un embedding no es una propiedad del texto. Es una propiedad del par (texto, modelo, opciones). Dos modelos distintos colocan el mismo párrafo en espacios que <strong>no se pueden comparar</strong>.</p>
-<p>Eso ata una decisión de la fase final del proyecto. Cuando los servicios pasen al servidor local del centro y Titan se sustituya por un modelo local, hay que:</p>
+<p>Un embedding <strong>no es una propiedad del texto</strong>. Es una propiedad del trío (texto, modelo, opciones). Dos modelos distintos colocan el mismo párrafo en mapas que no se pueden comparar, igual que las coordenadas de un mapa de Madrid no valen en un plano de Barcelona.</p>
+<p>Esto condiciona la fase final del proyecto. Cuando los servicios pasen al servidor local del centro y Titan se sustituya por un modelo local, hay que:</p>
 <ol>
 <li>generar de nuevo el vector de cada fragmento con el modelo nuevo;</li>
 <li>construir una colección nueva (la dimensión y la geometría pueden cambiar);</li>
 <li>repetir las pruebas de recuperación antes de dar por buena la sustitución.</li>
 </ol>
-<p>No existe una conversión lineal fiable de «vector Titan» a «vector del modelo local» que nos ahorre esa reindexación. El texto sí se conserva: por eso en cada registro guardamos el fragmento original, no solo el vector. El vector se puede tirar y recalcular. El texto, si no está, no.</p>
+<p>No existe una conversión fiable de «vector Titan» a «vector del modelo local» que ahorre esa reindexación. Por eso en cada registro guardamos el <strong>texto original</strong>, no solo el vector: el vector se puede tirar y recalcular; el texto, si no está, no se recupera.</p>
 <h2 id="que-no-hace-el-modelo-de-embeddings">Qué no hace el modelo de embeddings<a class="headerlink" href="#que-no-hace-el-modelo-de-embeddings" title="Permanent link">&para;</a></h2>
-<p>No redacta la respuesta. No cita. No decide si el fragmento es vigente. No aplica el filtro «solo oferta educativa»: eso es un metadato y un <code>where</code>, tema 6. Si el grupo espera que el embedding «entienda el organigrama del IES» más allá de lo que dicen los documentos indexados, el sistema va a inventar huecos. Solo puede acercar la pregunta a texto que sí se ha guardado.</p>
+<ul>
+<li><strong>No redacta la respuesta.</strong> Solo coloca textos en un mapa. Redactar es trabajo de otro modelo, en otra unidad.</li>
+<li><strong>No cita ni decide si un fragmento está vigente.</strong> Un procedimiento derogado se parece igual que uno vigente.</li>
+<li><strong>No aplica filtros.</strong> «Solo oferta educativa» es un metadato con un <code>where</code>, tema 6.</li>
+<li><strong>No inventa lo que no está.</strong> Solo puede acercar la pregunta a texto que se ha guardado. Si esperas que «entienda el organigrama del IES» más allá de lo que dicen los documentos indexados, el sistema inventará huecos.</li>
+<li><strong>Es flojo con los detalles finos.</strong> «El plazo termina el 15» y «el plazo termina el 25» dan vectores casi iguales, porque hablan de lo mismo. Y «se puede matricular» y «no se puede matricular» también quedan muy cerca. El embedding sirve para <strong>encontrar</strong> el fragmento correcto, y luego hay que <strong>leerlo</strong> para ver lo que dice exactamente.</li>
+</ul>
+<h2 id="comprueba-que-lo-has-entendido">Comprueba que lo has entendido<a class="headerlink" href="#comprueba-que-lo-has-entendido" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>1. ¿Qué es un embedding, dicho en una frase?</summary>
+<p>La posición de un texto en un mapa de significado, escrita como una lista de números. Textos que hablan de lo mismo quedan con números parecidos.</p>
+</details>
+<details class="question">
+<summary>2. La pregunta «¿cómo me matriculo?» y el texto «plazo de inscripción» no comparten palabras. ¿Por qué pueden estar cerca?</summary>
+<p>Porque el modelo, en su entrenamiento, ha visto «matricularse» e «inscribirse» en contextos parecidos y las coloca en la misma zona del mapa. La cercanía viene del significado, no de las letras.</p>
+</details>
+<details class="question">
+<summary>3. ¿Qué significa la componente 37 de un vector de Titan?</summary>
+<p>Nada que se pueda leer por sí sola. Los ejes los descubre el modelo al entrenarse y no tienen nombre. El significado está en la posición del punto respecto a los demás.</p>
+</details>
+<details class="question">
+<summary>4. Un fragmento tiene tres palabras y otro tiene tres páginas. ¿Qué dimensión tiene cada vector?</summary>
+<p>La misma, 1024 en DocIA+. El modelo siempre devuelve el mismo número de componentes, sea cual sea la longitud del texto.</p>
+</details>
+<details class="question">
+<summary>5. Se indexa con Titan a 1024 dimensiones y se cambia a 512 para consultar. ¿Qué pasa?</summary>
+<p>Que la búsqueda deja de ser válida: los dos vectores no viven en el mismo espacio. Para cambiar la dimensión hay que reindexar todos los fragmentos con esa opción.</p>
+</details>
+<details class="question">
+<summary>6. ¿Por qué guardamos el texto original además del vector?</summary>
+<p>Porque el vector depende del modelo. Si cambiamos de modelo hay que recalcular todos los vectores, y para eso hace falta el texto. Además, la respuesta a la persona se redacta con el texto, no con los números.</p>
+</details>
 
 
 
