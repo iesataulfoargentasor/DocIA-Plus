@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 448" role="img">
+  <title>Filtro y similitud en una misma consulta</title>
+  <desc>El filtro decide qué registros participan: solo g4 del curso 2026-2027. El vector ordena los que quedan por distancia a la pregunta. La versión de 2023 queda fuera por el filtro.</desc>
+  <rect width="760" height="448" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="32" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Cada consulta responde a dos preguntas distintas</text>
+<rect x="24" y="50" width="400" height="40" rx="10" fill="#e8eaf6" stroke="#3949ab" stroke-width="1.5"/>
+<text x="40" y="76" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">1. ¿Quién participa?  →  el filtro where</text>
+<text x="40" y="110" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">categoria = g4  y  curso = 2026-2027</text>
+<rect x="24" y="124" width="400" height="44" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="38" y="143" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Formalización de matrícula</text>
+<text x="38" y="160" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">oferta-iabd-2026_000  ·  g4 · 2026-2027</text>
+<text x="410" y="151" text-anchor="end" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">entra</text>
+<rect x="24" y="176" width="400" height="44" rx="10" fill="#eef0f6" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="38" y="195" text-anchor="start" fill="#8b93a7" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Formalización de matrícula (2023)</text>
+<text x="38" y="212" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">oferta-iabd-2023_000  ·  g4 · 2023-2024</text>
+<text x="410" y="203" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">fuera</text>
+<rect x="24" y="228" width="400" height="44" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="38" y="247" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Plazo de inscripción</text>
+<text x="38" y="264" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">oferta-iabd-2026_001  ·  g4 · 2026-2027</text>
+<text x="410" y="255" text-anchor="end" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">entra</text>
+<rect x="24" y="280" width="400" height="44" rx="10" fill="#eef0f6" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="38" y="299" text-anchor="start" fill="#8b93a7" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Menú de la cafetería</text>
+<text x="38" y="316" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">menu-2026_000  ·  g5 · 2026-2027</text>
+<text x="410" y="307" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">fuera</text>
+<rect x="24" y="332" width="400" height="44" rx="10" fill="#eef0f6" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="38" y="351" text-anchor="start" fill="#8b93a7" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">Precio del bocadillo</text>
+<text x="38" y="368" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="11" font-weight="500">menu-2026_001  ·  g5 · 2026-2027</text>
+<text x="410" y="359" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">fuera</text>
+<line x1="430" y1="250" x2="470" y2="250" stroke="#3949ab" stroke-width="2.5" marker-end="url(#flecha)"/>
+<rect x="476" y="50" width="260" height="40" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="492" y="76" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">2. ¿En qué orden?  →  el vector</text>
+<text x="492" y="110" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">distancia a la pregunta, menor primero</text>
+<rect x="476" y="176" width="260" height="150" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="606" y="204" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Resultado</text>
+<text x="492" y="236" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">1.  Formalización de matrícula</text>
+<text x="492" y="254" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">distancia 0,003</text>
+<text x="492" y="280" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">2.  Plazo de inscripción</text>
+<text x="492" y="298" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">distancia 0,030</text>
+<text x="24" y="406" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">La versión de 2023 se parece tanto como la de 2026: el vector no sabe de vigencias.</text>
+<text x="24" y="428" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400">La deja fuera el filtro por curso, no la similitud.</text>
+</svg>
