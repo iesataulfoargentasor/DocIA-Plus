@@ -6,7 +6,7 @@ Unidad previa a la implementación del almacén de embeddings de DocIA+. Si el g
 
 | Tema | Pregunta que responde |
 | --- | --- |
-| [Sesión 1. Ver la base vectorial](sesion-01.md) | Mapa en la pizarra, ver un vector y las primeras operaciones en ChromaDB |
+| [Sesión 1. Ver la base vectorial](sesion-01.md) | Del dato en bruto al vector, ver esa lista y las primeras operaciones en ChromaDB |
 | [Por qué existen](00-por-que-existen.md) | Cuándo aparecen y por qué no nacieron para el RAG |
 | [1. Búsqueda literal y semántica](01-busqueda-literal-y-semantica.md) | Por qué una base SQL o un `grep` no bastan |
 | [2. Embeddings](02-embeddings.md) | Qué es el vector y qué modelo lo produce en DocIA+ |
@@ -25,7 +25,7 @@ Pensada para unas siete sesiones compartidas o repartidas entre SBD y BDA. La pr
 
 | Sesión | Trabajo | Encargo dominante |
 | --- | --- | --- |
-| 1 | [Sesión 1](sesion-01.md): mapa, vector a la vista y ChromaDB en Colab | Los dos |
+| 1 | [Sesión 1](sesion-01.md): del dato al vector, la lista a la vista y ChromaDB en Colab | Los dos |
 | 2 | Por qué existen, y temas 1 y 2, con los dos vídeos de CodelyTV | Los dos |
 | 3 | Tema 3 y laboratorio de geometría | Los dos |
 | 4 | Tema 4 | Los dos, con más peso conceptual en BDA |

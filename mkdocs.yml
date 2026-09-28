@@ -49,6 +49,10 @@ nav:
       - 9. Calidad, fallos y qué mediremos: 01-bases-vectoriales/09-calidad-y-fallos.md
       - 10. ChromaDB en DocIA+: 01-bases-vectoriales/10-chromadb-en-docia.md
       - Ejercicios: 01-bases-vectoriales/ejercicios.md
+extra_css:
+  - stylesheets/diapositivas.css
+extra_javascript:
+  - javascripts/diapositivas.js
 markdown_extensions:
   - admonition
   - pymdownx.details

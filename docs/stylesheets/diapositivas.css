@@ -1,0 +1,123 @@
+.dia-deck {
+  margin: 1.2rem 0 1.6rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 16px;
+  background: var(--md-code-bg-color);
+  overflow: hidden;
+}
+
+.dia-slide {
+  padding: 1.35rem 1.5rem 1.1rem;
+}
+
+.dia-deck.dia-ready .dia-slide {
+  display: none;
+  min-height: 22rem;
+}
+
+.dia-deck.dia-ready .dia-slide.is-active {
+  display: block;
+}
+
+.dia-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--md-primary-fg-color);
+}
+
+.dia-slide h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.dia-slide p,
+.dia-slide li {
+  font-size: 0.98rem;
+}
+
+.dia-slide ul {
+  margin-top: 0.4rem;
+}
+
+.dia-pasos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin: 1rem 0 0.4rem;
+}
+
+.dia-paso {
+  margin: 0;
+  padding: 0.75rem 0.7rem;
+  border-radius: 12px;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.dia-paso strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.dia-paso span {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.dia-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0.6rem 0 0.2rem;
+  border-radius: 12px;
+}
+
+.dia-bar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem 0.85rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.dia-deck.dia-ready .dia-bar {
+  display: flex;
+}
+
+.dia-bar button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+  color: var(--md-primary-bg-color);
+  background: var(--md-primary-fg-color);
+}
+
+.dia-bar button:focus-visible,
+.dia-deck:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+.dia-count {
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+}
+
+@media (max-width: 720px) {
+  .dia-pasos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dia-deck.dia-ready .dia-slide {
+    min-height: 0;
+  }
+}

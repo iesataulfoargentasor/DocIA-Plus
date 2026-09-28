@@ -48,16 +48,25 @@ def main() -> None:
             md(
                 """# Práctica 1. Ver el vector antes de guardarlo
 
-En esta práctica no hay base de datos. Un modelo convierte frases en listas de números. Esa lista es el embedding: la posición de la frase en el mapa.
+En esta práctica no hay base de datos. El objetivo es obtener un vector y mirarlo.
 
-El modelo de esta sesión es pequeño y gratuito (`all-MiniLM-L6-v2`). Devuelve **384** números. En DocIA+ el modelo del proyecto será Amazon Titan y devolverá **1024**. Son dos mapas distintos. No se mezclan.
+Un modelo de embeddings ya entrenado convierte una frase en una lista de números. Esa lista es el vector: la posición de la frase en un mapa de muchas dimensiones. No es un resumen y no es una traducción. No se lee número a número.
 
-Las frases son de ejercicio. No son documentos oficiales del IES.
+El modelo de esta sesión es pequeño y gratuito (`all-MiniLM-L6-v2`). Devuelve **384** números porque así se construyó. En DocIA+ el modelo del proyecto será Amazon Titan y devolverá **1024**. Son dos mapas distintos. No se mezclan.
 
-La primera ejecución descarga el modelo. Puede tardar un minuto.
+Las frases son de ejercicio y ya son cortas: cada una es el trozo. No son documentos oficiales del IES.
+
+La primera ejecución descarga el modelo. Puede tardar un minuto. No lo estamos entrenando; lo estamos usando.
 """
             ),
-            md("## Instalar\n"),
+            md(
+                """## Instalar
+
+Python no trae un modelo de embeddings. Esta línea descarga la librería que sabe cargar uno.
+
+`sentence-transformers` es el programa. El modelo, `all-MiniLM-L6-v2`, se bajará en la celda siguiente, la primera vez que se use. Sin esta librería no hay función que convierta texto en números.
+"""
+            ),
             code(
                 """!pip install sentence-transformers -q
 print("Libreria instalada")
@@ -66,7 +75,11 @@ print("Libreria instalada")
             md(
                 """## Convertir una frase en una lista de números
 
-El modelo no redacta. Solo coloca la frase en el mapa.
+`SentenceTransformer(...)` carga el modelo en memoria. `encode` es el embedding: entra la frase y sale la lista.
+
+Imprimimos el texto, la longitud y solo los diez primeros números. La longitud tiene que ser 384. Los diez primeros bastan para ver que son decimales, no palabras. El número 7, solo, no significa nada. El significado, si lo hay, aparece al comparar la lista completa con otra lista del mismo modelo.
+
+El modelo no redacta y no contesta a la frase. Solo la coloca en el mapa.
 """
             ),
             code(
@@ -88,7 +101,11 @@ print(vector[:10])
             md(
                 """## Medir quién está cerca
 
-Número más pequeño significa más cerca. Todavía no hay ChromaDB: la cuenta la hace Python.
+La cercanía es una propiedad de los vectores. No hace falta una base de datos para verla.
+
+Se convierten tres frases con el mismo modelo. Python resta dos listas y mide lo larga que queda esa resta. Eso es una distancia. Número más pequeño, más cerca.
+
+Tiene que quedar más cerca «matrícula» de «inscripción» que de «cafetería». Las dos primeras hablan del mismo trámite con otras palabras. La tercera no. Si saliera al revés, las tres frases no se habrían codificado con el mismo modelo.
 """
             ),
             code(
@@ -121,23 +138,30 @@ else:
             md(
                 """# Práctica 2. ChromaDB paso a paso
 
-Ya habéis visto un vector en la práctica 1. Ahora ese vector entra en una base de datos.
+En la práctica 1 el vector vivía en una variable y se perdía al cerrar el cuaderno. Una base de datos lo guarda para poder buscarlo después.
 
-ChromaDB es la base del proyecto DocIA+. Aquí trabaja en memoria, dentro de Colab. Al final veréis una colección que sí se escribe en disco.
+ChromaDB es la base que usaremos en DocIA+. Aquí trabaja dentro de Colab. Primero en memoria, y al final en una carpeta.
 
-Cada registro guarda cuatro cosas:
+Cada registro guarda cuatro cosas, y cada una tiene un motivo:
 
-- `ids`: identificador único
-- `documents`: el texto que se podría citar
-- `embeddings`: la lista de números, calculada por nosotros
-- `metadatas`: la categoría, para filtrar
+- `ids`: identificador único, para actualizar o borrar ese registro y no otro
+- `documents`: el texto del trozo, porque el vector no se puede leer ni citar
+- `embeddings`: la lista de números, calculada por nosotros con el mismo modelo de antes
+- `metadatas`: datos para filtrar, por ejemplo la categoría. No forman parte del vector
 
-Si solo pasáis el texto y no el vector, ChromaDB llama a un modelo que no veis. En este cuaderno no se hace así.
+Si solo pasáis el texto y no el vector, ChromaDB llama a un modelo que no veis. Puede no ser el de 384 números. En este cuaderno no se hace así.
 
 Las frases siguen siendo de ejercicio.
 """
             ),
-            md("## Instalar y cargar el mismo modelo\n"),
+            md(
+                """## Instalar y cargar el mismo modelo
+
+Hace falta la librería de la base (`chromadb`) y otra vez el modelo de la práctica 1.
+
+Se imprime la dimensión. Tiene que salir 384. Si no sale 384, este cuaderno y el anterior no están en el mismo mapa y las distancias no significan nada.
+"""
+            ),
             code(
                 """!pip install chromadb sentence-transformers -q
 
@@ -150,7 +174,13 @@ print("Modelo listo. Dimensiones:", modelo.get_sentence_embedding_dimension())
             md(
                 """## Crear la colección
 
-En SQL esto sería una tabla. Aquí se llama colección. El espacio es el coseno: más adelante veréis por qué. Hoy basta con saber que una distancia más pequeña significa más parecido.
+En SQL, antes de insertar filas se crea la tabla. Aquí se crea la colección: el sitio donde vivirán los registros.
+
+`EphemeralClient` la guarda solo en memoria. Al cerrar el cuaderno desaparece. Más adelante veréis la que se escribe en disco.
+
+`hnsw:space = cosine` le dice cómo medir. Hoy basta con esto: en esta colección, una distancia más pequeña significa más parecido. El coseno se calcula a mano en el tema 3.
+
+Si la colección ya existía de una ejecución anterior, se borra y se crea vacía. Así no se mezclan pruebas viejas.
 """
             ),
             code(
@@ -171,7 +201,11 @@ print("Coleccion creada:", coleccion.name)
             md(
                 """## Guardar cinco frases
 
-Primero se calcula el vector. Después se guarda, junto con el texto y la categoría.
+Este es el paso de cargar la base. Cada frase ya es un trozo, así que no hay que partirla.
+
+Primero `encode` calcula las cinco listas con el modelo que acabamos de cargar. Después `add` las guarda. El orden importa: el vector que entra es el nuestro. La base no lo inventa.
+
+La categoría (`Secretaria`, `Servicios`…) es un metadato. Sirve para filtrar, como un `WHERE`. No cambia los números del vector.
 """
             ),
             code(
@@ -204,7 +238,9 @@ print("Registros guardados:", coleccion.count())
             md(
                 """## Mirar el vector que quedó dentro
 
-Tiene que salir 384, los mismos que en la práctica 1.
+Antes de preguntar, se comprueba que la base ha guardado lo que le hemos dado.
+
+Pedimos el registro `doc1` con su texto y su vector. La longitud tiene que ser 384, la misma de la práctica 1. Si la base hubiera llamado a otro modelo a escondidas, esta comprobación fallaría.
 """
             ),
             code(
@@ -219,7 +255,11 @@ print("Diez primeros numeros:", list(vector[:10]))
             md(
                 """## Preguntar con otras palabras
 
-La pregunta no contiene «formalizacion» ni «matricula». El vector de la pregunta se calcula con el mismo modelo y se compara con los que están guardados.
+La pregunta también es un dato. Hay que convertirla en vector con el mismo modelo y comparar esa lista con las que están guardadas. `query_embeddings` hace la comparación. `n_results=2` pide solo los dos vecinos más cercanos.
+
+La frase no contiene «formalizacion» ni «matricula». Un `LIKE` no encontraría la primera frase. La base vectorial sí puede, porque no busca las letras: busca el punto más cercano.
+
+La distancia que imprime ChromaDB en esta colección es más pequeña cuanto más se parecen. Cerca de 0, muy parecido.
 """
             ),
             code(
@@ -240,7 +280,11 @@ for i, doc in enumerate(resultados["documents"][0]):
             md(
                 """## Filtrar por categoría
 
-La cercanía y el filtro no son la misma cosa. Aquí la pregunta es amplia, pero solo pueden salir textos de `Secretaria`.
+La cercanía y el filtro no son la misma cosa.
+
+La pregunta es amplia. Sin filtro podrían salir textos de varias categorías. `where` obliga a que la categoría sea `Secretaria`, igual que un `WHERE` en SQL. Eso no crea otro vector: quita registros y, entre los que quedan, ordena por cercanía.
+
+Si el filtro se aplicara después de pedir los dos más cercanos, se podrían perder los de Secretaría. Por eso va dentro de la misma consulta.
 """
             ),
             code(
@@ -261,7 +305,11 @@ for doc, meta in zip(filtrados["documents"][0], filtrados["metadatas"][0]):
             md(
                 """## Memoria y disco
 
-La colección de arriba desaparece al cerrar el cuaderno. Una base de datos también tiene que seguir ahí mañana. `PersistentClient` escribe una carpeta.
+La colección de arriba es un cálculo en memoria. Al cerrar Colab desaparece. Una base de datos tiene que seguir ahí mañana.
+
+`PersistentClient` escribe una carpeta. Se guardan los mismos cinco registros, se cierra el cliente y se abre otro apuntando a la misma carpeta. Si el recuento sigue siendo 5, los vectores han sobrevivido fuera de la variable.
+
+En el proyecto la carpeta no estará en Colab: estará en el servidor. La idea es la misma.
 """
             ),
             code(
