@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 434" role="img">
+  <title>Ejercicio 8: el fragmento correcto está en la posición 8</title>
+  <desc>Los siete primeros de la lista son programaciones g1. La consulta pide solo 5, así que el fragmento de oferta g4, en la posición 8, no llega a pedirse.</desc>
+  <rect width="500" height="434" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="36" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Ejercicio 8: la lista completa, de más a menos parecido</text>
+<rect x="24" y="54" width="452" height="40" rx="20" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="42" y="79" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">¿Puedo acceder con un grado medio de informática?</text>
+<rect x="24" y="116" width="360" height="30" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="44" y="136" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">1</text>
+<text x="64" y="136" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">prog-sbd-2026_001</text>
+<text x="368" y="136" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g1</text>
+<rect x="24" y="154" width="360" height="30" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="44" y="174" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">2</text>
+<text x="64" y="174" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">prog-bda-2026_000</text>
+<text x="368" y="174" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g1</text>
+<rect x="24" y="192" width="360" height="30" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="44" y="212" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">3</text>
+<text x="64" y="212" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">prog-pia-2026_002</text>
+<text x="368" y="212" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g1</text>
+<rect x="24" y="230" width="360" height="30" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="44" y="250" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">4</text>
+<text x="64" y="250" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">prog-sbd-2026_000</text>
+<text x="368" y="250" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g1</text>
+<rect x="24" y="268" width="360" height="30" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="44" y="288" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">5</text>
+<text x="64" y="288" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">prog-bda-2026_003</text>
+<text x="368" y="288" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g1</text>
+<rect x="24" y="306" width="360" height="30" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="44" y="326" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">6</text>
+<text x="64" y="326" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">prog-mia-2026_001</text>
+<text x="368" y="326" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g1</text>
+<rect x="24" y="344" width="360" height="30" rx="8" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="44" y="364" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">7</text>
+<text x="64" y="364" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">prog-pia-2026_000</text>
+<text x="368" y="364" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g1</text>
+<rect x="24" y="382" width="360" height="30" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="44" y="402" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">8</text>
+<text x="64" y="402" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">oferta-iabd-2026_002</text>
+<text x="368" y="402" text-anchor="end" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">g4</text>
+<line x1="16" y1="302" x2="470" y2="302" stroke="#b71c1c" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="400" y="292" text-anchor="start" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">n_results=5</text>
+<text x="400" y="322" text-anchor="start" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">no se piden</text>
+<text x="400" y="402" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">el fragmento</text>
+<text x="400" y="420" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">que responde</text>
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 394" role="img">
+  <title>Diez ejercicios en tres bloques</title>
+  <desc>Buscar por significado: ejercicios 1, 2 y 3. Guardar y consultar: 4, 5, 8 y 9. Mantener y medir: 6, 7 y 10. Cada uno indica su tema y su sesión.</desc>
+  <rect width="768" height="394" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="36" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Diez ejercicios, tres bloques de la unidad</text>
+<text x="24" y="60" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Cada tarjeta dice qué tema repasa y en qué sesión se hace.</text>
+<text x="24" y="96" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Buscar por significado</text>
+<line x1="24" y1="106" x2="256" y2="106" stroke="#3949ab" stroke-width="2"/>
+<rect x="24" y="120" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="50" cy="148" r="15" fill="#3949ab"/>
+<text x="50" y="153" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">1</text>
+<text x="74" y="145" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Dos búsquedas</text>
+<text x="74" y="164" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">tema 1 · sesión 2</text>
+<rect x="24" y="186" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="50" cy="214" r="15" fill="#3949ab"/>
+<text x="50" y="219" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">2</text>
+<text x="74" y="211" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Coseno a mano</text>
+<text x="74" y="230" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">tema 3 · sesión 3</text>
+<rect x="24" y="252" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="50" cy="280" r="15" fill="#3949ab"/>
+<text x="50" y="285" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">3</text>
+<text x="74" y="277" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Vectores normalizados</text>
+<text x="74" y="296" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">tema 3 · sesión 3</text>
+<text x="272" y="96" text-anchor="start" fill="#00796b" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Guardar y consultar</text>
+<line x1="272" y1="106" x2="504" y2="106" stroke="#00796b" stroke-width="2"/>
+<rect x="272" y="120" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="298" cy="148" r="15" fill="#00796b"/>
+<text x="298" y="153" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">4</text>
+<text x="322" y="145" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Colección que no se mezcla</text>
+<text x="322" y="164" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">temas 2 y 5 · sesión 2</text>
+<rect x="272" y="186" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="298" cy="214" r="15" fill="#00796b"/>
+<text x="298" y="219" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">5</text>
+<text x="322" y="211" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Estructura de un registro</text>
+<text x="322" y="230" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">tema 6 · sesión 5</text>
+<rect x="272" y="252" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="298" cy="280" r="15" fill="#00796b"/>
+<text x="298" y="285" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">8</text>
+<text x="322" y="277" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">El filtro que llega tarde</text>
+<text x="322" y="296" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">temas 4 y 6 · sesión 5</text>
+<rect x="272" y="318" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="298" cy="346" r="15" fill="#00796b"/>
+<text x="298" y="351" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">9</text>
+<text x="322" y="343" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Escala del IES</text>
+<text x="322" y="362" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">tema 4 · sesión 4</text>
+<text x="520" y="96" text-anchor="start" fill="#2e7d32" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Mantener y medir</text>
+<line x1="520" y1="106" x2="752" y2="106" stroke="#2e7d32" stroke-width="2"/>
+<rect x="520" y="120" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="546" cy="148" r="15" fill="#2e7d32"/>
+<text x="546" y="153" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">6</text>
+<text x="570" y="145" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Actualizar sin huérfanos</text>
+<text x="570" y="164" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">temas 7 y 8 · sesión 6</text>
+<rect x="520" y="186" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="546" cy="214" r="15" fill="#2e7d32"/>
+<text x="546" y="219" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">7</text>
+<text x="570" y="211" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Recall@5</text>
+<text x="570" y="230" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">tema 9 · sesión 7</text>
+<rect x="520" y="252" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<circle cx="546" cy="280" r="15" fill="#2e7d32"/>
+<text x="546" y="285" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">10</text>
+<text x="570" y="277" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Cambio de modelo</text>
+<text x="570" y="296" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">temas 2 y 9 · sesión 7</text>
+</svg>

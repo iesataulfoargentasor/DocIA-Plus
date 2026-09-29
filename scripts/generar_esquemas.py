@@ -1467,7 +1467,135 @@ def sql_vs_mapa() -> None:
     )
 
 
+def ejercicios_mapa() -> None:
+    columnas = [
+        ("Buscar por significado", INDIGO, [
+            (1, "Dos búsquedas", "tema 1 · sesión 2"),
+            (2, "Coseno a mano", "tema 3 · sesión 3"),
+            (3, "Vectores normalizados", "tema 3 · sesión 3"),
+        ]),
+        ("Guardar y consultar", TEAL, [
+            (4, "Colección que no se mezcla", "temas 2 y 5 · sesión 2"),
+            (5, "Estructura de un registro", "tema 6 · sesión 5"),
+            (8, "El filtro que llega tarde", "temas 4 y 6 · sesión 5"),
+            (9, "Escala del IES", "tema 4 · sesión 4"),
+        ]),
+        ("Mantener y medir", GREEN, [
+            (6, "Actualizar sin huérfanos", "temas 7 y 8 · sesión 6"),
+            (7, "Recall@5", "tema 9 · sesión 7"),
+            (10, "Cambio de modelo", "temas 2 y 9 · sesión 7"),
+        ]),
+    ]
+    parts = [text(24, 36, "Diez ejercicios, tres bloques de la unidad", 18, INK, 650)]
+    parts.append(text(24, 60, "Cada tarjeta dice qué tema repasa y en qué sesión se hace.", 13, MUTED))
+    for col, (titulo, color, items) in enumerate(columnas):
+        x = 24 + col * 248
+        parts.append(text(x, 96, titulo, 15, color, 700))
+        parts.append(f'<line x1="{x}" y1="106" x2="{x + 232}" y2="106" stroke="{color}" stroke-width="2"/>')
+        for row, (num, nombre, donde) in enumerate(items):
+            y = 120 + row * 66
+            parts.append(rect(x, y, 232, 56, CARD, LINE, 12))
+            parts.append(f'<circle cx="{x + 26}" cy="{y + 28}" r="15" fill="{color}"/>')
+            parts.append(text(x + 26, y + 33, str(num), 13, CARD, 700, "middle"))
+            parts.append(text(x + 50, y + 25, nombre, 13, INK, 650))
+            parts.append(text(x + 50, y + 44, donde, 12, MUTED))
+    save(
+        "ej-mapa.svg",
+        "\n".join(parts),
+        "Diez ejercicios en tres bloques",
+        "Buscar por significado: ejercicios 1, 2 y 3. Guardar y consultar: 4, 5, 8 y 9. Mantener y medir: 6, 7 y 10. Cada uno indica su tema y su sesión.",
+        768,
+        394,
+    )
+
+
+def ejercicios_coseno() -> None:
+    ox, oy, s = 90, 300, 70
+    parts = [text(24, 36, "Ejercicio 2: tres vectores sin normalizar", 18, INK, 650)]
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox + 3.6 * s}" y2="{oy}" stroke="{INK}" stroke-width="1.5"/>')
+    parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox}" y2="{oy - 3.6 * s}" stroke="{INK}" stroke-width="1.5"/>')
+    for i in range(1, 4):
+        parts.append(text(ox + i * s, oy + 20, str(i), 12, MUTED, 500, "middle"))
+        parts.append(text(ox - 12, oy - i * s + 4, str(i), 12, MUTED, 500, "end"))
+    parts.append(text(ox + 1.8 * s, oy + 44, "eje 1: habla de matrícula  →", 13, MUTED, 500, "middle"))
+    parts.append(
+        f'<text x="34" y="{oy - 1.6 * s}" text-anchor="middle" fill="{MUTED}" font-family="Segoe UI, sans-serif" '
+        f'font-size="13" font-weight="500" transform="rotate(-90 34 {oy - 1.6 * s})">eje 2: cafetería  →</text>'
+    )
+    vectores = [("a", (2, 0), INDIGO), ("b", (1, 1), TEAL), ("c", (0, 3), ORANGE)]
+    for nombre, (x, y), color in vectores:
+        parts.append(f'<line x1="{ox}" y1="{oy}" x2="{ox + x * s}" y2="{oy - y * s}" stroke="{color}" stroke-width="3.5"/>')
+        parts.append(f'<circle cx="{ox + x * s}" cy="{oy - y * s}" r="6" fill="{color}"/>')
+    parts.append(text(ox + 2 * s + 12, oy - 10, "a = (2, 0)", 14, INDIGO, 700))
+    parts.append(text(ox + s + 12, oy - s - 6, "b = (1, 1)", 14, TEAL, 700))
+    parts.append(text(ox + 14, oy - 3 * s + 6, "c = (0, 3)", 14, ORANGE, 700))
+    parts.append(f'<path d="M {ox + 44} {oy} A 44 44 0 0 0 {ox + 31.1} {oy - 31.1}" fill="none" stroke="{TEAL}" stroke-width="2"/>')
+    parts.append(text(ox + 52, oy - 16, "?", 15, TEAL, 800))
+    parts.append(f'<path d="M {ox + 26} {oy} A 26 26 0 0 0 {ox} {oy - 26}" fill="none" stroke="{ORANGE}" stroke-width="2"/>')
+    parts.append(text(ox + 8, oy - 32, "?", 15, ORANGE, 800))
+    parts.append(rect(370, 90, 250, 150, CARD, LINE, 14))
+    parts.append(text(386, 118, "Lo que tienes que calcular", 14, INK, 700))
+    for i, linea in enumerate([
+        "la longitud (norma) de cada uno",
+        "el coseno de a con b",
+        "el coseno de a con c",
+        "el producto escalar a · b",
+        "la distancia que daría ChromaDB",
+    ]):
+        parts.append(text(386, 146 + i * 20, f"·  {linea}", 13, MUTED))
+    save(
+        "ej-coseno.svg",
+        "\n".join(parts),
+        "Ejercicio 2: tres vectores sin normalizar",
+        "a = (2, 0) apunta a matrícula, b = (1, 1) está a medio camino y c = (0, 3) apunta a cafetería. Hay que calcular normas, cosenos, producto escalar y distancia.",
+        644,
+        370,
+    )
+
+
+def ejercicios_filtro_tarde() -> None:
+    filas = [
+        ("prog-sbd-2026_001", "g1"),
+        ("prog-bda-2026_000", "g1"),
+        ("prog-pia-2026_002", "g1"),
+        ("prog-sbd-2026_000", "g1"),
+        ("prog-bda-2026_003", "g1"),
+        ("prog-mia-2026_001", "g1"),
+        ("prog-pia-2026_000", "g1"),
+        ("oferta-iabd-2026_002", "g4"),
+    ]
+    parts = [text(24, 36, "Ejercicio 8: la lista completa, de más a menos parecido", 18, INK, 650)]
+    parts.append(rect(24, 54, 452, 40, CARD, LINE, 20))
+    parts.append(text(42, 79, "¿Puedo acceder con un grado medio de informática?", 14, INK, 500))
+    y0 = 116
+    for i, (doc, cat) in enumerate(filas):
+        y = y0 + i * 38
+        ok = cat == "g4"
+        parts.append(rect(24, y, 360, 30, GREEN_SOFT if ok else CARD, GREEN if ok else LINE, 8, 2 if ok else 1.5))
+        parts.append(text(44, y + 20, str(i + 1), 13, MUTED, 700, "middle"))
+        parts.append(text(64, y + 20, doc, 13, INK, 650 if ok else 400))
+        parts.append(text(368, y + 20, cat, 13, GREEN if ok else MUTED, 700, "end"))
+    corte = y0 + 5 * 38 - 4
+    parts.append(f'<line x1="16" y1="{corte}" x2="470" y2="{corte}" stroke="{RED}" stroke-width="2" stroke-dasharray="7 5"/>')
+    parts.append(text(400, corte - 10, "n_results=5", 13, RED, 700))
+    parts.append(text(400, corte + 20, "no se piden", 13, RED, 500))
+    yo = y0 + 7 * 38 + 20
+    parts.append(text(400, yo, "el fragmento", 13, GREEN, 700))
+    parts.append(text(400, yo + 18, "que responde", 13, GREEN, 700))
+    save(
+        "ej-filtro-tarde.svg",
+        "\n".join(parts),
+        "Ejercicio 8: el fragmento correcto está en la posición 8",
+        "Los siete primeros de la lista son programaciones g1. La consulta pide solo 5, así que el fragmento de oferta g4, en la posición 8, no llega a pedirse.",
+        500,
+        434,
+    )
+
+
 def main() -> None:
+    ejercicios_mapa()
+    ejercicios_coseno()
+    ejercicios_filtro_tarde()
     mapa_2d()
     sql_vs_mapa()
     origen_orden()

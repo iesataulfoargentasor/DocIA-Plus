@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 644 370" role="img">
+  <title>Ejercicio 2: tres vectores sin normalizar</title>
+  <desc>a = (2, 0) apunta a matrícula, b = (1, 1) está a medio camino y c = (0, 3) apunta a cafetería. Hay que calcular normas, cosenos, producto escalar y distancia.</desc>
+  <rect width="644" height="370" rx="18" fill="#f4f6fb"/>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3949ab"/>
+    </marker>
+    <marker id="flecha-roja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
+    </marker>
+  </defs>
+  <text x="24" y="36" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Ejercicio 2: tres vectores sin normalizar</text>
+<line x1="90" y1="300" x2="342.0" y2="300" stroke="#1c2340" stroke-width="1.5"/>
+<line x1="90" y1="300" x2="90" y2="48.0" stroke="#1c2340" stroke-width="1.5"/>
+<text x="160" y="320" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">1</text>
+<text x="78" y="234" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">1</text>
+<text x="230" y="320" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">2</text>
+<text x="78" y="164" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">2</text>
+<text x="300" y="320" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">3</text>
+<text x="78" y="94" text-anchor="end" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="500">3</text>
+<text x="216.0" y="344" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500">eje 1: habla de matrícula  →</text>
+<text x="34" y="188.0" text-anchor="middle" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="500" transform="rotate(-90 34 188.0)">eje 2: cafetería  →</text>
+<line x1="90" y1="300" x2="230" y2="300" stroke="#3949ab" stroke-width="3.5"/>
+<circle cx="230" cy="300" r="6" fill="#3949ab"/>
+<line x1="90" y1="300" x2="160" y2="230" stroke="#00796b" stroke-width="3.5"/>
+<circle cx="160" cy="230" r="6" fill="#00796b"/>
+<line x1="90" y1="300" x2="90" y2="90" stroke="#ef6c00" stroke-width="3.5"/>
+<circle cx="90" cy="90" r="6" fill="#ef6c00"/>
+<text x="242" y="290" text-anchor="start" fill="#3949ab" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">a = (2, 0)</text>
+<text x="172" y="224" text-anchor="start" fill="#00796b" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">b = (1, 1)</text>
+<text x="104" y="96" text-anchor="start" fill="#ef6c00" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">c = (0, 3)</text>
+<path d="M 134 300 A 44 44 0 0 0 121.1 268.9" fill="none" stroke="#00796b" stroke-width="2"/>
+<text x="142" y="284" text-anchor="start" fill="#00796b" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800">?</text>
+<path d="M 116 300 A 26 26 0 0 0 90 274" fill="none" stroke="#ef6c00" stroke-width="2"/>
+<text x="98" y="268" text-anchor="start" fill="#ef6c00" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800">?</text>
+<rect x="370" y="90" width="250" height="150" rx="14" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
+<text x="386" y="118" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Lo que tienes que calcular</text>
+<text x="386" y="146" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">·  la longitud (norma) de cada uno</text>
+<text x="386" y="166" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">·  el coseno de a con b</text>
+<text x="386" y="186" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">·  el coseno de a con c</text>
+<text x="386" y="206" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">·  el producto escalar a · b</text>
+<text x="386" y="226" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">·  la distancia que daría ChromaDB</text>
+</svg>
