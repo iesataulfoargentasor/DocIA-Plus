@@ -882,6 +882,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#como-trabajarlos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo trabajarlos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-dos-busquedas" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -985,6 +996,17 @@
     <span class="md-ellipsis">
       
         10. Cambio de modelo en la fase local
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprueba-que-lo-has-entendido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprueba que lo has entendido
       
     </span>
   </a>
@@ -1034,6 +1056,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#como-trabajarlos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo trabajarlos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-dos-busquedas" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1143,6 +1176,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#comprueba-que-lo-has-entendido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprueba que lo has entendido
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1164,83 +1208,256 @@
 
 
 <h1 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h1>
-<p>Se resuelven en papel o con el laboratorio. No hace falta AWS. Las soluciones están en el material de docente, para corregir después de la puesta en común.</p>
+<p>Diez ejercicios para cerrar la unidad. Cada uno repasa uno o dos temas con el mismo ejemplo de siempre: los textos de la matrícula, los documentos <code>oferta-iabd-2026</code>, <code>pec-2026</code> y <code>calendario-2026</code>, y los unos 1.200 fragmentos que se esperan en DocIA+.</p>
+<h2 id="como-trabajarlos">Cómo trabajarlos<a class="headerlink" href="#como-trabajarlos" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Se hacen en papel</strong>, con calculadora. Las cuentas son pequeñas a propósito. Si quieres, compruébalas después en Python o con los laboratorios. No hace falta AWS.</li>
+<li><strong>Primero inténtalo sin mirar nada.</strong> Si te atascas, abre la <strong>pista</strong>. La pista no da la respuesta: te dice qué parte del tema releer.</li>
+<li><strong>Escribe el razonamiento, no solo el resultado.</strong> En la puesta en común se corrige el porqué. Las soluciones las tiene el profesorado y se ven en clase después de intentarlo.</li>
+<li><strong>Se hacen en la sesión indicada</strong>, cuando ya se ha visto el tema. La tabla de la <a href="../" target="_blank" rel="noopener">presentación de la unidad</a> dice cuáles tocan en cada sesión.</li>
+</ul>
+<p><img alt="Tres bloques. Buscar por significado: ejercicios 1, 2 y 3. Guardar y consultar: 4, 5, 8 y 9. Mantener y medir: 6, 7 y 10." src="../../assets/esquemas/ej-mapa.svg" /></p>
+<table>
+<thead>
+<tr>
+<th>Ejercicio</th>
+<th>Qué repasa</th>
+<th>Tema</th>
+<th>Sesión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Dos búsquedas</td>
+<td>Búsqueda literal frente a búsqueda semántica</td>
+<td><a href="../01-busqueda-literal-y-semantica/" target="_blank" rel="noopener">1</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td>2. Coseno a mano</td>
+<td>Norma, coseno, producto escalar y distancia</td>
+<td><a href="../03-geometria-y-similitud/" target="_blank" rel="noopener">3</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td>3. Vectores normalizados</td>
+<td>Por qué con longitud 1 basta el producto escalar</td>
+<td><a href="../03-geometria-y-similitud/" target="_blank" rel="noopener">3</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td>4. Colección que no se mezcla</td>
+<td>Dimensión y modelo iguales al indexar y al consultar</td>
+<td><a href="../02-embeddings/" target="_blank" rel="noopener">2</a> y <a href="../05-anatomia-bd-vectorial/" target="_blank" rel="noopener">5</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td>5. Estructura de un registro</td>
+<td>Identificador y esquema de metadatos</td>
+<td><a href="../06-metadatos-y-filtros/" target="_blank" rel="noopener">6</a></td>
+<td>5</td>
+</tr>
+<tr>
+<td>6. Actualizar sin huérfanos</td>
+<td>Hash, <code>upsert</code> y borrado</td>
+<td><a href="../07-chunking-y-ciclo-de-indexacion/" target="_blank" rel="noopener">7</a> y <a href="../08-operaciones-de-gestion/" target="_blank" rel="noopener">8</a></td>
+<td>6</td>
+</tr>
+<tr>
+<td>7. Recall@5</td>
+<td>Medir si la búsqueda cumple el objetivo</td>
+<td><a href="../09-calidad-y-fallos/" target="_blank" rel="noopener">9</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td>8. El filtro que llega tarde</td>
+<td>Filtro dentro de la consulta y umbral</td>
+<td><a href="../04-busqueda-e-indices/" target="_blank" rel="noopener">4</a> y <a href="../06-metadatos-y-filtros/" target="_blank" rel="noopener">6</a></td>
+<td>5</td>
+</tr>
+<tr>
+<td>9. Escala del IES</td>
+<td>Cuándo hace falta un índice aproximado</td>
+<td><a href="../04-busqueda-e-indices/" target="_blank" rel="noopener">4</a></td>
+<td>4</td>
+</tr>
+<tr>
+<td>10. Cambio de modelo</td>
+<td>Reindexar y volver a medir</td>
+<td><a href="../02-embeddings/" target="_blank" rel="noopener">2</a> y <a href="../09-calidad-y-fallos/" target="_blank" rel="noopener">9</a></td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>Recuerda la regla de lectura de las distancias, que se usa en varios ejercicios. En una colección en espacio coseno, ChromaDB devuelve <strong>distancia = 1 − coseno</strong>: 0 es idéntico y cuanto más pequeña, más parecido. El laboratorio lo muestra: el fragmento de matrícula sale a 0,002, que es un coseno de 0,998.</p>
 <h2 id="1-dos-busquedas">1. Dos búsquedas<a class="headerlink" href="#1-dos-busquedas" title="Permanent link">&para;</a></h2>
-<p>El documento dice: «Procedimiento de formalización de matrícula del curso de especialización».</p>
-<p>La pregunta es: «¿Cómo me matriculo en el ciclo de IA?».</p>
+<p>El documento <code>oferta-iabd-2026</code> tiene este fragmento: «Procedimiento de formalización de matrícula del curso de especialización».</p>
+<p>Una alumna escribe: «¿Cómo me matriculo en el ciclo de IA?».</p>
 <ol>
-<li>Explica por qué una búsqueda literal puede no devolver ese documento.</li>
-<li>Explica qué tiene que coincidir entre la indexación y la consulta para que una búsqueda semántica tenga sentido.</li>
+<li>Escribe las palabras de la pregunta y las del fragmento. Marca las que coinciden <strong>letra por letra</strong>. ¿Son palabras que ayuden a encontrar el fragmento?</li>
+<li>Explica por qué una búsqueda literal, como un <code>LIKE '%matriculo%'</code> en SQL, no devuelve ese fragmento.</li>
+<li>Explica qué tiene que ser igual al indexar el fragmento y al consultar la pregunta para que la búsqueda semántica tenga sentido.</li>
 <li>Di una pregunta para la que, al revés, la búsqueda literal sería la herramienta correcta.</li>
 </ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>Fíjate en «matriculo» y «matrícula»: para un ordenador que compara letras son palabras distintas. Para el apartado 3, relee en el tema 1 las dos fases, indexar y consultar. Para el 4, piensa en algo que se escribe siempre igual, como un código.</p>
+</details>
 <h2 id="2-coseno-a-mano">2. Coseno a mano<a class="headerlink" href="#2-coseno-a-mano" title="Permanent link">&para;</a></h2>
-<p>Vectores sin normalizar:</p>
-<div class="highlight"><pre><span></span><code>a = (2, 0)
-b = (1, 1)
-c = (0, 3)
+<p>Tres vectores <strong>sin normalizar</strong>, con los dos ejes de juguete del tema 1: cuánto habla de matrícula y cuánto de cafetería.</p>
+<div class="highlight"><pre><span></span><code>a = (2, 0)     solo habla de matrícula
+b = (1, 1)     mitad matrícula, mitad cafetería
+c = (0, 3)     solo habla de cafetería
 </code></pre></div>
+<p><img alt="Los vectores a, b y c dibujados en los ejes de matrícula y cafetería. a apunta a matrícula, c a cafetería y b a medio camino." src="../../assets/esquemas/ej-coseno.svg" /></p>
 <ol>
-<li>Calcula la norma de <code>a</code>, de <code>b</code> y de <code>c</code>.</li>
+<li>Calcula la norma (la longitud) de <code>a</code>, de <code>b</code> y de <code>c</code>.</li>
 <li>Calcula el coseno de <code>a</code> con <code>b</code> y el de <code>a</code> con <code>c</code>.</li>
-<li>Ordénalos de mayor a menor similitud respecto de <code>a</code>.</li>
+<li>Ordena <code>b</code> y <code>c</code> de más a menos parecido a <code>a</code>. ¿Cuadra con lo que dice cada texto?</li>
 <li>Calcula el producto escalar de <code>a</code> con <code>b</code>. ¿Por qué no coincide con el coseno?</li>
+<li>Normaliza <code>a</code> y <code>b</code> (divide cada uno por su norma) y vuelve a hacer el producto escalar. ¿Qué obtienes ahora?</li>
+<li>¿Qué distancia devolvería ChromaDB, en espacio coseno, para <code>b</code> y para <code>c</code>?</li>
 </ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>La norma de <code>(x, y)</code> es <code>√(x² + y²)</code>. El coseno es el producto escalar dividido entre el producto de las dos normas. Rehaz primero el ejemplo resuelto del tema 3, el de «¿Cómo me matriculo?», que sale 0,998.</p>
+</details>
 <h2 id="3-vectores-ya-normalizados">3. Vectores ya normalizados<a class="headerlink" href="#3-vectores-ya-normalizados" title="Permanent link">&para;</a></h2>
-<p>Alguien configura Titan con normalización y obtiene, redondeando:</p>
-<div class="highlight"><pre><span></span><code>q = (0,6, 0,8)
+<p>Titan se usa con la opción de normalizar, así que todos sus vectores miden 1. Con dos ejes y redondeando, una pregunta y dos fragmentos quedan así:</p>
+<div class="highlight"><pre><span></span><code>q  = (0,6, 0,8)     la pregunta
 d1 = (0,6, 0,8)
 d2 = (0,8, 0,6)
 </code></pre></div>
 <ol>
 <li>Comprueba que la norma de <code>q</code> es 1.</li>
-<li>Calcula la similitud del coseno de <code>q</code> con <code>d1</code> y con <code>d2</code> usando el producto escalar.</li>
-<li>¿Cuál devolvería primero una colección en espacio coseno, y qué distancia esperas para <code>d1</code> si la distancia es «1 menos el coseno»? Trata esta última regla como hipótesis de lectura: <code>laboratorio/02_chromadb_coleccion.py</code> muestra la distancia real que devuelve la versión de ChromaDB fijada en el repositorio. No es la resta de listas del cuaderno de la sesión 1.</li>
+<li>Calcula el producto escalar de <code>q</code> con <code>d1</code> y con <code>d2</code>. Explica por qué, aquí, eso ya es el coseno.</li>
+<li>¿Qué fragmento devuelve primero una colección en espacio coseno? ¿Qué distancia da ChromaDB para cada uno?</li>
+<li>El cuaderno 1 de la sesión 1 no mide la distancia coseno: mide la «resta» entre los dos vectores, la longitud de <code>q − d2</code>. Calcúlala y comprueba que es igual a <code>√(2 × distancia)</code>. Por eso los números del cuaderno 1 no se comparan con los de ChromaDB.</li>
+<li>Un compañero guarda un fragmento sin normalizar: <code>d4 = (3, 4)</code>. Calcula <code>q · d4</code>. ¿Por qué ese número no puede ser un coseno? ¿Cuál es el coseno de verdad?</li>
 </ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>Con longitud 1, la división del coseno es entre <code>1 × 1</code>, así que no cambia nada. En el apartado 5, un coseno nunca pasa de 1. Calcula la norma de <code>d4</code> y mira hacia dónde apunta comparado con <code>q</code>.</p>
+</details>
 <h2 id="4-una-coleccion-que-no-se-puede-mezclar">4. Una colección que no se puede mezclar<a class="headerlink" href="#4-una-coleccion-que-no-se-puede-mezclar" title="Permanent link">&para;</a></h2>
-<p>Un grupo indexó 40 documentos con Titan a 1024 dimensiones. Otro quiere «probar rápido» consultando con vectores de 256 dimensiones del mismo modelo, porque ocupa menos.</p>
+<p>El grupo de BDA ha indexado los unos 1.200 fragmentos de DocIA+ (80 documentos por unos 15 fragmentos cada uno) con Titan a <strong>1024 dimensiones</strong>. Otro grupo quiere «probar rápido» consultando con vectores de Titan a <strong>256 dimensiones</strong>, porque ocupan menos.</p>
 <ol>
-<li>¿Por qué la consulta no es válida?</li>
-<li>¿Qué habría que hacer para pasar toda la colección a 256 dimensiones?</li>
-<li>¿Por qué no vale con recortar las últimas coordenadas del vector de 1024?</li>
+<li>Calcula cuánto ocupan los vectores de la colección con 1024 dimensiones y cuánto ocuparían con 256. Cada número ocupa 4 bytes. ¿Es un ahorro que importe?</li>
+<li>¿Por qué la consulta de 256 dimensiones contra la colección de 1024 no es válida?</li>
+<li>Si de verdad se quisiera trabajar con 256, ¿qué habría que hacer con la colección?</li>
+<li>Alguien propone quedarse con los primeros 256 números de cada vector de 1024, en vez de volver a llamar a Titan. ¿Por qué no vale?</li>
 </ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>Relee en el tema 2 que un embedding depende del trío texto, modelo y opciones. La dimensión es una de esas opciones. La cuenta del apartado 1 está hecha en el mismo tema, para 1024.</p>
+</details>
 <h2 id="5-estructura-de-un-registro">5. Estructura de un registro<a class="headerlink" href="#5-estructura-de-un-registro" title="Permanent link">&para;</a></h2>
-<p>Documento <code>plan-igualdad-2026.pdf</code>, categoría G3, curso 2026-2027, título «Plan de igualdad», sección «Medidas», fragmento número 2 (el tercero, si se numera desde 0). El texto del fragmento es el párrafo de las medidas.</p>
+<p>El grupo G3 indexa el documento <code>plan-igualdad-2026.pdf</code>, «Plan de igualdad», del curso 2026-2027. El fragmento que nos interesa es de la sección «Medidas», está en la página 4 y es el tercero del documento (número 2, contando desde 0). Se indexa el 15 de noviembre de 2026.</p>
 <ol>
-<li>Propón el identificador.</li>
-<li>Lista los metadatos mínimos según el esquema de la unidad.</li>
-<li>Di dos campos que no deben guardarse, aunque resulte cómodo para depurar.</li>
+<li>Escribe su identificador siguiendo la regla <code>{doc_id}_{chunk}</code> de la unidad, con tres cifras.</li>
+<li>Escribe su diccionario de metadatos completo, con los diez campos del esquema del tema 6 y el tipo correcto de cada valor.</li>
+<li>Otro documento es una página web del centro, sin número de página. ¿Qué haces con el campo <code>pagina</code>?</li>
+<li>Di dos datos que <strong>no</strong> deben guardarse en los metadatos, aunque parezcan cómodos para depurar.</li>
 </ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>Toma como modelo el registro completo de <code>oferta-iabd-2026</code> del tema 6. Fíjate en qué campos son número y cuáles texto, y en cómo se escribe la fecha de <code>indexado</code>. La sección «Reglas de tipos» responde al apartado 3.</p>
+</details>
 <h2 id="6-actualizar-sin-dejar-huerfanos">6. Actualizar sin dejar huérfanos<a class="headerlink" href="#6-actualizar-sin-dejar-huerfanos" title="Permanent link">&para;</a></h2>
-<p>El documento <code>calendario-2026</code> tenía 4 fragmentos indexados, con identificadores <code>_000</code> a <code>_003</code>. La versión nueva, ya fragmentada, solo produce <code>_000</code> y <code>_001</code>. El hash de <code>_000</code> coincide con el almacenado. El de <code>_001</code> ha cambiado.</p>
-<p>Describe, en orden, las operaciones sobre la colección: qué no se envía a Titan, qué se hace <code>upsert</code> y qué se borra.</p>
+<p>Es el caso del tema 8. El documento <code>calendario-2026</code> tenía <strong>4 fragmentos</strong> indexados: <code>calendario-2026_000</code> a <code>calendario-2026_003</code>. Llega una versión nueva, más corta. Al trocearla solo salen <code>_000</code> y <code>_001</code>. El hash de <code>_000</code> coincide con el guardado. El de <code>_001</code> ha cambiado.</p>
+<ol>
+<li>Describe, en orden, lo que se hace con cada identificador: cuál no se envía a Titan, cuál se envía y se escribe con <code>upsert</code>, y cuáles se borran.</li>
+<li>¿Cuántas llamadas a Titan se hacen? ¿Cuántas se ahorran gracias al hash?</li>
+<li>Al terminar, ¿cuántos registros tiene que devolver un <code>get</code> por <code>doc_id</code>, y cuáles?</li>
+<li>¿Qué pasa si el pipeline se olvida del borrado y un alumno pregunta por una fecha que solo estaba en <code>_003</code>?</li>
+</ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>El procedimiento del tema 8 tiene cuatro pasos para cada <code>doc_id</code>. El paso que se olvida con facilidad es el último: los identificadores que había antes y ya no se han generado.</p>
+</details>
 <h2 id="7-recall5">7. Recall@5<a class="headerlink" href="#7-recall5" title="Permanent link">&para;</a></h2>
-<p>Ocho preguntas de prueba. En el top 5, el documento esperado aparece en las preguntas 1, 2, 3, 5 y 7. En la 4 el documento esperado está en la posición 8. En la 6 y la 8 no aparece.</p>
-<ol>
-<li>Calcula el recall@5.</li>
+<p>El conjunto de pruebas tiene ocho preguntas, cada una con el <code>doc_id</code> que debería aparecer. Resultado de la búsqueda:</p>
+<ul>
+<li>En las preguntas 1, 2, 3, 5 y 7, el documento esperado aparece entre los cinco primeros.</li>
+<li>En la 4, aparece en la posición 8.</li>
+<li>
+<p>En la 6 y la 8, no aparece.</p>
+</li>
+<li>
+<p>Calcula el recall@5.</p>
+</li>
 <li>¿Se cumple el objetivo del proyecto?</li>
-<li>¿Cambiaría la respuesta del apartado 2 si el objetivo se midiera con k = 10 y la pregunta 4 pasara a contarse como acierto? Razona si esa forma de medir respetaría lo escrito en el proyecto.</li>
-</ol>
+<li>Si se midiera con k = 10, la pregunta 4 pasaría a contar como acierto. ¿Cuánto saldría? Razona si esa forma de medir respeta lo que pide el proyecto.</li>
+<li>¿Por qué preguntas empezarías a investigar, y qué mirarías primero?</li>
+</ul>
+<details class="tip">
+<summary>Pista</summary>
+<p>El tema 9 tiene la fórmula y el esquema con estas mismas ocho preguntas. Para el apartado 3, relee qué dice el proyecto sobre cuántos fragmentos se devuelven. Para el 4, la tabla de diagnóstico del mismo tema.</p>
+</details>
 <h2 id="8-el-filtro-que-llega-tarde">8. El filtro que llega tarde<a class="headerlink" href="#8-el-filtro-que-llega-tarde" title="Permanent link">&para;</a></h2>
-<p>La colección tiene programaciones y oferta educativa. La consulta pide los 5 más cercanos y, <strong>después</strong>, en Python, se descartan los que no son <code>g4</code>. Los cinco más cercanos eran de <code>g1</code>. El fragmento correcto de <code>g4</code> era el octavo en la lista global.</p>
+<p>La colección tiene programaciones (<code>g1</code>) y oferta educativa (<code>g4</code>), entre otras categorías. Una persona pregunta: «¿Puedo acceder con un grado medio de informática?». La respuesta está en <code>oferta-iabd-2026_002</code>, de <code>g4</code>.</p>
+<p>El programa pide a ChromaDB los 5 más cercanos, <strong>sin filtro</strong>, y <strong>después</strong>, en Python, se queda con los que son <code>g4</code>. Esta es la lista completa, de más a menos parecido:</p>
+<p><img alt="Los siete primeros son programaciones de g1, que también hablan de acceso. El fragmento de oferta g4 está en la posición 8, por debajo del corte de n_results=5." src="../../assets/esquemas/ej-filtro-tarde.svg" /></p>
 <ol>
-<li>¿Qué devuelve ese procedimiento?</li>
-<li>¿Cómo tiene que pedirse la consulta para que no ocurra?</li>
-<li>Relaciónalo con una de las preguntas de ejemplo del proyecto, que mezcla horas de un módulo y acceso con grado medio.</li>
+<li>¿Qué devuelve ese procedimiento? ¿Llega a ver alguna vez <code>oferta-iabd-2026_002</code>?</li>
+<li>Escribe la llamada a <code>query</code> para que no ocurra. ¿Qué cambia en el significado de «los 5 más cercanos»?</li>
+<li>Con el filtro bien puesto, otra persona pregunta «¿Hay beca de transporte?» y el primer resultado <code>g4</code> sale a distancia 0,97. ¿Qué debe hacer DocIA+ con él?</li>
+<li>La pregunta «¿Cuándo empiezan las clases del curso de especialización?» necesita la oferta (<code>g4</code>) y el calendario (<code>g5</code>). ¿Qué <code>where</code> escribirías?</li>
 </ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>El tema 4 explica por qué el filtro va dentro de la consulta y el tema 6 tiene la tabla de cómo se escribe cada <code>where</code>. Para el apartado 3, relee qué pasa cuando el filtro deja solo registros que no se parecen: el tema 6 tiene un caso a 0,968.</p>
+</details>
 <h2 id="9-escala-del-ies">9. Escala del IES<a class="headerlink" href="#9-escala-del-ies" title="Permanent link">&para;</a></h2>
-<p>Estimas 1.500 fragmentos de dimensión 1024.</p>
+<p>DocIA+ tendrá unos 1.200 fragmentos con vectores de 1024 dimensiones.</p>
 <ol>
-<li>Argumenta si hace falta un índice aproximado para cumplir una latencia de búsqueda de décimas de segundo.</li>
-<li>Aun así, ¿qué parámetro mirarías si el top 5 de ChromaDB no coincide con un barrido exacto escrito en Python?</li>
-<li>¿Qué no tocarías todavía?</li>
+<li>Calcula cuántas multiplicaciones hace una búsqueda exacta, que compara la pregunta con todos los fragmentos. ¿Hace falta un índice aproximado para responder en décimas de segundo?</li>
+<li>Haz la misma cuenta con 1.000.000 de fragmentos, el tamaño con el que nació Faiss en <a href="../00-por-que-existen/" target="_blank" rel="noopener">Por qué existen</a>. ¿Qué cambia?</li>
+<li>ChromaDB usa HNSW de todas formas. Si su top 5 no coincide con el de un recorrido completo escrito en Python, ¿qué parámetro mirarías?</li>
+<li>¿Qué <strong>no</strong> tocarías todavía mientras no se haya resuelto el apartado 3?</li>
 </ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>La tabla de tamaños del tema 4 tiene la primera cuenta. Para el apartado 3, busca en ese tema cómo se comprueba el índice con datos reales.</p>
+</details>
 <h2 id="10-cambio-de-modelo-en-la-fase-local">10. Cambio de modelo en la fase local<a class="headerlink" href="#10-cambio-de-modelo-en-la-fase-local" title="Permanent link">&para;</a></h2>
-<p>En la fase final del proyecto, Titan puede sustituirse por un modelo ejecutado en el servidor del centro.</p>
+<p>En la fase final del proyecto, Titan se sustituye por un modelo que se ejecuta en el servidor del centro. Supón que es el de la sesión 1, <code>paraphrase-multilingual-MiniLM-L12-v2</code>, que da vectores de <strong>384</strong> números.</p>
 <ol>
-<li>¿Se pueden dejar los vectores antiguos y solo cambiar la consulta?</li>
-<li>¿Qué se conserva de cada registro para no depender de Titan en esa reconstrucción?</li>
-<li>¿Qué medida hay que repetir antes de dar por válida la sustitución?</li>
+<li>¿Se pueden dejar los vectores de Titan en la colección y cambiar solo el modelo de la pregunta? Da dos motivos.</li>
+<li>¿Qué parte de cada registro permite reconstruir la colección sin volver a pedir nada a Titan?</li>
+<li>¿Qué medida hay que repetir antes de dar por buena la sustitución, y con qué preguntas?</li>
+<li>El umbral de distancia se había fijado con Titan. ¿Sirve para el modelo nuevo?</li>
 </ol>
+<details class="tip">
+<summary>Pista</summary>
+<p>Relee en el tema 2 «El mismo texto, otro modelo, otro espacio», y en el tema 9 cómo se fija el umbral con las preguntas negativas.</p>
+</details>
+<h2 id="comprueba-que-lo-has-entendido">Comprueba que lo has entendido<a class="headerlink" href="#comprueba-que-lo-has-entendido" title="Permanent link">&para;</a></h2>
+<p>Estas preguntas recogen las ideas que se repiten en varios ejercicios. Contesta antes de abrir la respuesta.</p>
+<details class="question">
+<summary>1. ¿Qué tiene que ser igual al indexar un fragmento y al consultar una pregunta? (ejercicios 1, 4 y 10)</summary>
+<p>El modelo, la dimensión y la normalización. Si cambia cualquiera de las tres, la pregunta y los fragmentos no están en el mismo mapa y la distancia deja de significar parecido.</p>
+</details>
+<details class="question">
+<summary>2. ChromaDB devuelve una distancia de 0,04 en espacio coseno. ¿Qué coseno es y se parece mucho? (ejercicios 2 y 3)</summary>
+<p>Coseno 0,96, porque la distancia es 1 menos el coseno. Se parece mucho: 0 sería idéntico.</p>
+</details>
+<details class="question">
+<summary>3. ¿Por qué el identificador se calcula con <code>{doc_id}_{chunk}</code> y no se inventa al azar? (ejercicios 5 y 6)</summary>
+<p>Porque al reindexar el mismo documento salen los mismos identificadores y <code>upsert</code> sustituye los registros en lugar de duplicarlos. Así también se sabe qué identificadores sobran y hay que borrar.</p>
+</details>
+<details class="question">
+<summary>4. ¿Dónde va el filtro por categoría, y qué hace el umbral que no hace el filtro? (ejercicio 8)</summary>
+<p>El filtro va dentro de la consulta, en el <code>where</code>, para que los k resultados ya lo cumplan. El filtro decide qué registros entran. El umbral decide si el mejor de ellos se parece lo suficiente como para responder.</p>
+</details>
+<details class="question">
+<summary>5. ¿Con qué k se mide el objetivo del proyecto, y por qué no se sube para mejorar la cifra? (ejercicio 7)</summary>
+<p>Con k entre 3 y 5, porque es lo que el proyecto devuelve a la persona. Con k más grande el recall sube siempre, pero la persona recibiría más ruido y ya no se mediría lo que pide el proyecto.</p>
+</details>
+<details class="question">
+<summary>6. ¿Qué se guarda en cada registro para poder cambiar de modelo sin perder nada? (ejercicios 4 y 10)</summary>
+<p>El texto original y los metadatos. Los vectores se tiran y se recalculan con el modelo nuevo, en una colección nueva. Después se vuelven a medir el recall@5 y el umbral.</p>
+</details>
 
 
 
