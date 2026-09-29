@@ -1303,7 +1303,7 @@
 <p>Hasta aquí hemos visto las piezas por separado: qué es un vector (tema 2), cómo se mide el parecido entre dos (tema 3) y cómo se encuentran los más cercanos entre muchos (tema 4). Este tema las junta y responde a la pregunta: <strong>¿qué hay dentro de una base de datos vectorial, y qué guarda exactamente por cada fragmento?</strong></p>
 <p>Lo haremos apoyándonos en algo que ya conoces de SBD: las bases de datos relacionales. Una base vectorial se parece mucho más a ellas de lo que el nombre sugiere.</p>
 <h2 id="un-indice-no-es-todavia-una-base-de-datos">Un índice no es todavía una base de datos<a class="headerlink" href="#un-indice-no-es-todavia-una-base-de-datos" title="Permanent link">&para;</a></h2>
-<p>En el tema 4 vimos HNSW, que encuentra vectores cercanos muy rápido. Existen librerías, como FAISS, que hacen solo eso: les das vectores y te devuelven los más cercanos a otro. Pero imagina usarla sola en DocIA+:</p>
+<p>En el tema 4 vimos HNSW, que encuentra vectores cercanos muy rápido. Existen librerías, como Faiss, que hacen solo eso: les das vectores y te devuelven los más cercanos a otro. Pero imagina usarla sola en DocIA+:</p>
 <ul>
 <li>Te devuelve «los vectores 17 y 243». ¿Qué texto era el 17? La librería no lo sabe: solo guarda números.</li>
 <li>La persona pregunta solo por oferta educativa. ¿Cuáles de los vectores son de oferta educativa? Tampoco lo sabe.</li>
@@ -1489,9 +1489,9 @@
 <p>Esta es la salida real del laboratorio de ChromaDB local para la pregunta «¿cómo me matriculo?» sin filtro, con <code>n_results=3</code>:</p>
 <div class="highlight"><pre><span></span><code>distancia=0.0019  categoria=g4  Procedimiento de formalización de matrícula del curso de especialización.
 distancia=0.7804  categoria=g4  El módulo de Big Data Aplicado tiene una duración de 190 horas.
-distancia=0.7804  categoria=g5  Calendario escolar, fragmento 1, versión antigua.
+distancia=0.8397  categoria=g5  Calendario escolar, fragmento 0.
 </code></pre></div>
-<p>Recuerda del tema 3 que la distancia es 1 menos el coseno: 0,0019 es un coseno de 0,998, casi idéntico. Los otros dos están lejos (coseno 0,22), pero salen porque se han pedido 3 resultados y la base siempre devuelve 3 si los hay. Esto es lo que el umbral del tema 3 permite descartar.</p>
+<p>Recuerda del tema 3 que la distancia es 1 menos el coseno: 0,0019 es un coseno de 0,998, casi idéntico. Los otros dos están lejos (cosenos 0,22 y 0,16), pero salen porque se han pedido 3 resultados y la base siempre devuelve 3 si los hay. Esto es lo que el umbral del tema 3 permite descartar.</p>
 <p>Fíjate en la tercera línea: sin filtro, se ha colado un fragmento de otra categoría (<code>g5</code>). Con el filtro <code>where={"categoria": "g4"}</code> no saldría.</p>
 <h2 id="la-coleccion">La colección<a class="headerlink" href="#la-coleccion" title="Permanent link">&para;</a></h2>
 <p>Una colección es el conjunto de registros que comparten tres cosas:</p>
@@ -1570,7 +1570,7 @@ distancia=0.7804  categoria=g5  Calendario escolar, fragmento 1, versión antigu
 <td>Tiene sentido si el sistema ya usa PostgreSQL. Aquí añadiría un servicio que el proyecto no necesita</td>
 </tr>
 <tr>
-<td><strong>FAISS</strong></td>
+<td><strong>Faiss</strong></td>
 <td>Librería de índices, muy rápida, sin metadatos ni servidor</td>
 <td>Buena para experimentar con k-NN. Por sí sola no filtra, no persiste de forma operativa ni gestiona borrados</td>
 </tr>
@@ -1586,7 +1586,7 @@ distancia=0.7804  categoria=g5  Calendario escolar, fragmento 1, versión antigu
 </tr>
 </tbody>
 </table>
-<p>La fila de FAISS es la que vale la pena recordar, porque resume el principio de este tema: un índice de vectores no es todavía una base de datos. La base aparece cuando, además del índice, hay identificadores, texto, metadatos, actualización, borrado y copias.</p>
+<p>La fila de Faiss es la que vale la pena recordar, porque resume el principio de este tema: un índice de vectores no es todavía una base de datos. La base aparece cuando, además del índice, hay identificadores, texto, metadatos, actualización, borrado y copias.</p>
 <h2 id="lo-que-la-coleccion-no-guarda">Lo que la colección no guarda<a class="headerlink" href="#lo-que-la-coleccion-no-guarda" title="Permanent link">&para;</a></h2>
 <p>Tan importante como lo que se guarda es lo que <strong>no</strong>:</p>
 <ul>
@@ -1596,8 +1596,8 @@ distancia=0.7804  categoria=g5  Calendario escolar, fragmento 1, versión antigu
 </ul>
 <h2 id="comprueba-que-lo-has-entendido">Comprueba que lo has entendido<a class="headerlink" href="#comprueba-que-lo-has-entendido" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>1. ¿Qué le falta a una librería como FAISS para ser una base de datos vectorial?</summary>
-<p>Guardar el texto y los metadatos de cada vector, filtrar, actualizar y borrar registros, persistir en disco y hacer copias. FAISS solo busca vectores cercanos.</p>
+<summary>1. ¿Qué le falta a una librería como Faiss para ser una base de datos vectorial?</summary>
+<p>Guardar el texto y los metadatos de cada vector, filtrar, actualizar y borrar registros, persistir en disco y hacer copias. Faiss solo busca vectores cercanos.</p>
 </details>
 <details class="question">
 <summary>2. ¿Cuáles son las cuatro piezas de un registro y para qué sirve cada una?</summary>

@@ -1420,7 +1420,7 @@
 </ul>
 <p>¿Por qué no abrir el puerto 8000 y que la web consulte ChromaDB directamente, sin API? Porque, tal como se arranca arriba, <strong>el servidor no pide contraseña</strong>: en la prueba, <code>HttpClient</code> se conectó sin ninguna credencial. Cualquiera que llegara al puerto podría hacer un <code>get()</code> y llevarse todos los fragmentos, o borrar la colección. Es el mismo motivo por el que no se abre a internet el puerto 3306 de un MySQL: la aplicación web es la que se conecta a la base, no el navegador.</p>
 <h2 id="cuanto-ocupa-y-cuanto-tarda">Cuánto ocupa y cuánto tarda<a class="headerlink" href="#cuanto-ocupa-y-cuanto-tarda" title="Permanent link">&para;</a></h2>
-<p>En el tema 2 estimamos unos 1.200 fragmentos para el corpus del IES. Lo hemos medido: 1.200 vectores de 1024 números, cada uno con un texto de 600 caracteres y sus metadatos, en ChromaDB 1.1.0.</p>
+<p>En el tema 4 estimamos unos 1.200 fragmentos para el corpus del IES. Lo hemos medido: 1.200 vectores de 1024 números, cada uno con un texto de 600 caracteres y sus metadatos, en ChromaDB 1.1.0.</p>
 <table>
 <thead>
 <tr>
@@ -1528,7 +1528,7 @@
 ¿Cómo me matriculo? Sin filtro de categoría
   distancia=0.0019  categoria=g4  Procedimiento de formalización de matrícula  ← tema 3: 1 − 0,998
   distancia=0.7804  categoria=g4  El módulo de Big Data Aplicado ... 190 horas
-  distancia=0.7804  categoria=g5  Calendario escolar, fragmento 3, ...
+  distancia=0.8397  categoria=g5  Calendario escolar, fragmento 0.            ← tema 5: sin filtro se cuela
 
 La misma pregunta, solo proyecto educativo (g2)
   distancia=0.9683  categoria=g2  El plan de convivencia regula la vida ...    ← tema 6: el filtro manda
@@ -1540,13 +1540,43 @@ Fragmentos que quedan de calendario-2026:                                      �
 <p>Cuando el script sale bien, se han visto todas las operaciones de la base sin depender de la nube. El salto a DocIA+ consiste en cambiar dos cosas: el vector escrito a mano por el de Titan, y el texto de ejercicio por fragmentos de documentos reales. El esquema de metadatos y las operaciones no cambian.</p>
 <h2 id="que-viene-despues">Qué viene después<a class="headerlink" href="#que-viene-despues" title="Permanent link">&para;</a></h2>
 <p>Cuando se cierre esta unidad, el trabajo sigue este orden:</p>
-<ol>
-<li>Cerrar en el aula el esquema de metadatos del tema 6, con los cinco grupos delante.</li>
-<li>Elegir un documento real corto de cada categoría y escribir a mano cinco preguntas cuya respuesta esté en él, más unas cuantas preguntas sin respuesta.</li>
-<li>Pasar esos cinco documentos por el pipeline del tema 7, todavía en local, en una colección que lleve en el nombre y en los metadatos el modelo usado.</li>
-<li>Calcular el recall@5 del tema 9 y ver si hay hueco para un umbral.</li>
-<li>Solo con esa medida, decidir si el corte y los metadatos aguantan el paso a la colección compartida.</li>
-</ol>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Quién</th>
+<th>Qué sale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Cerrar en el aula el esquema de metadatos del tema 6, con los cinco grupos delante</td>
+<td>SBD, con BDA comprobando los tipos</td>
+<td>El esquema, igual para todos</td>
+</tr>
+<tr>
+<td>2. Elegir un documento real corto de cada categoría y escribir a mano cinco preguntas cuya respuesta esté en él, más unas cuantas sin respuesta</td>
+<td>SBD, cada grupo con su categoría</td>
+<td>El conjunto de pruebas</td>
+</tr>
+<tr>
+<td>3. Pasar esos cinco documentos por el pipeline del tema 7, todavía en local, con el modelo de la sesión 1, que no necesita AWS. La colección lleva en el nombre y en los metadatos el modelo usado</td>
+<td>SBD los pasos 1 a 4, BDA los pasos 5 a 9</td>
+<td>Una colección de prueba, por ejemplo <code>docia_prueba_384</code></td>
+</tr>
+<tr>
+<td>4. Calcular el recall@5 del tema 9 y ver si hay hueco para un umbral</td>
+<td>SBD y BDA juntos</td>
+<td>La primera medida</td>
+</tr>
+<tr>
+<td>5. Solo con esa medida, decidir si el corte y los metadatos aguantan el paso a Titan y a la colección compartida</td>
+<td>Los dos módulos</td>
+<td>La decisión de seguir o corregir</td>
+</tr>
+</tbody>
+</table>
+<p>Al pasar a Titan no se reutilizan los vectores de la prueba: se crea otra colección y se reindexa, como en <a href="#dos-cosas-que-no-se-cambian-sobre-la-marcha">Dos cosas que no se cambian sobre la marcha</a>. Lo que sí se reutiliza es todo lo demás: el esquema, el corte, el conjunto de pruebas y el código del pipeline.</p>
 <p>Hasta tener el punto 4, no compensa discutir la instancia, el dominio ni el chatbot.</p>
 <h2 id="comprueba-que-lo-has-entendido">Comprueba que lo has entendido<a class="headerlink" href="#comprueba-que-lo-has-entendido" title="Permanent link">&para;</a></h2>
 <details class="question">
@@ -1578,8 +1608,8 @@ Fragmentos que quedan de calendario-2026:                                      �
 <p>Restaurándola: se arranca el servidor sobre la copia y se comprueba que <code>count()</code> coincide con el del registro de ejecución. Una copia que no se ha restaurado nunca no se sabe si funciona.</p>
 </details>
 <details class="question">
-<summary>8. En la salida del laboratorio, el fragmento de las 190 horas y el del calendario salen a la misma distancia, 0,7804. ¿Por qué?</summary>
-<p>Porque en el script tienen el mismo vector escrito a mano (el de «horas»). La base solo compara vectores, no textos. Con un modelo real, dos textos distintos darían vectores distintos y distancias distintas.</p>
+<summary>8. En la salida del laboratorio, sin filtro, salen las 190 horas a 0,7804 y un fragmento del calendario a 0,8397. ¿Deberían llegar al redactor?</summary>
+<p>No. Están muy lejos de la pregunta (cosenos 0,22 y 0,16) y salen solo porque se pidieron 3 resultados: la base siempre devuelve k si los hay. El umbral los descarta antes de redactar, y un filtro por categoría dejaría fuera además el del calendario, que es <code>g5</code>.</p>
 </details>
 
 
