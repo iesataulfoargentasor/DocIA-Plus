@@ -1475,7 +1475,7 @@ def ejercicios_mapa() -> None:
             (3, "Vectores normalizados", "tema 3 · sesión 3"),
         ]),
         ("Guardar y consultar", TEAL, [
-            (4, "Colección que no se mezcla", "temas 2 y 5 · sesión 2"),
+            (4, "Colección que no se mezcla", "tema 2 · sesión 2"),
             (5, "Estructura de un registro", "tema 6 · sesión 5"),
             (8, "El filtro que llega tarde", "temas 4 y 6 · sesión 5"),
             (9, "Escala del IES", "tema 4 · sesión 4"),

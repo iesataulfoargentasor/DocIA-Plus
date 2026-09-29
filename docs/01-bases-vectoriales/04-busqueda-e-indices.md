@@ -32,7 +32,7 @@ La forma más simple de resolverlo es la que haría una persona con una calculad
 2. Ordenar de mayor a menor.
 3. Quedarse con los k primeros.
 
-Los coseno ya los calculamos en el tema 3 (los del fragmento B se calculan igual: `P · B = 0×4 + 3×1 = 3`, longitudes 4,12 y 3, y `3 / (4,12 × 3) = 0,243`):
+Los cosenos ya los calculamos en el tema 3 (los del fragmento B se calculan igual: `P · B = 0×4 + 3×1 = 3`, longitudes 4,12 y 3, y `3 / (4,12 × 3) = 0,243`):
 
 | Fragmento | Similitud con P | Puesto |
 | --- | --- | --- |

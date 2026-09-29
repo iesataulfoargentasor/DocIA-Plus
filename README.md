@@ -34,9 +34,14 @@ La primera práctica con un modelo es la sesión 1, con dos cuadernos de Colab e
 
 ## Qué hay y qué no hay todavía
 
-Hay explicación, un esquema de metadatos con los códigos `g1` a `g5`, la sesión 1 (del dato al vector, la lista a la vista y ChromaDB en Colab) y, más adelante, dos scripts locales de geometría y de ChromaDB con vectores escritos a mano.
+Hay:
 
-No hay todavía pipeline de indexación, cuenta de AWS, Amazon Titan ni API FastAPI. Eso viene cuando esta unidad esté asentada y concretemos el trabajo sobre la base vectorial del proyecto.
+- la unidad de bases de datos vectoriales: la sesión 1, «Por qué existen», diez temas y diez ejercicios, con el esquema de metadatos de partida (códigos `g1` a `g5`);
+- dos cuadernos de Colab para la sesión 1, con un modelo real de 384 números ([`laboratorio/colab/`](laboratorio/colab/));
+- dos scripts locales, de geometría y de ChromaDB, con vectores escritos a mano ([`laboratorio/`](laboratorio/README.md));
+- los generadores de los esquemas y de los cuadernos ([`scripts/`](scripts/)).
+
+No hay todavía pipeline de indexación, cuenta de AWS, Amazon Titan ni API FastAPI. Son el paso siguiente, en el orden que propone el apartado «Qué viene después» del [tema 10](docs/01-bases-vectoriales/10-chromadb-en-docia.md).
 
 ## Licencia
 

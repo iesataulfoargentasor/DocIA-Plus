@@ -109,7 +109,7 @@ En el proyecto, todo lo de DocIA+ vive en una instancia EC2 pequeña, de 2 vCPU 
 
 ## Cuánto ocupa y cuánto tarda
 
-En el tema 2 estimamos unos 1.200 fragmentos para el corpus del IES. Lo hemos medido: 1.200 vectores de 1024 números, cada uno con un texto de 600 caracteres y sus metadatos, en ChromaDB 1.1.0.
+En el tema 4 estimamos unos 1.200 fragmentos para el corpus del IES. Lo hemos medido: 1.200 vectores de 1024 números, cada uno con un texto de 600 caracteres y sus metadatos, en ChromaDB 1.1.0.
 
 | Pieza en disco | Tamaño |
 | --- | --- |
@@ -218,7 +218,7 @@ Distancia de un vector consigo mismo: 0.0000                                   �
 ¿Cómo me matriculo? Sin filtro de categoría
   distancia=0.0019  categoria=g4  Procedimiento de formalización de matrícula  ← tema 3: 1 − 0,998
   distancia=0.7804  categoria=g4  El módulo de Big Data Aplicado ... 190 horas
-  distancia=0.7804  categoria=g5  Calendario escolar, fragmento 3, ...
+  distancia=0.8397  categoria=g5  Calendario escolar, fragmento 0.            ← tema 5: sin filtro se cuela
 
 La misma pregunta, solo proyecto educativo (g2)
   distancia=0.9683  categoria=g2  El plan de convivencia regula la vida ...    ← tema 6: el filtro manda
@@ -234,11 +234,15 @@ Cuando el script sale bien, se han visto todas las operaciones de la base sin de
 
 Cuando se cierre esta unidad, el trabajo sigue este orden:
 
-1. Cerrar en el aula el esquema de metadatos del tema 6, con los cinco grupos delante.
-2. Elegir un documento real corto de cada categoría y escribir a mano cinco preguntas cuya respuesta esté en él, más unas cuantas preguntas sin respuesta.
-3. Pasar esos cinco documentos por el pipeline del tema 7, todavía en local, en una colección que lleve en el nombre y en los metadatos el modelo usado.
-4. Calcular el recall@5 del tema 9 y ver si hay hueco para un umbral.
-5. Solo con esa medida, decidir si el corte y los metadatos aguantan el paso a la colección compartida.
+| Paso | Quién | Qué sale |
+| --- | --- | --- |
+| 1. Cerrar en el aula el esquema de metadatos del tema 6, con los cinco grupos delante | SBD, con BDA comprobando los tipos | El esquema, igual para todos |
+| 2. Elegir un documento real corto de cada categoría y escribir a mano cinco preguntas cuya respuesta esté en él, más unas cuantas sin respuesta | SBD, cada grupo con su categoría | El conjunto de pruebas |
+| 3. Pasar esos cinco documentos por el pipeline del tema 7, todavía en local, con el modelo de la sesión 1, que no necesita AWS. La colección lleva en el nombre y en los metadatos el modelo usado | SBD los pasos 1 a 4, BDA los pasos 5 a 9 | Una colección de prueba, por ejemplo `docia_prueba_384` |
+| 4. Calcular el recall@5 del tema 9 y ver si hay hueco para un umbral | SBD y BDA juntos | La primera medida |
+| 5. Solo con esa medida, decidir si el corte y los metadatos aguantan el paso a Titan y a la colección compartida | Los dos módulos | La decisión de seguir o corregir |
+
+Al pasar a Titan no se reutilizan los vectores de la prueba: se crea otra colección y se reindexa, como en [Dos cosas que no se cambian sobre la marcha](#dos-cosas-que-no-se-cambian-sobre-la-marcha). Lo que sí se reutiliza es todo lo demás: el esquema, el corte, el conjunto de pruebas y el código del pipeline.
 
 Hasta tener el punto 4, no compensa discutir la instancia, el dominio ni el chatbot.
 
@@ -265,5 +269,5 @@ Hasta tener el punto 4, no compensa discutir la instancia, el dominio ni el chat
 ??? question "7. ¿Cómo sabes que una copia de seguridad de la base sirve?"
     Restaurándola: se arranca el servidor sobre la copia y se comprueba que `count()` coincide con el del registro de ejecución. Una copia que no se ha restaurado nunca no se sabe si funciona.
 
-??? question "8. En la salida del laboratorio, el fragmento de las 190 horas y el del calendario salen a la misma distancia, 0,7804. ¿Por qué?"
-    Porque en el script tienen el mismo vector escrito a mano (el de «horas»). La base solo compara vectores, no textos. Con un modelo real, dos textos distintos darían vectores distintos y distancias distintas.
+??? question "8. En la salida del laboratorio, sin filtro, salen las 190 horas a 0,7804 y un fragmento del calendario a 0,8397. ¿Deberían llegar al redactor?"
+    No. Están muy lejos de la pregunta (cosenos 0,22 y 0,16) y salen solo porque se pidieron 3 resultados: la base siempre devuelve k si los hay. El umbral los descarta antes de redactar, y un filtro por categoría dejaría fuera además el del calendario, que es `g5`.

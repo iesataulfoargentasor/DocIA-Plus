@@ -84,7 +84,7 @@ Cada tema añade una pieza al mismo caso, «¿Cómo me matriculo?»:
 | [Sesión 1](01-bases-vectoriales/sesion-01.md) | Primer contacto: del dato al vector y ChromaDB en Colab, con un modelo real |
 | [Temas 1 a 10](01-bases-vectoriales/01-busqueda-literal-y-semantica.md) | Las bases de datos vectoriales, con DocIA+ como hilo |
 | [Laboratorio local](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md) | Dos scripts con vectores escritos a mano, sin cuenta de AWS |
-| [Ejercicios](01-bases-vectoriales/ejercicios.md) | Cierre de la unidad |
+| [Ejercicios](01-bases-vectoriales/ejercicios.md) | Diez ejercicios en papel, cada uno en la sesión de su tema |
 
 ## Orden de lectura
 
@@ -96,7 +96,7 @@ Cada tema añade una pieza al mismo caso, «¿Cómo me matriculo?»:
 6. Temas 5 a 8: qué se guarda, cómo se filtra, cómo entra un documento y cómo se mantiene.
 7. Laboratorio de ChromaDB, [`02_chromadb_coleccion.py`](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/02_chromadb_coleccion.py), después de los temas 7 y 8.
 8. Temas 9 y 10: cómo se mide si la base funciona y cómo encaja todo en el proyecto.
-9. [Ejercicios](01-bases-vectoriales/ejercicios.md).
+9. [Ejercicios](01-bases-vectoriales/ejercicios.md). Cada uno se hace en la sesión de su tema, según la [secuencia de aula](01-bases-vectoriales/index.md#secuencia-de-aula). Al final de la unidad se repasan juntos.
 
 Una advertencia para no confundirse: el primer cuaderno de Colab mide la diferencia entre dos vectores restando sus listas. El laboratorio y los temas usan la **distancia coseno** de ChromaDB, que es 1 menos el parecido (tema 3). Son números distintos y no se comparan entre sí.
 

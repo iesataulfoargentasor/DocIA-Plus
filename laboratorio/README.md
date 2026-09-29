@@ -44,7 +44,7 @@ Qué tiene que observarse, en este orden:
 
 1. Dos vectores idénticos dan distancia 0.
 2. En esta versión (ChromaDB 1.1.0, espacio `cosine`) la distancia es **1 menos el coseno**. El fragmento de matrícula, con coseno cerca de 0,998, sale con distancia cerca de 0,002.
-3. La consulta «¿cómo me matriculo?» devuelve primero el fragmento de formalización de matrícula, categoría `g4`.
+3. La consulta «¿cómo me matriculo?» devuelve primero el fragmento de formalización de matrícula, categoría `g4`. Detrás, muy lejos, salen las 190 horas (0,7804) y un fragmento del calendario (0,8397), solo porque se han pedido 3 resultados.
 4. La misma consulta filtrada con `categoria = g2` solo devuelve el plan de convivencia, con una distancia mucho mayor. El filtro gana a la similitud.
 5. Tras simular una versión nueva del calendario, los fragmentos `_002` y `_003` desaparecen y `_001` queda con el texto nuevo.
 6. `get` por `doc_id` lista esos fragmentos sin vector de consulta.

@@ -6,7 +6,7 @@ Lo haremos apoyándonos en algo que ya conoces de SBD: las bases de datos relaci
 
 ## Un índice no es todavía una base de datos
 
-En el tema 4 vimos HNSW, que encuentra vectores cercanos muy rápido. Existen librerías, como FAISS, que hacen solo eso: les das vectores y te devuelven los más cercanos a otro. Pero imagina usarla sola en DocIA+:
+En el tema 4 vimos HNSW, que encuentra vectores cercanos muy rápido. Existen librerías, como Faiss, que hacen solo eso: les das vectores y te devuelven los más cercanos a otro. Pero imagina usarla sola en DocIA+:
 
 - Te devuelve «los vectores 17 y 243». ¿Qué texto era el 17? La librería no lo sabe: solo guarda números.
 - La persona pregunta solo por oferta educativa. ¿Cuáles de los vectores son de oferta educativa? Tampoco lo sabe.
@@ -125,10 +125,10 @@ Esta es la salida real del laboratorio de ChromaDB local para la pregunta «¿c�
 ```text
 distancia=0.0019  categoria=g4  Procedimiento de formalización de matrícula del curso de especialización.
 distancia=0.7804  categoria=g4  El módulo de Big Data Aplicado tiene una duración de 190 horas.
-distancia=0.7804  categoria=g5  Calendario escolar, fragmento 1, versión antigua.
+distancia=0.8397  categoria=g5  Calendario escolar, fragmento 0.
 ```
 
-Recuerda del tema 3 que la distancia es 1 menos el coseno: 0,0019 es un coseno de 0,998, casi idéntico. Los otros dos están lejos (coseno 0,22), pero salen porque se han pedido 3 resultados y la base siempre devuelve 3 si los hay. Esto es lo que el umbral del tema 3 permite descartar.
+Recuerda del tema 3 que la distancia es 1 menos el coseno: 0,0019 es un coseno de 0,998, casi idéntico. Los otros dos están lejos (cosenos 0,22 y 0,16), pero salen porque se han pedido 3 resultados y la base siempre devuelve 3 si los hay. Esto es lo que el umbral del tema 3 permite descartar.
 
 Fíjate en la tercera línea: sin filtro, se ha colado un fragmento de otra categoría (`g5`). Con el filtro `where={"categoria": "g4"}` no saldría.
 
@@ -190,11 +190,11 @@ ChromaDB no es la única base vectorial. Estos son los nombres que vas a encontr
 | --- | --- | --- |
 | **ChromaDB** | Base vectorial de código abierto, que puede ir dentro de la propia aplicación o como servicio | Es la elección del proyecto. Corre en la misma máquina que la API, sin licencia, y se puede usar en local el mismo día |
 | **pgvector** | Extensión que añade vectores a PostgreSQL. Es la que usan los vídeos de CodelyTV | Tiene sentido si el sistema ya usa PostgreSQL. Aquí añadiría un servicio que el proyecto no necesita |
-| **FAISS** | Librería de índices, muy rápida, sin metadatos ni servidor | Buena para experimentar con k-NN. Por sí sola no filtra, no persiste de forma operativa ni gestiona borrados |
+| **Faiss** | Librería de índices, muy rápida, sin metadatos ni servidor | Buena para experimentar con k-NN. Por sí sola no filtra, no persiste de forma operativa ni gestiona borrados |
 | **Qdrant o Weaviate** | Servicios vectoriales con filtros muy completos | Válidos técnicamente, pero son una pieza más de infraestructura que el proyecto no quiere operar |
 | **OpenSearch vectorial** | Motor de búsqueda con soporte de vectores | El proyecto lo descartó por su coste fijo mensual frente a ChromaDB en la máquina que ya aloja la API |
 
-La fila de FAISS es la que vale la pena recordar, porque resume el principio de este tema: un índice de vectores no es todavía una base de datos. La base aparece cuando, además del índice, hay identificadores, texto, metadatos, actualización, borrado y copias.
+La fila de Faiss es la que vale la pena recordar, porque resume el principio de este tema: un índice de vectores no es todavía una base de datos. La base aparece cuando, además del índice, hay identificadores, texto, metadatos, actualización, borrado y copias.
 
 ## Lo que la colección no guarda
 
@@ -206,8 +206,8 @@ Tan importante como lo que se guarda es lo que **no**:
 
 ## Comprueba que lo has entendido
 
-??? question "1. ¿Qué le falta a una librería como FAISS para ser una base de datos vectorial?"
-    Guardar el texto y los metadatos de cada vector, filtrar, actualizar y borrar registros, persistir en disco y hacer copias. FAISS solo busca vectores cercanos.
+??? question "1. ¿Qué le falta a una librería como Faiss para ser una base de datos vectorial?"
+    Guardar el texto y los metadatos de cada vector, filtrar, actualizar y borrar registros, persistir en disco y hacer copias. Faiss solo busca vectores cercanos.
 
 ??? question "2. ¿Cuáles son las cuatro piezas de un registro y para qué sirve cada una?"
     Identificador (encontrar y sustituir el registro), vector (ordenar por parecido), texto (citarlo en la respuesta) y metadatos (filtrar y citar la fuente).

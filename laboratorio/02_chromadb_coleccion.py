@@ -22,6 +22,16 @@ HORAS = [0.05, 0.95, 0.00]
 CONVIVENCIA = [0.00, 0.05, 0.90]
 PREGUNTA_MATRICULA = [0.88, 0.15, 0.02]
 
+# El calendario habla de fechas: mucho del eje 2, algo del 3 y nada de matrícula.
+# Cada fragmento tiene su propio vector para que el orden de la salida no dependa de empates.
+CALENDARIO = [
+    [0.00, 0.80, 0.40],
+    [0.00, 0.70, 0.50],
+    [0.00, 0.60, 0.60],
+    [0.00, 0.50, 0.70],
+]
+CALENDARIO_1_NUEVO = [0.00, 0.75, 0.45]
+
 
 def preparar_coleccion() -> chromadb.Collection:
     if DATOS.exists():
@@ -48,10 +58,7 @@ def indexar(coleccion: chromadb.Collection) -> None:
             MATRICULA,
             HORAS,
             CONVIVENCIA,
-            HORAS,
-            HORAS,
-            HORAS,
-            HORAS,
+            *CALENDARIO,
         ],
         documents=[
             "Procedimiento de formalización de matrícula del curso de especialización.",
@@ -87,7 +94,7 @@ def actualizar_calendario(coleccion: chromadb.Collection) -> None:
     """Simula el tema 8: el fragmento 1 cambia y los fragmentos 2 y 3 se retiran."""
     coleccion.upsert(
         ids=["calendario-2026_001"],
-        embeddings=[CONVIVENCIA],
+        embeddings=[CALENDARIO_1_NUEVO],
         documents=["Calendario escolar, fragmento 1, versión nueva."],
         metadatas=[
             {"categoria": "g5", "doc_id": "calendario-2026", "chunk": 1, "curso": "2026-2027"}

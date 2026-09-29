@@ -16,7 +16,7 @@ Diez ejercicios para cerrar la unidad. Cada uno repasa uno o dos temas con el mi
 | 1. Dos búsquedas | Búsqueda literal frente a búsqueda semántica | [1](01-busqueda-literal-y-semantica.md) | 2 |
 | 2. Coseno a mano | Norma, coseno, producto escalar y distancia | [3](03-geometria-y-similitud.md) | 3 |
 | 3. Vectores normalizados | Por qué con longitud 1 basta el producto escalar | [3](03-geometria-y-similitud.md) | 3 |
-| 4. Colección que no se mezcla | Dimensión y modelo iguales al indexar y al consultar | [2](02-embeddings.md) y [5](05-anatomia-bd-vectorial.md) | 2 |
+| 4. Colección que no se mezcla | Dimensión y modelo iguales al indexar y al consultar | [2](02-embeddings.md) | 2 |
 | 5. Estructura de un registro | Identificador y esquema de metadatos | [6](06-metadatos-y-filtros.md) | 5 |
 | 6. Actualizar sin huérfanos | Hash, `upsert` y borrado | [7](07-chunking-y-ciclo-de-indexacion.md) y [8](08-operaciones-de-gestion.md) | 6 |
 | 7. Recall@5 | Medir si la búsqueda cumple el objetivo | [9](09-calidad-y-fallos.md) | 7 |
@@ -154,7 +154,7 @@ El programa pide a ChromaDB los 5 más cercanos, **sin filtro**, y **después**,
 DocIA+ tendrá unos 1.200 fragmentos con vectores de 1024 dimensiones.
 
 1. Calcula cuántas multiplicaciones hace una búsqueda exacta, que compara la pregunta con todos los fragmentos. ¿Hace falta un índice aproximado para responder en décimas de segundo?
-2. Haz la misma cuenta con 1.000.000 de fragmentos, el tamaño con el que nació Faiss en [Por qué existen](00-por-que-existen.md). ¿Qué cambia?
+2. Haz la misma cuenta con 1.000.000 de fragmentos, la escala del ejemplo de Faiss en [Por qué existen](00-por-que-existen.md). ¿Qué cambia?
 3. ChromaDB usa HNSW de todas formas. Si su top 5 no coincide con el de un recorrido completo escrito en Python, ¿qué parámetro mirarías?
 4. ¿Qué **no** tocarías todavía mientras no se haya resuelto el apartado 3?
 
