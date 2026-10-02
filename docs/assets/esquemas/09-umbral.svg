@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 408" role="img">
-  <title>El umbral solo existe si hay un hueco</title>
+  <title>Un umbral sin errores en este ejemplo</title>
   <desc>Con un fragmento de índice, la pregunta sin respuesta queda a 0,013, entre las que sí tienen respuesta. Tras limpiarlo, queda a 0,307, por encima de la peor con respuesta (0,220), y cabe un umbral.</desc>
   <rect width="620" height="408" rx="18" fill="#f4f6fb"/>
   <defs>
@@ -32,7 +32,7 @@
 <circle cx="63.0" cy="122" r="7" fill="#2e7d32"/>
 <circle cx="286.5" cy="146" r="7" fill="#2e7d32"/>
 <circle cx="79.5" cy="110" r="7" fill="#b71c1c"/>
-<text x="570.0" y="130" text-anchor="end" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">se mezclan: no hay umbral posible</text>
+<text x="570.0" y="130" text-anchor="end" fill="#b71c1c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">se mezclan: habrá errores</text>
 <rect x="16" y="230" width="588" height="128" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <text x="32" y="254" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Tras limpiar el índice</text>
 <line x1="60" y1="308" x2="570.0" y2="308" stroke="#1c2340" stroke-width="1.5"/>

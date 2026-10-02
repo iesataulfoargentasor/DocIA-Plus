@@ -38,6 +38,12 @@ Las cuentas de los temas se pueden hacer con calculadora: sumas, multiplicacione
 | [9. Calidad y fallos](09-calidad-y-fallos.md) | ¿Cómo sabemos si la búsqueda funciona, y qué hacemos si no? |
 | [10. ChromaDB en DocIA+](10-chromadb-en-docia.md) | ¿Cómo encaja todo en el proyecto? |
 
+## Recorrido de los martes
+
+Para el grupo que comienza con Qdrant, seguir [De Qdrant a ChromaDB](qdrant-a-chromadb.md): primero Ver el vector, después la introducción comentada y el reto, y por último ChromaDB. El segundo cuaderno de la sesión 1 se reserva para esa transición. La [planificación de los martes](../00-proyecto/martes-y-entrega.md) diferencia BDA y SBD y fija la entrega antes de la Formación en Empresa.
+
+La tabla siguiente conserva el itinerario conceptual directo a ChromaDB. No hay que repetir ambos recorridos completos.
+
 ## Secuencia de aula
 
 | Sesión | Qué se trabaja | Práctica | Ejercicios | Módulo con más peso |
@@ -112,6 +118,6 @@ En el aula usaremos estas palabras con un solo significado:
 | `upsert` | Escribir un registro: lo crea si no existe y lo sustituye si existe | 8 |
 | Huérfano | Un fragmento que sigue en la colección aunque ya no existe en la versión actual del documento | 8 |
 | Conjunto de pruebas | Preguntas escritas de antemano, con el documento que debe responderlas | 9 |
-| Recall@k | Proporción de preguntas de prueba cuyo documento correcto aparece entre los k primeros | 9 |
+| Acierto@k | Proporción de preguntas de prueba cuyo documento correcto aparece entre los k primeros | 9 |
 | Umbral | La distancia a partir de la cual DocIA+ dice que no tiene documentación suficiente | 9 |
 | RAG | Diseño en dos pasos: primero se recuperan fragmentos, después un modelo redacta con ellos | 1 |

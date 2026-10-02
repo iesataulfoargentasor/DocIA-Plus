@@ -2,6 +2,9 @@
 
 Esta es la primera sesión. No hace falta haber leído los temas 1 a 10. El grupo parte de cero: sabe consultar una tabla y no ha visto nunca un embedding.
 
+!!! note "Si empezamos con Qdrant"
+    Hoy hacemos el mapa y el cuaderno **Ver el vector**. Reservamos **ChromaDB, despacio** para después de las prácticas de Qdrant. El [recorrido de transición](qdrant-a-chromadb.md) indica qué materiales utilizar sin duplicar la introducción.
+
 ## Qué vamos a hacer hoy
 
 | Parte | Qué se hace | Para qué |
@@ -240,7 +243,7 @@ Hasta aquí el vector vivía en una variable de Python y se perdía al cerrar el
     Eso es la búsqueda: el mismo camino que al guardar, y luego los vecinos.
 
 6. **Filtrar.** Con la pregunta amplia «¿Cuándo hay que hacer los trámites?» y el filtro `categoria = g4` salen solo las frases de oferta educativa: la de matricularse en secretaría y la de las pruebas de acceso. El filtro no es otro vector. Quita registros antes de ordenar por cercanía, igual que un `WHERE` en SQL.
-7. **Memoria y disco.** La colección en memoria desaparece al cerrar el cuaderno. `PersistentClient` escribe una carpeta; se abre otro cliente sobre ella y el recuento sigue siendo 5. Una base de datos tiene que seguir ahí mañana. Una variable, no.
+7. **Memoria y disco.** La colección en memoria desaparece al cerrar el cuaderno. `PersistentClient` escribe una carpeta; se abre otro cliente sobre ella y el recuento sigue siendo 5. En Colab, esta carpeta pertenece al disco temporal del entorno. Puede desaparecer cuando Colab elimina la máquina. Descargar el .ipynb no descarga la base: hay que conservar los originales y el código de reconstrucción, o exportar una copia consistente fuera del entorno. Abrir otro cliente sobre la misma carpeta solo demuestra persistencia en ese disco.
 
 El cuaderno cierra con un ejercicio: añadir la frase «El centro dispone de aparcamiento para bicicletas.», categoría `g5`, calcular su vector y preguntar «¿Dónde puedo dejar la bicicleta?». Tiene que salir esa frase, a una distancia de unos **0,37**. La siguiente frase más cercana queda por encima de 0,88.
 
@@ -273,4 +276,4 @@ Esas ideas se ven también en dos vídeos de CodelyTV: la comparación entre SQL
     No. El filtro quita los registros que no son `g4` y, entre los que quedan, la base ordena por cercanía. Es como un `WHERE` antes del `ORDER BY`.
 
 ??? question "7. ¿Qué diferencia hay entre `EphemeralClient` y `PersistentClient`?"
-    El primero guarda la colección en memoria y se pierde al cerrar el cuaderno. El segundo la escribe en una carpeta y se puede volver a abrir. En el tema 10 se ve una tercera forma, el servidor, que es la de DocIA+.
+    El primero guarda la colección en memoria y se pierde al cerrar el cuaderno. El segundo la escribe en una carpeta y se puede volver a abrir mientras esa carpeta exista. En Colab el disco es temporal; el archivo .ipynb no contiene la base. En el tema 10 se ve una tercera forma, el servidor, que es la de DocIA+.

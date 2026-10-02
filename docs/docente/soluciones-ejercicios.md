@@ -37,7 +37,7 @@ a · c = 2 × 0 + 0 × 3 = 0       cos(a, c) = 0 / (2 × 3)     = 0
 
 1. Con 1024: 1.200 × 1024 × 4 bytes = 4.915.200 bytes, unos 5 MB. Con 256: 1.200 × 256 × 4 = 1.228.800 bytes, unos 1,2 MB. Se ahorran menos de 4 MB, que no importan en el servidor previsto.
 2. Los vectores tienen distinta dimensión: no se pueden ni comparar. Además, el vector de 256 y el de 1024 son dos respuestas distintas del modelo, no dos trozos del mismo mapa.
-3. Crear una colección nueva, volver a pedir a Titan **todos** los fragmentos con 256 dimensiones y repetir el recall@5. Solo compensa si la calidad no baja.
+3. Crear una colección nueva, volver a pedir a Titan **todos** los fragmentos con 256 dimensiones y repetir el acierto@5. Solo compensa si la calidad no baja.
 4. Los números de un embedding no son características sueltas que se puedan recortar. Titan no documenta que su vector de 256 sea el principio del de 1024. Recortar a mano da un vector que el modelo nunca ha producido, que además ya no mide 1.
 
 ## 5. Estructura de un registro
@@ -72,7 +72,7 @@ a · c = 2 × 0 + 0 × 3 = 0       cos(a, c) = 0 / (2 × 3)     = 0
 3. Dos: `calendario-2026_000` y `calendario-2026_001`, este con el texto nuevo.
 4. `_003` sigue en la colección con información antigua y se puede recuperar. DocIA+ respondería con una fecha que ya no vale.
 
-## 7. Recall@5
+## 7. Acierto@5
 
 1. Cinco de ocho: 5 / 8 = 62,5 %.
 2. No. El proyecto pide más del 80 % devolviendo de 3 a 5 fragmentos.
@@ -108,5 +108,5 @@ a · c = 2 × 0 + 0 × 3 = 0       cos(a, c) = 0 / (2 × 3)     = 0
 
 1. No. Primero, la dimensión es distinta (1024 frente a 384) y no se pueden comparar. Segundo, aunque coincidiera, cada modelo tiene su propio mapa: mezclarlos da un orden sin significado.
 2. El texto del fragmento y sus metadatos. Con el texto se pide el vector al modelo nuevo; los metadatos se copian igual. Los vectores de Titan se tiran.
-3. El recall@5, con el mismo conjunto de preguntas de prueba. Si baja, la sustitución no está validada, aunque el servidor ya responda.
+3. El acierto@5, con el mismo conjunto de preguntas de prueba. Si baja, la sustitución no está validada, aunque el servidor ya responda.
 4. No. El umbral depende del modelo y de la colección. Se vuelve a fijar con las preguntas negativas, buscando el hueco entre las que tienen respuesta y las que no.

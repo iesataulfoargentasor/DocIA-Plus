@@ -40,11 +40,16 @@ resultado = coleccion.query(                    # paso 3
     where={"curso": "2026-2027"},
 )
 
-distancias = resultado["distances"][0]          # paso 4: [0.002, ...]
-if distancias[0] > UMBRAL:                      # paso 5
+distancias = resultado["distances"][0]          # paso 4
+candidatos = zip(resultado["documents"][0], resultado["metadatas"][0], distancias)
+aceptados = [(texto, meta) for texto, meta, distancia in candidatos
+             if distancia <= UMBRAL]            # paso 5: filtrar cada fragmento
+if not aceptados:                               # incluye una consulta sin resultados
     respuesta = "No tengo documentación suficiente para contestar."
 else:
-    respuesta = redactar(resultado["documents"][0], resultado["metadatas"][0])  # paso 6
+    textos, metadatos = zip(*aceptados)
+    # PIA verifica suficiencia, apoyo documental y citas; puede abstenerse.
+    respuesta = redactar(list(textos), list(metadatos))  # paso 6
 ```
 
 Con los números del ejemplo:
@@ -239,7 +244,7 @@ Cuando se cierre esta unidad, el trabajo sigue este orden:
 | 1. Cerrar en el aula el esquema de metadatos del tema 6, con los cinco grupos delante | SBD, con BDA comprobando los tipos | El esquema, igual para todos |
 | 2. Elegir un documento real corto de cada categoría y escribir a mano cinco preguntas cuya respuesta esté en él, más unas cuantas sin respuesta | SBD, cada grupo con su categoría | El conjunto de pruebas |
 | 3. Pasar esos cinco documentos por el pipeline del tema 7, todavía en local, con el modelo de la sesión 1, que no necesita AWS. La colección lleva en el nombre y en los metadatos el modelo usado | SBD los pasos 1 a 4, BDA los pasos 5 a 9 | Una colección de prueba, por ejemplo `docia_prueba_384` |
-| 4. Calcular el recall@5 del tema 9 y ver si hay hueco para un umbral | SBD y BDA juntos | La primera medida |
+| 4. Calcular el acierto@5 del tema 9 y evaluar los errores de aceptación y rechazo del umbral | SBD y BDA juntos | La primera medida |
 | 5. Solo con esa medida, decidir si el corte y los metadatos aguantan el paso a Titan y a la colección compartida | Los dos módulos | La decisión de seguir o corregir |
 
 Al pasar a Titan no se reutilizan los vectores de la prueba: se crea otra colección y se reindexa, como en [Dos cosas que no se cambian sobre la marcha](#dos-cosas-que-no-se-cambian-sobre-la-marcha). Lo que sí se reutiliza es todo lo demás: el esquema, el corte, el conjunto de pruebas y el código del pipeline.

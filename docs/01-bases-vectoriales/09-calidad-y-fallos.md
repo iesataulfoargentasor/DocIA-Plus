@@ -40,15 +40,15 @@ Tres reglas para que el conjunto sea útil:
 
 ### Preguntas sin respuesta
 
-Además, se añaden aparte unas cuantas **preguntas negativas**: preguntas cuya respuesta **no** está en ningún documento, como «¿hay beca de transporte este año?». Para esas, lo correcto no es recuperar nada, sino que la base no encuentre nada lo bastante parecido y DocIA+ diga que no tiene documentación suficiente. No cuentan para el recall; sirven para fijar el umbral, como veremos.
+Además, se añaden aparte unas cuantas **preguntas negativas**: preguntas cuya respuesta **no** está en ningún documento, como «¿hay beca de transporte este año?». Para esas, lo correcto no es recuperar nada, sino que la base no encuentre nada lo bastante parecido y DocIA+ diga que no tiene documentación suficiente. No cuentan para el acierto; sirven para fijar el umbral, como veremos.
 
-## La medida: recall@k
+## La medida: acierto@k
 
-La medida se llama **recall@k** («recall en k»). *Recall* significa aquí «cuánto de lo que había que encontrar se ha encontrado». La cuenta es sencilla:
+La medida inicial es **acierto@k**, también llamada **Hit@k**: la proporción de preguntas con al menos un resultado relevante entre los k primeros. La cuenta es sencilla:
 
 ```text
                 preguntas en las que el doc_id esperado aparece entre los k primeros
-recall@k  =  ─────────────────────────────────────────────────────────────────────────
+acierto@k  =  ─────────────────────────────────────────────────────────────────────────
                                  preguntas del conjunto
 ```
 
@@ -60,9 +60,21 @@ Con k = 5, el objetivo del proyecto se lee así: **en más del 80 % de las pregu
 
 Tres aclaraciones:
 
-- **Es un recall sobre documentos**, no el recall del índice del tema 4. Aquel comparaba HNSW con la búsqueda exacta; este compara con lo que una persona sabe que es la respuesta.
+- **Es una tasa de acierto sobre documentos**, distinta del recall del índice del tema 4. Aquel comparaba HNSW con la búsqueda exacta; este compara con lo que una persona sabe que es la respuesta.
 - **Al principio basta con el `doc_id`.** Si se quiere afinar, se exige también la sección correcta. Empezar por el `doc_id` evita bloquear la medida discutiendo en qué página exacta está cada cosa.
-- **k se escribe siempre junto a la cifra.** Con k más grande, el recall siempre sube o se queda igual, porque se miran más resultados. Un 80 % con k = 20 no cumple el objetivo: el proyecto habla de 3 a 5. Subir k para mejorar la cifra empeora lo que ve la persona, que recibe más ruido.
+- **k se escribe siempre junto a la cifra.** Con k más grande, el acierto siempre sube o se queda igual, porque se miran más resultados. Un 80 % con k = 20 no cumple el objetivo: el proyecto habla de 3 a 5. Subir k para mejorar la cifra empeora lo que ve la persona, que recibe más ruido.
+
+### Acierto, precisión y exhaustividad
+
+Acierto@k pregunta si encontramos **algún** resultado relevante. Precision@k mide qué proporción de los resultados recuperados es relevante. Recall@k mide qué proporción de **todos los elementos relevantes anotados** se ha recuperado; se calcula por pregunta y después se promedia.
+
+Si una pregunta tiene cuatro fragmentos relevantes y recuperamos dos entre cinco, el acierto es 1, Precision@5 es 2/5 y Recall@5 es 2/4. Con un único documento relevante por pregunta, el acierto y el recall sobre documentos coinciden. No se mezclan documentos y fragmentos al contar.
+
+Encontrar cualquier fragmento del documento esperado es una primera comprobación. Para aceptar el sistema, SBD verifica que el fragmento contiene la información necesaria. Una pregunta que requiere dos apartados puede acertar por documento y seguir teniendo contexto incompleto.
+
+### Ajustar y evaluar con preguntas distintas
+
+Separamos preguntas de ajuste y preguntas reservadas para la evaluación final. El umbral, el modelo y el fragmentado se deciden con las primeras. Las reservadas se usan después, sin retocar el sistema para favorecerlas. Registramos corpus, modelo, configuración y k junto a cada medida. Incluimos preguntas literales, paráfrasis, ambiguas y sin respuesta; las negativas se evalúan aparte.
 
 ## Un ejemplo completo, ejecutado
 
@@ -97,8 +109,8 @@ Resultados reales, los tres primeros de cada pregunta con su distancia:
 
 Contamos:
 
-- **recall@1 = 3/4 = 75 %.** En la cuarta pregunta, el primer resultado es el **índice** del PDF, no la oferta.
-- **recall@3 = 4/4 = 100 %.** Con tres resultados, la oferta aparece en todas.
+- **acierto@1 = 3/4 = 75 %.** En la cuarta pregunta, el primer resultado es el **índice** del PDF, no la oferta.
+- **acierto@3 = 4/4 = 100 %.** Con tres resultados, la oferta aparece en todas.
 
 Y hay algo peor en la última línea: la pregunta **sin respuesta** encuentra el índice a distancia **0,013**, casi como si fuera la respuesta perfecta. El índice «habla un poco de todo» y por eso se parece un poco a cualquier pregunta (lo anunciamos en el tema 1 con las portadas).
 
@@ -114,16 +126,16 @@ El índice de un PDF es ruido: debería haberse quitado en la limpieza del tema 
 ¿Hay beca de transporte?               pec-2026_000 0.307           oferta-iabd-2026_000 0.360   oferta-iabd-2026_001 0.523
 ```
 
-- **recall@1 = 4/4 = 100 %.**
+- **acierto@1 = 4/4 = 100 %.**
 - La pregunta sin respuesta ahora queda a **0,307** del fragmento más cercano: lejos.
 
 La mejora no ha venido de tocar el modelo, ni el índice HNSW, ni k. Ha venido de **limpiar el texto**. Esa es la lección más importante del tema.
 
-Los vectores son de juguete, y la pregunta sin respuesta tiene un vector inventado a propósito. Pero la ChromaDB y las cuentas son reales, y el efecto de un índice o una portada en un corpus de verdad es exactamente este.
+Los vectores son de juguete, y la pregunta sin respuesta tiene un vector inventado a propósito. Pero la ChromaDB y las cuentas son reales, y muestran un fallo posible. Su frecuencia y magnitud deben medirse con documentos y embeddings reales; estas cifras no predicen el resultado de Titan.
 
 ## El umbral
 
-El top-k siempre devuelve k fragmentos, aunque ninguno sirva (tema 6). Para saber cuándo **no** hay respuesta se usa un **umbral**: si el primer resultado está a una distancia mayor que el umbral, DocIA+ dice que no tiene documentación suficiente.
+El top-k devuelve hasta k fragmentos disponibles que cumplen el filtro, aunque ninguno responda a la pregunta (tema 6). Para saber cuándo **no** hay respuesta se usa un **umbral**: si el primer resultado está a una distancia mayor que el umbral, DocIA+ dice que no tiene documentación suficiente.
 
 ¿Dónde se pone? Se mira la distancia del **primer resultado** de cada pregunta, separando las que tienen respuesta de las que no:
 
@@ -137,7 +149,14 @@ El top-k siempre devuelve k fragmentos, aunque ninguno sirva (tema 6). Para sabe
 - **Con el índice**, la pregunta sin respuesta queda **más cerca** que algunas con respuesta. Los dos grupos se mezclan y no existe ningún umbral que los separe: cualquier valor que deje pasar las buenas deja pasar también la mala.
 - **Tras limpiar**, hay un **hueco** entre 0,220 y 0,307. El umbral se coloca en ese hueco, por ejemplo en 0,26.
 
-De aquí sale la regla: **si los dos grupos se solapan, el problema no es el umbral, es el texto** (el fragmentado, la limpieza) o el modelo. Mover el umbral no arregla un solapamiento.
+En este ejemplo hay una separación perfecta después de limpiar. **En datos reales puede haber solapamiento incluso con un corpus bien preparado.** Un umbral puede seguir siendo útil: hay que elegir qué errores se aceptan y medirlos.
+
+- **Aceptación indebida:** se permite responder a una pregunta sin respaldo documental.
+- **Rechazo indebido:** se rechaza una pregunta cuya respuesta sí estaba disponible.
+
+Registramos ambos errores sobre preguntas reservadas. Revisamos también limpieza, fragmentado, modelo y relevancia del contexto. Una distancia baja no demuestra que se pueda responder. PIA debe comprobar el apoyo documental y permitir la abstención.
+
+El umbral se aplica a cada fragmento antes de enviarlo al redactor. Si no queda ninguno, se devuelve el mensaje de falta de contexto; si quedan algunos, todavía se debe valorar si son suficientes.
 
 El número del umbral de DocIA+ **no se fija en esta unidad**. Se decidirá con el conjunto de pruebas real, sobre la colección real con Titan, y se anotará en la documentación del pipeline. El 0,26 del ejemplo solo vale para estos vectores de juguete.
 
@@ -179,20 +198,20 @@ Ese orden evita pasar una tarde ajustando parámetros de HNSW cuando el problema
 ??? question "2. ¿Por qué las preguntas de prueba no deben copiar las palabras del documento?"
     Porque entonces acertaría hasta una búsqueda literal y la prueba no mediría la búsqueda por significado, que es lo que DocIA+ tiene que hacer bien.
 
-??? question "3. Diez preguntas; el documento esperado aparece en el top 5 en siete. ¿Recall@5? ¿Se cumple el objetivo?"
+??? question "3. Diez preguntas; el documento esperado aparece en el top 5 en siete. ¿Acierto@5? ¿Se cumple el objetivo?"
     7 / 10 = 70 %. No se cumple: el proyecto pide más del 80 %.
 
-??? question "4. Con k = 20 el recall sube al 90 %. ¿Se cumple el objetivo?"
-    No. El objetivo está definido para k entre 3 y 5. Subir k siempre sube el recall o lo deja igual, y da más ruido a quien pregunta.
+??? question "4. Con k = 20 el acierto sube al 90 %. ¿Se cumple el objetivo?"
+    No. El objetivo está definido para k entre 3 y 5. Subir k siempre sube el acierto o lo deja igual, y da más ruido a quien pregunta.
 
 ??? question "5. En el ejemplo, ¿por qué la pregunta «¿hay beca de transporte?» encontraba un fragmento a distancia 0,013?"
     Porque el fragmento «Índice» habla un poco de todo y se parece un poco a cualquier pregunta. Es ruido de extracción que debía haberse limpiado.
 
 ??? question "6. Las preguntas con respuesta tienen su primer resultado entre 0,002 y 0,30, y las negativas entre 0,25 y 0,40. ¿Dónde pones el umbral?"
-    En ningún sitio que funcione: los grupos se solapan entre 0,25 y 0,30. Hay que revisar el texto (limpieza, fragmentado) o el modelo antes de fijar un umbral.
+    No hay un umbral que separe perfectamente ambos grupos. Se comparan los errores de aceptación y rechazo con varios valores, se revisan datos y modelo y se valida la decisión con preguntas reservadas.
 
 ??? question "7. Un documento corregido sigue citando el texto antiguo. ¿Qué dos causas del tema 8 revisarías?"
     Que hayan quedado fragmentos huérfanos sin borrar, o que el pipeline haya escrito con `add`, que ignora en silencio los identificadores que ya existen.
 
-??? question "8. Baja el recall. Un compañero propone subir `search_ef`. ¿Qué revisarías antes?"
+??? question "8. Baja el acierto. Un compañero propone subir `search_ef`. ¿Qué revisarías antes?"
     El texto guardado, los metadatos, la llamada al modelo y la consulta, en ese orden. El índice es lo último.

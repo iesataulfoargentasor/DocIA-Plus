@@ -153,6 +153,12 @@ f6f5a2802de5da76   El módulo de Big Data Aplicado tiene una duración de 192 ho
 
 Un solo dígito distinto y la huella no se parece en nada. Recuerda el tema 2: por eso el hash **no sirve para buscar por significado**. Pero sirve para otra cosa muy útil: al reindexar, si la huella del fragmento es igual a la que ya está guardada, el texto no ha cambiado y **no hace falta volver a llamar a Titan**. Se ahorra dinero y tiempo.
 
+### Cuándo se puede reutilizar un vector
+
+El hash se calcula sobre el texto exacto enviado al modelo, incluidos título y sección si se añaden. Para reutilizar el vector deben coincidir también el modelo y su versión, la dimensión, la normalización y la configuración de preparación del texto. Un cambio de modelo exige una colección nueva y reindexación.
+
+Aunque el texto no cambie, se comparan y actualizan los metadatos: por ejemplo, la vigencia o la URL pueden haber cambiado. Ahorrar una llamada a Titan no significa saltarse la actualización del registro.
+
 ## El pipeline, paso a paso
 
 El **pipeline** es el programa que hace todo el recorrido, del fichero al registro. Tiene nueve pasos. Los cuatro primeros son de SBD (preparar el texto y su estructura) y los cinco últimos de BDA (convertir en vector y gestionar la colección):
@@ -165,7 +171,7 @@ El **pipeline** es el programa que hace todo el recorrido, del fichero al regist
 | 2. Extracción | SBD | Sacar el texto del PDF o del DOCX | Un PDF escaneado es una imagen sin texto: se detecta **aquí**, no cuando ChromaDB devuelve fragmentos vacíos |
 | 3. Limpieza | SBD | Quitar pies de página repetidos, guiones que parten palabras, páginas vacías y duplicados | Que el pie «IES Ataúlfo Argenta – Página 3» aparezca en todos los fragmentos |
 | 4. Troceado | SBD | Partir en fragmentos y calcular sus metadatos, incluido el hash | Frases partidas y fragmentos de dos temas |
-| 5. ¿Hash igual? | BDA | Comparar el hash nuevo con el guardado para ese identificador | Llamar a Titan si el texto no ha cambiado |
+| 5. ¿Vector reutilizable? | BDA | Comparar hash y configuración; revisar metadatos por separado | Reutilizar un vector incompatible o dejar metadatos antiguos |
 | 6. Titan | BDA | Pedir el vector: dimensión 1024, normalizado | — |
 | 7. Comprobación | BDA | Revisar que el vector tiene 1024 números y longitud cercana a 1 (tema 3) | Escribir un vector mal configurado |
 | 8. `upsert` | BDA | Escribir texto, vector y metadatos en la colección | Duplicados al reindexar (tema 5) |

@@ -19,7 +19,7 @@ Diez ejercicios para cerrar la unidad. Cada uno repasa uno o dos temas con el mi
 | 4. Colección que no se mezcla | Dimensión y modelo iguales al indexar y al consultar | [2](02-embeddings.md) | 2 |
 | 5. Estructura de un registro | Identificador y esquema de metadatos | [6](06-metadatos-y-filtros.md) | 5 |
 | 6. Actualizar sin huérfanos | Hash, `upsert` y borrado | [7](07-chunking-y-ciclo-de-indexacion.md) y [8](08-operaciones-de-gestion.md) | 6 |
-| 7. Recall@5 | Medir si la búsqueda cumple el objetivo | [9](09-calidad-y-fallos.md) | 7 |
+| 7. Acierto@5 | Medir si la búsqueda cumple el objetivo | [9](09-calidad-y-fallos.md) | 7 |
 | 8. El filtro que llega tarde | Filtro dentro de la consulta y umbral | [4](04-busqueda-e-indices.md) y [6](06-metadatos-y-filtros.md) | 5 |
 | 9. Escala del IES | Cuándo hace falta un índice aproximado | [4](04-busqueda-e-indices.md) | 4 |
 | 10. Cambio de modelo | Reindexar y volver a medir | [2](02-embeddings.md) y [9](09-calidad-y-fallos.md) | 7 |
@@ -117,7 +117,7 @@ Es el caso del tema 8. El documento `calendario-2026` tenía **4 fragmentos** in
 ??? tip "Pista"
     El procedimiento del tema 8 tiene cuatro pasos para cada `doc_id`. El paso que se olvida con facilidad es el último: los identificadores que había antes y ya no se han generado.
 
-## 7. Recall@5
+## 7. Acierto@5
 
 El conjunto de pruebas tiene ocho preguntas, cada una con el `doc_id` que debería aparecer. Resultado de la búsqueda:
 
@@ -125,7 +125,7 @@ El conjunto de pruebas tiene ocho preguntas, cada una con el `doc_id` que deber�
 - En la 4, aparece en la posición 8.
 - En la 6 y la 8, no aparece.
 
-1. Calcula el recall@5.
+1. Calcula el acierto@5.
 2. ¿Se cumple el objetivo del proyecto?
 3. Si se midiera con k = 10, la pregunta 4 pasaría a contar como acierto. ¿Cuánto saldría? Razona si esa forma de medir respeta lo que pide el proyecto.
 4. ¿Por qué preguntas empezarías a investigar, y qué mirarías primero?
@@ -190,7 +190,7 @@ Estas preguntas recogen las ideas que se repiten en varios ejercicios. Contesta 
     El filtro va dentro de la consulta, en el `where`, para que los k resultados ya lo cumplan. El filtro decide qué registros entran. El umbral decide si el mejor de ellos se parece lo suficiente como para responder.
 
 ??? question "5. ¿Con qué k se mide el objetivo del proyecto, y por qué no se sube para mejorar la cifra? (ejercicio 7)"
-    Con k entre 3 y 5, porque es lo que el proyecto devuelve a la persona. Con k más grande el recall sube siempre, pero la persona recibiría más ruido y ya no se mediría lo que pide el proyecto.
+    Con k entre 3 y 5, porque es lo que el proyecto devuelve a la persona. Con k más grande el acierto sube siempre, pero la persona recibiría más ruido y ya no se mediría lo que pide el proyecto.
 
 ??? question "6. ¿Qué se guarda en cada registro para poder cambiar de modelo sin perder nada? (ejercicios 4 y 10)"
-    El texto original y los metadatos. Los vectores se tiran y se recalculan con el modelo nuevo, en una colección nueva. Después se vuelven a medir el recall@5 y el umbral.
+    El texto original y los metadatos. Los vectores se tiran y se recalculan con el modelo nuevo, en una colección nueva. Después se vuelven a medir el acierto@5 y el umbral.

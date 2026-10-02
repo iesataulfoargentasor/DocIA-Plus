@@ -107,9 +107,9 @@ Este es el caso más importante del tema. El centro publica una **versión nueva
 El procedimiento, para un `doc_id`, tiene cuatro pasos:
 
 1. **Trocear el fichero nuevo** y calcular sus identificadores: `{_000, _001}`.
-2. **Comparar hashes.** `_000` tiene el mismo hash: **no se llama a Titan**. `_001` ha cambiado: se pide su vector nuevo.
+2. **Comparar hashes y configuración del embedding.** Si coinciden, `_000` reutiliza su vector, pero sus metadatos se actualizan si han cambiado. `_001` necesita un vector nuevo. El hash corresponde al texto exacto enviado al modelo, incluido el contexto añadido.
 3. **`upsert`** de lo que ha cambiado: `_001`.
-4. **Borrar los que sobran**: los que había antes para ese `doc_id` y ya no se han generado.
+4. **Borrar los que sobran, solo después de validar la extracción completa y confirmar las escrituras**: los que había antes para ese `doc_id` y ya no se han generado.
 
 El paso 4 es una **resta de conjuntos**:
 

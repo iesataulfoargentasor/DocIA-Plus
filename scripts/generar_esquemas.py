@@ -102,7 +102,7 @@ def pipeline() -> None:
 def modulos() -> None:
     cols = [
         (36, "SBD", "Prepara los documentos", ["Extrae y limpia texto", "Corta en fragmentos", "Metadatos g1–g5"]),
-        (262, "BDA", "Llena y cuida la colección", ["Vectores con Titan v2", "upsert y huérfanos", "Mide el recall@5"]),
+        (262, "BDA", "Llena y cuida la colección", ["Vectores con Titan v2", "upsert y huérfanos", "Mide el acierto@5"]),
         (488, "PIA", "La usa después", ["API y umbral", "Redacta y cita", "Widget de la web"]),
     ]
     parts = []
@@ -528,7 +528,7 @@ def umbral() -> None:
         for d in negativos:
             parts.append(f'<circle cx="{px(d):.1f}" cy="{base - 12 if d > 0.05 else base - 48}" r="7" fill="{RED}"/>')
         if corte is None:
-            parts.append(text(px(0.34), top + 50, "se mezclan: no hay umbral posible", 13, RED, 700, "end"))
+            parts.append(text(px(0.34), top + 50, "se mezclan: habrá errores", 13, RED, 700, "end"))
         else:
             parts.append(
                 f'<line x1="{px(corte)}" y1="{top + 34}" x2="{px(corte)}" y2="{base + 4}" stroke="{INDIGO}" stroke-width="2" stroke-dasharray="5 4"/>'
@@ -538,7 +538,7 @@ def umbral() -> None:
     save(
         "09-umbral.svg",
         "\n".join(parts),
-        "El umbral solo existe si hay un hueco",
+        "Un umbral sin errores en este ejemplo",
         "Con un fragmento de índice, la pregunta sin respuesta queda a 0,013, entre las que sí tienen respuesta. Tras limpiarlo, queda a 0,307, por encima de la peor con respuesta (0,220), y cabe un umbral.",
         620,
         408,
@@ -1188,7 +1188,7 @@ def recall() -> None:
         ("7", True, "dentro del top 5"),
         ("8", False, "no aparece"),
     ]
-    parts = [text(24, 34, "Ejemplo de recall@5: 5 de 8", 18, INK, 650)]
+    parts = [text(24, 34, "Ejemplo de acierto@5: 5 de 8", 18, INK, 650)]
     parts.append(text(24, 56, "Es el ejercicio 7, no una medida del corpus del IES.", 13, MUTED))
     y = 74
     for number, hit, detail in rows:
@@ -1207,7 +1207,7 @@ def recall() -> None:
     save(
         "09-recall.svg",
         "\n".join(parts),
-        "Recall en cinco de ocho preguntas de ejemplo",
+        "Acierto en cinco de ocho preguntas de ejemplo",
         "Cinco preguntas tienen el documento esperado entre los cinco primeros fragmentos. Eso es un 62,5 por ciento, por debajo del objetivo del proyecto.",
         684,
         y + 8,
@@ -1482,7 +1482,7 @@ def ejercicios_mapa() -> None:
         ]),
         ("Mantener y medir", GREEN, [
             (6, "Actualizar sin huérfanos", "temas 7 y 8 · sesión 6"),
-            (7, "Recall@5", "tema 9 · sesión 7"),
+            (7, "Acierto@5", "tema 9 · sesión 7"),
             (10, "Cambio de modelo", "temas 2 y 9 · sesión 7"),
         ]),
     ]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 684 386" role="img">
-  <title>Recall en cinco de ocho preguntas de ejemplo</title>
+  <title>Acierto en cinco de ocho preguntas de ejemplo</title>
   <desc>Cinco preguntas tienen el documento esperado entre los cinco primeros fragmentos. Eso es un 62,5 por ciento, por debajo del objetivo del proyecto.</desc>
   <rect width="684" height="386" rx="18" fill="#f4f6fb"/>
   <defs>
@@ -11,7 +11,7 @@
       <path d="M 0 1 L 9 5 L 0 9 z" fill="#b71c1c"/>
     </marker>
   </defs>
-  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Ejemplo de recall@5: 5 de 8</text>
+  <text x="24" y="34" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="18" font-weight="650">Ejemplo de acierto@5: 5 de 8</text>
 <text x="24" y="56" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="400">Es el ejercicio 7, no una medida del corpus del IES.</text>
 <rect x="24" y="74" width="420" height="32" rx="8" fill="#e8f5e9" stroke="#e8f5e9" stroke-width="0"/>
 <text x="40" y="96" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="650">Pregunta 1</text>

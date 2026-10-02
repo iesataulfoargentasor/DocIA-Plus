@@ -86,6 +86,10 @@ Cada tema añade una pieza al mismo caso, «¿Cómo me matriculo?»:
 | [Laboratorio local](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md) | Dos scripts con vectores escritos a mano, sin cuenta de AWS |
 | [Ejercicios](01-bases-vectoriales/ejercicios.md) | Diez ejercicios en papel, cada uno en la sesión de su tema |
 
+## Nuestro recorrido de clase
+
+Los martes combinamos 3 horas de BDA y 2 de SBD. Empezamos por [Qdrant y su transición a ChromaDB](01-bases-vectoriales/qdrant-a-chromadb.md). Consulta las [entregas de los martes](00-proyecto/martes-y-entrega.md): el trabajo de aula se cierra el **18 de mayo de 2027**, antes de comenzar la Formación en Empresa el día 20.
+
 ## Orden de lectura
 
 1. El proyecto: [Qué vamos a construir](00-proyecto/que-vamos-a-construir.md) y [El encargo de SBD y BDA](00-proyecto/encargo-sbd-bda.md).

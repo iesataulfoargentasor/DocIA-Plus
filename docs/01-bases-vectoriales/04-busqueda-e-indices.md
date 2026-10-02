@@ -92,7 +92,7 @@ recall del índice = 4 aciertos / 5 = 0,8
 
 Un recall de 1 significa que el índice coincide con la búsqueda exacta.
 
-No lo confundas con el **recall de recuperación** del [tema 9](09-calidad-y-fallos.md). Este otro compara con lo que una **persona** sabe que es la respuesta correcta: mide si el documento adecuado está entre los devueltos. El recall del índice solo compara al índice con la búsqueda exacta, sin importar si esta acierta o no.
+No lo confundas con el **acierto de recuperación** del [tema 9](09-calidad-y-fallos.md). Este otro compara con lo que una **persona** sabe que es la respuesta correcta: mide si el documento adecuado está entre los devueltos. El recall del índice solo compara al índice con la búsqueda exacta, sin importar si esta acierta o no.
 
 **Para DocIA+** el objetivo es un recall de índice indistinguible de 1. Con 1.200 vectores se consigue con la búsqueda exacta o con un índice holgado. No vamos a afinar un índice para ganar microsegundos y perder el fragmento que cita la norma de acceso.
 
@@ -195,8 +195,8 @@ Por eso el filtro va **dentro** de la consulta a la base, y k significa «k resu
 ??? question "3. La búsqueda exacta devuelve F, I, X, Y, Z con k = 5 y el índice devuelve F, I, X, Y, W. ¿Cuál es el recall del índice?"
     4 de 5 coinciden: 4 / 5 = 0,8.
 
-??? question "4. ¿En qué se diferencia el recall del índice del recall de recuperación?"
-    El del índice compara el índice con la búsqueda exacta. El de recuperación compara con la respuesta correcta que conoce una persona (el documento que debería salir). Un índice perfecto puede tener mal recall de recuperación si el modelo o el fragmentado son malos.
+??? question "4. ¿En qué se diferencia el recall del índice del acierto de recuperación?"
+    El del índice compara el índice con la búsqueda exacta. El de recuperación compara con la respuesta correcta que conoce una persona (el documento que debería salir). Un índice perfecto puede tener mal acierto de recuperación si el modelo o el fragmentado son malos.
 
 ??? question "5. En DocIA+ tenemos unos 1.200 vectores. ¿Por qué no se dedica tiempo a afinar M y ef?"
     Porque con ese tamaño la búsqueda exacta ya tarda milisegundos, y el fallo más probable no está en el índice sino en el fragmentado, los metadatos o el modelo. Solo se tocan si una medida demuestra que el índice pierde vecinos.

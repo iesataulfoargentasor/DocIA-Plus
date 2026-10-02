@@ -77,7 +77,7 @@ Algunas tareas no tienen sentido en un solo módulo:
 | Esquema de metadatos | Propone los campos | Comprueba que ChromaDB los acepta: sin valores vacíos ni listas, fechas como número | 6 |
 | Corte en fragmentos | Decide cómo se corta | Devuelve lo que no sirve | 7 |
 | Conjunto de pruebas | Escribe las preguntas de su categoría, sin copiar el documento | Ejecuta las consultas | 9 |
-| Medida y umbral | Revisa el texto cuando la medida falla | Calcula el recall@5 y el hueco para el umbral | 9 |
+| Medida y umbral | Revisa el texto cuando la medida falla | Calcula el acierto@5 y los errores al aplicar el umbral | 9 |
 
 La medida es la que decide si el trabajo está bien: **más del 80 % de acierto con 3 a 5 fragmentos** (tema 9).
 
@@ -103,7 +103,7 @@ La unidad está asentada cuando un grupo puede explicar, sin leer los apuntes, e
 | 4. La categoría es un **filtro**, no un vector más | 6 |
 | 5. Actualizar un documento es un `upsert` de sus fragmentos y un borrado de los que ya no existen | 8 |
 | 6. Cambiar de modelo de embeddings obliga a **crear otra colección** y reindexar | 2 y 10 |
-| 7. La calidad se mide con preguntas escritas antes, como recall@5, y el umbral solo existe si hay hueco | 9 |
+| 7. La calidad se mide con preguntas escritas antes, como acierto@5, y el umbral se valida midiendo errores de aceptación y rechazo | 9 |
 | 8. ChromaDB no se abre a internet: solo la API la consulta | 10 |
 
 El [laboratorio](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/laboratorio/README.md) comprueba la geometría y las operaciones con vectores escritos a mano, para no mezclar todavía el aprendizaje de la base de datos con el de la cuenta de AWS.
@@ -114,7 +114,7 @@ El [laboratorio](https://github.com/iesataulfoargentasor/DocIA-Plus/blob/main/la
     SBD. Si el corte está mal, BDA no lo puede arreglar al calcular el vector: se lo devuelve a SBD para que lo corrija.
 
 ??? question "2. ¿Por qué la limpieza del texto, que es de SBD, afecta a la medida de calidad?"
-    Porque el ruido que queda se recupera como si fuera contenido. En el tema 9, un índice de PDF sin quitar bajaba el recall@1 de 4/4 a 3/4 y hacía imposible fijar un umbral.
+    Porque el ruido que queda se recupera como si fuera contenido. En el tema 9, un índice de PDF sin quitar bajaba el acierto@1 de 4/4 a 3/4 y hacía imposible fijar un umbral.
 
 ??? question "3. Sin el metadato `curso`, ¿qué problema aparece?"
     No se pueden separar vigencias: la oferta de 2023 y la de 2026 se parecen igual a la pregunta y salen juntas. Tampoco se puede borrar solo lo caducado.

@@ -62,7 +62,7 @@
 <rect x="520" y="186" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <circle cx="546" cy="214" r="15" fill="#2e7d32"/>
 <text x="546" y="219" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">7</text>
-<text x="570" y="211" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Recall@5</text>
+<text x="570" y="211" text-anchor="start" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="13" font-weight="650">Acierto@5</text>
 <text x="570" y="230" text-anchor="start" fill="#5c657a" font-family="Segoe UI, sans-serif" font-size="12" font-weight="400">tema 9 · sesión 7</text>
 <rect x="520" y="252" width="232" height="56" rx="12" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <circle cx="546" cy="280" r="15" fill="#2e7d32"/>

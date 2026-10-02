@@ -324,6 +324,8 @@ La colección de arriba es un cálculo en memoria. Al cerrar Colab desaparece. U
 
 `PersistentClient` escribe una carpeta. Se guardan los mismos cinco registros, se cierra el cliente y se abre otro apuntando a la misma carpeta. Si el recuento sigue siendo 5, los vectores han sobrevivido fuera de la variable.
 
+En Colab, esta carpeta pertenece al disco temporal del entorno. Puede desaparecer cuando Colab elimina la máquina. Descargar el .ipynb no descarga la base: hay que conservar los originales y el código de reconstrucción, o exportar una copia consistente fuera del entorno. Abrir otro cliente sobre la misma carpeta solo demuestra persistencia en ese disco.
+
 En el proyecto la carpeta no estará en Colab: estará en el servidor. La idea es la misma.
 """
             ),
