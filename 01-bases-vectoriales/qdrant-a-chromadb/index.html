@@ -10,25 +10,31 @@
       
       
       
+        <link rel="canonical" href="https://iesataulfoargentasor.github.io/DocIA-Plus/01-bases-vectoriales/qdrant-a-chromadb/">
       
+      
+        <link rel="prev" href="../sesion-01/">
+      
+      
+        <link rel="next" href="../00-por-que-existen/">
       
       
         
       
       
-      <link rel="icon" href="/DocIA-Plus/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>DocIA+</title>
+        <title>De Qdrant a ChromaDB - DocIA+</title>
       
     
     
-      <link rel="stylesheet" href="/DocIA-Plus/assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="/DocIA-Plus/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="/DocIA-Plus/stylesheets/diapositivas.css">
+      <link rel="stylesheet" href="../../stylesheets/diapositivas.css">
     
-    <script>__md_scope=new URL("/DocIA-Plus/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#de-qdrant-a-chromadb" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="/DocIA-Plus/." title="DocIA+" class="md-header__button md-logo" aria-label="DocIA+" data-md-component="logo">
+    <a href="../.." title="DocIA+" class="md-header__button md-logo" aria-label="DocIA+" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              De Qdrant a ChromaDB
             
           </span>
         </div>
@@ -221,7 +232,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/DocIA-Plus/." title="DocIA+" class="md-nav__button md-logo" aria-label="DocIA+" data-md-component="logo">
+    <a href="../.." title="DocIA+" class="md-nav__button md-logo" aria-label="DocIA+" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -251,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -332,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/00-proyecto/que-vamos-a-construir/" class="md-nav__link">
+      <a href="../../00-proyecto/que-vamos-a-construir/" class="md-nav__link">
         
   
   
@@ -360,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/00-proyecto/encargo-sbd-bda/" class="md-nav__link">
+      <a href="../../00-proyecto/encargo-sbd-bda/" class="md-nav__link">
         
   
   
@@ -388,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/00-proyecto/martes-y-entrega/" class="md-nav__link">
+      <a href="../../00-proyecto/martes-y-entrega/" class="md-nav__link">
         
   
   
@@ -420,8 +431,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -432,13 +445,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -459,7 +470,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -477,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -505,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/sesion-01/" class="md-nav__link">
+      <a href="../sesion-01/" class="md-nav__link">
         
   
   
@@ -530,10 +541,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/qdrant-a-chromadb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -549,6 +587,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-recorrido-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El recorrido de clase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparar-las-practicas-de-qdrant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparar las prácticas de Qdrant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-cambia-entre-las-bases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué cambia entre las bases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practica-de-transicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Práctica de transición
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -561,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/00-por-que-existen/" class="md-nav__link">
+      <a href="../00-por-que-existen/" class="md-nav__link">
         
   
   
@@ -589,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/01-busqueda-literal-y-semantica/" class="md-nav__link">
+      <a href="../01-busqueda-literal-y-semantica/" class="md-nav__link">
         
   
   
@@ -617,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/02-embeddings/" class="md-nav__link">
+      <a href="../02-embeddings/" class="md-nav__link">
         
   
   
@@ -645,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/03-geometria-y-similitud/" class="md-nav__link">
+      <a href="../03-geometria-y-similitud/" class="md-nav__link">
         
   
   
@@ -673,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/04-busqueda-e-indices/" class="md-nav__link">
+      <a href="../04-busqueda-e-indices/" class="md-nav__link">
         
   
   
@@ -701,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/05-anatomia-bd-vectorial/" class="md-nav__link">
+      <a href="../05-anatomia-bd-vectorial/" class="md-nav__link">
         
   
   
@@ -729,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/06-metadatos-y-filtros/" class="md-nav__link">
+      <a href="../06-metadatos-y-filtros/" class="md-nav__link">
         
   
   
@@ -757,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/07-chunking-y-ciclo-de-indexacion/" class="md-nav__link">
+      <a href="../07-chunking-y-ciclo-de-indexacion/" class="md-nav__link">
         
   
   
@@ -785,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/08-operaciones-de-gestion/" class="md-nav__link">
+      <a href="../08-operaciones-de-gestion/" class="md-nav__link">
         
   
   
@@ -813,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/09-calidad-y-fallos/" class="md-nav__link">
+      <a href="../09-calidad-y-fallos/" class="md-nav__link">
         
   
   
@@ -841,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/10-chromadb-en-docia/" class="md-nav__link">
+      <a href="../10-chromadb-en-docia/" class="md-nav__link">
         
   
   
@@ -869,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DocIA-Plus/01-bases-vectoriales/ejercicios/" class="md-nav__link">
+      <a href="../ejercicios/" class="md-nav__link">
         
   
   
@@ -914,6 +1016,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-recorrido-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El recorrido de clase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparar-las-practicas-de-qdrant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparar las prácticas de Qdrant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-cambia-entre-las-bases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué cambia entre las bases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practica-de-transicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Práctica de transición
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -926,8 +1082,107 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="de-qdrant-a-chromadb">De Qdrant a ChromaDB<a class="headerlink" href="#de-qdrant-a-chromadb" title="Permanent link">&para;</a></h1>
+<p>Qdrant nos permite observar colecciones, vectores y metadatos en una consola. ChromaDB será la base del proyecto. Aprendemos primero las operaciones comunes y después comprobamos qué cambia entre ambas herramientas.</p>
+<h2 id="el-recorrido-de-clase">El recorrido de clase<a class="headerlink" href="#el-recorrido-de-clase" title="Permanent link">&para;</a></h2>
+<ol>
+<li>En la <a href="../sesion-01/" target="_blank" rel="noopener">sesión 1</a>, hacer el mapa y el cuaderno <strong>Ver el vector</strong>. Reservar el segundo cuaderno, de ChromaDB, para la transición.</li>
+<li>Trabajar la <a href="https://colab.research.google.com/drive/1Xq0OPU6QwyTMVoBjcTGVH5oyakT0MkAk?usp=sharing" target="_blank" rel="noopener">introducción comentada a Qdrant</a>, por partes: película, paráfrasis y filtro.</li>
+<li>Resolver el <a href="https://colab.research.google.com/drive/1dJyARi0sBpsZrfcPSTY_DHkKI-Euk-P4?usp=sharing" target="_blank" rel="noopener">reto de recursos educativos</a>. Reservar unas dos horas y tiempo para explicar los resultados.</li>
+<li>Trasladar el catálogo a ChromaDB con el segundo cuaderno de la sesión 1 como referencia.</li>
+<li>Sustituir el catálogo por documentos del centro, según los temas 7 a 10.</li>
+</ol>
+<p>La versión comentada desarrolla el mismo código del cuaderno original: no es necesario realizar ambos. Los Colab enlazados son materiales externos; las indicaciones de esta página no modifican sus celdas.</p>
+<h2 id="preparar-las-practicas-de-qdrant">Preparar las prácticas de Qdrant<a class="headerlink" href="#preparar-las-practicas-de-qdrant" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Usar <code>getpass</code> o los secretos de Colab para las credenciales. No copiar claves a celdas o salidas compartidas.</li>
+<li>El cuaderno comentado conserva borrados de colecciones con nombres fijos. Trabajar en una colección propia y revisar los borrados antes de ejecutar. El reto usa memoria por defecto y crea un nombre único.</li>
+<li>Los Colab usan <code>all-MiniLM-L6-v2</code>. Compararlo con el modelo multilingüe de la web usando las mismas consultas; no atribuir automáticamente a la base los errores de recuperación en español.</li>
+<li>Al cambiar el modelo, crear otra colección, recalcular todos los vectores y comprobar su dimensión. No mezclar espacios aunque tengan el mismo tamaño.</li>
+<li>Interpretar «Filtros híbridos» como <strong>búsqueda vectorial con filtros de metadatos</strong>. No hay combinación de búsqueda léxica y vectorial en esa práctica.</li>
+<li>Registrar las versiones utilizadas. Una demostración con cinco registros no demuestra rendimiento con datos masivos.</li>
+</ul>
+<h2 id="que-cambia-entre-las-bases">Qué cambia entre las bases<a class="headerlink" href="#que-cambia-entre-las-bases" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Qdrant</th>
+<th>ChromaDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registro</td>
+<td>Punto: ID, vector y payload</td>
+<td>ID, embedding, documento y metadatos</td>
+</tr>
+<tr>
+<td>Texto</td>
+<td>Un campo del payload en estas prácticas</td>
+<td><code>documents</code></td>
+</tr>
+<tr>
+<td>Buscar</td>
+<td><code>query_points</code></td>
+<td><code>query</code></td>
+</tr>
+<tr>
+<td>Filtrar</td>
+<td><code>query_filter</code></td>
+<td><code>where</code></td>
+</tr>
+<tr>
+<td>Coseno</td>
+<td>Score mayor: más similar</td>
+<td>Distancia menor: más próximo</td>
+</tr>
+<tr>
+<td>Identificador</td>
+<td>Entero o UUID</td>
+<td>Cadena</td>
+</tr>
+<tr>
+<td>Actualizar metadatos</td>
+<td><code>set_payload</code></td>
+<td><code>update</code> con <code>metadatas</code></td>
+</tr>
+</tbody>
+</table>
+<p>La dimensión sale del modelo. En ambas bases, el filtro restringe los candidatos y la similitud los ordena. Para la configuración coseno, distancia = 1 − similitud; no trasladamos umbrales entre modelos.</p>
+<h2 id="practica-de-transicion">Práctica de transición<a class="headerlink" href="#practica-de-transicion" title="Permanent link">&para;</a></h2>
+<p><strong>BDA (3 horas).</strong> Exportar los ocho recursos del reto, conservar sus embeddings y convertir los IDs a cadenas. Crear una colección de ChromaDB en espacio coseno con los mismos vectores, textos y metadatos. Repetir tres consultas, incluida una ajena al catálogo, con y sin filtro. Comparar IDs y orden, teniendo en cuenta posibles empates y aproximaciones numéricas.</p>
+<p><strong>SBD (2 horas).</strong> Revisar qué campo se vectoriza, qué texto se puede citar y qué campos permiten filtrar. Proponer el registro de un documento real del grupo: fuente, categoría, curso, sección e identificador. Detectar campos ausentes y datos de vigencia dudosa.</p>
+<p><strong>Entrega:</strong> tabla de resultados, explicación de similitud frente a distancia y un registro documental validado. No basta una captura de una búsqueda que parece funcionar.</p>
+<p>El modelo permanece fijo durante esta comparación. El salto a Titan se realiza después en una colección nueva; así se distingue el cambio de base del cambio de representación.</p>
+<details class="question">
+<summary>¿Puede ChromaDB devolver números distintos y el mismo orden que Qdrant?</summary>
+<p>Sí. Con los mismos vectores y coseno, Qdrant presenta similitud y ChromaDB distancia. Una similitud de 0,8 corresponde a una distancia de 0,2. Ninguna es una probabilidad de respuesta correcta.</p>
+</details>
+<details class="question">
+<summary>¿Un filtro por categoría mejora el embedding?</summary>
+<p>No. Selecciona qué registros pueden participar. Puede excluir un fragmento relevante si la categoría elegida es incorrecta.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -964,12 +1219,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/DocIA-Plus/", "features": ["navigation.sections", "navigation.expand", "content.code.copy", "toc.follow"], "search": "/DocIA-Plus/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="/DocIA-Plus/assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="/DocIA-Plus/javascripts/diapositivas.js"></script>
+        <script src="../../javascripts/diapositivas.js"></script>
       
     
   </body>

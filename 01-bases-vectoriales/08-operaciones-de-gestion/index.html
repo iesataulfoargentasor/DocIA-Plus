@@ -392,6 +392,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-proyecto/martes-y-entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los martes y la entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -496,6 +524,34 @@
     
   
     Sesión 1. Ver la base vectorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qdrant-a-chromadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
   
 
     
@@ -1423,9 +1479,9 @@ salida:   k registros que cumplen el filtro, ordenados de menor a mayor distanci
 <p>El procedimiento, para un <code>doc_id</code>, tiene cuatro pasos:</p>
 <ol>
 <li><strong>Trocear el fichero nuevo</strong> y calcular sus identificadores: <code>{_000, _001}</code>.</li>
-<li><strong>Comparar hashes.</strong> <code>_000</code> tiene el mismo hash: <strong>no se llama a Titan</strong>. <code>_001</code> ha cambiado: se pide su vector nuevo.</li>
+<li><strong>Comparar hashes y configuración del embedding.</strong> Si coinciden, <code>_000</code> reutiliza su vector, pero sus metadatos se actualizan si han cambiado. <code>_001</code> necesita un vector nuevo. El hash corresponde al texto exacto enviado al modelo, incluido el contexto añadido.</li>
 <li><strong><code>upsert</code></strong> de lo que ha cambiado: <code>_001</code>.</li>
-<li><strong>Borrar los que sobran</strong>: los que había antes para ese <code>doc_id</code> y ya no se han generado.</li>
+<li><strong>Borrar los que sobran, solo después de validar la extracción completa y confirmar las escrituras</strong>: los que había antes para ese <code>doc_id</code> y ya no se han generado.</li>
 </ol>
 <p>El paso 4 es una <strong>resta de conjuntos</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">viejos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">coleccion</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;doc_id&quot;</span><span class="p">:</span> <span class="s2">&quot;calendario-2026&quot;</span><span class="p">},</span> <span class="n">include</span><span class="o">=</span><span class="p">[])[</span><span class="s2">&quot;ids&quot;</span><span class="p">])</span>

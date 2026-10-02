@@ -392,6 +392,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-proyecto/martes-y-entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los martes y la entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -496,6 +524,34 @@
     
   
     Sesión 1. Ver la base vectorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qdrant-a-chromadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
   
 
     
@@ -867,13 +923,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#la-medida-recallk" class="md-nav__link">
+  <a href="#la-medida-aciertok" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La medida: recall@k
+        La medida: acierto@k
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="La medida: acierto@k">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acierto-precision-y-exhaustividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acierto, precisión y exhaustividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustar-y-evaluar-con-preguntas-distintas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajustar y evaluar con preguntas distintas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1087,13 +1171,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#la-medida-recallk" class="md-nav__link">
+  <a href="#la-medida-aciertok" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La medida: recall@k
+        La medida: acierto@k
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="La medida: acierto@k">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acierto-precision-y-exhaustividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acierto, precisión y exhaustividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustar-y-evaluar-con-preguntas-distintas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajustar y evaluar con preguntas distintas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1256,11 +1368,11 @@
 <li><strong>Tamaño suficiente.</strong> Veinte preguntas (cuatro por categoría) ya permiten discutir. Ochenta, con el corpus cerrado, dan una cifra que se puede presentar. Con menos de diez no se distingue un sistema bueno de la suerte: cada pregunta vale un 10 %.</li>
 </ol>
 <h3 id="preguntas-sin-respuesta">Preguntas sin respuesta<a class="headerlink" href="#preguntas-sin-respuesta" title="Permanent link">&para;</a></h3>
-<p>Además, se añaden aparte unas cuantas <strong>preguntas negativas</strong>: preguntas cuya respuesta <strong>no</strong> está en ningún documento, como «¿hay beca de transporte este año?». Para esas, lo correcto no es recuperar nada, sino que la base no encuentre nada lo bastante parecido y DocIA+ diga que no tiene documentación suficiente. No cuentan para el recall; sirven para fijar el umbral, como veremos.</p>
-<h2 id="la-medida-recallk">La medida: recall@k<a class="headerlink" href="#la-medida-recallk" title="Permanent link">&para;</a></h2>
-<p>La medida se llama <strong>recall@k</strong> («recall en k»). <em>Recall</em> significa aquí «cuánto de lo que había que encontrar se ha encontrado». La cuenta es sencilla:</p>
+<p>Además, se añaden aparte unas cuantas <strong>preguntas negativas</strong>: preguntas cuya respuesta <strong>no</strong> está en ningún documento, como «¿hay beca de transporte este año?». Para esas, lo correcto no es recuperar nada, sino que la base no encuentre nada lo bastante parecido y DocIA+ diga que no tiene documentación suficiente. No cuentan para el acierto; sirven para fijar el umbral, como veremos.</p>
+<h2 id="la-medida-aciertok">La medida: acierto@k<a class="headerlink" href="#la-medida-aciertok" title="Permanent link">&para;</a></h2>
+<p>La medida inicial es <strong>acierto@k</strong>, también llamada <strong>Hit@k</strong>: la proporción de preguntas con al menos un resultado relevante entre los k primeros. La cuenta es sencilla:</p>
 <div class="highlight"><pre><span></span><code>                preguntas en las que el doc_id esperado aparece entre los k primeros
-recall@k  =  ─────────────────────────────────────────────────────────────────────────
+acierto@k  =  ─────────────────────────────────────────────────────────────────────────
                                  preguntas del conjunto
 </code></pre></div>
 <p>Para cada pregunta solo se mira una cosa: ¿está el documento esperado entre los k resultados? Sí o no. Luego se cuentan los síes.</p>
@@ -1268,10 +1380,16 @@ recall@k  =  ──────────────────────�
 <p>Con k = 5, el objetivo del proyecto se lee así: <strong>en más del 80 % de las preguntas controladas, el documento correcto está entre los cinco primeros fragmentos.</strong></p>
 <p>Tres aclaraciones:</p>
 <ul>
-<li><strong>Es un recall sobre documentos</strong>, no el recall del índice del tema 4. Aquel comparaba HNSW con la búsqueda exacta; este compara con lo que una persona sabe que es la respuesta.</li>
+<li><strong>Es una tasa de acierto sobre documentos</strong>, distinta del recall del índice del tema 4. Aquel comparaba HNSW con la búsqueda exacta; este compara con lo que una persona sabe que es la respuesta.</li>
 <li><strong>Al principio basta con el <code>doc_id</code>.</strong> Si se quiere afinar, se exige también la sección correcta. Empezar por el <code>doc_id</code> evita bloquear la medida discutiendo en qué página exacta está cada cosa.</li>
-<li><strong>k se escribe siempre junto a la cifra.</strong> Con k más grande, el recall siempre sube o se queda igual, porque se miran más resultados. Un 80 % con k = 20 no cumple el objetivo: el proyecto habla de 3 a 5. Subir k para mejorar la cifra empeora lo que ve la persona, que recibe más ruido.</li>
+<li><strong>k se escribe siempre junto a la cifra.</strong> Con k más grande, el acierto siempre sube o se queda igual, porque se miran más resultados. Un 80 % con k = 20 no cumple el objetivo: el proyecto habla de 3 a 5. Subir k para mejorar la cifra empeora lo que ve la persona, que recibe más ruido.</li>
 </ul>
+<h3 id="acierto-precision-y-exhaustividad">Acierto, precisión y exhaustividad<a class="headerlink" href="#acierto-precision-y-exhaustividad" title="Permanent link">&para;</a></h3>
+<p>Acierto@k pregunta si encontramos <strong>algún</strong> resultado relevante. Precision@k mide qué proporción de los resultados recuperados es relevante. Recall@k mide qué proporción de <strong>todos los elementos relevantes anotados</strong> se ha recuperado; se calcula por pregunta y después se promedia.</p>
+<p>Si una pregunta tiene cuatro fragmentos relevantes y recuperamos dos entre cinco, el acierto es 1, Precision@5 es 2/5 y Recall@5 es 2/4. Con un único documento relevante por pregunta, el acierto y el recall sobre documentos coinciden. No se mezclan documentos y fragmentos al contar.</p>
+<p>Encontrar cualquier fragmento del documento esperado es una primera comprobación. Para aceptar el sistema, SBD verifica que el fragmento contiene la información necesaria. Una pregunta que requiere dos apartados puede acertar por documento y seguir teniendo contexto incompleto.</p>
+<h3 id="ajustar-y-evaluar-con-preguntas-distintas">Ajustar y evaluar con preguntas distintas<a class="headerlink" href="#ajustar-y-evaluar-con-preguntas-distintas" title="Permanent link">&para;</a></h3>
+<p>Separamos preguntas de ajuste y preguntas reservadas para la evaluación final. El umbral, el modelo y el fragmentado se deciden con las primeras. Las reservadas se usan después, sin retocar el sistema para favorecerlas. Registramos corpus, modelo, configuración y k junto a cada medida. Incluimos preguntas literales, paráfrasis, ambiguas y sin respuesta; las negativas se evalúan aparte.</p>
 <h2 id="un-ejemplo-completo-ejecutado">Un ejemplo completo, ejecutado<a class="headerlink" href="#un-ejemplo-completo-ejecutado" title="Permanent link">&para;</a></h2>
 <p>Montamos una evaluación pequeña en ChromaDB con los vectores de juguete del tema 3, con tres ejes (matrícula, horas, convivencia). La colección tiene cuatro fragmentos. El cuarto es el <strong>índice</strong> del PDF del proyecto educativo, que habla un poco de todo:</p>
 <table>
@@ -1345,8 +1463,8 @@ recall@k  =  ──────────────────────�
 </code></pre></div>
 <p>Contamos:</p>
 <ul>
-<li><strong>recall@1 = 3/4 = 75 %.</strong> En la cuarta pregunta, el primer resultado es el <strong>índice</strong> del PDF, no la oferta.</li>
-<li><strong>recall@3 = 4/4 = 100 %.</strong> Con tres resultados, la oferta aparece en todas.</li>
+<li><strong>acierto@1 = 3/4 = 75 %.</strong> En la cuarta pregunta, el primer resultado es el <strong>índice</strong> del PDF, no la oferta.</li>
+<li><strong>acierto@3 = 4/4 = 100 %.</strong> Con tres resultados, la oferta aparece en todas.</li>
 </ul>
 <p>Y hay algo peor en la última línea: la pregunta <strong>sin respuesta</strong> encuentra el índice a distancia <strong>0,013</strong>, casi como si fuera la respuesta perfecta. El índice «habla un poco de todo» y por eso se parece un poco a cualquier pregunta (lo anunciamos en el tema 1 con las portadas).</p>
 <h3 id="lo-mismo-tras-limpiar">Lo mismo, tras limpiar<a class="headerlink" href="#lo-mismo-tras-limpiar" title="Permanent link">&para;</a></h3>
@@ -1358,13 +1476,13 @@ recall@k  =  ──────────────────────�
 ¿Hay beca de transporte?               pec-2026_000 0.307           oferta-iabd-2026_000 0.360   oferta-iabd-2026_001 0.523
 </code></pre></div>
 <ul>
-<li><strong>recall@1 = 4/4 = 100 %.</strong></li>
+<li><strong>acierto@1 = 4/4 = 100 %.</strong></li>
 <li>La pregunta sin respuesta ahora queda a <strong>0,307</strong> del fragmento más cercano: lejos.</li>
 </ul>
 <p>La mejora no ha venido de tocar el modelo, ni el índice HNSW, ni k. Ha venido de <strong>limpiar el texto</strong>. Esa es la lección más importante del tema.</p>
-<p>Los vectores son de juguete, y la pregunta sin respuesta tiene un vector inventado a propósito. Pero la ChromaDB y las cuentas son reales, y el efecto de un índice o una portada en un corpus de verdad es exactamente este.</p>
+<p>Los vectores son de juguete, y la pregunta sin respuesta tiene un vector inventado a propósito. Pero la ChromaDB y las cuentas son reales, y muestran un fallo posible. Su frecuencia y magnitud deben medirse con documentos y embeddings reales; estas cifras no predicen el resultado de Titan.</p>
 <h2 id="el-umbral">El umbral<a class="headerlink" href="#el-umbral" title="Permanent link">&para;</a></h2>
-<p>El top-k siempre devuelve k fragmentos, aunque ninguno sirva (tema 6). Para saber cuándo <strong>no</strong> hay respuesta se usa un <strong>umbral</strong>: si el primer resultado está a una distancia mayor que el umbral, DocIA+ dice que no tiene documentación suficiente.</p>
+<p>El top-k devuelve hasta k fragmentos disponibles que cumplen el filtro, aunque ninguno responda a la pregunta (tema 6). Para saber cuándo <strong>no</strong> hay respuesta se usa un <strong>umbral</strong>: si el primer resultado está a una distancia mayor que el umbral, DocIA+ dice que no tiene documentación suficiente.</p>
 <p>¿Dónde se pone? Se mira la distancia del <strong>primer resultado</strong> de cada pregunta, separando las que tienen respuesta de las que no:</p>
 <table>
 <thead>
@@ -1392,7 +1510,13 @@ recall@k  =  ──────────────────────�
 <li><strong>Con el índice</strong>, la pregunta sin respuesta queda <strong>más cerca</strong> que algunas con respuesta. Los dos grupos se mezclan y no existe ningún umbral que los separe: cualquier valor que deje pasar las buenas deja pasar también la mala.</li>
 <li><strong>Tras limpiar</strong>, hay un <strong>hueco</strong> entre 0,220 y 0,307. El umbral se coloca en ese hueco, por ejemplo en 0,26.</li>
 </ul>
-<p>De aquí sale la regla: <strong>si los dos grupos se solapan, el problema no es el umbral, es el texto</strong> (el fragmentado, la limpieza) o el modelo. Mover el umbral no arregla un solapamiento.</p>
+<p>En este ejemplo hay una separación perfecta después de limpiar. <strong>En datos reales puede haber solapamiento incluso con un corpus bien preparado.</strong> Un umbral puede seguir siendo útil: hay que elegir qué errores se aceptan y medirlos.</p>
+<ul>
+<li><strong>Aceptación indebida:</strong> se permite responder a una pregunta sin respaldo documental.</li>
+<li><strong>Rechazo indebido:</strong> se rechaza una pregunta cuya respuesta sí estaba disponible.</li>
+</ul>
+<p>Registramos ambos errores sobre preguntas reservadas. Revisamos también limpieza, fragmentado, modelo y relevancia del contexto. Una distancia baja no demuestra que se pueda responder. PIA debe comprobar el apoyo documental y permitir la abstención.</p>
+<p>El umbral se aplica a cada fragmento antes de enviarlo al redactor. Si no queda ninguno, se devuelve el mensaje de falta de contexto; si quedan algunos, todavía se debe valorar si son suficientes.</p>
 <p>El número del umbral de DocIA+ <strong>no se fija en esta unidad</strong>. Se decidirá con el conjunto de pruebas real, sobre la colección real con Titan, y se anotará en la documentación del pipeline. El 0,26 del ejemplo solo vale para estos vectores de juguete.</p>
 <h2 id="fallos-tipicos">Fallos típicos<a class="headerlink" href="#fallos-tipicos" title="Permanent link">&para;</a></h2>
 <p>Cuando la medida sale mal, casi nunca es que «el modelo se haya vuelto tonto». Cada fallo tiene un síntoma y un sitio donde se corrige. Todos se han visto en algún tema de la unidad:</p>
@@ -1483,12 +1607,12 @@ recall@k  =  ──────────────────────�
 <p>Porque entonces acertaría hasta una búsqueda literal y la prueba no mediría la búsqueda por significado, que es lo que DocIA+ tiene que hacer bien.</p>
 </details>
 <details class="question">
-<summary>3. Diez preguntas; el documento esperado aparece en el top 5 en siete. ¿Recall@5? ¿Se cumple el objetivo?</summary>
+<summary>3. Diez preguntas; el documento esperado aparece en el top 5 en siete. ¿Acierto@5? ¿Se cumple el objetivo?</summary>
 <p>7 / 10 = 70 %. No se cumple: el proyecto pide más del 80 %.</p>
 </details>
 <details class="question">
-<summary>4. Con k = 20 el recall sube al 90 %. ¿Se cumple el objetivo?</summary>
-<p>No. El objetivo está definido para k entre 3 y 5. Subir k siempre sube el recall o lo deja igual, y da más ruido a quien pregunta.</p>
+<summary>4. Con k = 20 el acierto sube al 90 %. ¿Se cumple el objetivo?</summary>
+<p>No. El objetivo está definido para k entre 3 y 5. Subir k siempre sube el acierto o lo deja igual, y da más ruido a quien pregunta.</p>
 </details>
 <details class="question">
 <summary>5. En el ejemplo, ¿por qué la pregunta «¿hay beca de transporte?» encontraba un fragmento a distancia 0,013?</summary>
@@ -1496,14 +1620,14 @@ recall@k  =  ──────────────────────�
 </details>
 <details class="question">
 <summary>6. Las preguntas con respuesta tienen su primer resultado entre 0,002 y 0,30, y las negativas entre 0,25 y 0,40. ¿Dónde pones el umbral?</summary>
-<p>En ningún sitio que funcione: los grupos se solapan entre 0,25 y 0,30. Hay que revisar el texto (limpieza, fragmentado) o el modelo antes de fijar un umbral.</p>
+<p>No hay un umbral que separe perfectamente ambos grupos. Se comparan los errores de aceptación y rechazo con varios valores, se revisan datos y modelo y se valida la decisión con preguntas reservadas.</p>
 </details>
 <details class="question">
 <summary>7. Un documento corregido sigue citando el texto antiguo. ¿Qué dos causas del tema 8 revisarías?</summary>
 <p>Que hayan quedado fragmentos huérfanos sin borrar, o que el pipeline haya escrito con <code>add</code>, que ignora en silencio los identificadores que ya existen.</p>
 </details>
 <details class="question">
-<summary>8. Baja el recall. Un compañero propone subir <code>search_ef</code>. ¿Qué revisarías antes?</summary>
+<summary>8. Baja el acierto. Un compañero propone subir <code>search_ef</code>. ¿Qué revisarías antes?</summary>
 <p>El texto guardado, los metadatos, la llamada al modelo y la consulta, en ese orden. El índice es lo último.</p>
 </details>
 

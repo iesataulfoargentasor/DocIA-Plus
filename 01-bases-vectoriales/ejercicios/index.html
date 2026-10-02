@@ -390,6 +390,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-proyecto/martes-y-entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los martes y la entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -494,6 +522,34 @@
     
   
     Sesión 1. Ver la base vectorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qdrant-a-chromadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
   
 
     
@@ -959,10 +1015,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-recall5" class="md-nav__link">
+  <a href="#7-acierto5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Recall@5
+        7. Acierto@5
       
     </span>
   </a>
@@ -1133,10 +1189,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-recall5" class="md-nav__link">
+  <a href="#7-acierto5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Recall@5
+        7. Acierto@5
       
     </span>
   </a>
@@ -1264,7 +1320,7 @@
 <td>6</td>
 </tr>
 <tr>
-<td>7. Recall@5</td>
+<td>7. Acierto@5</td>
 <td>Medir si la búsqueda cumple el objetivo</td>
 <td><a href="../09-calidad-y-fallos/" target="_blank" rel="noopener">9</a></td>
 <td>7</td>
@@ -1375,7 +1431,7 @@ d2 = (0,8, 0,6)
 <summary>Pista</summary>
 <p>El procedimiento del tema 8 tiene cuatro pasos para cada <code>doc_id</code>. El paso que se olvida con facilidad es el último: los identificadores que había antes y ya no se han generado.</p>
 </details>
-<h2 id="7-recall5">7. Recall@5<a class="headerlink" href="#7-recall5" title="Permanent link">&para;</a></h2>
+<h2 id="7-acierto5">7. Acierto@5<a class="headerlink" href="#7-acierto5" title="Permanent link">&para;</a></h2>
 <p>El conjunto de pruebas tiene ocho preguntas, cada una con el <code>doc_id</code> que debería aparecer. Resultado de la búsqueda:</p>
 <ul>
 <li>En las preguntas 1, 2, 3, 5 y 7, el documento esperado aparece entre los cinco primeros.</li>
@@ -1384,7 +1440,7 @@ d2 = (0,8, 0,6)
 <p>En la 6 y la 8, no aparece.</p>
 </li>
 <li>
-<p>Calcula el recall@5.</p>
+<p>Calcula el acierto@5.</p>
 </li>
 <li>¿Se cumple el objetivo del proyecto?</li>
 <li>Si se midiera con k = 10, la pregunta 4 pasaría a contar como acierto. ¿Cuánto saldría? Razona si esa forma de medir respeta lo que pide el proyecto.</li>
@@ -1452,11 +1508,11 @@ d2 = (0,8, 0,6)
 </details>
 <details class="question">
 <summary>5. ¿Con qué k se mide el objetivo del proyecto, y por qué no se sube para mejorar la cifra? (ejercicio 7)</summary>
-<p>Con k entre 3 y 5, porque es lo que el proyecto devuelve a la persona. Con k más grande el recall sube siempre, pero la persona recibiría más ruido y ya no se mediría lo que pide el proyecto.</p>
+<p>Con k entre 3 y 5, porque es lo que el proyecto devuelve a la persona. Con k más grande el acierto sube siempre, pero la persona recibiría más ruido y ya no se mediría lo que pide el proyecto.</p>
 </details>
 <details class="question">
 <summary>6. ¿Qué se guarda en cada registro para poder cambiar de modelo sin perder nada? (ejercicios 4 y 10)</summary>
-<p>El texto original y los metadatos. Los vectores se tiran y se recalculan con el modelo nuevo, en una colección nueva. Después se vuelven a medir el recall@5 y el umbral.</p>
+<p>El texto original y los metadatos. Los vectores se tiran y se recalculan con el modelo nuevo, en una colección nueva. Después se vuelven a medir el acierto@5 y el umbral.</p>
 </details>
 
 

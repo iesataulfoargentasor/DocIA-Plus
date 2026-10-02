@@ -16,7 +16,7 @@
         <link rel="prev" href="../que-vamos-a-construir/">
       
       
-        <link rel="next" href="../../01-bases-vectoriales/">
+        <link rel="next" href="../martes-y-entrega/">
       
       
         
@@ -527,6 +527,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../martes-y-entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los martes y la entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -631,6 +659,34 @@
     
   
     Sesión 1. Ver la base vectorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-bases-vectoriales/qdrant-a-chromadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
   
 
     
@@ -1250,7 +1306,7 @@
 <tr>
 <td>Medida y umbral</td>
 <td>Revisa el texto cuando la medida falla</td>
-<td>Calcula el recall@5 y el hueco para el umbral</td>
+<td>Calcula el acierto@5 y los errores al aplicar el umbral</td>
 <td>9</td>
 </tr>
 </tbody>
@@ -1328,7 +1384,7 @@
 <td>2 y 10</td>
 </tr>
 <tr>
-<td>7. La calidad se mide con preguntas escritas antes, como recall@5, y el umbral solo existe si hay hueco</td>
+<td>7. La calidad se mide con preguntas escritas antes, como acierto@5, y el umbral se valida midiendo errores de aceptación y rechazo</td>
 <td>9</td>
 </tr>
 <tr>
@@ -1345,7 +1401,7 @@
 </details>
 <details class="question">
 <summary>2. ¿Por qué la limpieza del texto, que es de SBD, afecta a la medida de calidad?</summary>
-<p>Porque el ruido que queda se recupera como si fuera contenido. En el tema 9, un índice de PDF sin quitar bajaba el recall@1 de 4/4 a 3/4 y hacía imposible fijar un umbral.</p>
+<p>Porque el ruido que queda se recupera como si fuera contenido. En el tema 9, un índice de PDF sin quitar bajaba el acierto@1 de 4/4 a 3/4 y hacía imposible fijar un umbral.</p>
 </details>
 <details class="question">
 <summary>3. Sin el metadato <code>curso</code>, ¿qué problema aparece?</summary>

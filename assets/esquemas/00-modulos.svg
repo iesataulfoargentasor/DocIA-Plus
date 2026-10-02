@@ -32,7 +32,7 @@
 <rect x="278" y="164" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
 <text x="367" y="187" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">upsert y huérfanos</text>
 <rect x="278" y="210" width="178" height="36" rx="8" fill="#e8eaf6" stroke="#e8eaf6" stroke-width="0"/>
-<text x="367" y="233" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Mide el recall@5</text>
+<text x="367" y="233" text-anchor="middle" fill="#1c2340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="500">Mide el acierto@5</text>
 <rect x="488" y="24" width="210" height="268" rx="16" fill="#ffffff" stroke="#d5daf0" stroke-width="1.5"/>
 <rect x="488" y="24" width="210" height="48" rx="16" fill="#3949ab" stroke="#3949ab" stroke-width="1.5"/>
 <rect x="488" y="56" width="210" height="16" rx="0" fill="#3949ab" stroke="#3949ab" stroke-width="1.5"/>

@@ -392,6 +392,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-proyecto/martes-y-entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los martes y la entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -496,6 +524,34 @@
     
   
     Sesión 1. Ver la base vectorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qdrant-a-chromadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
   
 
     
@@ -1356,11 +1412,16 @@
     <span class="n">where</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;curso&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-2027&quot;</span><span class="p">},</span>
 <span class="p">)</span>
 
-<span class="n">distancias</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s2">&quot;distances&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>          <span class="c1"># paso 4: [0.002, ...]</span>
-<span class="k">if</span> <span class="n">distancias</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">UMBRAL</span><span class="p">:</span>                      <span class="c1"># paso 5</span>
+<span class="n">distancias</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s2">&quot;distances&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>          <span class="c1"># paso 4</span>
+<span class="n">candidatos</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">resultado</span><span class="p">[</span><span class="s2">&quot;documents&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">resultado</span><span class="p">[</span><span class="s2">&quot;metadatas&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">distancias</span><span class="p">)</span>
+<span class="n">aceptados</span> <span class="o">=</span> <span class="p">[(</span><span class="n">texto</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span> <span class="k">for</span> <span class="n">texto</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">distancia</span> <span class="ow">in</span> <span class="n">candidatos</span>
+             <span class="k">if</span> <span class="n">distancia</span> <span class="o">&lt;=</span> <span class="n">UMBRAL</span><span class="p">]</span>            <span class="c1"># paso 5: filtrar cada fragmento</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">aceptados</span><span class="p">:</span>                               <span class="c1"># incluye una consulta sin resultados</span>
     <span class="n">respuesta</span> <span class="o">=</span> <span class="s2">&quot;No tengo documentación suficiente para contestar.&quot;</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">respuesta</span> <span class="o">=</span> <span class="n">redactar</span><span class="p">(</span><span class="n">resultado</span><span class="p">[</span><span class="s2">&quot;documents&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">resultado</span><span class="p">[</span><span class="s2">&quot;metadatas&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># paso 6</span>
+    <span class="n">textos</span><span class="p">,</span> <span class="n">metadatos</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">aceptados</span><span class="p">)</span>
+    <span class="c1"># PIA verifica suficiencia, apoyo documental y citas; puede abstenerse.</span>
+    <span class="n">respuesta</span> <span class="o">=</span> <span class="n">redactar</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">textos</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">metadatos</span><span class="p">))</span>  <span class="c1"># paso 6</span>
 </code></pre></div>
 <p>Con los números del ejemplo:</p>
 <ul>
@@ -1565,7 +1626,7 @@ Fragmentos que quedan de calendario-2026:                                      �
 <td>Una colección de prueba, por ejemplo <code>docia_prueba_384</code></td>
 </tr>
 <tr>
-<td>4. Calcular el recall@5 del tema 9 y ver si hay hueco para un umbral</td>
+<td>4. Calcular el acierto@5 del tema 9 y evaluar los errores de aceptación y rechazo del umbral</td>
 <td>SBD y BDA juntos</td>
 <td>La primera medida</td>
 </tr>

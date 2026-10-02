@@ -392,6 +392,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-proyecto/martes-y-entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los martes y la entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -496,6 +524,34 @@
     
   
     Sesión 1. Ver la base vectorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qdrant-a-chromadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
   
 
     
@@ -857,6 +913,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="El hash: saber si algo ha cambiado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuando-se-puede-reutilizar-un-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cuándo se puede reutilizar un vector
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1132,6 +1205,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="El hash: saber si algo ha cambiado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuando-se-puede-reutilizar-un-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cuándo se puede reutilizar un vector
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1338,6 +1428,9 @@ Duración: 190 horas.
 f6f5a2802de5da76   El módulo de Big Data Aplicado tiene una duración de 192 horas.
 </code></pre></div>
 <p>Un solo dígito distinto y la huella no se parece en nada. Recuerda el tema 2: por eso el hash <strong>no sirve para buscar por significado</strong>. Pero sirve para otra cosa muy útil: al reindexar, si la huella del fragmento es igual a la que ya está guardada, el texto no ha cambiado y <strong>no hace falta volver a llamar a Titan</strong>. Se ahorra dinero y tiempo.</p>
+<h3 id="cuando-se-puede-reutilizar-un-vector">Cuándo se puede reutilizar un vector<a class="headerlink" href="#cuando-se-puede-reutilizar-un-vector" title="Permanent link">&para;</a></h3>
+<p>El hash se calcula sobre el texto exacto enviado al modelo, incluidos título y sección si se añaden. Para reutilizar el vector deben coincidir también el modelo y su versión, la dimensión, la normalización y la configuración de preparación del texto. Un cambio de modelo exige una colección nueva y reindexación.</p>
+<p>Aunque el texto no cambie, se comparan y actualizan los metadatos: por ejemplo, la vigencia o la URL pueden haber cambiado. Ahorrar una llamada a Titan no significa saltarse la actualización del registro.</p>
 <h2 id="el-pipeline-paso-a-paso">El pipeline, paso a paso<a class="headerlink" href="#el-pipeline-paso-a-paso" title="Permanent link">&para;</a></h2>
 <p>El <strong>pipeline</strong> es el programa que hace todo el recorrido, del fichero al registro. Tiene nueve pasos. Los cuatro primeros son de SBD (preparar el texto y su estructura) y los cinco últimos de BDA (convertir en vector y gestionar la colección):</p>
 <p><img alt="Nueve pasos: SBD hace inventario, extracción, limpieza y troceado con metadatos y hash. BDA compara el hash, llama a Titan, comprueba, hace upsert y borra huérfanos." src="../../assets/esquemas/07-pipeline.svg" /></p>
@@ -1376,10 +1469,10 @@ f6f5a2802de5da76   El módulo de Big Data Aplicado tiene una duración de 192 ho
 <td>Frases partidas y fragmentos de dos temas</td>
 </tr>
 <tr>
-<td>5. ¿Hash igual?</td>
+<td>5. ¿Vector reutilizable?</td>
 <td>BDA</td>
-<td>Comparar el hash nuevo con el guardado para ese identificador</td>
-<td>Llamar a Titan si el texto no ha cambiado</td>
+<td>Comparar hash y configuración; revisar metadatos por separado</td>
+<td>Reutilizar un vector incompatible o dejar metadatos antiguos</td>
 </tr>
 <tr>
 <td>6. Titan</td>

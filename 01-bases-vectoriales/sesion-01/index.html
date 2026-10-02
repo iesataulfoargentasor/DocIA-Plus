@@ -16,7 +16,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../00-por-que-existen/">
+        <link rel="next" href="../qdrant-a-chromadb/">
       
       
         
@@ -392,6 +392,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-proyecto/martes-y-entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los martes y la entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -678,6 +706,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qdrant-a-chromadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1201,6 +1257,10 @@
 
 <h1 id="sesion-1-ver-que-es-una-base-de-datos-vectorial">Sesión 1. Ver qué es una base de datos vectorial<a class="headerlink" href="#sesion-1-ver-que-es-una-base-de-datos-vectorial" title="Permanent link">&para;</a></h1>
 <p>Esta es la primera sesión. No hace falta haber leído los temas 1 a 10. El grupo parte de cero: sabe consultar una tabla y no ha visto nunca un embedding.</p>
+<div class="admonition note">
+<p class="admonition-title">Si empezamos con Qdrant</p>
+<p>Hoy hacemos el mapa y el cuaderno <strong>Ver el vector</strong>. Reservamos <strong>ChromaDB, despacio</strong> para después de las prácticas de Qdrant. El <a href="../qdrant-a-chromadb/" target="_blank" rel="noopener">recorrido de transición</a> indica qué materiales utilizar sin duplicar la introducción.</p>
+</div>
 <h2 id="que-vamos-a-hacer-hoy">Qué vamos a hacer hoy<a class="headerlink" href="#que-vamos-a-hacer-hoy" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1439,7 +1499,7 @@ La inscripción queda más cerca de la matrícula que la cafetería.
 <li>
 <p><strong>Filtrar.</strong> Con la pregunta amplia «¿Cuándo hay que hacer los trámites?» y el filtro <code>categoria = g4</code> salen solo las frases de oferta educativa: la de matricularse en secretaría y la de las pruebas de acceso. El filtro no es otro vector. Quita registros antes de ordenar por cercanía, igual que un <code>WHERE</code> en SQL.</p>
 </li>
-<li><strong>Memoria y disco.</strong> La colección en memoria desaparece al cerrar el cuaderno. <code>PersistentClient</code> escribe una carpeta; se abre otro cliente sobre ella y el recuento sigue siendo 5. Una base de datos tiene que seguir ahí mañana. Una variable, no.</li>
+<li><strong>Memoria y disco.</strong> La colección en memoria desaparece al cerrar el cuaderno. <code>PersistentClient</code> escribe una carpeta; se abre otro cliente sobre ella y el recuento sigue siendo 5. En Colab, esta carpeta pertenece al disco temporal del entorno. Puede desaparecer cuando Colab elimina la máquina. Descargar el .ipynb no descarga la base: hay que conservar los originales y el código de reconstrucción, o exportar una copia consistente fuera del entorno. Abrir otro cliente sobre la misma carpeta solo demuestra persistencia en ese disco.</li>
 </ol>
 <p>El cuaderno cierra con un ejercicio: añadir la frase «El centro dispone de aparcamiento para bicicletas.», categoría <code>g5</code>, calcular su vector y preguntar «¿Dónde puedo dejar la bicicleta?». Tiene que salir esa frase, a una distancia de unos <strong>0,37</strong>. La siguiente frase más cercana queda por encima de 0,88.</p>
 <p>Este ChromaDB de Colab no es el de la carpeta <code>laboratorio/</code>. Aquel usa vectores escritos a mano, sin descargar un modelo: la parte de geometría se hace después del tema 3 y la de ChromaDB después de los temas 7 y 8.</p>
@@ -1473,7 +1533,7 @@ La inscripción queda más cerca de la matrícula que la cafetería.
 </details>
 <details class="question">
 <summary>7. ¿Qué diferencia hay entre <code>EphemeralClient</code> y <code>PersistentClient</code>?</summary>
-<p>El primero guarda la colección en memoria y se pierde al cerrar el cuaderno. El segundo la escribe en una carpeta y se puede volver a abrir. En el tema 10 se ve una tercera forma, el servidor, que es la de DocIA+.</p>
+<p>El primero guarda la colección en memoria y se pierde al cerrar el cuaderno. El segundo la escribe en una carpeta y se puede volver a abrir mientras esa carpeta exista. En Colab el disco es temporal; el archivo .ipynb no contiene la base. En el tema 10 se ve una tercera forma, el servidor, que es la de DocIA+.</p>
 </details>
 
 

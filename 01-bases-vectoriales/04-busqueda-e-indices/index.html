@@ -392,6 +392,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-proyecto/martes-y-entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los martes y la entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -496,6 +524,34 @@
     
   
     Sesión 1. Ver la base vectorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qdrant-a-chromadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De Qdrant a ChromaDB
   
 
     
@@ -1381,7 +1437,7 @@
 recall del índice = 4 aciertos / 5 = 0,8
 </code></pre></div>
 <p>Un recall de 1 significa que el índice coincide con la búsqueda exacta.</p>
-<p>No lo confundas con el <strong>recall de recuperación</strong> del <a href="../09-calidad-y-fallos/" target="_blank" rel="noopener">tema 9</a>. Este otro compara con lo que una <strong>persona</strong> sabe que es la respuesta correcta: mide si el documento adecuado está entre los devueltos. El recall del índice solo compara al índice con la búsqueda exacta, sin importar si esta acierta o no.</p>
+<p>No lo confundas con el <strong>acierto de recuperación</strong> del <a href="../09-calidad-y-fallos/" target="_blank" rel="noopener">tema 9</a>. Este otro compara con lo que una <strong>persona</strong> sabe que es la respuesta correcta: mide si el documento adecuado está entre los devueltos. El recall del índice solo compara al índice con la búsqueda exacta, sin importar si esta acierta o no.</p>
 <p><strong>Para DocIA+</strong> el objetivo es un recall de índice indistinguible de 1. Con 1.200 vectores se consigue con la búsqueda exacta o con un índice holgado. No vamos a afinar un índice para ganar microsegundos y perder el fragmento que cita la norma de acceso.</p>
 <h2 id="hnsw-el-indice-de-chromadb">HNSW, el índice de ChromaDB<a class="headerlink" href="#hnsw-el-indice-de-chromadb" title="Permanent link">&para;</a></h2>
 <p>El índice que usa ChromaDB se llama <strong>HNSW</strong> (<em>Hierarchical Navigable Small World</em>, «mundo pequeño navegable jerárquico»). Los nombres asustan; la idea es la de un viaje por carretera:</p>
@@ -1529,8 +1585,8 @@ recall del índice = 4 aciertos / 5 = 0,8
 <p>4 de 5 coinciden: 4 / 5 = 0,8.</p>
 </details>
 <details class="question">
-<summary>4. ¿En qué se diferencia el recall del índice del recall de recuperación?</summary>
-<p>El del índice compara el índice con la búsqueda exacta. El de recuperación compara con la respuesta correcta que conoce una persona (el documento que debería salir). Un índice perfecto puede tener mal recall de recuperación si el modelo o el fragmentado son malos.</p>
+<summary>4. ¿En qué se diferencia el recall del índice del acierto de recuperación?</summary>
+<p>El del índice compara el índice con la búsqueda exacta. El de recuperación compara con la respuesta correcta que conoce una persona (el documento que debería salir). Un índice perfecto puede tener mal acierto de recuperación si el modelo o el fragmentado son malos.</p>
 </details>
 <details class="question">
 <summary>5. En DocIA+ tenemos unos 1.200 vectores. ¿Por qué no se dedica tiempo a afinar M y ef?</summary>
